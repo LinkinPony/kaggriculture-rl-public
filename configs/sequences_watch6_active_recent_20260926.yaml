@@ -1,0 +1,33 @@
+defaults:
+  - sequences_watch5_active_recent_20260926
+  - _self_
+
+# Preserve the five opponents' already frozen submission selection.
+selection:
+  output: outputs/datasets/derived-v5b-watch5-active-recent-20260926-train-val-q100/source-manifests
+own:
+  output: ${data.output}/source-manifests/own
+  sources:
+    dsm: ${selection.output}/dsm/collector-original.json
+    mm-pq: ${selection.output}/mm-pq/collector-original.json
+    decem: ${selection.output}/decem/collector-original.json
+    boey: ${selection.output}/boey/collector-original.json
+    vadim: ${selection.output}/vadim/collector-original.json
+  team_id: 16730612
+  team_name: Unknown Mother-Goose
+  # Own games use episode createTime, independent of submission date.
+  created_since: '2026-09-24T16:01:00Z'
+data:
+  output: outputs/datasets/derived-v5b-watch6-active-recent-20260926-train-val-q100
+  teachers: [DSM, 'M & M & P & Q', DECEM, Boey, Vadim Vasilenko, Unknown Mother-Goose]
+  watch_manifests:
+    - ${selection.output}/dsm/selected.json
+    - ${selection.output}/mm-pq/selected.json
+    - ${selection.output}/decem/selected.json
+    - ${selection.output}/boey/selected.json
+    - ${selection.output}/vadim/selected.json
+    - ${own.output}/selected.json
+report: outputs/analysis/watch6-active-bc-20260926/data-verification.json
+hydra:
+  run:
+    dir: tmp/hydra/watch6-active-recent-20260926/${now:%Y%m%d-%H%M%S}

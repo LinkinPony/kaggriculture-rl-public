@@ -1,0 +1,11 @@
+# DSM clone v3 plan C started from s99001 U1061 instead of U0, like s100801. s100801 (mixed
+# 9/28-9/29 plan B and C data from U1061) beat every U0-started DSM clone at T=0; the same
+# start with only plan C data separates the effect of initialization from that of the data.
+defaults:
+- learning_dsm_clone_v3_plan_c_bc_20260930
+- _self_
+experiment:
+  initial_weights:
+    run: outputs/learning/derived-v5b-m384-strength-canonical-ppo50-warmup300-20260928-s99001
+    checkpoint: checkpoints/update-001061.pt
+    sha256: 03a8c0f738811f00ab8200297e8ce7ffde29d46c411c17d0f9c67b72ec92aa42

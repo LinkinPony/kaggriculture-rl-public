@@ -1,0 +1,19 @@
+defaults:
+  - _self_
+benchmark:
+  run: outputs/learning/long-100k-20260908-s61001
+  output: outputs/analysis/dual-h200/benchmark.json
+  repetitions: 3
+  execution:
+    devices: [cuda:0]
+    microbatch_rows: 1440
+    workers_per_rank: 16
+    cpu_threads_per_rank: 2
+    compile_inference: true
+    fused_loss: false
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/dual-h200/hydra
+  output_subdir: null

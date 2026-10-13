@@ -1,0 +1,21 @@
+defaults:
+  - learning
+  - _self_
+experiment:
+  output_dir: outputs/learning/scratch-grounded-s42001
+  seed: 42001
+  architecture: grounded-v1
+  decision_interval: 1
+  train_seed: 740000000
+  updates: 16
+  games: 128
+  actor_learning_rate: 0.0001
+  entropy_weight: 0.0001
+  batch_rows: 5760
+  microbatch_rows: 256
+  evaluation:
+    games: 64
+    interval: 4
+    selection_seed: 770000000
+    confirmation_seed: 780000000
+    anchor_seeds: [92001, 92002]

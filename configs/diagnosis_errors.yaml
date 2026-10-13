@@ -1,0 +1,16 @@
+# Teacher-forced error classes of one frozen actor on one dataset split.
+analysis:
+  output: ???
+  actor: ???
+  manifest: ???
+  split: val
+  device: cuda:0
+  chunk_turns: 48
+  memory_fraction: 0.06
+  trajectories: 0
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${analysis.output}/hydra
+  output_subdir: null

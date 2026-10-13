@@ -1,0 +1,11 @@
+defaults:
+  - learning_demonstration_arena
+  - _self_
+arena:
+  opponents:
+    - run: outputs/learning/scratch-later-opponents-s49001
+      member: checkpoints/update-000064.pt
+    - run: outputs/learning/scratch-later-opponents-s49002
+      member: checkpoints/update-000064.pt
+  output_dir: outputs/analysis/scratch-demonstrations-later-arena
+  seed: 1100000000

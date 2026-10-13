@@ -1,0 +1,12 @@
+output_dir: outputs/analysis/20260907-neural-credit
+runs:
+  td: outputs/production-policy/20260907-neural-credit-td
+  mc: outputs/production-policy/20260907-neural-credit-mc
+baseline_selection: outputs/analysis/20260907-neural-credit/baseline-selection/confirmation.json
+protocol: outputs/analysis/20260907-neural-credit/protocol.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${output_dir}/comparison-hydra
+  output_subdir: null

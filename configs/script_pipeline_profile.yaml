@@ -1,0 +1,15 @@
+benchmark:
+  state: outputs/analysis/notebook-survey-20260921/formal-state.json
+  checkpoint: outputs/analysis/notebook-survey-20260921/formal-checkpoint-000164.pt
+  opponents: [ahmed_v45, ahmed_v53]
+  rank: 0
+  update: 157
+  repeats: 2
+  memory_fraction: 0.30
+  report: outputs/analysis/compact-script-throughput-round2-20260921/pipeline.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/script-pipeline-profile
+  output_subdir: null

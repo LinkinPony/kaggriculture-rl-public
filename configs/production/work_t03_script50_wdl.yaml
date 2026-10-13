@@ -1,0 +1,8 @@
+defaults:
+  - work_t03_script50
+  - _self_
+checkpoint: outputs/releases/20260906-work-t03-cash-stopped/update-0257-wdl-fork.pt
+output_dir: outputs/production-policy/20260906-work-t03-script50-wdl
+ppo:
+  cash_weight: 0.0
+  win_weight: 1.0

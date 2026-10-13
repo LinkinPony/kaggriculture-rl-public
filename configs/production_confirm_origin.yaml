@@ -1,0 +1,6 @@
+defaults:
+  - production_confirm_evolution
+  - _self_
+production:
+  output_dir: outputs/analysis/20260907-work-policy-search/origin-confirmation
+  checkpoint: outputs/releases/20260907-work-no-prior-ppo-lr1e6-stopped/update-0751.pt

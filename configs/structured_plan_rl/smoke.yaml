@@ -1,0 +1,102 @@
+# Bounded integration profile; long official-season training uses a separate profile.
+actor_initialization: bc_backbone
+initial_actor: outputs/turn-policy/20260828-opening-diverse-bc2-v1/actor-fp16.pt
+resume_checkpoint: null
+output_dir: outputs/structured-plan-rl/smoke-v19
+
+seed: 20260830
+rollout_seed_start: 4000000
+updates: 1
+paired_seats: true
+selection_seeds: [84000, 84001]
+confirmation_seeds: [84100, 84101]
+
+abi:
+  version: 3
+  production_lines: 8
+  line_fields: 6
+  global_fields: 10
+  mode_tokens: 2
+  line_operation_tokens: 3
+  line_value_tokens: 16
+  global_operation_tokens: 2
+  global_value_tokens: 16
+  observation_features: 90
+  journal_features: 32
+  event_features: 32
+
+model:
+  model_width: 256
+  entity_width: 128
+  attention_heads: 4
+  feedforward_width: 704
+  latent_tokens: 64
+  register_tokens: 4
+  scene_layers: 2
+  temporal_layers: 20
+  action_layers: 2
+  max_history: 64
+  strategy_tokens: 8
+  fact_dropout: 0.25
+
+versions:
+  language: independent-execution-portfolio-language-v5
+  observation: actor-visible-rich-portfolio-observation-v3
+  grammar: parallel-prefix-portfolio-grammar-v6
+  executor: native-portfolio-executor-v7
+
+objective:
+  reward: terminal_wdl
+  discount: 1.0
+  gae_lambda: 1.0
+
+optimization:
+  ppo_epochs: 2
+  episodes_per_minibatch: 4
+  actor_learning_rate: 0.000005
+  critic_learning_rate: 0.0001
+  weight_decay: 0.00001
+  clip_epsilon: 0.1
+  value_loss_weight: 1.0
+  entropy_weight: 0.001
+  target_kl: 0.02
+  gradient_clip: 1.0
+  normalize_advantage: true
+
+rollout:
+  seeds_per_update: 4
+  cpu_workers: 4
+  inference_batch_size: 16
+  event_cuda_graph_max_batch_size: 0
+  host_memory_limit_gib: 4
+  gpu_memory_fraction: 0.5
+
+self_play:
+  historical_fraction: 0.5
+  snapshot_interval: 1
+  history_capacity: 2
+
+health:
+  warmup_updates: 8
+  anchor_panels: 2
+  stop_fraction_floor: 0.9
+  plan_change_fraction_ceiling: 0.1
+  anchor_loss_rate_floor: 0.8
+
+checkpoint:
+  rolling_interval: 1
+  rolling_keep: 2
+  permanent_interval: 10
+
+observability:
+  tensorboard: true
+  flush_seconds: 10
+  max_queue: 20
+
+devices: [cuda:0]
+cpu_threads: 4
+act_timeout_seconds: 1.0
+remaining_overage_seconds: 60.0
+environment:
+  episodeSteps: 48
+  maxMarketOrdersPerTurn: 10

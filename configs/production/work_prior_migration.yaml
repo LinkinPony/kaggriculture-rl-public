@@ -1,0 +1,12 @@
+defaults:
+  - work_t03_script50_wdl
+  - _self_
+checkpoint: outputs/releases/20260906-work-t03-wdl-stopped/update-0442.pt
+output_dir: outputs/production-policy/20260907-work-no-prior-ppo-lr1e5
+precision: bf16
+bf16_reduced_precision_reduction: false
+model:
+  time_prior: true
+  prior_scale: 1.0
+ppo:
+  actor_learning_rate: 0.00001

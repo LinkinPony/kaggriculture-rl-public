@@ -1,0 +1,39 @@
+# Strength-selected DSM/MMPQ versions, canonical market labels and field-mean weighting.
+defaults:
+- learning_boey_all_watch4_bc_20260928
+- _self_
+experiment:
+  output_dir: outputs/learning/derived-v5b-m384-u590-strength-canonical-bc-20260928-s98001
+  seed: 98001
+  train_seed: 7800000000
+  resume: false
+  pretraining_only: true
+  initial_weights:
+    run: outputs/learning/derived-v5b-m384-boey-watch4-ppo50-warmup300-20260928-s97001
+    checkpoint: checkpoints/update-000590.pt
+    sha256: c9a5d536b3adeaf5dc7f74dbf51889f5841a479722f15d046868d9fbc780223e
+  evaluation:
+    selection_seed: 7820000000
+    confirmation_seed: 7821000000
+    anchor_seeds:
+    - 470001
+    - 470002
+  demonstrations:
+    manifest: outputs/datasets/derived-v5b-strength-top-canonical-20260928-train-val-q100/manifest.json
+    sha256: 052d0f7883259bc064be9dcc6738c90746cbab19965bb172ddf0fab548b09b5c
+    epochs: 40
+    learning_rate: 1.0e-05
+    epoch_checkpoint_interval: 2
+    early_stopping:
+      patience: 4
+      min_delta: 0.0005
+    behavior_seed: 7822000000
+    # Each market field counts 3.5 unit fields: markets keep 40% of the objective.
+    loss:
+      normalization: field_mean
+      weights:
+        unit_target: 1.0
+        unit_operation: 1.0
+        unit_quantity: 1.0
+        market_operation: 3.5
+        market_quantity: 3.5

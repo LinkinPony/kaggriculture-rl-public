@@ -1,0 +1,25 @@
+# Continue the latest s99001 actor with only recent DSM demonstration labels.
+defaults:
+- learning_strength_canonical_bc_20260929
+- _self_
+experiment:
+  output_dir: outputs/learning/derived-v5b-m384-s99001u1061-dsm2d-bc-20260929-s100801
+  seed: 100801
+  train_seed: 8900000000
+  initial_weights:
+    run: outputs/learning/derived-v5b-m384-strength-canonical-ppo50-warmup300-20260928-s99001
+    checkpoint: checkpoints/update-001061.pt
+    sha256: 03a8c0f738811f00ab8200297e8ce7ffde29d46c411c17d0f9c67b72ec92aa42
+  evaluation:
+    selection_seed: 8920000000
+    confirmation_seed: 8921000000
+    anchor_seeds: [510001, 510002]
+  demonstrations:
+    manifest: outputs/datasets/derived-v5b-dsm-recent2d-20260929-train-val-q100/manifest.json
+    sha256: f4757ab4c4c5b8f2099f1f6e582d47d7a802747af4d14eea7425178b74e8dec0
+    epochs: 40
+    epoch_checkpoint_interval: 1
+    early_stopping:
+      patience: 4
+      min_delta: 0.0005
+    behavior_seed: 8922000000

@@ -1,0 +1,14 @@
+# MMPQ clone v5 data: only the three versions submitted on 9/29 (56658903, 56679033,
+# 56680759), the strongest MMPQ versions by Bradley-Terry strength. v4 (all six current-plan
+# versions) lifted the clone from 48% to about 78% on the fixed panel, so v5 tests whether
+# an even narrower, newer selection helps. Same partition seed, so splits agree with v4.
+defaults:
+  - sequences_team_clone_mmpq_v4_20260930
+  - _self_
+selection:
+  output: outputs/datasets/team-clone-v5-mm-pq-20260930/source-manifests
+  submitted_since: '2026-09-29T00:00:00Z'
+data:
+  output: outputs/datasets/team-clone-v5-mm-pq-20260930-train-val-q100
+  watch_manifests: [outputs/datasets/team-clone-v5-mm-pq-20260930/source-manifests/mm-pq/selected.json]
+report: outputs/analysis/mmpq-bc-redesign-20260930/v5-data-verification.json

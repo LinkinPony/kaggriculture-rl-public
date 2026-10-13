@@ -1,0 +1,23 @@
+snapshot:
+  source: data/external/kaggriculture-dsm-v5b-20260925/manifest.json
+  output: outputs/datasets/derived-v5b-dsm-20260923-25-train-val-q100/source-manifests
+  submitted_since: '2026-09-23T00:00:00Z'
+data:
+  output: outputs/datasets/derived-v5b-dsm-20260923-25-train-val-q100
+  raw: data/external
+  reuse: []
+  teachers: [DSM]
+  watch_manifests:
+    - ${snapshot.output}/selected.json
+  workers: 16
+  partition_seed: 62001
+  train_val: true
+  agronomy: true
+  derived: true
+report: outputs/analysis/derived-dsm-bc-20260925/data-verification.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/derived-dsm-bc-20260925/${now:%Y%m%d-%H%M%S}
+  output_subdir: null

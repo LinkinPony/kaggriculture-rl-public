@@ -1,0 +1,60 @@
+snapshots:
+  boey:
+    source: outputs/datasets/derived-v5b-boey-all-watch4-since-20260927-train-val-q100/source-manifests/boey/available.json
+    output: outputs/datasets/derived-v5b-boey-all-watch4-since-20260927-train-val-q100/source-manifests/boey
+    created_since: '2026-09-24T00:00:00Z'
+    created_before: '2026-09-28T00:29:44.995978Z'
+    expected_episodes: 388
+  dsm:
+    source: outputs/datasets/derived-v5b-boey-all-watch4-since-20260927-train-val-q100/source-manifests/dsm/available.json
+    output: outputs/datasets/derived-v5b-boey-all-watch4-since-20260927-train-val-q100/source-manifests/dsm
+    created_since: '2026-09-27T00:00:00Z'
+    created_before: '2026-09-28T00:37:54.348855Z'
+    expected_episodes: 395
+  mm-pq:
+    source: outputs/datasets/derived-v5b-boey-all-watch4-since-20260927-train-val-q100/source-manifests/mm-pq/available.json
+    output: outputs/datasets/derived-v5b-boey-all-watch4-since-20260927-train-val-q100/source-manifests/mm-pq
+    created_since: '2026-09-27T00:00:00Z'
+    created_before: '2026-09-28T00:36:55.916099Z'
+    expected_episodes: 389
+  decem:
+    source: outputs/datasets/derived-v5b-boey-all-watch4-since-20260927-train-val-q100/source-manifests/decem/available.json
+    output: outputs/datasets/derived-v5b-boey-all-watch4-since-20260927-train-val-q100/source-manifests/decem
+    created_since: '2026-09-27T00:00:00Z'
+    created_before: '2026-09-28T00:29:25.171760Z'
+    expected_episodes: 389
+  vadim:
+    source: outputs/datasets/derived-v5b-boey-all-watch4-since-20260927-train-val-q100/source-manifests/vadim/available.json
+    output: outputs/datasets/derived-v5b-boey-all-watch4-since-20260927-train-val-q100/source-manifests/vadim
+    created_since: '2026-09-27T00:00:00Z'
+    created_before: '2026-09-28T00:37:51.235471Z'
+    expected_episodes: 362
+snapshot: ${snapshots.boey}
+data:
+  output: outputs/datasets/derived-v5b-boey-all-watch4-since-20260927-train-val-q100
+  raw: data/external
+  reuse: []
+  teachers:
+  - Boey
+  - DSM
+  - M & M & P & Q
+  - DECEM
+  - Vadim Vasilenko
+  watch_manifests:
+  - outputs/datasets/derived-v5b-boey-all-watch4-since-20260927-train-val-q100/source-manifests/boey/selected.json
+  - outputs/datasets/derived-v5b-boey-all-watch4-since-20260927-train-val-q100/source-manifests/dsm/selected.json
+  - outputs/datasets/derived-v5b-boey-all-watch4-since-20260927-train-val-q100/source-manifests/mm-pq/selected.json
+  - outputs/datasets/derived-v5b-boey-all-watch4-since-20260927-train-val-q100/source-manifests/decem/selected.json
+  - outputs/datasets/derived-v5b-boey-all-watch4-since-20260927-train-val-q100/source-manifests/vadim/selected.json
+  workers: 16
+  partition_seed: 62001
+  train_val: true
+  agronomy: true
+  derived: true
+report: outputs/analysis/boey-all-watch4-bc-20260928/data-verification.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/boey-all-watch4-bc-20260928/${now:%Y%m%d-%H%M%S}
+  output_subdir: null

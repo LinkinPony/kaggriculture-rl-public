@@ -1,0 +1,28 @@
+Kaggriculture RL
+Copyright (c) 2026 LinkinPony
+
+Original project contributions are licensed under the MIT License in LICENSE.
+Third-party material retains its own licenses and attribution.
+
+The C++ rules engine and observation/deployment code adapt the official
+Kaggle kaggle-environments Kaggriculture interpreter. These translations and
+local modifications are covered by Apache-2.0; see LICENSES/Apache-2.0.txt.
+Upstream: https://github.com/Kaggle/kaggle-environments
+Reference distribution: kaggle-environments 1.32.7.
+
+Native bindings use pybind11 (BSD-3-Clause); its license is in LICENSES/.
+Distributed native submission binaries statically link GCC runtime libraries.
+The GCC Runtime Library Exception permits eligible applications to be distributed
+under their own terms; the runtime retains its original license and exception.
+See LICENSES/GPL-3.0.txt and LICENSES/GCC-Runtime-Library-Exception-3.1.txt.
+
+Public notebook adaptations and route assets retain their Apache-2.0 licenses
+and original attribution under src/kagg_revue/opponents/{kaito,boatlee,mugundh,
+portfolios}/. Their original authors are credited in those NOTICE.md files.
+Generated C++ adaptations remain covered by the corresponding upstream terms.
+The source identities in portfolios/catalog.py identify the exact adaptations.
+
+This distribution removes local machine paths and private service links.
+It includes no historical Git author metadata, credentials, raw replay datasets,
+or training checkpoint collection. Release archives describe their own changes
+in release-provenance.json; original submitted archives remain unchanged.

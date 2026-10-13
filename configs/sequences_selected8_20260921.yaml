@@ -1,0 +1,31 @@
+data:
+  output: outputs/datasets/agronomy-v4-selected8-5d-20260921-q100
+  raw: data/external/kaggriculture-selected8-5d-20260921/raw/daily
+  reuse:
+    - data/external/kaggriculture-plain-memory-20260917/raw/daily
+  teachers:
+    - M & M & P & Q
+    - DSM
+    - THIRD FARM CLUB
+    - Unknown Mother-Goose
+    - SpaTaro
+    - Majkel1337
+    - ymg_aq
+    - Artem The Farmer 🍅
+  expected_dates:
+    - '2026-09-16'
+    - '2026-09-17'
+    - '2026-09-18'
+    - '2026-09-19'
+    - '2026-09-20'
+  days: 5
+  workers: 32
+  partition_seed: 62001
+  agronomy: true
+report: outputs/analysis/selected8-5d-20260921/data-verification.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/selected8-5d-20260921/${now:%Y%m%d-%H%M%S}
+  output_subdir: null

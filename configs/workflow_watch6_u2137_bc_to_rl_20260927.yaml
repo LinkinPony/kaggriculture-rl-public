@@ -1,0 +1,51 @@
+# Frozen expanded dataset, U2137 initialization, best validation BC -> warmup PPO.
+defaults:
+  - learning_watch6_scratch_bc_20260927@bc_stage
+  - learning_watch6_ppo50_20260927@rl_stage
+  - bc_loss@bc_stage.experiment.demonstrations.loss: grouped
+  - _self_
+
+bc_stage:
+  experiment:
+    output_dir: outputs/learning/derived-v5b-m384-u2137-watch6-bc100-20260927-s94001
+    seed: 94001
+    train_seed: 7300000000
+    initial_weights:
+      run: outputs/learning/derived-v5b-m384-watch6-ppo50-20260926-s91001
+      checkpoint: checkpoints/update-002137.pt
+      sha256: 3200230b002527352cd2e7a02531d7e279a4b9a75a27fe4f503875960c32ac81
+    demonstrations:
+      epoch_checkpoint_interval: 4
+      early_stopping:
+        patience: 6
+        min_delta: 0.001
+      behavior_seed: 7322000000
+    evaluation:
+      selection_seed: 7320000000
+      confirmation_seed: 7321000000
+      anchor_seeds: [440001, 440002]
+
+rl_stage:
+  experiment:
+    output_dir: outputs/learning/derived-v5b-m384-watch6-ppo50-warmup300-20260927-s95001
+    seed: 95001
+    train_seed: 7500000000
+    initial_weights: null
+    learning_rate_warmup_updates: 300
+    evaluation:
+      selection_seed: 7520000000
+      confirmation_seed: 7521000000
+      anchor_seeds: [450001, 450002]
+
+workflow:
+  output_dir: outputs/workflows/derived-v5b-u2137-watch6-bc-to-rl-20260927
+  bc: ${bc_stage.experiment}
+  rl: ${rl_stage.experiment}
+  historical_archive: ${rl_stage.historical_archive}
+
+hydra:
+  run:
+    dir: ${workflow.output_dir}/hydra
+  output_subdir: null
+  job:
+    chdir: false

@@ -1,0 +1,23 @@
+defaults:
+  - learning_plain_memory_bc_20260917
+  - _self_
+
+experiment:
+  output_dir: outputs/learning/plain-m384-bc-qualification-20260917
+  seed: 72002
+  train_seed: 4130000000
+  updates: 2
+  checkpoint_interval: 1
+  evaluation:
+    games: 2
+    selection_seed: 4131000000
+    confirmation_seed: 4132000000
+  demonstrations:
+    manifest: outputs/analysis/gtrxl-20260916/qualification-data/manifest.json
+    sha256: 3643160fe7b5750583328921091abd0219dd43d3da72e28ee06f27eea7c9f3e1
+    epochs: 2
+    checkpoint_shards: 1
+    behavior_games: 2
+    control_games: 2
+    behavior_seed: 4133000000
+    early_stopping: null

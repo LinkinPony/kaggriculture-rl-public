@@ -1,0 +1,16 @@
+data:
+  output: outputs/datasets/grounded-sequences-latest3d-20260917-q100
+  raw: data/external/kaggriculture-plain-memory-20260917/raw/daily
+  reuse:
+    - data/external/kaggriculture-gtrxl-20260916/raw/daily
+    - data/external/kaggriculture-opening-eda-20260916/raw/daily
+  screening: outputs/analysis/top10-2d-20260915/screening.json
+  days: 3
+  workers: 48
+report: outputs/analysis/plain-memory-20260917/data-verification.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/sequences/${now:%Y%m%d-%H%M%S}
+  output_subdir: null

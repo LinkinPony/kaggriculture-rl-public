@@ -1,0 +1,11 @@
+integration:
+  run: outputs/learning/league3-20260909-s63001-fixed
+  destination: outputs/learning/league-selfplay-qualification-20260909
+  output: outputs/analysis/league-selfplay-20260909/qualification.json
+  selfplay_games_per_member: 32
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/league-selfplay-20260909/hydra
+  output_subdir: null

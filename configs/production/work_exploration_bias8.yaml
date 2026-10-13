@@ -1,0 +1,7 @@
+defaults:
+  - work_exploration_control
+  - _self_
+checkpoint: outputs/analysis/20260906-work-exploration/prior-strength/bias-8/initial.pt
+output_dir: outputs/production-policy/20260906-work-exploration-bias8
+bc:
+  greedy_prior_bias: 8.0

@@ -1,0 +1,16 @@
+defaults:
+  - enterprise
+  - _self_
+panel:
+  output: outputs/analysis/enterprise-20260915/prototype-05
+  variants:
+    default: {workers: 13}
+    crops_only: {animal_limit: 0, central_reserve: 0, workers: 12}
+    short_cycle: {duration_power: 1.6, central_reserve: 0, workers: 13}
+    livestock: {animal_bias: 1.5, central_reserve: 5, workers: 13}
+    production: {workers: 13, growth_bias: 0.0}
+    strawberry: {workers: 13, animal_limit: 8, growth_bias: 0.5, crop_bias: {STRAWBERRY: 2.0}}
+    no_regions: {workers: 13, territories: false}
+    no_crews: {workers: 13, crews: false}
+    full_team: {workers: 15, animal_limit: 16, animals_per_worker: 2}
+    lean: {workers: 10, animal_limit: 6, animals_per_worker: 2, growth_bias: 0}

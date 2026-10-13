@@ -1,0 +1,27 @@
+defaults:
+  - _self_
+change:
+  run: outputs/learning/long-100k-20260908-s61001
+  population:
+    fraction: 0.25
+    snapshot_interval: 4
+    capacity: 8
+  script_population:
+    manifest: data/external/kaggriculture-shop-router-0908-20260908/manifest.json
+    sha256: 1d93290c788275d0a2c58c33435c210e5ee1b4e5aff7094615e6dc2c136f2bb8
+    agents: [router_95, farming_v4, kaito_v58, shop_router_0908]
+    fraction: 0.25
+  qualification: outputs/analysis/script-population-20260908/qualification.json
+  qualification_sha256: ???
+qualification:
+  output_dir: outputs/learning/script-population-native-qualification-v3-20260908
+  updates: 12
+  official_games: 16
+  official_seed: 3070000000
+  reference_directory: data/external/kaggriculture-reference-1.32.7
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/script-population-20260908/hydra
+  output_subdir: null

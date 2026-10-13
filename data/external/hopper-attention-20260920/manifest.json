@@ -1,0 +1,61 @@
+{
+  "purpose": "isolated optional Hopper attention and FP8 benchmark dependencies; not installed into the training virtualenv",
+  "date": "2026-09-20",
+  "installation": "uv pip install --target data/external/hopper-attention-20260920/site-packages --no-deps",
+  "packages": [
+    {
+      "name": "apache-tvm-ffi",
+      "version": "0.1.14.post0"
+    },
+    {
+      "name": "einops",
+      "version": "0.8.2"
+    },
+    {
+      "name": "flash-attn-4",
+      "version": "4.0.0b31"
+    },
+    {
+      "name": "nvidia-cutlass-dsl",
+      "version": "4.7.1"
+    },
+    {
+      "name": "nvidia-cutlass-dsl-libs-base",
+      "version": "4.7.1"
+    },
+    {
+      "name": "nvidia-cutlass-dsl-libs-core",
+      "version": "4.7.1"
+    },
+    {
+      "name": "nvidia-cutlass-dsl-libs-cu13",
+      "version": "4.7.1"
+    },
+    {
+      "name": "quack-kernels",
+      "version": "0.6.5"
+    },
+    {
+      "name": "torch_c_dlpack_ext",
+      "version": "0.1.5"
+    },
+    {
+      "name": "torchao",
+      "version": "0.17.0"
+    }
+  ],
+  "upstream": "https://github.com/Dao-AILab/flash-attention/tree/main/flash_attn/cute",
+  "installation_log": "outputs/analysis/h200-throughput-20260920/flash-install.log",
+  "qualification": "not selected; production 40/48-wide head gradients failed, padded 64-wide implementation passed but was slower",
+  "python_paths": [
+    "site-packages",
+    "site-packages/nvidia_cutlass_dsl/dsl_packages"
+  ],
+  "float8_experiment": {
+    "upstream": "https://github.com/pytorch/ao",
+    "documentation": "https://docs.pytorch.org/ao/stable/workflows/training.html",
+    "installation_log": "outputs/analysis/h200-throughput-20260920/torchao-install.log",
+    "qualification": "Not selected: slower than BF16 at four exploratory shapes. Only QKV 384->1152 matches the production model; three other shapes assumed 4x MLP expansion, while production uses 2x. Corrected-shape rerun cancelled at user request to resume training immediately.",
+    "results": "outputs/analysis/h200-throughput-20260920/linear-fp8.json"
+  }
+}

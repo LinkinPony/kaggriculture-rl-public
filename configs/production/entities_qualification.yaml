@@ -1,0 +1,10 @@
+defaults:
+  - entities
+  - _self_
+mode: train
+checkpoint: outputs/production-policy/20260905-entities-bc-v2/bc/best.pt
+output_dir: outputs/production-policy/20260905-entities-qualification-v2
+ppo:
+  updates: 50
+  checkpoint_interval: 10
+  evaluation_interval: 10

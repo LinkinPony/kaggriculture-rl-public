@@ -1,0 +1,15 @@
+run: outputs/learning/league3-20260909-s63001
+device: cuda:0
+shard: 141
+trace: true
+backward: false
+scan: false
+modes: [eager, compiled]
+options: {}
+output: outputs/analysis/league-failure-20260909/condition-trace.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/league-failure-20260909/hydra
+  output_subdir: null

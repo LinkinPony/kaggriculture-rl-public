@@ -1,0 +1,30 @@
+defaults:
+  - work_prefix_selfplay
+  - _self_
+mode: train
+output_dir: outputs/production-policy/20260907-neural-credit-mc
+devices: [cuda:0]
+opponents: []
+evaluation_policies:
+  - outputs/releases/20260907-work-policy-search-ppo-start/actor.pt
+  - outputs/releases/20260907-work-prefix-recovery-u0175/training.pt
+evaluation_games: 256
+evaluation_seed: 610000000
+confirmation_seed: 611000000
+ppo:
+  population: self_play
+  history: null
+  temperature: 0.2
+  prefix_trace_lambda: 1.0
+  updates: 16
+  games_per_update: 512
+  batch_rows: 5760
+  microbatch_rows: 256
+  actor_learning_rate: 0.000001
+  seed_start: 600000000
+  evaluation_interval: 4
+  retain_checkpoints: 20
+  protection:
+    backtrack_attempts: 3
+    learning_rate_decay: 0.5
+    skip_constant_returns: true

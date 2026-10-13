@@ -1,0 +1,30 @@
+# Latest s82001 actor, imitating the frozen clean three-team submission cohort.
+defaults:
+  - learning_grouped_bc
+  - _self_
+
+experiment:
+  output_dir: outputs/learning/agronomy-v4-m384-u113-watch3-bc100-20260924-s83001
+  seed: 83001
+  train_seed: 5700000000
+  pretraining_only: true
+  initial_weights:
+    run: outputs/learning/agronomy-v4-m384-dsm-games-ppo50-20260924-s82001
+    checkpoint: checkpoints/update-000113.pt
+    sha256: a1f40ad6730be9ad8dbf66a133ac7bdf91274ee2475b68ee97f21c5f40e64e70
+  evaluation:
+    selection_seed: 5720000000
+    confirmation_seed: 5721000000
+    anchor_seeds: [330001, 330002]
+  demonstrations:
+    manifest: outputs/datasets/agronomy-v4-watch3-submissions-20260923-24-train-val-q100-exclude-56484772/manifest.json
+    sha256: 77a1b96f07374ba096f753a7f074de1eb6b94d76f5a15893fee0e1f8e99e0e91
+    epochs: 100
+    early_stopping: null
+    learning_rate: 0.0001
+    batch_rows: 5752
+    checkpoint_shards: 16
+    distributed: true
+    behavior_games: 0
+    control_games: 0
+    behavior_seed: 5722000000

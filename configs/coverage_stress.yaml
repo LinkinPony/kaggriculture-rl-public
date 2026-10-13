@@ -1,0 +1,16 @@
+reference: data/external/kaggle-submission-56161402/107807755-replay.json
+profiles:
+  - name: current_u2748
+    path: data/external/kaggle-submission-56161402/107807755-replay.json
+    seat: 1
+  - name: majkel_56156662
+    path: data/external/kaggriculture-bc-redesign-20260911/raw/public/replays/107679150.json.gz
+    seat: 1
+maximum_quantity: 80
+output: outputs/analysis/bc-redesign-20260911/procurement-stress.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/bc-redesign-20260911/hydra-stress
+  output_subdir: null

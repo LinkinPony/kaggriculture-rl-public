@@ -1,0 +1,3 @@
+defaults:
+  - unit_task_rl: smoke
+  - _self_

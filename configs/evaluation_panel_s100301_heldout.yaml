@@ -1,0 +1,20 @@
+# s100301 (seed replicate of s100201) checkpoints against opponents outside its PFSP pool,
+# on the same seeds as the s100101/s100201 held-out panels; s100201 U200 is the reference.
+defaults:
+  - evaluation_panel_s100101_heldout
+  - _self_
+study:
+  output: outputs/analysis/heldout-panel-20260929-s100301
+  memory_fraction: 0.04
+  devices: [cuda:0, cuda:1, cuda:0, cuda:1, cuda:0, cuda:1]
+  scope: >-
+    Held-out s99001 checkpoints and the 9/29 BC as opponents; none is in the s100301 pool.
+  candidates:
+    - {name: s100201-u0200, run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201, member: checkpoints/update-000200.pt}
+    - {name: s100301-u0100, run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100301, member: checkpoints/update-000100.pt}
+    - {name: s100301-u0150, run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100301, member: checkpoints/update-000150.pt}
+    - {name: s100301-u0200, run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100301, member: checkpoints/update-000200.pt}
+    - {name: s100301-u0250, run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100301, member: checkpoints/update-000250.pt}
+hydra:
+  run:
+    dir: tmp/hydra/heldout-panel-20260929-s100301

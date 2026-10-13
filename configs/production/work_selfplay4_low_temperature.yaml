@@ -1,0 +1,7 @@
+defaults:
+  - work_selfplay4
+  - _self_
+checkpoint: outputs/releases/20260906-work-selfplay-t1-stopped/update-0050-fork.pt
+output_dir: outputs/production-policy/20260906-work-selfplay4-low-temperature-u50
+ppo:
+  temperature: 0.5

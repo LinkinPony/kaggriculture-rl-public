@@ -1,0 +1,9 @@
+accounting:
+  source: outputs/analysis/scratch-demonstrations-public-accounting/comparison.json
+  output_dir: outputs/analysis/scratch-demonstrations-public-accounting/figures
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${accounting.output_dir}/hydra
+  output_subdir: null

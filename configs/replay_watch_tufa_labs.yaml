@@ -1,0 +1,38 @@
+watch:
+  raw: data/external/kaggriculture-tufa-labs-replays
+  team_id: 16621497
+  team_name: Victor @ Tufa Labs
+  seed_submissions: [56642914]
+  seed_episodes: [114912906]
+  excluded_submissions: [56414341, 56484772]
+  # Inclusive official timestamp of submission 56642914; follow all later versions.
+  submitted_since: '2026-09-28T13:56:46.353Z'
+  daily_archive_root: data/external
+  scan_own_history: false
+  history_sources:
+    - data/external/kaggle-submission-56161402/episodes.json
+    - data/external/kaggriculture-model-comparison-20260919/raw/replay-selection.json
+    - data/external/kaggriculture-bc-redesign-20260911/raw/public/manifest.json
+    - data/external/kaggriculture-top10-2d-20260913/raw/manifest.json
+    - data/external/kaggriculture-top10-2d-20260915/raw/manifest.json
+    - data/external/kaggriculture-dsm-replays/manifest.json
+    - data/external/kaggriculture-mm-pq-replays/manifest.json
+    - data/external/kaggriculture-decem-replays/manifest.json
+    - data/external/kaggriculture-boey-replays/manifest.json
+    - data/external/kaggriculture-vadim-replays/manifest.json
+    - data/external/kaggriculture-tufa-labs-replays/bootstrap/submission-56642914-public.json
+  own_history_interval_seconds: 3600
+  poll_seconds: 3600
+  cycle_timeout_seconds: 3600
+  workers: 1
+  request_interval: 6.0
+  maximum_backoffs: 2
+  downloads_per_cycle: 200
+  once: false
+
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${watch.raw}/hydra
+  output_subdir: null

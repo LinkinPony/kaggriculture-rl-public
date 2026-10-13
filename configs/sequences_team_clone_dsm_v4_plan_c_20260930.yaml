@@ -1,0 +1,12 @@
+# DSM clone v4 data (plan C, refreshed): the four plan C versions of v3 with every public game
+# collected by the 10:01 UTC 9/30 watcher cycle. v3 froze the 08:36 manifest, which lacked about
+# forty games of DSM's two active versions, 56692773 and 56693917.
+defaults:
+  - sequences_team_clone_dsm_v3_plan_c_20260930
+  - _self_
+selection:
+  output: outputs/datasets/team-clone-v4-dsm-plan-c-20260930/source-manifests
+data:
+  output: outputs/datasets/team-clone-v4-dsm-plan-c-20260930-train-val-q100
+  watch_manifests: [outputs/datasets/team-clone-v4-dsm-plan-c-20260930/source-manifests/dsm/selected.json]
+report: outputs/analysis/dsm-bc-redesign-20260930/v4-plan-c-data-verification.json

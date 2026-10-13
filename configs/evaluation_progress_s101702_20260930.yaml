@@ -1,0 +1,19 @@
+# s101702 (second seed of s101102's recipe) checkpoints on s101102's progress panel, paired
+# against s101102 U200 on the same seeds.
+defaults:
+- evaluation_progress_s101102_20260930
+- _self_
+progress:
+  run: outputs/learning/derived-v5b-m384-mmpqclone4-kl-ppo50-1gpu-r2-20260930-s101702
+  prefix: s101702
+  updates: [100, 150, 200, 250, 300, 350, 400]
+  baseline:
+    study: outputs/analysis/s101102-progress-20260930/u000200
+    candidate: s101102-u000200
+  study:
+    output: outputs/analysis/s101702-progress-20260930
+    devices: [cuda:1, cuda:0]
+    scope: >-
+      s101702 checkpoints at T=0 against s100901 U480/U756, s100201 U200 and s99001 U200, all
+      at T=0, on 64 common seeds with both seats; baseline is s101102 U200 (Kaggle 56709373)
+      on the same seeds. Local proxy only.

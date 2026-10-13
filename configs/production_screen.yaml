@@ -1,0 +1,17 @@
+defaults:
+  - production: work_expert
+  - _self_
+production:
+  output_dir: outputs/production-policy/20260907-work-parameter-screen
+  evaluation_seed: 35000000
+  confirmation_seed: 36000000
+search_seed: 54000000
+mutation_seed: 87291
+directions: 8
+scales: [0.01, 0.03, 0.1, 0.3]
+finalists: 4
+hydra:
+  run:
+    dir: ${production.output_dir}/hydra
+  job:
+    chdir: false

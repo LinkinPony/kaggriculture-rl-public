@@ -1,0 +1,36 @@
+panel:
+  manifest: data/external/kaggriculture-notebook-survey-20260915/manifest.json
+  output: outputs/analysis/enterprise-20260915/public-confirmation
+  variants:
+    enterprise_p1: {}
+  opponents:
+  - ahmed_v43
+  - ahmed_v42
+  - farming_v4_0914
+  - shop_router_0913
+  - rayk_v38_low_pressure
+  - metacounter_r1
+  seeds:
+  - 1860917401
+  - 1860917402
+  - 1860917403
+  - 1860917404
+  - 1860917405
+  - 1860917406
+  - 1860917407
+  - 1860917408
+  - 1860917409
+  - 1860917410
+  - 1860917411
+  - 1860917412
+  - 1860917413
+  - 1860917414
+  - 1860917415
+  - 1860917416
+  workers: 16
+  trace: false
+  source: outputs/opponents/enterprise-20260915/enterprise-p1/main.py
+hydra:
+  run:
+    dir: outputs/analysis/enterprise-20260915/hydra
+  output_subdir: null

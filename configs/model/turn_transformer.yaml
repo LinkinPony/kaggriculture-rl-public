@@ -1,0 +1,19 @@
+# Narrow/deep submission actor. Measured artifact reports remain authoritative.
+model_width: 256
+entity_width: 128
+attention_heads: 4
+feedforward_width: 704
+latent_tokens: 64
+# DINO-style internal workspace; stripped from task outputs and decoder memory.
+register_tokens: 4
+scene_layers: 2
+temporal_layers: 20
+action_layers: 2
+max_history: 720
+max_decisions: 42
+# Exact categorical policy language for deployment quantities.
+maximum_quantity: 128
+fact_dropout: 0.25
+# Recurrent strategy is introduced by the authenticated migration, not chunked BC.
+skill_tokens: 0
+strategy_tokens: 0

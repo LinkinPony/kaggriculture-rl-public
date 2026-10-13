@@ -1,0 +1,9 @@
+batches: [64, 2880]
+widths: [40, 48]
+output: outputs/analysis/league-throughput-20260909/attention.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/league-throughput-20260909/hydra
+  output_subdir: null

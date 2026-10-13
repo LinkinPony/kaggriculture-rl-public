@@ -1,0 +1,15 @@
+defaults:
+  - learning_margin_change
+  - _self_
+
+change:
+  run: outputs/learning/agronomy-v4-m384-bc100-3d-20260917-s73001
+  cash_margin:
+    beta: 1.0
+    cash_scale: 10000.0
+  qualification: outputs/analysis/agronomy-margin-20260919/qualification.json
+qualification:
+  output_dir: outputs/learning/agronomy-margin-qualification-20260919-v1
+hydra:
+  run:
+    dir: outputs/analysis/agronomy-margin-20260919/hydra

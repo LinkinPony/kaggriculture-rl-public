@@ -1,0 +1,13 @@
+# Macro-behaviour fingerprints of watched-team versions: hires, land purchase days, asset
+# purchases and market orders, averaged over every downloaded public game of each version.
+analysis:
+  output: ???
+  manifest: data/external/kaggriculture-dsm-replays/manifest.json
+  submissions: ???
+  workers: 16
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${analysis.output}/hydra
+  output_subdir: null

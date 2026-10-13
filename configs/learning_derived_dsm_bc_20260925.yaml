@@ -1,0 +1,32 @@
+# Full v5b, with all public DSM versions submitted since 2026-09-23. No ablations.
+defaults:
+  - learning_grouped_bc
+  - _self_
+
+experiment:
+  output_dir: outputs/learning/derived-v5b-m384-u1843-dsm-bc100-20260925-s85001
+  seed: 85001
+  train_seed: 5900000000
+  agronomy: true
+  derived: true
+  pretraining_only: true
+  initial_weights:
+    run: outputs/learning/agronomy-v4-m384-dsm-games-ppo50-20260924-s82001
+    checkpoint: checkpoints/update-001843.pt
+    sha256: eae69f6cf64a1d0d2a12e8355526d6463bee0db51ee62e4dad7d9322fb777f41
+  evaluation:
+    selection_seed: 5920000000
+    confirmation_seed: 5921000000
+    anchor_seeds: [350001, 350002]
+  demonstrations:
+    manifest: outputs/datasets/derived-v5b-dsm-20260923-25-train-val-q100-exclude-56484772/manifest.json
+    sha256: 4e9b68763fa5110d31c9ff96a997d20c2db9753785407cd713fba6d9e0a6eb10
+    epochs: 100
+    early_stopping: null
+    learning_rate: 0.0001
+    batch_rows: 5752
+    checkpoint_shards: 16
+    distributed: true
+    behavior_games: 0
+    control_games: 0
+    behavior_seed: 5922000000

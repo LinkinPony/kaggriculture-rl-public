@@ -1,0 +1,3 @@
+defaults:
+  - intent_ledger_oracle_audit: smoke
+  - _self_

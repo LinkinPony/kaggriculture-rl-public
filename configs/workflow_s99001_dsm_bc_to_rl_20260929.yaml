@@ -1,0 +1,15 @@
+defaults:
+- learning_s99001_dsm_bc_20260929@bc_stage
+- learning_s99001_dsm_ppo_20260929@rl_stage
+- _self_
+workflow:
+  output_dir: outputs/workflows/derived-v5b-s99001u1061-dsm2d-bc-to-rl-20260929
+  bc: ${bc_stage.experiment}
+  rl: ${rl_stage.experiment}
+  historical_archive: ${rl_stage.historical_archive}
+hydra:
+  run:
+    dir: ${workflow.output_dir}/hydra
+  output_subdir: null
+  job:
+    chdir: false

@@ -1,0 +1,92 @@
+defaults:
+  - learning_context
+  - _self_
+experiment:
+  output_dir: outputs/learning/context-26m-3d-20260910-s65001
+  seed: 65001
+  games: 128
+  train_seed: 4150000000
+  script_population: null
+  population:
+    fraction: 0.5
+    snapshot_interval: 64
+    capacity: 16
+    pfsp:
+      power: 2.0
+      uniform_fraction: 0.2
+      latest_fraction: 0.1
+      prior_games: 8.0
+      half_life_updates: 128.0
+      max_effective_games: 256.0
+      recent_snapshots: 4
+      concurrent_inference: true
+  quantity_extra:
+    - 256
+    - 500
+    - 502
+    - 512
+    - 750
+    - 769
+    - 790
+    - 796
+    - 811
+    - 859
+    - 864
+    - 865
+    - 871
+    - 895
+    - 920
+    - 948
+    - 975
+    - 976
+    - 978
+    - 979
+    - 980
+    - 981
+    - 982
+    - 983
+    - 984
+    - 985
+    - 986
+    - 987
+    - 988
+    - 989
+    - 990
+    - 991
+    - 992
+    - 993
+    - 994
+    - 995
+    - 996
+    - 997
+    - 998
+    - 999
+    - 1000
+    - 1024
+    - 1193
+    - 1198
+    - 1200
+    - 1249
+    - 1250
+    - 1332
+    - 1334
+    - 2988
+    - 3001
+    - 4096
+    - 10000
+    - 100000
+    - 1000000
+  demonstrations:
+    manifest: outputs/datasets/grounded-v2-20260907-09/manifest.json
+    sha256: 2ac6d5b961f771fa298e522e76ef5ada537febb78897f54fcb4e9aa4fb4b7700
+    epochs: 4
+    batch_rows: 256
+    learning_rate: 0.0001
+    checkpoint_shards: 4
+    distributed: true
+    behavior_games: 4
+    behavior_seed: 4190000000
+  evaluation:
+    selection_seed: 4170000000
+    confirmation_seed: 4180000000
+    anchor_seeds: [150001, 150002]

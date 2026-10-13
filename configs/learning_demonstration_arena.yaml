@@ -1,0 +1,15 @@
+defaults:
+  - learning_arena
+  - _self_
+arena:
+  runs:
+    - outputs/learning/scratch-demonstrations-s47001
+    - outputs/learning/scratch-demonstrations-s47002
+  opponents:
+    - run: outputs/learning/scratch-demonstrations-s47001
+      member: pretraining/shard-000672.pt
+    - run: outputs/learning/scratch-demonstrations-s47002
+      member: pretraining/shard-000672.pt
+  updates: [0, 16, 32, 64, 96, 128]
+  output_dir: outputs/analysis/scratch-demonstrations-common-arena
+  seed: 1010000000

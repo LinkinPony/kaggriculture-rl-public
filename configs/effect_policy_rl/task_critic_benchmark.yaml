@@ -1,0 +1,14 @@
+defaults:
+  - task_critic
+  - _self_
+
+initial_checkpoint: outputs/analysis/20260905-task-critic/critic-probe-v2/critic-initialized.pt
+output_dir: outputs/effect-policy-rl/20260905-task-critic-benchmark
+updates: 3
+optimization:
+  critic_warmup_updates: 0
+checkpoint:
+  interval: 1
+
+model:
+  destination_tasks: true

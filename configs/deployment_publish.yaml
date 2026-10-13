@@ -1,0 +1,34 @@
+publishing:
+  output_dir: outputs/deployment/drive-publisher
+  discover_active: true
+  # Include both BC runs that were active when automatic publishing was requested.
+  runs:
+    - outputs/learning/derived-v5b-m384-mmpqclone4-kl-ppo50-1gpu-20260930-s101102
+    - outputs/learning/dsm-clone-v3-plan-c-from-u1061-bc-20260930-s101203
+    - outputs/learning/dsm-clone-v3-plan-c-from-u756-bc-20260930-s101204
+  labels:
+    '101102': MMPQ clone v4 KL RL v5b
+    '101203': DSM clone v3 plan C from U1061 v5b
+    '101204': DSM clone v3 plan C from U756 v5b
+  interval_seconds: 1800
+  poll_seconds: 30
+  retry_seconds: 120
+  temperature: 0
+  rclone: ${oc.env:REVUE_RCLONE,/usr/bin/rclone}
+  rclone_config: ${oc.env:REVUE_RCLONE_CONFIG,${oc.env:HOME}/.config/rclone/rclone.conf}
+  remote: gdrive
+  folder: kagg-rl-revue-submissions
+  native:
+    interpreters:
+      - ${oc.env:REVUE_PYTHON_311,/usr/bin/python3.11}
+      - /usr/bin/python3.12
+    compiler: ${oc.env:REVUE_CXX,/usr/bin/g++}
+    patchelf: ${oc.env:REVUE_PATCHELF,/usr/bin/patchelf}
+    max_glibc: '2.35'
+    jobs: 2
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${publishing.output_dir}/hydra
+  output_subdir: null

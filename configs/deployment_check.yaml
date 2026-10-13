@@ -1,0 +1,14 @@
+check:
+  archive: outputs/deployment/scratch-scaling-s51001-u512-portable-v1/submission.tar.gz
+  sha256: b3c22b47f70e607ce77de6f6cceef2bfeb6c2cdf5cff7c163e20f8551d362c85
+  interpreter: /usr/bin/python3.12
+  output_dir: outputs/analysis/deployment-check-${now:%Y%m%d-%H%M%S}
+  reference_directory: data/external/kaggriculture-reference-1.32.7
+  seed: 1220000000
+  games: 2
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/deployment-check/hydra
+  output_subdir: null

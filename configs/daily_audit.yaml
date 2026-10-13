@@ -1,0 +1,13 @@
+audit:
+  archive: data/external/kaggriculture-episodes-2026-09-06_2026-09-07/raw/kaggriculture-episodes-2026-09-06.zip
+  index: data/external/kaggriculture-episodes-2026-09-06_2026-09-07/raw/kaggriculture-episodes-index.zip
+  date: '2026-09-06'
+  output_dir: outputs/analysis/daily-20260906-native-audit
+  episodes: 64
+  workers: 8
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${audit.output_dir}/hydra
+  output_subdir: null

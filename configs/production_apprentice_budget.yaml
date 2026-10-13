@@ -1,0 +1,14 @@
+defaults:
+  - production_apprentice
+  - _self_
+production:
+  output_dir: outputs/production-policy/20260907-work-expert-apprentice-budget
+  evaluation_seed: 142000000
+  confirmation_seed: 152000000
+  ppo:
+    seed_start: 112000000
+validation_seed: 132000000
+generations: 6
+fits_per_expert: 1
+search_interval: 1
+bootstrap_updates: 1

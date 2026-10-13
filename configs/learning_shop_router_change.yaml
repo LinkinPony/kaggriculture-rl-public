@@ -1,0 +1,11 @@
+defaults:
+  - learning_script_mix_change
+  - _self_
+change:
+  qualification: outputs/analysis/context-shop-router-20260908/qualification.json
+qualification:
+  output_dir: outputs/learning/context-shop-router-qualification-20260908
+  official_seed: 1860908600
+hydra:
+  run:
+    dir: outputs/analysis/context-shop-router-20260908/hydra

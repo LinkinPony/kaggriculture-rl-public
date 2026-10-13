@@ -1,0 +1,22 @@
+# MMPQ clone v4: fine-tune U0 on the current MMPQ plan only (six versions from 56612150).
+# v3 was already over-fitting at a constant 1e-5 (train NLL kept falling, validation NLL flat
+# from epoch 7), so v4 anneals with a cosine schedule instead of raising the rate.
+# Variants are overrides: experiment.joint_units=true decodes units in slot order, each
+# seeing the choices of earlier units; its zero-started parameters use joint_learning_rate.
+defaults:
+- learning_team_clone_bc_20260929
+- _self_
+experiment:
+  joint_units: false
+  demonstrations:
+    manifest: outputs/datasets/team-clone-v4-mm-pq-20260930-train-val-q100/manifest.json
+    sha256: 063e56ec71259b37bf67c2c2467eea4a53fc4e2437a1ffd01e1e19c45d617ca9
+    learning_rate: 2.0e-05
+    joint_learning_rate: null
+    epochs: 14
+    schedule:
+      warmup_shards: 85
+      final_fraction: 0.05
+    early_stopping:
+      patience: 5
+      min_delta: 0.0005

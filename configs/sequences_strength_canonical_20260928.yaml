@@ -1,0 +1,37 @@
+# Strength-selected recent versions of the leaderboard top five, canonical market labels.
+selection:
+  output: ${data.output}/source-manifests
+  sources:
+    dsm: data/external/kaggriculture-dsm-replays/manifest.json
+    mm-pq: data/external/kaggriculture-mm-pq-replays/manifest.json
+    boey: data/external/kaggriculture-boey-replays/manifest.json
+    decem: data/external/kaggriculture-decem-replays/manifest.json
+    vadim: data/external/kaggriculture-vadim-replays/manifest.json
+  rated_since: '2026-09-25T00:00:00Z'
+  submitted_since: '2026-09-26T00:00:00Z'
+  margin: 0.5
+  uncertainty: 2.0
+  precision: 0.25
+data:
+  output: outputs/datasets/derived-v5b-strength-top-canonical-20260928-train-val-q100
+  raw: data/external
+  reuse: []
+  teachers:
+  - DSM
+  - M & M & P & Q
+  watch_manifests:
+  - ${data.output}/source-manifests/dsm/selected.json
+  - ${data.output}/source-manifests/mm-pq/selected.json
+  workers: 16
+  partition_seed: 62001
+  train_val: true
+  agronomy: true
+  derived: true
+  canonical_market: true
+report: outputs/analysis/strength-canonical-bc-20260928/data-verification.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/strength-canonical-bc-20260928/${now:%Y%m%d-%H%M%S}
+  output_subdir: null

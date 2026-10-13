@@ -1,0 +1,12 @@
+# DSM clone v4 of the latest version only (56693917, 108 games, train/val 103/5) from s100901
+# U756. An epoch is 13 shards, so warmup is one epoch and the budget is 30 epochs.
+defaults:
+- learning_dsm_clone_v4_plan_c_u756_bc_20260930
+- _self_
+experiment:
+  demonstrations:
+    manifest: outputs/datasets/team-clone-v4-dsm-latest-20260930-train-val-q100/manifest.json
+    sha256: e68718be687f9b03cdfa52af268581f1feeda70448e044544fe51b86fa99de31
+    epochs: 30
+    schedule: {warmup_shards: 13}
+    early_stopping: {patience: 6}

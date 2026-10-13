@@ -1,0 +1,9 @@
+defaults:
+  - enterprise
+  - _self_
+search_output: outputs/analysis/enterprise-20260915/evolution-01
+generations: 5
+population: 24
+panel:
+  workers: 16
+  trace: false

@@ -1,0 +1,9 @@
+benchmark:
+  checkpoint: outputs/learning/agronomy-v4-pipeline-rl-qualification-20260917/checkpoints/update-000006.pt
+  report: outputs/analysis/agronomy-v4-async-20260917/checkpoint-profile.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/checkpoint-profile
+  output_subdir: null

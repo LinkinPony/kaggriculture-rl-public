@@ -1,0 +1,11 @@
+defaults:
+  - replay_watch_dsm
+  - _self_
+watch:
+  raw: data/external/kaggriculture-dsm-v5b-20260925
+  submitted_since: '2026-09-23T00:00:00Z'
+  seed_submissions: [56489014, 56495569, 56498734, 56518845, 56527482]
+  seed_episodes: []
+  own_history_interval_seconds: 1
+  downloads_per_cycle: 10000
+  once: true

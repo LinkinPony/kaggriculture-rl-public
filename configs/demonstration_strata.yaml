@@ -1,0 +1,15 @@
+strata:
+  base: outputs/datasets/league-v2-20260906-08/base/manifest.json
+  survey: outputs/analysis/daily-behavior-20260906-08
+  output: outputs/datasets/league-v2-20260906-08/views
+  window: 24
+  minimum_support: 3
+  market_agreement: 0.9
+  market_stability: 0.8
+  specialist_name: SpaTaro
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/league-20260909/strata-hydra
+  output_subdir: null

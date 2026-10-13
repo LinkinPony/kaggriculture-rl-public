@@ -1,0 +1,73 @@
+# Continue the detached persistent-GRU lineage with pure terminal W/D/L.
+initial_actor: outputs/strategy-migration/20260827-persistent-gru-v2/initial-actor.pt
+resume_checkpoint: outputs/terminal-wdl/20260828-persistent-gru-mixed-public-actor-detach-lr5e5-v1/checkpoints/rolling/checkpoint-00002305.pt
+public_agent_manifest: data/external/kaggriculture-public-notebooks-2026-08-28/manifest.json
+output_dir: outputs/terminal-wdl/20260829-persistent-gru-mixed-public-actor-detach-lr5e5-wdl-resume-u2305-v1
+
+seed: 20260827
+rollout_seed_start: 2000000
+updates: 300000
+seeds_per_update: 384
+rollout_batch_games: 384
+rollout_cpu_workers: 48
+rollout_actor_streams: 2
+rollout_gpu_policy_session: true
+rollout_host_memory_limit_gib: 256
+rollout_gpu_memory_fraction: 0.70
+opponents: [self_play, kaito_v48, mugundh_v21, boatlee_v21, kaito_v39]
+opponent_sampling:
+  mode: weighted_per_seed
+  weights:
+    self_play: 0.5
+    kaito_v48: 0.175
+    mugundh_v21: 0.15
+    boatlee_v21: 0.125
+    kaito_v39: 0.05
+pfsp:
+  enabled: false
+  self_play_probability: 1.0
+  history_capacity: 8
+checkpoint:
+  rolling_interval: 5
+  rolling_keep: 5
+  permanent_interval: 50
+terminal_reward:
+  mode: wdl
+  margin_beta: 0.0
+  margin_cash_scale: 1.0
+paired_seats: true
+evaluation_opponents: [deterministic_incumbent, kaito_v39]
+selection_seeds: [64000, 64001, 64002, 64003]
+confirmation_seeds: [64100, 64101, 64102, 64103]
+
+# These values bind the undiscounted competition objective and are not tuning knobs.
+discount: 1.0
+gae_lambda: 1.0
+critic_warmup_updates: 5
+critic_actor_gradient: false
+ppo_epochs: 2
+episodes_per_minibatch: 32
+actor_learning_rate: 0.00005
+critic_learning_rate: 0.0001
+weight_decay: 0.00001
+clip_epsilon: 0.1
+value_loss_weight: 1.0
+entropy_weight: 0.001
+target_kl: 0.02
+gradient_clip: 1.0
+normalize_advantage: true
+
+device: cuda:0
+devices: [cuda:0, cuda:1]
+cpu_threads: 8
+unit_limit: 32
+evaluation_device: cuda:0
+act_timeout_seconds: 1.0
+remaining_overage_seconds: 60.0
+observability:
+  tensorboard: true
+  flush_seconds: 30
+  max_queue: 100
+environment:
+  episodeSteps: 720
+  maxMarketOrdersPerTurn: 10

@@ -1,0 +1,7 @@
+defaults:
+  - task_critic_benchmark
+  - _self_
+
+output_dir: outputs/effect-policy-rl/20260905-task-critic-continuation-v4
+model:
+  destination_tasks: false

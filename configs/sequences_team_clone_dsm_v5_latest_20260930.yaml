@@ -1,0 +1,12 @@
+# DSM clone v5 data (latest version only): still 56693917 (9/30 01:50 UTC), which remains DSM's
+# newest public version at 13:59 UTC. Rebuilt after the 13:36 collection cycle, which lists 132
+# of its games against the 108 frozen in v4, so the clone sees about a fifth more C' play.
+defaults:
+  - sequences_team_clone_dsm_v4_latest_20260930
+  - _self_
+selection:
+  output: outputs/datasets/team-clone-v5-dsm-latest-20260930/source-manifests
+data:
+  output: outputs/datasets/team-clone-v5-dsm-latest-20260930-train-val-q100
+  watch_manifests: [outputs/datasets/team-clone-v5-dsm-latest-20260930/source-manifests/dsm/selected.json]
+report: outputs/analysis/dsm-bc-redesign-20260930/v5-latest-data-verification.json

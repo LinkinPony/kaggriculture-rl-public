@@ -1,0 +1,20 @@
+# Fresh random actor; retain the previous BC recipe with an expanded frozen dataset.
+defaults:
+  - learning_watch6_active_recent_bc_20260926
+  - _self_
+
+experiment:
+  output_dir: outputs/learning/derived-v5b-m384-watch6-scratch-bc100-20260927-s92001
+  seed: 92001
+  train_seed: 6800000000
+  resume: false
+  initial_weights: null
+  pretraining_only: true
+  evaluation:
+    selection_seed: 6820000000
+    confirmation_seed: 6821000000
+    anchor_seeds: [420001, 420002]
+  demonstrations:
+    manifest: outputs/datasets/derived-v5b-watch6-expanded-20260927-train-val-q100-exclude-56484772/manifest.json
+    sha256: 'd48b153f317953b2075c7407817baf40314aaa6a0af19bd2a5a2c03764e78dca'
+    behavior_seed: 6822000000

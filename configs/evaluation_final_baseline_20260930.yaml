@@ -1,0 +1,40 @@
+# Final-submission baseline: s101102 U200 (Kaggle 56709373) at T=0 against s100901 U480
+# (Kaggle 56689315), the v4 P MMPQ clone (s101001 epoch 9) and the strongest DSM clone
+# (v5 latest-version s101501 epoch 8), all at T=0, on fresh common seeds with both seats.
+# Final candidates play the same opponents plus U200 on these seeds, so each candidate pairs
+# with U200 seed by seed.
+study:
+  output: outputs/analysis/final-candidates-20260930/baseline-u0200
+  games: 512
+  seed: 9950000000
+  sampling_seed: 99500001
+  devices: [cuda:0, cuda:1, cuda:0, cuda:1]
+  memory_fraction: 0.06
+  precision: bf16
+  scope: >-
+    s101102 U200 at T=0 against s100901 U480, the v4 P MMPQ clone and the v5 DSM clone
+    s101501, all at T=0, on 256 fresh common seeds with both seats. Local proxy only.
+  candidates:
+    - name: s101102-u0200-t0
+      temperature: 0
+      path: outputs/analysis/s101102-vs-mmpq-clone-20260930/actors/s101102-u0200-t0.pt
+  opponents:
+    - name: s100901-u0480-t0
+      group: s100901-u0480
+      temperature: 0
+      path: outputs/analysis/s100901-u0480-temperature-20260929/actors/s100901-u0480-t0.pt
+    - name: mmpq-v4-p-t0
+      group: mmpq-v4-p
+      temperature: 0
+      path: outputs/analysis/s101102-vs-mmpq-clone-20260930/actors/mmpq-v4-p-t0.pt
+    - name: dsm-v5-t0
+      group: dsm-v5
+      temperature: 0
+      run: outputs/learning/dsm-clone-v5-latest-from-u756-bc-20260930-s101501
+      member: pretraining/shard-000128.pt
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${study.output}/hydra
+  output_subdir: null

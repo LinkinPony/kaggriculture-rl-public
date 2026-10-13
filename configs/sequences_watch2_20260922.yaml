@@ -1,0 +1,20 @@
+data:
+  output: outputs/datasets/agronomy-v4-watch2-20260922-q100
+  raw: data/external
+  reuse: []
+  teachers:
+    - DSM
+    - M & M & P & Q
+  watch_manifests:
+    - outputs/datasets/agronomy-v4-watch2-20260922-q100/source-manifests/dsm.json
+    - outputs/datasets/agronomy-v4-watch2-20260922-q100/source-manifests/mm-pq.json
+  workers: 32
+  partition_seed: 62001
+  agronomy: true
+report: outputs/analysis/watch2-bc-20260922/data-verification.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/watch2-20260922/${now:%Y%m%d-%H%M%S}
+  output_subdir: null

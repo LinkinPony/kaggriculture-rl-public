@@ -1,0 +1,13 @@
+defaults:
+  - learning_compact_bc_20260921
+  - _self_
+experiment:
+  pretraining_only: false
+  actor_learning_rate: 0.0001
+  critic_learning_rate: 0.0001
+  learning_rate_warmup_updates: 500
+  gamma: 0.999
+  gae_lambda: 0.95
+  execution:
+    pipeline_groups: 2
+    async_checkpoint: true

@@ -1,0 +1,30 @@
+# Latest s80001 actor, imitating DSM in the pinned 802-game creation-time window.
+defaults:
+  - learning_grouped_bc
+  - _self_
+
+experiment:
+  output_dir: outputs/learning/agronomy-v4-m384-u3207-dsm-games-bc100-20260924-s81001
+  seed: 81001
+  train_seed: 5500000000
+  pretraining_only: true
+  initial_weights:
+    run: outputs/learning/agronomy-v4-m384-dsm-grouped-ppo-20260923-s80001
+    checkpoint: checkpoints/update-003207.pt
+    sha256: d6cd5117af1d6a72aa474458027305c0dab202c43b2c2b724e50de86f178f3d9
+  evaluation:
+    selection_seed: 5520000000
+    confirmation_seed: 5521000000
+    anchor_seeds: [310001, 310002]
+  demonstrations:
+    manifest: outputs/datasets/agronomy-v4-dsm-games-20260922-24-train-val-q100-exclude-56484772/manifest.json
+    sha256: 09209b8deda6954414de0db68b0516f3d350ace4bcff9a1d8c4d18a05a6c2dbc
+    epochs: 100
+    early_stopping: null
+    learning_rate: 0.0001
+    batch_rows: 5752
+    checkpoint_shards: 16
+    distributed: true
+    behavior_games: 0
+    control_games: 0
+    behavior_seed: 5522000000

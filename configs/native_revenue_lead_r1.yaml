@@ -1,0 +1,13 @@
+defaults:
+  - native_public_20260914_v2
+  - _self_
+
+generation:
+  destination: tmp/revenue-lead-r1-build/src/kagg_revue/native/csrc/opponents/compiled/generated
+  assets: tmp/revenue-lead-r1-build/src/kagg_revue/opponents/portfolios
+  report: outputs/opponents/research-20260915/revenue-lead-r1-reproduced/native-generation.json
+  additions:
+    revenue_lead_r1:
+      path: outputs/opponents/research-20260915/revenue-lead-r1/main.py
+      sha256: 385024f8fa6419b237a49f47f161937362e71776ea99b824e911b3d89ff72505
+      normalization: v43-container-copy

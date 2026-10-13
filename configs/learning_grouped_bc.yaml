@@ -1,0 +1,9 @@
+# Reproduce the watch2 BC inputs with an explicitly balanced supervised objective.
+# Override the output directory for each experiment; no existing run is resumed.
+defaults:
+  - learning_agronomy_watch2_bc_20260922
+  - bc_loss: grouped
+  - _self_
+
+experiment:
+  output_dir: outputs/learning/agronomy-v4-m384-watch2-grouped-bc

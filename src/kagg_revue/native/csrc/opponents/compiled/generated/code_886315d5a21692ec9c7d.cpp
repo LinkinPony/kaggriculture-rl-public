@@ -1,0 +1,27 @@
+// Generated from authenticated public notebook source; do not edit.
+#include "opponents/compiled/generated/declarations.hpp"
+
+namespace kagg::opponents::compiled {
+Value Code_886315d5a21692ec9c7d(Context& c, const ScopePtr& s) {
+static constexpr const char* s_names[] = {"batch", "inv", "item", "k", "observation", "params", "patch", "qty"};
+s->PrepareSlots(s_names);
+if (static_cast<bool>(([&]() -> Value { auto v22547 = ([&]() -> Value { auto v22548 = s->LocalAt(7); Value v22549; v22549 = Value(int64_t{0}); if (!static_cast<bool>(Binary("LtE", v22548, v22549))) return Value(false); v22548 = v22549; return Value(true); }()); if (static_cast<bool>(v22547)) return v22547; v22547 = ([&]() -> Value { auto v22550 = s->LocalAt(0); Value v22551; v22551 = Value(int64_t{0}); if (!static_cast<bool>(Binary("LtE", v22550, v22551))) return Value(false); v22550 = v22551; return Value(true); }()); if (static_cast<bool>(v22547)) return v22547; v22547 = ([&]() -> Value { auto v22552 = s->LocalAt(2); Value v22553; v22553 = s->Global("_R37_MARKET_PARAMS"); if (!static_cast<bool>(Binary("NotIn", v22552, v22553))) return Value(false); v22552 = v22553; return Value(true); }()); return v22547; }()))) {
+return Value(0.0);
+}
+auto v22554 = ([&]() -> Value { auto comp22555 = std::make_shared<Scope>(); comp22555->globals = s->globals; comp22555->parent = s; static constexpr const char* comp22555_names[] = {"k", "v"}; comp22555->PrepareSlots(comp22555_names); auto result22556 = Dict(); for (const auto& item22557 : Iterate(([&]() -> Value { auto fn22558 = Attribute(s->Global("_R37_MARKET_PARAMS"), "items"); Arguments args22559; return Call(c, fn22558, std::move(args22559)); }()))) { auto unpack22560 = Iterate(item22557); ValidateUnpack(unpack22560, 2, false); comp22555->SetAt(0, unpack22560.at(0)); comp22555->SetAt(1, unpack22560.at(1)); Put(result22556, comp22555->LocalAt(0), ([&]() -> Value { auto fn22561 = comp22555->Global("dict"); Arguments args22562; args22562.Add(comp22555->LocalAt(1), false); return Call(c, fn22561, std::move(args22562)); }())); } return result22556; }());
+s->SetAt(5, v22554);
+for (const auto& item22563 : Iterate(([&]() -> Value { auto fn22564 = Attribute(([&]() -> Value { auto v22566 = ([&]() -> Value { auto fn22567 = PrepareDictionaryGet(Get(s->LocalAt(4), Value("market"))); Arguments args22568; args22568.Add(Value("params"), false); return CallDictionaryGet(c, fn22567, std::move(args22568)); }()); if (static_cast<bool>(v22566)) return v22566; v22566 = ([&]() -> Value { auto dict22569 = Dict(); return dict22569; }()); return v22566; }()), "items"); Arguments args22565; return Call(c, fn22564, std::move(args22565)); }()))) {
+auto unpack22570 = Iterate(item22563);
+ValidateUnpack(unpack22570, 2, false);
+s->SetAt(3, unpack22570.at(0));
+s->SetAt(6, unpack22570.at(1));
+if (static_cast<bool>(([&]() -> Value { auto v22571 = s->LocalAt(3); Value v22572; v22572 = s->LocalAt(5); if (!static_cast<bool>(Binary("In", v22571, v22572))) return Value(false); v22571 = v22572; return Value(true); }()))) {
+(void)([&]() -> Value { auto fn22573 = Attribute(Get(s->LocalAt(5), s->LocalAt(3)), "update"); Arguments args22574; args22574.Add(s->LocalAt(6), false); return Call(c, fn22573, std::move(args22574)); }());
+}
+}
+auto v22575 = ([&]() -> Value { auto fn22576 = s->Global("int"); Arguments args22577; args22577.Add(Get(Get(Get(s->LocalAt(4), Value("market")), Value("inventory")), s->LocalAt(2)), false); return Call(c, fn22576, std::move(args22577)); }());
+s->SetAt(1, v22575);
+return ([&]() -> Value { auto fn22578 = s->Global("float"); Arguments args22579; args22579.Add(([&]() -> Value { auto fn22580 = s->Global("sum"); Arguments args22581; args22581.Add(([&]() -> Value { auto comp22582 = std::make_shared<Scope>(); comp22582->globals = s->globals; comp22582->parent = s; static constexpr const char* comp22582_names[] = {"j"}; comp22582->PrepareSlots(comp22582_names); auto result22583 = List(); for (const auto& item22584 : Iterate(([&]() -> Value { auto fn22585 = s->Global("range"); Arguments args22586; args22586.Add(s->LocalAt(7), false); return Call(c, fn22585, std::move(args22586)); }()))) { comp22582->SetAt(0, item22584); result22583.node()->sequence.push_back(([&]() -> Value { auto v22587 = ([&]() -> Value { auto fn22588 = comp22582->Global("_r37_market_price"); Arguments args22589; args22589.positional.reserve(3); args22589.Add(comp22582->Captured("item"), false); args22589.Add(([&]() -> Value { auto v22590 = comp22582->Captured("inv"); return Binary("Add", v22590, comp22582->LocalAt(0)); }()), false); args22589.Add(comp22582->Captured("params"), false); return Call(c, fn22588, std::move(args22589)); }()); return Binary("Sub", v22587, ([&]() -> Value { auto fn22591 = comp22582->Global("_r37_market_price"); Arguments args22592; args22592.positional.reserve(3); args22592.Add(comp22582->Captured("item"), false); args22592.Add(([&]() -> Value { auto v22593 = ([&]() -> Value { auto v22594 = comp22582->Captured("inv"); return Binary("Add", v22594, comp22582->Captured("batch")); }()); return Binary("Add", v22593, comp22582->LocalAt(0)); }()), false); args22592.Add(comp22582->Captured("params"), false); return Call(c, fn22591, std::move(args22592)); }())); }())); } return result22583; }()), false); return Call(c, fn22580, std::move(args22581)); }()), false); return Call(c, fn22578, std::move(args22579)); }());
+return {};
+}
+}  // namespace kagg::opponents::compiled

@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-08-28T00:00:00Z",
+  "retrieval": {
+    "source": "Kaggle public notebooks for the kaggriculture competition",
+    "method": "Kaggle CLI 2.2.3: kernels list, kernels pull -m, kernels output",
+    "scope": "Distinct promising agent notebooks plus the existing frozen kaito_v39 control"
+  },
+  "agents": [
+    {
+      "agent_id": "kaito_v39",
+      "notebook_ref": "kaitofukami/103-126-untouched-future-top-30-v39-history-gate",
+      "notebook_id": 129557885,
+      "notebook_url": "https://www.kaggle.com/code/kaitofukami/103-126-untouched-future-top-30-v39-history-gate",
+      "main_path": "data/external/public-agents/kaito-v39/main.py",
+      "sha256": "c0298c82c2a2f9b41cd48657b63b16a9c6f07ea3ee02dc85062f807e54e8c54a",
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "Existing frozen control; notebook reports 103/126 against an untouched future Top-30 set."
+    },
+    {
+      "agent_id": "kaito_v43",
+      "notebook_ref": "kaitofukami/103-128-fresh-public-v43-sparse-shop-hybrid",
+      "notebook_id": 129557885,
+      "notebook_url": "https://www.kaggle.com/code/kaitofukami/103-128-fresh-public-v43-sparse-shop-hybrid",
+      "main_path": "data/external/kaggriculture-public-notebooks-2026-08-28/raw/kaitofukami__v43/main.py",
+      "sha256": "69f06a802b62aa08f28705dab5728eb924bb6a7c23ffe0164f65b104cc3dadf3",
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "Notebook reports 103/128 fresh executable games and 108/116 unseen-continuation replay controls."
+    },
+    {
+      "agent_id": "kaito_v48",
+      "notebook_ref": "kaitofukami/40-40-early-floor-39-46-top-10-v48-fast-routes",
+      "notebook_id": 129971739,
+      "notebook_url": "https://www.kaggle.com/code/kaitofukami/40-40-early-floor-39-46-top-10-v48-fast-routes",
+      "main_path": "data/external/kaggriculture-public-notebooks-2026-08-28/raw/kaitofukami__v48/main.py",
+      "sha256": "dadee25a9840313218384208c53b2c4752f82c3209cc654632e0b96c65e2664a",
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "Notebook reports 39/46 against a current Top-10 holdout and 97/140 against a Top-30 holdout; these are local controls."
+    },
+    {
+      "agent_id": "boatlee_v21",
+      "notebook_ref": "boatlee/v21-r1-public-state-route-portfolio",
+      "notebook_id": 131517790,
+      "notebook_url": "https://www.kaggle.com/code/boatlee/v21-r1-public-state-route-portfolio",
+      "main_path": "data/external/kaggriculture-public-notebooks-2026-08-28/raw/boatlee__v21/main.py",
+      "sha256": "c6f96a8521dc9aa369b6f27e5b36b9d481e5c1688f50c8ca215c3bb53f1f9eb8",
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "Notebook reports 164/192 against score-stratified executable proxies and 45/48 against top-front proxies."
+    },
+    {
+      "agent_id": "salem_2900",
+      "notebook_ref": "salemali7/kaggriculture-2900",
+      "notebook_id": 130139083,
+      "notebook_url": "https://www.kaggle.com/code/salemali7/kaggriculture-2900",
+      "main_path": "data/external/kaggriculture-public-notebooks-2026-08-28/raw/salemali7__2900/main.py",
+      "sha256": "01f0cd470f669f86d4b53eb5b014614d3b383970d0755f119de14153fd77c1eb",
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "Notebook reports 60/60 local paired wins for its replay-derived 8C/4S route."
+    },
+    {
+      "agent_id": "indar_top10",
+      "notebook_ref": "indarkarhana/rank-top10-read-the-market-choose-the-farm",
+      "notebook_id": 130676395,
+      "notebook_url": "https://www.kaggle.com/code/indarkarhana/rank-top10-read-the-market-choose-the-farm",
+      "main_path": "data/external/kaggriculture-public-notebooks-2026-08-28/raw/indarkarhana__top10/main.py",
+      "sha256": "d39dba50793d9777c990347443bf0c481c78adaea86055f6f6b0600dcfcd9f2e",
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "Notebook reports 19/21 paired blocks on a sealed leader holdout and a public-demand route selector."
+    },
+    {
+      "agent_id": "steven_x594",
+      "notebook_ref": "stevenleehans/kaggriculture-x578-i-m-the-strongest",
+      "notebook_id": 131492250,
+      "notebook_url": "https://www.kaggle.com/code/stevenleehans/kaggriculture-x578-i-m-the-strongest",
+      "main_path": "data/external/kaggriculture-public-notebooks-2026-08-28/raw/stevenleehans__x578/main.py",
+      "sha256": "d946545e01d5a07485ca348c16080b61ecd4f2eff6a8c5fc08be7a449c43abc5",
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "Latest output identifies itself as X594 and says its paired gate against X578 was negative; retained as an explicit reject/control candidate."
+    },
+    {
+      "agent_id": "pilkwang_precomputed",
+      "notebook_ref": "pilkwang/kaggriculture-precomputed-schedule-policy",
+      "notebook_id": 129744179,
+      "notebook_url": "https://www.kaggle.com/code/pilkwang/kaggriculture-precomputed-schedule-policy",
+      "main_path": "data/external/kaggriculture-public-notebooks-2026-08-28/raw/pilkwang__precomputed/main.py",
+      "sha256": "8b9983d62293bcaabe73b326a67f1a49e275be10b32a6ff55c04044a5dc2d906",
+      "evidence_level": "unverified",
+      "evidence_note": "Observation-agnostic 720-turn precomputed schedule; included as a low-cost fixed-policy control."
+    },
+    {
+      "agent_id": "ecobot_v6",
+      "notebook_ref": "premaananda108/economics-driven-rule-agent-ecobot-v6",
+      "notebook_id": 131369359,
+      "notebook_url": "https://www.kaggle.com/code/premaananda108/economics-driven-rule-agent-ecobot-v6",
+      "main_path": "data/external/kaggriculture-public-notebooks-2026-08-28/raw/premaananda108__ecobot_v6/main.py",
+      "sha256": "aca6dcddafd6fd6bc55bf271112fd0041d92b6eb45f6e1babc36b40c81f32cad",
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "Reactive macro-planner; notebook validates only against random/starter, so strength is not established."
+    },
+    {
+      "agent_id": "flexonafft_multi_route",
+      "notebook_ref": "flexonafft/kaggriculture-multi-route-farming-agent",
+      "notebook_id": 129367546,
+      "notebook_url": "https://www.kaggle.com/code/flexonafft/kaggriculture-multi-route-farming-agent",
+      "main_path": "data/external/kaggriculture-public-notebooks-2026-08-28/raw/flexonafft__multi_route/main.py",
+      "sha256": "8ac34abce129cf5c9456776c90edf7d2233b3a280bbdcf7622628825ef3669a0",
+      "evidence_level": "unverified",
+      "evidence_note": "Replay-route selector with yarn, milk, and balanced branches; no direct current-version match table in the notebook."
+    },
+    {
+      "agent_id": "yamakawa_adaptive",
+      "notebook_ref": "yamakawanin/kaggriculture-adaptive-public-state-multi-route",
+      "notebook_id": 131902590,
+      "notebook_url": "https://www.kaggle.com/code/yamakawanin/kaggriculture-adaptive-public-state-multi-route",
+      "main_path": "data/external/kaggriculture-public-notebooks-2026-08-28/raw/yamakawanin__adaptive_route/main.py",
+      "sha256": "9b5e1157af3d4a643fcd818f5c290003d2672230d5ae8c0024fae0836cc894df",
+      "evidence_level": "unverified",
+      "evidence_note": "Three embedded replay experts plus public-state routing and guarded market overlays; notebook provides structural checks but no strength table."
+    },
+    {
+      "agent_id": "mugundh_v21",
+      "notebook_ref": "mugundhjb/v21-multi-route-agent-sell-divergence-guarder",
+      "notebook_id": 131735152,
+      "notebook_url": "https://www.kaggle.com/code/mugundhjb/v21-multi-route-agent-sell-divergence-guarder",
+      "main_path": "data/external/kaggriculture-public-notebooks-2026-08-28/raw/mugundhjb__v21/main.py",
+      "sha256": "e2f9107e9e537b77b9e908744114a43cece81a6316e33a69ff8aa02618b4c0f1",
+      "evidence_level": "unverified",
+      "evidence_note": "Multi-route agent with a sell-divergence guard; retained to measure lineage overlap with related route portfolios."
+    },
+    {
+      "agent_id": "deniz_v111",
+      "notebook_ref": "denizeryilmaz/v111-8c4s-economic-core-premium-lead",
+      "notebook_id": 130581200,
+      "notebook_url": "https://www.kaggle.com/code/denizeryilmaz/v111-8c4s-economic-core-premium-lead",
+      "main_path": "data/external/kaggriculture-public-notebooks-2026-08-28/raw/denizeryilmaz__v111/main.py",
+      "sha256": "f029fa0cb66a9eb509afbe44e3f59b800332d0419db91607183410e4089c4d19",
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "Notebook reports 60/60 local paired wins for a V16-RC5 8C/4S route; appears closely related to salem_2900."
+    },
+    {
+      "agent_id": "rayk_c95",
+      "notebook_ref": "raykkretzschmar/kaggriculture-findings-from-zero-to-top-meta",
+      "notebook_id": 129396610,
+      "notebook_url": "https://www.kaggle.com/code/raykkretzschmar/kaggriculture-findings-from-zero-to-top-meta",
+      "main_path": "data/external/kaggriculture-public-notebooks-2026-08-28/raw/raykkretzschmar__zero_to_top/main.py",
+      "sha256": "489f5d197527f107027626cce79d850fd2ca90edd43d94384b849b6511e27bdb",
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "Latest output identifies the artifact as C95, selected by a fresh Top-20 wheat-counter experiment after the documented C94 line."
+    },
+    {
+      "agent_id": "hamburger_v27",
+      "notebook_ref": "romantamrazov/kaggriculture-hamburger",
+      "notebook_id": 129255770,
+      "notebook_url": "https://www.kaggle.com/code/romantamrazov/kaggriculture-hamburger",
+      "main_path": "data/external/kaggriculture-public-notebooks-2026-08-28/raw/romantamrazov__hamburger/main.py",
+      "sha256": "00e8ab594a39779e808dd351d0973260f4c90ddc1370e684fa46eaa184ae4546",
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "V27 internal-economy anchor with terminal routing and clone-aware market-timing ablations."
+    }
+  ],
+  "rejected": [
+    {
+      "notebook_ref": "revanthtambisetty/two-private-bots-beating-kaggriculture-meta",
+      "reason": "Analysis notebook; latest version exposes no runnable agent output."
+    },
+    {
+      "notebook_ref": "saitejabandaruin/kaggriculture-pure-architecture-2600-elo-v3",
+      "reason": "Kaggle output listing exposes no runnable artifact."
+    }
+  ]
+}

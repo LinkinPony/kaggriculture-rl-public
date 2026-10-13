@@ -1,0 +1,44 @@
+defaults:
+  - script_research_screen
+  - _self_
+
+research:
+  output: outputs/analysis/script-research-20260915/market-followup
+  variants:
+    - name: lead_8_early
+      market: lead
+      lead: 8
+      sale_start: 0
+    - name: lead_4
+      market: lead
+      lead: 4
+    - name: lead_6
+      market: lead
+      lead: 6
+    - name: lead_10
+      market: lead
+      lead: 10
+    - name: lead_12
+      market: lead
+      lead: 12
+    - name: priority
+      market: priority
+      sale_start: 0
+      sale_end: 718
+    - name: seed_repair
+      globals:
+        _R148_SEEDS: true
+    - name: fertilizer_workers_off
+      globals:
+        _R51_INPUT_MAX_WORKERS: 0
+    - name: feed_saving_off
+      globals:
+        _R85_FEED: false
+    - name: opening_0_0_60
+      opening: [0, 0, 60]
+    - name: opening_5_10_0
+      opening: [5, 10, 0]
+    - name: opening_10_15_60
+      opening: [10, 15, 60]
+    - name: opening_13_30_60
+      opening: [13, 30, 60]

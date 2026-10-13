@@ -1,0 +1,110 @@
+# New PPO from the latest stopped BC; terminal WDL and a unified opponent pool.
+defaults:
+- learning_agronomy_selected8_bc_20260921
+- _self_
+experiment:
+  output_dir: outputs/learning/agronomy-v4-m384-selected8-ppo-20260921-s76001
+  seed: 76001
+  train_seed: 5000000000
+  pretraining_only: false
+  demonstrations: null
+  initial_weights:
+    run: outputs/learning/agronomy-v4-m384-u7820-selected8-bc100-20260921-s75001
+    checkpoint: pretraining/shard-004934.pt
+    sha256: 4fec69a4841733643cdc671c8e4afbdd43f4deae835831a0585925f8ba00b240
+  cash_weight: 0.0
+  cash_margin: null
+  gamma: 1.0
+  gae_lambda: 1.0
+  actor_learning_rate: 7.5e-06
+  critic_learning_rate: 0.0001
+  learning_rate_warmup_updates: 0
+  games: 128
+  batch_rows: 40264
+  sequence_games_per_rank: 28
+  execution:
+    devices:
+    - cuda:0
+    - cuda:1
+    microbatch_rows: 1536
+    pipeline_groups: 2
+    async_checkpoint: true
+  evaluation:
+    selection_seed: 5020000000
+    confirmation_seed: 5021000000
+    anchor_seeds:
+    - 260001
+    - 260002
+  population:
+    fraction: 0.7
+    snapshot_interval: 64
+    capacity: 177
+    pfsp:
+      power: 2.0
+      uniform_fraction: 0.2
+      latest_fraction: 0.1
+      prior_games: 8.0
+      half_life_updates: 128.0
+      max_effective_games: 256.0
+      script_min_pairs_per_rank: 1
+      recent_snapshots: 4
+      concurrent_inference: true
+    sources:
+    - run: outputs/learning/agronomy-v4-m384-bc100-3d-20260917-s73001
+      state_sha256: 4317df0ef5adc832c5cc40d3b9dd4b1debb1244ab366a6a4a8a9cb87ff02633a
+      checkpoints:
+      - pretraining/shard-004187.pt
+      - checkpoints/update-000256.pt
+      - checkpoints/update-000512.pt
+      - checkpoints/update-000768.pt
+      - checkpoints/update-001024.pt
+      - checkpoints/update-001280.pt
+      - checkpoints/update-001536.pt
+      - checkpoints/update-001792.pt
+      - checkpoints/update-002048.pt
+      - checkpoints/update-002304.pt
+      - checkpoints/update-002560.pt
+      - checkpoints/update-002816.pt
+      - checkpoints/update-003072.pt
+      - checkpoints/update-003328.pt
+      - checkpoints/update-003584.pt
+      - checkpoints/update-003840.pt
+      - checkpoints/update-004096.pt
+      - checkpoints/update-004224.pt
+      - checkpoints/update-004352.pt
+      - checkpoints/update-004480.pt
+      - checkpoints/update-004672.pt
+      - checkpoints/update-004864.pt
+      - checkpoints/update-005056.pt
+      - checkpoints/update-005248.pt
+      - checkpoints/update-005440.pt
+      - checkpoints/update-005632.pt
+      - checkpoints/update-005824.pt
+      - checkpoints/update-006016.pt
+      - checkpoints/update-006208.pt
+      - checkpoints/update-006400.pt
+      - checkpoints/update-006592.pt
+      - checkpoints/update-006784.pt
+      - checkpoints/update-006976.pt
+      - checkpoints/update-007168.pt
+      - checkpoints/update-007360.pt
+      - checkpoints/update-007552.pt
+      - checkpoints/update-007616.pt
+      - checkpoints/update-007680.pt
+      - checkpoints/update-007744.pt
+      - checkpoints/update-007808.pt
+      - checkpoints/update-007820.pt
+    unified: true
+  script_population:
+    manifest: data/external/kaggriculture-public-native-20260921/manifest.json
+    sha256: 7ffa98e2860d1638dc340bf060d6592791f41c6580e99fe6d007edab62a40b01
+    agents:
+    - ahmed_v45
+    - metacounter_r1
+    - shop_router_0913
+    - rayk_v38_low_pressure
+    - farming_v4_0914
+    - ahmed_v53
+    - thomas_metav4
+    backend: native-cpp
+    fraction: 0.0

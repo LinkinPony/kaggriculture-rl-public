@@ -1,0 +1,8 @@
+panel:
+  manifest: data/external/kaggriculture-notebook-survey-20260919/manifest.json
+  output: outputs/analysis/notebook-survey-20260919/screen-v45
+  candidates: [ahmed_v46, ahmed_v47, ahmed_v48, ahmed_v49, first_in_line, aurax_v7, melon_squeeze, guru_discrete, jaxa_open10, farming_v5, pipe8, salem, tetsu_v65, thomas_2945]
+  seeds: [1860919001, 1860919002, 1860919003, 1860919004]
+  anchor: ahmed_v45
+  reference: null
+  workers: 8

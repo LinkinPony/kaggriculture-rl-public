@@ -1,0 +1,22 @@
+benchmark:
+  state: outputs/learning/agronomy-v4-m384-bc100-3d-20260917-s73001/runtime-revisions/0003/previous-state.json
+  checkpoint: outputs/analysis/throughput-scale-20260921/boundary-dual-gpu.pt
+  output: outputs/analysis/throughput-scale-20260921/baseline.json
+  initialization: checkpoint
+  history: pretraining/shard-004187.pt
+  selfplay: false
+  same_model_history: false
+  history_fraction: 0.7
+  parameters_min: null
+  parameters_max: null
+  seed_start: 4490000000
+  repeats: 3
+  profile: false
+  changes: {}
+  execution: {}
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/throughput-scale-20260921/hydra
+  output_subdir: null

@@ -1,0 +1,19 @@
+defaults:
+  - learning_arena
+  - _self_
+arena:
+  runs:
+    - outputs/learning/scratch-scaling-s51001
+    - outputs/learning/scratch-scaling-s51002
+  opponents:
+    - run: outputs/learning/scratch-demonstrations-s47001
+      member: checkpoints/update-000128.pt
+    - run: outputs/learning/scratch-demonstrations-s47002
+      member: checkpoints/update-000128.pt
+    - run: outputs/learning/scratch-later-opponents-s49001
+      member: checkpoints/update-000064.pt
+    - run: outputs/learning/scratch-later-opponents-s49002
+      member: checkpoints/update-000064.pt
+  updates: [0, 16, 32, 64, 96, 128, 256, 384, 512]
+  output_dir: outputs/analysis/scratch-scaling-common-arena
+  seed: 1180000000

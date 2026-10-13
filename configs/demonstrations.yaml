@@ -1,0 +1,21 @@
+data:
+  output_dir: data/external/grounded-demonstrations-20260903-05-v1
+  sources:
+  - archive: data/external/kaggriculture-episodes-2026-09-03_2026-09-06/raw/kaggriculture-episodes-2026-09-03.zip
+    sha256: 3dfd17bffd67bb8a026705b6ac48f242277d2cb7c5f706dea4adcb456a8ad8ff
+    date: '2026-09-03'
+    split: train
+  - archive: data/external/kaggriculture-episodes-2026-09-03_2026-09-06/raw/kaggriculture-episodes-2026-09-04.zip
+    sha256: fe986b01057c06f6be3ef1dc3e04fc285c77a70e84d70bff72715985a88cb121
+    date: '2026-09-04'
+    split: train
+  - archive: data/external/kaggriculture-episodes-2026-09-03_2026-09-06/raw/kaggriculture-episodes-2026-09-05.zip
+    sha256: e57448887bcd84e049a2558a676abffd7b1e1d1b61d36991f9da0833a420e473
+    date: '2026-09-05'
+    split: selection
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/daily-grounded-pretraining/hydra
+  output_subdir: null

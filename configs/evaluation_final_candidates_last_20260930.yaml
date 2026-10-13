@@ -1,0 +1,22 @@
+# Last final candidates at T=0 after both runs stopped at 21:41 UTC (both at their regular
+# U292 checkpoints), against U200 and the baseline opponents, on eight panel workers.
+defaults:
+  - evaluation_final_candidates_20260930
+  - _self_
+
+study:
+  output: outputs/analysis/final-candidates-20260930/last
+  devices: [cuda:0, cuda:1, cuda:0, cuda:1, cuda:0, cuda:1, cuda:0, cuda:1]
+  candidates:
+    - name: s101701-u0250-t0
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-s101102u200-kl-ppo50-1gpu-20260930-s101701
+      member: checkpoints/update-000250.pt
+    - name: s101701-u0292-t0
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-s101102u200-kl-ppo50-1gpu-20260930-s101701
+      member: checkpoints/update-000292.pt
+    - name: s101702-u0292-t0
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-mmpqclone4-kl-ppo50-1gpu-r2-20260930-s101702
+      member: checkpoints/update-000292.pt

@@ -1,0 +1,12 @@
+defaults:
+  - sequences_20260917
+  - _self_
+
+data:
+  output: outputs/datasets/agronomy-v4-sequences-3d-20260917-q100
+  raw: data/external/kaggriculture-agronomy-v4-20260917/raw/daily
+  reuse:
+    - data/external/kaggriculture-plain-memory-20260917/raw/daily
+    - data/external/kaggriculture-opening-eda-20260916/raw/daily
+  agronomy: true
+report: outputs/analysis/agronomy-v4-20260917/data-verification.json

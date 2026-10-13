@@ -1,0 +1,18 @@
+defaults:
+  - learning_gtrxl_20260916
+  - _self_
+
+experiment:
+  output_dir: outputs/learning/gtrxl-m384-bc100-3d-20260916-s71001
+  seed: 71001
+  train_seed: 4000000000
+  evaluation:
+    selection_seed: 4020000000
+    confirmation_seed: 4021000000
+    anchor_seeds: [210001, 210002]
+  demonstrations:
+    epochs: 100
+    behavior_seed: 4022000000
+    early_stopping:
+      patience: 10
+      min_delta: 0.001

@@ -1,0 +1,25 @@
+acquisition:
+  raw: data/external/kaggriculture-top10-2d-20260915/raw
+  daily_manifest: data/external/kaggriculture-top10-2d-20260915/raw/daily/manifest.json
+  maximum_rank: 10
+  minimum_score: 2900
+  workers: 16
+  request_interval: 1.0
+  maximum_backoffs: 5
+  reuse_archives:
+  - data/external/kaggriculture-episodes-2026-09-03_2026-09-07/raw/kaggriculture-episodes-2026-09-06.zip
+  - data/external/kaggriculture-episodes-2026-09-03_2026-09-07/raw/kaggriculture-episodes-2026-09-07.zip
+  - data/external/kaggriculture-episodes-survey-20260909/raw/kaggriculture-episodes-2026-09-08.zip
+  - data/external/kaggriculture-context3d-20260910/raw/kaggriculture-episodes-2026-09-09.zip
+  - data/external/kaggriculture-bc-redesign-20260911/raw/index/kaggriculture-episodes-2026-09-10.zip
+  - data/external/kaggriculture-latest3d-20260912/raw/kaggriculture-episodes-2026-09-11.zip
+  - data/external/kaggriculture-top10-2d-20260913/raw/daily/kaggriculture-episodes-2026-09-12.zip
+  reuse_manifests:
+  - data/external/kaggriculture-bc-redesign-20260911/raw/public/manifest.json
+  - data/external/kaggriculture-top10-2d-20260913/raw/manifest.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/top10-2d-20260915/acquisition-hydra
+  output_subdir: null

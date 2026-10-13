@@ -1,0 +1,14 @@
+survey:
+  raw: data/external/kaggriculture-episodes-survey-20260909/raw
+  reuse:
+    - data/external/kaggriculture-episodes-2026-09-03_2026-09-07/raw
+  days: 3
+  workers: 8
+  output: outputs/analysis/daily-behavior-20260906-08
+  minimum_games: 10
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${survey.output}/hydra
+  output_subdir: null

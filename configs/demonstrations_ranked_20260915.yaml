@@ -1,0 +1,23 @@
+data:
+  output_dir: outputs/datasets/grounded-v2-top10-20260913-14-q100
+  daily_manifest: data/external/kaggriculture-top10-2d-20260915/raw/daily/manifest.json
+  public_manifest: data/external/kaggriculture-top10-2d-20260915/raw/manifest.json
+  leaderboard_snapshots:
+  - data/external/kaggriculture-top20-runtime-2026-08-27/raw/metadata.json
+  - data/external/kaggriculture-bc-redesign-20260911/raw/public/leaderboard.json
+  - data/external/kaggriculture-top10-2d-20260913/raw/leaderboard.json
+  - data/external/kaggriculture-top10-2d-20260915/raw/leaderboard.json
+  report_dir: outputs/analysis/top10-2d-20260915
+  frame_audit: outputs/analysis/top10-2d-20260915/raw-frames-audit.json
+  maximum_rank: 10
+  partition: episode-seed
+  partition_seed: 62001
+  workers: 12
+  episodes_per_shard: 8
+  quantity_max: 100
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/top10-2d-20260915/preparation-hydra
+  output_subdir: null

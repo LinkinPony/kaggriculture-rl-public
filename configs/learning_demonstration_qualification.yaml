@@ -1,0 +1,27 @@
+defaults:
+  - learning_demonstrations
+  - _self_
+experiment:
+  output_dir: outputs/learning/scratch-demonstration-qualification-v1
+  seed: 47011
+  device: cuda:1
+  updates: 2
+  games: 8
+  width: 32
+  depth: 1
+  critic_width: 32
+  critic_depth: 1
+  compile: false
+  precision: fp32
+  quantity_extra: [256, 499, 512, 999, 1024, 4096, 10000, 1000000]
+  batch_rows: 5760
+  microbatch_rows: 128
+  demonstrations:
+    manifest: data/external/grounded-demonstrations-qualification-v1/manifest.json
+    sha256: c1208c8448ab20e71901a5a8579bb24ab051821a64444f70550e6a74d7834d1b
+    epochs: 1
+    batch_rows: 128
+    checkpoint_shards: 1
+  evaluation:
+    games: 8
+    interval: 1

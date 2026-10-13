@@ -1,0 +1,13 @@
+// Generated from authenticated public notebook source; do not edit.
+#include "opponents/compiled/generated/declarations.hpp"
+
+namespace kagg::opponents::compiled {
+Value Code_050246d6a28bd372ae90(Context& c, const ScopePtr& s) {
+static constexpr const char* s_names[] = {"farm", "obs"};
+s->PrepareSlots(s_names);
+auto v30964 = Get(Get(s->LocalAt(1), Value("farms")), Get(s->LocalAt(1), Value("player")));
+s->SetAt(0, v30964);
+return ([&]() -> Value { auto comp30965 = std::make_shared<Scope>(); comp30965->globals = s->globals; comp30965->parent = s; static constexpr const char* comp30965_names[] = {"xy"}; comp30965->PrepareSlots(comp30965_names); auto result30966 = List(); for (const auto& item30967 : Iterate(s->Global("_VT_TILES"))) { comp30965->SetAt(0, item30967); if (!static_cast<bool>(([&]() -> Value { auto v30968 = ([&]() -> Value { auto fn30969 = comp30965->Global("isinstance"); Arguments args30970; args30970.positional.reserve(2); args30970.Add(Get(Get(Get(comp30965->Captured("farm"), Value("tiles")), Get(comp30965->LocalAt(0), Value(int64_t{1}))), Get(comp30965->LocalAt(0), Value(int64_t{0}))), false); args30970.Add(comp30965->Global("dict"), false); return Call(c, fn30969, std::move(args30970)); }()); if (!static_cast<bool>(v30968)) return v30968; v30968 = ([&]() -> Value { auto v30971 = ([&]() -> Value { auto fn30973 = PrepareDictionaryGet(Get(Get(Get(comp30965->Captured("farm"), Value("tiles")), Get(comp30965->LocalAt(0), Value(int64_t{1}))), Get(comp30965->LocalAt(0), Value(int64_t{0})))); Arguments args30974; args30974.Add(Value("animal"), false); return CallDictionaryGet(c, fn30973, std::move(args30974)); }()); Value v30972; v30972 = Value("SHEEP"); if (!static_cast<bool>(Binary("Eq", v30971, v30972))) return Value(false); v30971 = v30972; return Value(true); }()); if (!static_cast<bool>(v30968)) return v30968; v30968 = ([&]() -> Value { auto v30975 = ([&]() -> Value { auto fn30977 = PrepareDictionaryGet(Get(Get(Get(comp30965->Captured("farm"), Value("tiles")), Get(comp30965->LocalAt(0), Value(int64_t{1}))), Get(comp30965->LocalAt(0), Value(int64_t{0})))); Arguments args30978; args30978.positional.reserve(2); args30978.Add(Value("yield_units"), false); args30978.Add(Value(int64_t{0}), false); return CallDictionaryGet(c, fn30977, std::move(args30978)); }()); Value v30976; v30976 = Value(int64_t{0}); if (!static_cast<bool>(Binary("Gt", v30975, v30976))) return Value(false); v30975 = v30976; return Value(true); }()); return v30968; }()))) continue; result30966.node()->sequence.push_back(comp30965->LocalAt(0)); } return result30966; }());
+return {};
+}
+}  // namespace kagg::opponents::compiled

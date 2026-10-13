@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-08-28T03:50:11Z",
+  "source": {
+    "competition": "kaggriculture",
+    "command": "kaggle competitions replay 95997385",
+    "episode_id": 95997385,
+    "seed": 1694422600,
+    "environment_module_version": "1.32.7"
+  },
+  "artifacts": [
+    {
+      "path": "episode-95997385-replay.json",
+      "sha256": "e8f918956f2938c121a71afd0b411006ed1119cc3e7a6d00272e24f42b007e27",
+      "purpose": "Public replay used to exercise Kaito v39's replay-era stage-2 alt-route calibration branch."
+    }
+  ]
+}

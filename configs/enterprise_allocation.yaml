@@ -1,0 +1,13 @@
+defaults:
+  - enterprise
+  - _self_
+panel:
+  output: outputs/analysis/enterprise-20260915/allocation-01
+  variants:
+    default: {native_execution: true}
+    crops_only: {native_execution: true, animal_limit: 0}
+    short_cycle: {native_execution: true, duration_power: 1.6}
+    livestock: {native_execution: true, animal_bias: 1.5}
+    min_cost: {native_execution: true, scheduler: min_cost}
+    territory: {native_execution: true, scheduler: territory_aware}
+  seeds: [1860917101]

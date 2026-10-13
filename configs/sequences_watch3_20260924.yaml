@@ -1,0 +1,28 @@
+cohort:
+  output: outputs/datasets/agronomy-v4-watch3-submissions-20260923-24-train-val-q100/source-manifests
+  sources:
+    decem: data/external/kaggriculture-decem-replays/manifest.json
+    mm-pq: data/external/kaggriculture-mm-pq-replays/manifest.json
+    dsm: data/external/kaggriculture-dsm-replays/manifest.json
+  submitted_since: '2026-09-23T00:00:00Z'
+  excluded_submissions: [56414341, 56484772, 56509757]
+data:
+  output: outputs/datasets/agronomy-v4-watch3-submissions-20260923-24-train-val-q100
+  raw: data/external
+  reuse: []
+  teachers: [DECEM, 'M & M & P & Q', DSM]
+  watch_manifests:
+    - ${cohort.output}/decem/selected.json
+    - ${cohort.output}/mm-pq/selected.json
+    - ${cohort.output}/dsm/selected.json
+  workers: 16
+  partition_seed: 62001
+  train_val: true
+  agronomy: true
+report: outputs/analysis/watch3-bc-20260923-24/data-verification.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/watch3-bc-20260924/${now:%Y%m%d-%H%M%S}
+  output_subdir: null

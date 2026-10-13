@@ -1,0 +1,10 @@
+defaults:
+  - learning_compact_ppo_20260921
+  - _self_
+experiment:
+  output_dir: outputs/learning/compact289-v4-selected8-ppo-restart-20260921-s74001
+  gamma: 1.0
+  gae_lambda: 1.0
+  # 1,325,836 rows / 442,368 = three logical batches, with every row used once.
+  # Each full batch contains 36 of the existing 12,288-row microbatches.
+  batch_rows: 442368

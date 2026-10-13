@@ -1,0 +1,12 @@
+.bc-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 18px; }
+#bc-panel { display: grid; gap: 18px; }
+#bc-panel .panel-card { min-width: 0; padding: 22px; }
+#bc-panel h3 { margin: 0 0 14px; font-size: 16px; }
+#bc-panel summary { cursor: pointer; font-weight: 600; padding-bottom: 12px; }
+.bc-table-wrap { overflow: auto; max-height: 390px; }
+.bc-table-wrap th { position: sticky; top: 0; background: var(--panel, #fff); }
+.bc-note, .bc-live p { color: var(--muted, #667580); font-size: 12px; line-height: 1.7; }
+.bc-note, .bc-hash { overflow-wrap: anywhere; }
+.bc-hash { font-size: 11px; }
+.bc-live .hero-progress-track { width: 100%; margin: 14px 0; }
+@media (max-width: 1050px) { .bc-grid { grid-template-columns: 1fr; } }

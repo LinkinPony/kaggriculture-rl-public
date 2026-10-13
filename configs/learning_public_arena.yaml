@@ -1,0 +1,19 @@
+arena:
+  runs:
+    - outputs/learning/scratch-demonstrations-s47001
+    - outputs/learning/scratch-demonstrations-s47002
+  updates: [0, 64, 128]
+  manifest: data/external/kaggriculture-public-agents-20260907/manifest.json
+  manifest_sha256: 89f788632e1ef5e47a92bd540b4cea7b3b6905169cd49e2ef5c31bf038145a92
+  output_dir: outputs/analysis/scratch-demonstrations-public-arena
+  reference_directory: data/external/kaggriculture-reference-1.32.7
+  seed: 1240000000
+  games_per_opponent: 64
+  workers: 8
+  role: selection
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${arena.output_dir}/hydra
+  output_subdir: null

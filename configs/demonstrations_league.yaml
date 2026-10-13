@@ -1,0 +1,26 @@
+data:
+  output_dir: outputs/datasets/league-v2-20260906-08/base
+  architecture: grounded-v2
+  partition: episode-seed
+  partition_seed: 62001
+  workers: 12
+  episodes_per_shard: 8
+  sources:
+    - archive: data/external/kaggriculture-episodes-2026-09-03_2026-09-07/raw/kaggriculture-episodes-2026-09-06.zip
+      sha256: 8ab6f7da8b19c211361d7a8b769e41339f3e6f94f79f52b701fd7bf0dbdd556e
+      date: '2026-09-06'
+      split: train
+    - archive: data/external/kaggriculture-episodes-2026-09-03_2026-09-07/raw/kaggriculture-episodes-2026-09-07.zip
+      sha256: 08e49bd2bf0c975bc2a1fa92249f0cfe6ecbdff7436e49d7bb0b398b5decc50d
+      date: '2026-09-07'
+      split: train
+    - archive: data/external/kaggriculture-episodes-survey-20260909/raw/kaggriculture-episodes-2026-09-08.zip
+      sha256: e24aa237bbecff0dd63e55b024b9645dbcfde08d822924e0ea865ecb806765da
+      date: '2026-09-08'
+      split: train
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/league-20260909/data-hydra
+  output_subdir: null

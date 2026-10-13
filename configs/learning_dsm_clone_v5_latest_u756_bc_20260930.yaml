@@ -1,0 +1,10 @@
+# DSM clone v5 of the latest version only (56693917, 132 games, train/val 127/5 with the same
+# five validation games as v4) from s100901 U756. An epoch is 16 shards, so warmup is one epoch.
+defaults:
+- learning_dsm_clone_v4_latest_u756_bc_20260930
+- _self_
+experiment:
+  demonstrations:
+    manifest: outputs/datasets/team-clone-v5-dsm-latest-20260930-train-val-q100/manifest.json
+    sha256: 69ceb20796dc6816c9401157b552843a9f32d89cc18bdfeaf18bb431290585e7
+    schedule: {warmup_shards: 16}

@@ -1,0 +1,31 @@
+defaults:
+  - hopper_kernels
+  - _self_
+benchmark:
+  batch: 4096
+  heads: 4
+  widths: [64]
+  output: outputs/analysis/throughput-scale-20260921/compact-attention-hopper.json
+  variants:
+    - name: sdpa
+      options: {}
+    - name: tiles64
+      options: {BACKEND: TRITON, ROWS_GUARANTEED_SAFE: true, BLOCK_M: 64, BLOCK_N: 64}
+    - name: tiles64_tma
+      options: {BACKEND: TRITON, ROWS_GUARANTEED_SAFE: true, BLOCK_M: 64, BLOCK_N: 64, USE_TMA: true}
+    - name: tiles128x64
+      options: {BACKEND: TRITON, ROWS_GUARANTEED_SAFE: true, BLOCK_M: 128, BLOCK_N: 64}
+    - name: tiles64x128
+      options: {BACKEND: TRITON, ROWS_GUARANTEED_SAFE: true, BLOCK_M: 64, BLOCK_N: 128}
+    - name: tiles64_bwd32
+      options:
+        BACKEND: TRITON
+        ROWS_GUARANTEED_SAFE: true
+        BLOCK_M: 64
+        BLOCK_N: 64
+        bwd_BLOCK_M1: 32
+        bwd_BLOCK_N1: 64
+        bwd_BLOCK_M2: 64
+        bwd_BLOCK_N2: 32
+    - name: tiles64_warps4
+      options: {BACKEND: TRITON, ROWS_GUARANTEED_SAFE: true, BLOCK_M: 64, BLOCK_N: 64, num_warps: 4}

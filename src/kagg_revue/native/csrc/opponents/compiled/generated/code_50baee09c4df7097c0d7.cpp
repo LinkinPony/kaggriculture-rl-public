@@ -1,0 +1,93 @@
+// Generated from authenticated public notebook source; do not edit.
+#include "opponents/compiled/generated/declarations.hpp"
+
+namespace kagg::opponents::compiled {
+Value Code_50baee09c4df7097c0d7(Context& c, const ScopePtr& s) {
+static constexpr const char* s_names[] = {"_", "access", "action", "assignment", "c", "choices", "chosen", "costs", "count", "day", "distance", "dx", "dy", "farm", "fertilizer", "groups", "i", "native_hires", "obs", "path", "positions", "remaining", "spawns", "start", "step"};
+s->PrepareSlots(s_names);
+auto v8573 = ([&]() -> Value { auto fn8574 = s->Global("int"); Arguments args8575; args8575.Add(Get(s->LocalAt(18), Value("step")), false); return Call(c, fn8574, std::move(args8575)); }());
+s->SetAt(24, v8573);
+auto v8576 = ([&]() -> Value { auto v8577 = s->LocalAt(24); return Binary("FloorDiv", v8577, Value(int64_t{24})); }());
+s->SetAt(9, v8576);
+auto v8578 = Get(Get(s->LocalAt(18), Value("farms")), Get(s->LocalAt(18), Value("player")));
+s->SetAt(13, v8578);
+if (static_cast<bool>(([&]() -> Value { auto v8579 = ([&]() -> Value { auto v8580 = s->LocalAt(9); Value v8581; v8581 = Tuple({Value(int64_t{26}), Value(int64_t{27}), Value(int64_t{28})}); if (!static_cast<bool>(Binary("NotIn", v8580, v8581))) return Value(false); v8580 = v8581; return Value(true); }()); if (static_cast<bool>(v8579)) return v8579; v8579 = ([&]() -> Value { auto v8582 = ([&]() -> Value { auto v8584 = s->LocalAt(24); return Binary("Mod", v8584, Value(int64_t{24})); }()); Value v8583; v8583 = Value(int64_t{2}); if (!static_cast<bool>(Binary("Gt", v8582, v8583))) return Value(false); v8582 = v8583; return Value(true); }()); return v8579; }()))) {
+return Value{};
+}
+if (static_cast<bool>(([&]() -> Value { auto v8585 = ([&]() -> Value { auto v8586 = s->LocalAt(9); Value v8587; v8587 = Value(int64_t{27}); if (!static_cast<bool>(Binary("Eq", v8586, v8587))) return Value(false); v8586 = v8587; return Value(true); }()); if (!static_cast<bool>(v8585)) return v8585; v8585 = Unary("Not", s->LocalAt(14)); return v8585; }()))) {
+return Value{};
+}
+auto v8588 = (static_cast<bool>(s->LocalAt(14)) ? Value(int64_t{3}) : Value(int64_t{2}));
+s->SetAt(8, v8588);
+auto v8589 = ([&]() -> Value { auto v8590 = List({([&]() -> Value { auto fn8591 = s->Global("list"); Arguments args8592; args8592.Add(Get(s->LocalAt(13), Value("farmer")), false); return Call(c, fn8591, std::move(args8592)); }())}); return Binary("Add", v8590, ([&]() -> Value { auto comp8593 = std::make_shared<Scope>(); comp8593->globals = s->globals; comp8593->parent = s; static constexpr const char* comp8593_names[] = {"p"}; comp8593->PrepareSlots(comp8593_names); auto result8594 = List(); for (const auto& item8595 : Iterate(Get(s->LocalAt(13), Value("hands")))) { comp8593->SetAt(0, item8595); result8594.node()->sequence.push_back(([&]() -> Value { auto fn8596 = comp8593->Global("list"); Arguments args8597; args8597.Add(comp8593->LocalAt(0), false); return Call(c, fn8596, std::move(args8597)); }())); } return result8594; }())); }());
+s->SetAt(20, v8589);
+for (const auto& item8598 : Iterate(([&]() -> Value { auto fn8599 = s->Global("enumerate"); Arguments args8600; args8600.Add(Slice(([&]() -> Value { Arguments args8603; args8603.Add(([&]() -> Value { auto v8604 = ([&]() -> Value { auto fn8605 = PrepareDictionaryGet(s->LocalAt(2)); Arguments args8606; args8606.Add(Value("farmer"), false); return CallDictionaryGet(c, fn8605, std::move(args8606)); }()); if (static_cast<bool>(v8604)) return v8604; v8604 = List({Value("PASS")}); return v8604; }()), false); args8603.Add(([&]() -> Value { auto v8607 = ([&]() -> Value { auto fn8608 = PrepareDictionaryGet(s->LocalAt(2)); Arguments args8609; args8609.Add(Value("hands"), false); return CallDictionaryGet(c, fn8608, std::move(args8609)); }()); if (static_cast<bool>(v8607)) return v8607; v8607 = List({}); return v8607; }()), true); return List(std::move(args8603.positional)); }()), Value{}, ([&]() -> Value { auto fn8601 = s->Global("len"); Arguments args8602; args8602.Add(s->LocalAt(20), false); return Call(c, fn8601, std::move(args8602)); }()), Value{}), false); return Call(c, fn8599, std::move(args8600)); }()))) {
+auto unpack8610 = Iterate(item8598);
+ValidateUnpack(unpack8610, 2, false);
+s->SetAt(16, unpack8610.at(0));
+s->SetAt(4, unpack8610.at(1));
+if (static_cast<bool>(([&]() -> Value { auto v8611 = s->LocalAt(4); if (!static_cast<bool>(v8611)) return v8611; v8611 = ([&]() -> Value { auto v8612 = Get(s->LocalAt(4), Value(int64_t{0})); Value v8613; v8613 = s->Global("MOVES"); if (!static_cast<bool>(Binary("In", v8612, v8613))) return Value(false); v8612 = v8613; return Value(true); }()); return v8611; }()))) {
+auto v8614 = Get(s->Global("MOVES"), Get(s->LocalAt(4), Value(int64_t{0})));
+auto unpack8615 = Iterate(v8614);
+ValidateUnpack(unpack8615, 2, false);
+s->SetAt(11, unpack8615.at(0));
+s->SetAt(12, unpack8615.at(1));
+auto v8616 = List({([&]() -> Value { auto fn8617 = s->Global("max"); Arguments args8618; args8618.positional.reserve(2); args8618.Add(Value(int64_t{0}), false); args8618.Add(([&]() -> Value { auto fn8619 = s->Global("min"); Arguments args8620; args8620.positional.reserve(2); args8620.Add(Value(int64_t{9}), false); args8620.Add(([&]() -> Value { auto v8621 = Get(Get(s->LocalAt(20), s->LocalAt(16)), Value(int64_t{0})); return Binary("Add", v8621, s->LocalAt(11)); }()), false); return Call(c, fn8619, std::move(args8620)); }()), false); return Call(c, fn8617, std::move(args8618)); }()), ([&]() -> Value { auto fn8622 = s->Global("max"); Arguments args8623; args8623.positional.reserve(2); args8623.Add(Value(int64_t{0}), false); args8623.Add(([&]() -> Value { auto fn8624 = s->Global("min"); Arguments args8625; args8625.positional.reserve(2); args8625.Add(Value(int64_t{9}), false); args8625.Add(([&]() -> Value { auto v8626 = Get(Get(s->LocalAt(20), s->LocalAt(16)), Value(int64_t{1})); return Binary("Add", v8626, s->LocalAt(12)); }()), false); return Call(c, fn8624, std::move(args8625)); }()), false); return Call(c, fn8622, std::move(args8623)); }())});
+Put(s->LocalAt(20), s->LocalAt(16), v8616);
+}
+}
+auto v8627 = Tuple({Tuple({Value(int64_t{4}), Value(int64_t{4})}), Tuple({Value(int64_t{5}), Value(int64_t{4})}), Tuple({Value(int64_t{4}), Value(int64_t{5})}), Tuple({Value(int64_t{5}), Value(int64_t{5})})});
+s->SetAt(1, v8627);
+auto v8628 = List({});
+s->SetAt(22, v8628);
+auto v8629 = ([&]() -> Value { auto fn8630 = s->Global("sum"); Arguments args8631; args8631.Add(([&]() -> Value { auto comp8632 = std::make_shared<Scope>(); comp8632->globals = s->globals; comp8632->parent = s; static constexpr const char* comp8632_names[] = {"o"}; comp8632->PrepareSlots(comp8632_names); auto result8633 = List(); for (const auto& item8634 : Iterate(([&]() -> Value { auto fn8635 = PrepareDictionaryGet(s->LocalAt(2)); Arguments args8636; args8636.positional.reserve(2); args8636.Add(Value("market"), false); args8636.Add(List({}), false); return CallDictionaryGet(c, fn8635, std::move(args8636)); }()))) { comp8632->SetAt(0, item8634); result8633.node()->sequence.push_back(([&]() -> Value { auto v8637 = ([&]() -> Value { auto fn8638 = comp8632->Global("bool"); Arguments args8639; args8639.Add(comp8632->LocalAt(0), false); return Call(c, fn8638, std::move(args8639)); }()); if (!static_cast<bool>(v8637)) return v8637; v8637 = ([&]() -> Value { auto v8640 = Get(comp8632->LocalAt(0), Value(int64_t{0})); Value v8641; v8641 = Value("HIRE"); if (!static_cast<bool>(Binary("Eq", v8640, v8641))) return Value(false); v8640 = v8641; return Value(true); }()); return v8637; }())); } return result8633; }()), false); return Call(c, fn8630, std::move(args8631)); }());
+s->SetAt(17, v8629);
+for (const auto& item8642 : Iterate(([&]() -> Value { auto fn8643 = s->Global("range"); Arguments args8644; args8644.Add(([&]() -> Value { auto v8645 = s->LocalAt(17); return Binary("Add", v8645, s->LocalAt(8)); }()), false); return Call(c, fn8643, std::move(args8644)); }()))) {
+s->SetAt(16, item8642);
+auto v8646 = ([&]() -> Value { auto fn8647 = s->Global("min"); Arguments args8648; args8648.Add(s->LocalAt(1), false); args8648.Keyword("key", Define(&Code_356828608889996850bb, s, Signature{{"p"}, {}, {}, {}, "", "", ([]() -> std::span<const char* const> { static constexpr const char* names[] = {"p"}; return names; }())}, true, "<lambda>")); return Call(c, fn8647, std::move(args8648)); }());
+s->SetAt(6, v8646);
+(void)([&]() -> Value { auto fn8660 = Attribute(s->LocalAt(20), "append"); Arguments args8661; args8661.Add(([&]() -> Value { auto fn8662 = s->Global("list"); Arguments args8663; args8663.Add(s->LocalAt(6), false); return Call(c, fn8662, std::move(args8663)); }()), false); return Call(c, fn8660, std::move(args8661)); }());
+if (static_cast<bool>(([&]() -> Value { auto v8664 = s->LocalAt(16); Value v8665; v8665 = s->LocalAt(17); if (!static_cast<bool>(Binary("GtE", v8664, v8665))) return Value(false); v8664 = v8665; return Value(true); }()))) {
+(void)([&]() -> Value { auto fn8666 = Attribute(s->LocalAt(22), "append"); Arguments args8667; args8667.Add(s->LocalAt(6), false); return Call(c, fn8666, std::move(args8667)); }());
+}
+}
+auto v8668 = (static_cast<bool>(s->LocalAt(14)) ? Tuple({Tuple({Tuple({Value(int64_t{5}), Value(int64_t{5})}), Tuple({Value(int64_t{6}), Value(int64_t{5})}), Tuple({Value(int64_t{7}), Value(int64_t{5})}), Tuple({Value(int64_t{8}), Value(int64_t{5})})}), Tuple({Tuple({Value(int64_t{9}), Value(int64_t{5})}), Tuple({Value(int64_t{9}), Value(int64_t{6})}), Tuple({Value(int64_t{8}), Value(int64_t{6})})}), Tuple({Tuple({Value(int64_t{5}), Value(int64_t{6})}), Tuple({Value(int64_t{6}), Value(int64_t{6})}), Tuple({Value(int64_t{7}), Value(int64_t{6})})})}) : Tuple({([&]() -> Value { auto fn8669 = s->Global("tuple"); Arguments args8670; args8670.Add(([&]() -> Value { auto comp8671 = std::make_shared<Scope>(); comp8671->globals = s->globals; comp8671->parent = s; static constexpr const char* comp8671_names[] = {"x"}; comp8671->PrepareSlots(comp8671_names); auto result8672 = List(); for (const auto& item8673 : Iterate(([&]() -> Value { auto fn8674 = s->Global("range"); Arguments args8675; args8675.positional.reserve(2); args8675.Add(Value(int64_t{5}), false); args8675.Add(Value(int64_t{10}), false); return Call(c, fn8674, std::move(args8675)); }()))) { comp8671->SetAt(0, item8673); result8672.node()->sequence.push_back(Tuple({comp8671->LocalAt(0), Value(int64_t{5})})); } return result8672; }()), false); return Call(c, fn8669, std::move(args8670)); }()), ([&]() -> Value { auto fn8676 = s->Global("tuple"); Arguments args8677; args8677.Add(([&]() -> Value { auto comp8678 = std::make_shared<Scope>(); comp8678->globals = s->globals; comp8678->parent = s; static constexpr const char* comp8678_names[] = {"x"}; comp8678->PrepareSlots(comp8678_names); auto result8679 = List(); for (const auto& item8680 : Iterate(([&]() -> Value { auto fn8681 = s->Global("range"); Arguments args8682; args8682.positional.reserve(2); args8682.Add(Value(int64_t{5}), false); args8682.Add(Value(int64_t{10}), false); return Call(c, fn8681, std::move(args8682)); }()))) { comp8678->SetAt(0, item8680); result8679.node()->sequence.push_back(Tuple({comp8678->LocalAt(0), Value(int64_t{6})})); } return result8679; }()), false); return Call(c, fn8676, std::move(args8677)); }())}));
+s->SetAt(15, v8668);
+auto v8683 = List({});
+s->SetAt(5, v8683);
+auto v8684 = ([&]() -> Value { auto v8685 = Value(int64_t{23}); return Binary("Sub", v8685, ([&]() -> Value { auto v8686 = s->LocalAt(24); return Binary("Mod", v8686, Value(int64_t{24})); }())); }());
+s->SetAt(21, v8684);
+for (const auto& item8687 : Iterate(([&]() -> Value { auto fn8688 = s->Global("_r53_permutations"); Arguments args8689; args8689.Add(s->LocalAt(15), false); return Call(c, fn8688, std::move(args8689)); }()))) {
+s->SetAt(3, item8687);
+auto v8690 = List({});
+s->SetAt(7, v8690);
+for (const auto& item8691 : Iterate(([&]() -> Value { auto fn8692 = s->Global("zip"); Arguments args8693; args8693.positional.reserve(2); args8693.Add(s->LocalAt(22), false); args8693.Add(s->LocalAt(3), false); return Call(c, fn8692, std::move(args8693)); }()))) {
+auto unpack8694 = Iterate(item8691);
+ValidateUnpack(unpack8694, 2, false);
+s->SetAt(23, unpack8694.at(0));
+s->SetAt(19, unpack8694.at(1));
+auto v8695 = ([&]() -> Value { auto v8696 = ([&]() -> Value { auto fn8697 = s->Global("abs"); Arguments args8698; args8698.Add(([&]() -> Value { auto v8699 = Get(s->LocalAt(23), Value(int64_t{0})); return Binary("Sub", v8699, Get(Get(s->LocalAt(19), Value(int64_t{0})), Value(int64_t{0}))); }()), false); return Call(c, fn8697, std::move(args8698)); }()); return Binary("Add", v8696, ([&]() -> Value { auto fn8700 = s->Global("abs"); Arguments args8701; args8701.Add(([&]() -> Value { auto v8702 = Get(s->LocalAt(23), Value(int64_t{1})); return Binary("Sub", v8702, Get(Get(s->LocalAt(19), Value(int64_t{0})), Value(int64_t{1}))); }()), false); return Call(c, fn8700, std::move(args8701)); }())); }());
+s->SetAt(10, v8695);
+auto v8703 = s->LocalAt(10);
+s->SetAt(10, Inplace("Add", v8703, ([&]() -> Value { auto fn8704 = s->Global("sum"); Arguments args8705; args8705.Add(([&]() -> Value { auto comp8706 = std::make_shared<Scope>(); comp8706->globals = s->globals; comp8706->parent = s; static constexpr const char* comp8706_names[] = {"a", "b"}; comp8706->PrepareSlots(comp8706_names); auto result8707 = List(); for (const auto& item8708 : Iterate(([&]() -> Value { auto fn8709 = s->Global("zip"); Arguments args8710; args8710.positional.reserve(2); args8710.Add(s->LocalAt(19), false); args8710.Add(Slice(s->LocalAt(19), Value(int64_t{1}), Value{}, Value{}), false); return Call(c, fn8709, std::move(args8710)); }()))) { auto unpack8711 = Iterate(item8708); ValidateUnpack(unpack8711, 2, false); comp8706->SetAt(0, unpack8711.at(0)); comp8706->SetAt(1, unpack8711.at(1)); result8707.node()->sequence.push_back(([&]() -> Value { auto v8712 = ([&]() -> Value { auto fn8713 = comp8706->Global("abs"); Arguments args8714; args8714.Add(([&]() -> Value { auto v8715 = Get(comp8706->LocalAt(0), Value(int64_t{0})); return Binary("Sub", v8715, Get(comp8706->LocalAt(1), Value(int64_t{0}))); }()), false); return Call(c, fn8713, std::move(args8714)); }()); return Binary("Add", v8712, ([&]() -> Value { auto fn8716 = comp8706->Global("abs"); Arguments args8717; args8717.Add(([&]() -> Value { auto v8718 = Get(comp8706->LocalAt(0), Value(int64_t{1})); return Binary("Sub", v8718, Get(comp8706->LocalAt(1), Value(int64_t{1}))); }()), false); return Call(c, fn8716, std::move(args8717)); }())); }())); } return result8707; }()), false); return Call(c, fn8704, std::move(args8705)); }())));
+auto v8719 = s->LocalAt(10);
+s->SetAt(10, Inplace("Add", v8719, ([&]() -> Value { auto fn8720 = s->Global("min"); Arguments args8721; args8721.Add(([&]() -> Value { auto comp8722 = std::make_shared<Scope>(); comp8722->globals = s->globals; comp8722->parent = s; static constexpr const char* comp8722_names[] = {"x", "y"}; comp8722->PrepareSlots(comp8722_names); auto result8723 = List(); for (const auto& item8724 : Iterate(s->LocalAt(1))) { auto unpack8725 = Iterate(item8724); ValidateUnpack(unpack8725, 2, false); comp8722->SetAt(0, unpack8725.at(0)); comp8722->SetAt(1, unpack8725.at(1)); result8723.node()->sequence.push_back(([&]() -> Value { auto v8726 = ([&]() -> Value { auto fn8727 = comp8722->Global("abs"); Arguments args8728; args8728.Add(([&]() -> Value { auto v8729 = Get(Get(comp8722->Captured("path"), Unary("USub", Value(int64_t{1}))), Value(int64_t{0})); return Binary("Sub", v8729, comp8722->LocalAt(0)); }()), false); return Call(c, fn8727, std::move(args8728)); }()); return Binary("Add", v8726, ([&]() -> Value { auto fn8730 = comp8722->Global("abs"); Arguments args8731; args8731.Add(([&]() -> Value { auto v8732 = Get(Get(comp8722->Captured("path"), Unary("USub", Value(int64_t{1}))), Value(int64_t{1})); return Binary("Sub", v8732, comp8722->LocalAt(1)); }()), false); return Call(c, fn8730, std::move(args8731)); }())); }())); } return result8723; }()), false); return Call(c, fn8720, std::move(args8721)); }())));
+(void)([&]() -> Value { auto fn8733 = Attribute(s->LocalAt(7), "append"); Arguments args8734; args8734.Add(([&]() -> Value { auto v8735 = ([&]() -> Value { auto v8736 = ([&]() -> Value { auto v8737 = s->LocalAt(10); return Binary("Add", v8737, ([&]() -> Value { auto v8738 = (static_cast<bool>(s->LocalAt(14)) ? Value(int64_t{3}) : Value(int64_t{2})); return Binary("Mult", v8738, ([&]() -> Value { auto fn8739 = s->Global("len"); Arguments args8740; args8740.Add(s->LocalAt(19), false); return Call(c, fn8739, std::move(args8740)); }())); }())); }()); return Binary("Add", v8736, Value(int64_t{1})); }()); return Binary("Add", v8735, ([&]() -> Value { auto fn8741 = s->Global("int"); Arguments args8742; args8742.Add(s->LocalAt(14), false); return Call(c, fn8741, std::move(args8742)); }())); }()), false); return Call(c, fn8733, std::move(args8734)); }());
+}
+if (static_cast<bool>(([&]() -> Value { auto v8743 = ([&]() -> Value { auto fn8745 = s->Global("max"); Arguments args8746; args8746.Add(s->LocalAt(7), false); return Call(c, fn8745, std::move(args8746)); }()); Value v8744; v8744 = s->LocalAt(21); if (!static_cast<bool>(Binary("LtE", v8743, v8744))) return Value(false); v8743 = v8744; return Value(true); }()))) {
+(void)([&]() -> Value { auto fn8747 = Attribute(s->LocalAt(5), "append"); Arguments args8748; args8748.Add(Tuple({([&]() -> Value { auto fn8749 = s->Global("max"); Arguments args8750; args8750.Add(s->LocalAt(7), false); return Call(c, fn8749, std::move(args8750)); }()), ([&]() -> Value { auto fn8751 = s->Global("sum"); Arguments args8752; args8752.Add(s->LocalAt(7), false); return Call(c, fn8751, std::move(args8752)); }()), s->LocalAt(3)}), false); return Call(c, fn8747, std::move(args8748)); }());
+}
+}
+if (static_cast<bool>(Unary("Not", s->LocalAt(5)))) {
+return Value{};
+}
+auto v8753 = ([&]() -> Value { auto fn8754 = s->Global("min"); Arguments args8755; args8755.Add(s->LocalAt(5), false); return Call(c, fn8754, std::move(args8755)); }());
+auto unpack8756 = Iterate(v8753);
+ValidateUnpack(unpack8756, 3, false);
+s->SetAt(0, unpack8756.at(0));
+s->SetAt(0, unpack8756.at(1));
+s->SetAt(3, unpack8756.at(2));
+return ([&]() -> Value { auto fn8757 = s->Global("dict"); Arguments args8758; args8758.Keyword("paths", s->LocalAt(3)); args8758.Keyword("spawns", s->LocalAt(22)); args8758.Keyword("remaining", s->LocalAt(21)); args8758.Keyword("workers", s->LocalAt(8)); args8758.Keyword("fertilizer", s->LocalAt(14)); return Call(c, fn8757, std::move(args8758)); }());
+return {};
+}
+}  // namespace kagg::opponents::compiled

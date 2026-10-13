@@ -1,0 +1,9 @@
+defaults:
+  - production
+  - _self_
+mode: qualify
+checkpoint: outputs/production-policy/20260905-v1/bc/best.pt
+output_dir: outputs/production-policy/20260905-selfplay-qualification-v1
+ppo:
+  updates: 3
+  seed_start: 9700000

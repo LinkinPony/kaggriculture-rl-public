@@ -1,0 +1,13 @@
+audit:
+  mode: compare
+  engine: null
+  source_run: outputs/learning/budget-q100-top10-2d-20260913-s68001
+  manifest: outputs/datasets/agronomy-v4-sequences-3d-20260917-q100/manifest.json
+  audit: outputs/analysis/agronomy-v4-20260917/data-verification.json
+  output: outputs/analysis/agronomy-v4-rl-20260917/native-compatibility.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/native-history
+  output_subdir: null

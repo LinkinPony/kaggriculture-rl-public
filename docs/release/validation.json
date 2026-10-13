@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "artifacts": [
+    {
+      "name": "s101701-u0250",
+      "archive_sha256": "e00340e6b30afc5bf9c88d2284a4c5f9dd509504513529a4b201adbcf0b4dc8b",
+      "structure": {
+        "unchanged_torchscript_payload_members": 372,
+        "python_source_unchanged": true
+      },
+      "games": [
+        {
+          "seed": 101301000,
+          "turns": 719,
+          "matched_seat_actions": 1438,
+          "trajectory_sha256": "5a66d4e731a97ce59c341e98c5c78852d6353af9e82b7c9827b0c85606b9a515",
+          "terminal_cash": [
+            86756.0,
+            87243.0
+          ],
+          "python": "3.11.15",
+          "torch": "2.13.0+cu130",
+          "passed": true,
+          "scope": "Original-versus-sanitized full native-engine game; not a new Kaggle score or timing certification."
+        },
+        {
+          "seed": 101301000,
+          "turns": 719,
+          "matched_seat_actions": 1438,
+          "trajectory_sha256": "5a66d4e731a97ce59c341e98c5c78852d6353af9e82b7c9827b0c85606b9a515",
+          "terminal_cash": [
+            86756.0,
+            87243.0
+          ],
+          "python": "3.12.3",
+          "torch": "2.12.0+cu132",
+          "passed": true,
+          "scope": "Original-versus-sanitized full native-engine game; not a new Kaggle score or timing certification."
+        }
+      ]
+    },
+    {
+      "name": "s100901-u0756",
+      "archive_sha256": "095eeb35753464ac36d66b2b0c539a5560de367330f6b3af335897449d046417",
+      "structure": {
+        "unchanged_torchscript_payload_members": 372,
+        "python_source_unchanged": true
+      },
+      "games": [
+        {
+          "seed": 101301000,
+          "turns": 719,
+          "matched_seat_actions": 1438,
+          "trajectory_sha256": "2039f2369b6b0866dcd0efefce68b9744c1a745238e15f6e46b0cdec54b9ac08",
+          "terminal_cash": [
+            92992.0,
+            92992.0
+          ],
+          "python": "3.11.15",
+          "torch": "2.13.0+cu130",
+          "passed": true,
+          "scope": "Original-versus-sanitized full native-engine game; not a new Kaggle score or timing certification."
+        },
+        {
+          "seed": 101301000,
+          "turns": 719,
+          "matched_seat_actions": 1438,
+          "trajectory_sha256": "2039f2369b6b0866dcd0efefce68b9744c1a745238e15f6e46b0cdec54b9ac08",
+          "terminal_cash": [
+            92992.0,
+            92992.0
+          ],
+          "python": "3.12.3",
+          "torch": "2.12.0+cu132",
+          "passed": true,
+          "scope": "Original-versus-sanitized full native-engine game; not a new Kaggle score or timing certification."
+        }
+      ]
+    }
+  ]
+}

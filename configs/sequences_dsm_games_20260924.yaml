@@ -1,0 +1,24 @@
+snapshot:
+  source: data/external/kaggriculture-dsm-replays/manifest.json
+  output: outputs/datasets/agronomy-v4-dsm-games-20260922-24-train-val-q100/source-manifests
+  created_since: '2026-09-22T00:00:00Z'
+  created_before: '2026-09-24T06:49:20.533067Z'
+  expected_episodes: 802
+data:
+  output: outputs/datasets/agronomy-v4-dsm-games-20260922-24-train-val-q100
+  raw: data/external
+  reuse: []
+  teachers: [DSM]
+  watch_manifests:
+    - ${snapshot.output}/selected.json
+  workers: 16
+  partition_seed: 62001
+  train_val: true
+  agronomy: true
+report: outputs/analysis/dsm-games-bc-20260924/data-verification.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/dsm-games-bc-20260924/${now:%Y%m%d-%H%M%S}
+  output_subdir: null

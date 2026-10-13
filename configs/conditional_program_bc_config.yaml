@@ -1,0 +1,3 @@
+defaults:
+  - conditional_program_bc: daily_raw
+  - _self_

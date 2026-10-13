@@ -1,0 +1,15 @@
+defaults:
+  - learning_demonstrations
+  - _self_
+experiment:
+  output_dir: outputs/learning/scratch-later-opponents-s49001
+  seed: 49001
+  train_seed: 1070000000
+  updates: 64
+  demonstrations:
+    manifest: data/external/grounded-demonstrations-20260905-06-v1/manifest.json
+    sha256: 1bc344ed3aa7bd7dbdd762f44c21350565e55f0c289dcb40a2ef3c0cfc39eac0
+  evaluation:
+    selection_seed: 1080000000
+    confirmation_seed: 1090000000
+    anchor_seeds: [98001, 98002]

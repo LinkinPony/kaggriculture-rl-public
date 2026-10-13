@@ -1,0 +1,22 @@
+# Direct duels among the refreshed clones, the KL-anchored runs and the two tracked bots.
+defaults:
+  - evaluation_round_robin_final
+  - _self_
+study:
+  output: outputs/analysis/round-robin-20260929-anchored
+  games: 64
+  seed: 9450000000
+  sampling_seed: 94500001
+  devices: [cuda:0, cuda:1, cuda:0, cuda:1, cuda:0, cuda:1]
+  candidates:
+    - {name: s100201-u0200, run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201, member: checkpoints/update-000200.pt}
+    - {name: s99001-u0200, path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0200.pt}
+    - {name: clone-dsm-v2, run: outputs/learning/team-clone-v2-dsm-bc-20260929-s100022}
+    - {name: clone-mmpq-v3, run: outputs/learning/team-clone-v3-mm-pq-bc-20260929-s100023}
+    - {name: s100401-u0200, run: outputs/learning/derived-v5b-m384-dsmclone2-kl-ppo50-20260929-s100401, member: checkpoints/update-000200.pt}
+    - {name: s100401-u0300, run: outputs/learning/derived-v5b-m384-dsmclone2-kl-ppo50-20260929-s100401, member: checkpoints/update-000300.pt}
+    - {name: s100501-u0200, run: outputs/learning/derived-v5b-m384-mmpqclone3-kl-ppo50-20260929-s100501, member: checkpoints/update-000200.pt}
+    - {name: s100501-u0300, run: outputs/learning/derived-v5b-m384-mmpqclone3-kl-ppo50-20260929-s100501, member: checkpoints/update-000300.pt}
+hydra:
+  run:
+    dir: tmp/hydra/round-robin-20260929-anchored

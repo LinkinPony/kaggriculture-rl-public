@@ -1,0 +1,20 @@
+defaults:
+  - learning_population_change
+  - _self_
+change:
+  run: outputs/learning/context-26m-20260908-s62001
+  population:
+    fraction: 0.0
+  script_population:
+    fraction: 0.5
+  qualification: outputs/analysis/context-new-scripts-20260908/qualification.json
+qualification:
+  output_dir: outputs/learning/context-new-scripts-qualification-20260908
+  updates: 8
+  evaluation_games: 8
+  official_games: 8
+  official_seed: 1860908400
+  inference_device: cuda:0
+hydra:
+  run:
+    dir: outputs/analysis/context-new-scripts-20260908/hydra

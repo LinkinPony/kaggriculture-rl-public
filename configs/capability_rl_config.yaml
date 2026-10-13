@@ -1,0 +1,3 @@
+defaults:
+  - capability_rl: long
+  - _self_

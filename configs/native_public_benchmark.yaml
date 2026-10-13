@@ -1,0 +1,12 @@
+benchmark:
+  games: 16
+  workers: 8
+  repeats: 2
+  seed: 1860914400
+  output: outputs/opponents/public-20260914/throughput.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/opponents/public-20260914/benchmark-hydra
+  output_subdir: null

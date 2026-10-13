@@ -1,0 +1,14 @@
+# DSM clone v3, plan B: the plan C recipe on the ten strongest versions of DSM's long-lived
+# 9/26-9/29 plan (1017/67 games). With 2.5x the data per epoch, the cosine budget is 10 epochs.
+defaults:
+- learning_dsm_clone_v3_plan_c_bc_20260930
+- _self_
+experiment:
+  demonstrations:
+    manifest: outputs/datasets/team-clone-v3-dsm-plan-b-20260930-train-val-q100/manifest.json
+    sha256: c0bc88eeaf2961b0c08ed414f1fe0ff46663bebdc28f7252e76db4ba0e486c69
+    epochs: 10
+    schedule:
+      warmup_shards: 128
+    early_stopping:
+      patience: 4

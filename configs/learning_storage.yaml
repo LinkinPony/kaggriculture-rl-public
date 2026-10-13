@@ -1,0 +1,13 @@
+storage:
+  action: plan
+  runs:
+    - outputs/learning/agronomy-v4-m384-bc100-3d-20260917-s73001
+    - outputs/learning/budget-q100-top10-2d-20260913-s68001
+  report: outputs/analysis/checkpoint-storage-20260918
+
+hydra:
+  run:
+    dir: ${storage.report}/hydra
+  output_subdir: null
+  job:
+    chdir: false

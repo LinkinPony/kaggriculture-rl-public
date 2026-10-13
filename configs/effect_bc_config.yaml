@@ -1,0 +1,3 @@
+defaults:
+  - effect_bc: rank8_v2
+  - _self_

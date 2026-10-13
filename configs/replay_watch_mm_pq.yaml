@@ -1,0 +1,26 @@
+watch:
+  raw: data/external/kaggriculture-mm-pq-replays
+  team_id: 16681125
+  team_name: M & M & P & Q
+  seed_submissions: [56440961]
+  seed_episodes: [111819427]
+  excluded_submissions: [56414341, 56484772]
+  scan_own_history: false
+  history_sources:
+    - data/external/kaggle-submission-56161402/episodes.json
+    - data/external/kaggriculture-model-comparison-20260919/raw/replay-selection.json
+  own_history_interval_seconds: 3600
+  poll_seconds: 3600
+  cycle_timeout_seconds: 3600
+  workers: 1
+  request_interval: 6.0
+  maximum_backoffs: 2
+  downloads_per_cycle: 200
+  once: false
+
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${watch.raw}/hydra
+  output_subdir: null

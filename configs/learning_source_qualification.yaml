@@ -1,0 +1,14 @@
+change:
+  run: outputs/learning/agronomy-v4-m384-bc100-3d-20260917-s73001
+  implementation: true
+  qualification: outputs/analysis/h200-throughput-20260920/qualification.json
+qualification:
+  output_dir: outputs/learning/h200-throughput-s73001-final-qualification-20260920
+  updates: 4
+  evaluation_games: 4
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/h200-throughput-20260920/hydra-qualification
+  output_subdir: null

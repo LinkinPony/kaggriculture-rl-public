@@ -1,0 +1,6 @@
+defaults:
+  - work_exploration_bias8
+  - _self_
+output_dir: outputs/production-policy/20260906-work-exploration-joint
+ppo:
+  ratio_scope: plan

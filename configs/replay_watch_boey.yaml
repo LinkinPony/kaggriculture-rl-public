@@ -1,0 +1,32 @@
+watch:
+  raw: data/external/kaggriculture-boey-replays
+  team_id: 16915014
+  team_name: Boey
+  seed_submissions: [56521745]
+  seed_episodes: []
+  excluded_submissions: [56414341, 56484772]
+  # Preserve the original inclusive submission cutoff; retired versions are excluded.
+  submitted_since: '2026-09-23T06:08:10.517Z'
+  daily_archive_root: data/external
+  scan_own_history: false
+  history_sources:
+    - data/external/kaggle-submission-56161402/episodes.json
+    - data/external/kaggriculture-model-comparison-20260919/raw/replay-selection.json
+    - data/external/kaggriculture-dsm-replays/manifest.json
+    - data/external/kaggriculture-mm-pq-replays/manifest.json
+    - data/external/kaggriculture-boey-diagnosis-20260923/manifest.json
+  own_history_interval_seconds: 3600
+  poll_seconds: 3600
+  cycle_timeout_seconds: 3600
+  workers: 1
+  request_interval: 6.0
+  maximum_backoffs: 2
+  downloads_per_cycle: 200
+  once: false
+
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${watch.raw}/hydra
+  output_subdir: null

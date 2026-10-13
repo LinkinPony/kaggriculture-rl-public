@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-09-09T15:01:58.790761+00:00",
+  "retrieval": {
+    "method": "kaggle kernels pull with metadata; literal AST and base64/gzip data extraction; notebook cells not executed",
+    "previous_manifest": "data/external/kaggriculture-shop-router-0908-20260908/manifest.json"
+  },
+  "agents": [
+    {
+      "agent_id": "kaito_v58",
+      "notebook_ref": "kaitofukami/238-238-known-streams-v58-minimax-closed-loop",
+      "notebook_id": 129684439,
+      "notebook_url": "https://www.kaggle.com/code/kaitofukami/238-238-known-streams-v58-minimax-closed-loop",
+      "main_path": "data/external/kaggriculture-notebook-survey-20260908/kaito-v58/main.py",
+      "sha256": "b041058ec187a8d0a01edc0eab8de068b53deca3e6c1973faf74ace6916ddcb9",
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "238/238 known frozen development streams; explicitly not an unseen holdout. Dynamic v57 comparison 2W/8T/2L."
+    },
+    {
+      "agent_id": "farming_v4",
+      "notebook_ref": "lynnsakurai/farming-score-v4-a-better-shop",
+      "notebook_id": 132681375,
+      "notebook_url": "https://www.kaggle.com/code/lynnsakurai/farming-score-v4-a-better-shop",
+      "main_path": "data/external/kaggriculture-notebook-survey-20260908/farming-v4/main.py",
+      "sha256": "1590394cf30c8989a3e1cfdb027d89b5ccd97c2fb4cdc14959a15555b2b2361a",
+      "evidence_level": "unverified",
+      "evidence_note": "Prefix-safe four-route runtime with budget and inventory guards. No independent strength claim."
+    },
+    {
+      "agent_id": "router_95",
+      "notebook_ref": "thomastschinkel/kaggriculture-95-5-win-rate-via-replay-routing",
+      "notebook_id": 133468879,
+      "notebook_url": "https://www.kaggle.com/code/thomastschinkel/kaggriculture-95-5-win-rate-via-replay-routing",
+      "main_path": "data/external/kaggriculture-notebook-survey-20260908/router-95/main.py",
+      "sha256": "8241246765098c50223d897739cb32076b71a303284d2e5e1c5f0fb495bb5a97",
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "Author reports 95.51% over 44,096 games against 689 held-out replay streams, 32 seeds, both seats. Contains fitted tree; research acquisition only."
+    },
+    {
+      "agent_id": "shop_router_0908",
+      "notebook_ref": "yhay81/shop-router-0908",
+      "notebook_id": 133520239,
+      "notebook_url": "https://www.kaggle.com/code/yhay81/shop-router-0908",
+      "main_path": "data/external/kaggriculture-shop-router-0908-20260908/main.py",
+      "sha256": "66585d1a5dbfe11c946a3c400278592f860342bc4a8f5e5f87f2a9293348984b",
+      "files": {
+        "actions.json": "171c8550addac9fdb49acb44af36f64b4eb54e34c561eb6f3d4a83e2dcc803a6",
+        "model.json": "e6a3a8eff5d499a1764001943c9989bfe5a8ed3da8a5ab457d53012c56f9a378",
+        "observation.py": "516aee86ca84550839ecc5217cff3464c896a6a69d338f91f7ccfa16fee73fa9"
+      },
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "Frozen four-tape router with public-state decisions at steps 144 and 648. Notebook replay-screen claims are not independent strength evidence."
+    },
+    {
+      "agent_id": "shop_router_0909",
+      "notebook_ref": "yhay81/shop-router-0909",
+      "notebook_id": 133670867,
+      "notebook_url": "https://www.kaggle.com/code/yhay81/shop-router-0909",
+      "main_path": "data/external/kaggriculture-shop-router-0909-20260909/main.py",
+      "sha256": "d6d74997dc5b483db63d8e39cafa1afeec0f366824e75107e109123f111e866b",
+      "files": {
+        "actions.json": "17d503f2fd20d59f9c0f14024d1e74a8add8bb9b5561d4d908b45deecb5495ef",
+        "LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      "evidence_level": "unverified",
+      "evidence_note": "Frozen 13-tape router with ordered-shop selection, daily worker queues and reactive sales; native conformance qualified separately."
+    }
+  ],
+  "rejected": []
+}

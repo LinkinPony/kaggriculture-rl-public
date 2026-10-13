@@ -1,0 +1,18 @@
+<!doctype html><html lang="zh"><meta charset="utf-8">
+<title>Kaggriculture 三日行为分析</title><style>
+body{font:15px system-ui,sans-serif;max-width:1400px;margin:32px auto;padding:0 20px;color:#203046;background:#f7f9fc}
+h1{font-size:26px}table{border-collapse:collapse;width:100%;background:white}th,td{padding:10px;border-bottom:1px solid #dae0e9;text-align:left}
+th{background:#e8eef7;cursor:pointer;position:sticky;top:0}tr:hover{background:#eff6ff}input{padding:10px;margin:10px;width:280px}summary{cursor:pointer}
+pre{max-height:420px;max-width:650px;overflow:auto;font-size:12px}img{width:100%;background:white}p{line-height:1.7}.hint{color:#57657a}
+</style><h1>Kaggriculture · DATE_RANGE</h1>
+<p>全量 EPISODE_COUNT 场回放。筛选队伍、点击表头排序、展开队伍查看逐日指标。图中编号对应表格首列。</p>
+<p class="hint">重复率按同日同席位比较；公开路线覆盖允许逐步换路线，仅是相似度上界。显示名不标识提交版本；高变化不能确认 RL。胜率来自官方精选样本。</p>
+<img src="behavior.png" alt="动作重复率与公开路线相似度以及分阶段稳定性">
+<input id="q" placeholder="搜索队伍或行为分组"><label><input type="checkbox" id="enough" style="width:auto">至少MINIMUM_GAMES条轨迹</label>
+<table><thead><tr><th>编号</th><th>显示名</th><th>行为分组</th><th>轨迹</th><th>单位重复率</th><th>公开路线覆盖</th><th>24步开局数</th><th>对外胜率</th><th>现金中位数</th></tr></thead>
+<tbody>TABLE_ROWS</tbody></table><script>
+const body=document.querySelector('tbody');
+function filter(){const q=document.querySelector('#q').value.toLowerCase();const enough=document.querySelector('#enough').checked;for(const r of body.rows){r.hidden=!r.innerText.toLowerCase().includes(q)||(enough&&Number(r.dataset.n)<MINIMUM_GAMES);}}
+document.querySelector('#q').oninput=filter;document.querySelector('#enough').onchange=filter;
+document.querySelectorAll('th').forEach((th,col)=>{let desc=false;th.onclick=()=>{desc=!desc;const rows=[...body.rows];const val=r=>r.cells[col].querySelector('summary')?.textContent||r.cells[col].textContent;rows.sort((a,b)=>{const x=val(a),y=val(b),nx=parseFloat(x.replaceAll(',','')),ny=parseFloat(y.replaceAll(',',''));return (desc?-1:1)*(Number.isFinite(nx)&&Number.isFinite(ny)?nx-ny:x.localeCompare(y));});rows.forEach(r=>body.appendChild(r));};});
+</script></html>

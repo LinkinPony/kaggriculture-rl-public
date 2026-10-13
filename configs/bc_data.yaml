@@ -1,0 +1,27 @@
+bc_data:
+  index_archive: data/external/kaggriculture-episodes-2026-08-25_2026-08-28/raw/kaggriculture-episodes-index.zip
+  source_archives:
+    - data/external/kaggriculture-episodes-2026-08-25_2026-08-28/raw/kaggriculture-episodes-2026-08-25.zip
+    - data/external/kaggriculture-episodes-2026-08-25_2026-08-28/raw/kaggriculture-episodes-2026-08-26.zip
+    - data/external/kaggriculture-episodes-2026-08-25_2026-08-28/raw/kaggriculture-episodes-2026-08-27.zip
+  output_dir: data/external/kaggriculture-episodes-2026-08-25_2026-08-28/compact-opening-diverse-v1
+  report_dir: outputs/bc-data/20260828-opening-diverse-v1
+  days: 3
+  episodes_per_shard: 8
+  workers: 48
+  maximum_rejection_fraction: 0.01
+  opening_diversity:
+    prefix_turns: 8
+    training_turns: 32
+    horizons: [1, 2, 4, 8]
+    maximum_episodes: 256
+    maximum_identical_prefixes: 2
+    seed: 20260828
+  contract:
+    replay_schema_version: 1
+    module_version: 1.32.7
+    agents: 2
+    episode_steps: 720
+    board_size: 10
+    max_market_orders: 10
+    unit_limit: 32

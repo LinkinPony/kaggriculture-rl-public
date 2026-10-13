@@ -1,0 +1,33 @@
+comparison:
+  checkpoint: outputs/analysis/kaggle-context3d-s65001-u2748-20260911-double/update-002748.pt
+  package: outputs/deployment/context3d-s65001-u2748-20260911-double/package
+  output_dir: outputs/analysis/temperature-u2748-20260911
+  seed: 1511000000
+  seeds: 32
+  opponents: [router_95, farming_v4, shop_router_0908, shop_router_0909, kaito_v58]
+  workers: 64
+replays:
+  directory: data/external/kaggle-submission-56161402
+  episodes: [107807755, 107806761, 107808764, 107809753, 107810794]
+  turns: 96
+sensitivity:
+  opponent: shop_router_0909
+  seed: 1522000000
+  streams: 16
+  draws: 128
+  workers: 8
+duels:
+  seed: 1533000000
+  seeds: 16
+  workers: 24
+stress:
+  output_dir: outputs/analysis/opening-stress-u2748-20260911
+  episode: 107807755
+  maximum_quantity: 80
+  neural_quantities: [0, 5, 10, 13, 15, 20, 25, 30, 35, 40, 60, 80]
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/temperature-u2748-20260911/hydra
+  output_subdir: null

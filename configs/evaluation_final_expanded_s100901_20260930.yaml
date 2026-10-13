@@ -1,0 +1,21 @@
+# s100901 candidates on the expanded final panel's seeds and opponents. Their actor geometry
+# differs from the MMPQ line's, so they run as a separate panel that still pairs seed by seed.
+defaults:
+  - evaluation_final_expanded_20260930
+  - _self_
+
+study:
+  output: outputs/analysis/final-candidates-20260930/expanded-s100901
+  devices: [cuda:1, cuda:0, cuda:1]
+  scope: >-
+    s100901 U480 (Kaggle 56689315) and its final U756 at T=0 against both live Kaggle anchors,
+    the v4 P MMPQ clone, the v5 DSM clone and the Tufa Labs, DECEM and Vadim team clones, all
+    at T=0, on the expanded panel's 128 fresh common seeds with both seats. Local proxy only.
+  candidates:
+    - name: s100901-u0480-base
+      temperature: 0
+      path: outputs/analysis/s100901-u0480-temperature-20260929/actors/s100901-u0480-t0.pt
+    - name: s100901-u0756-t0
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-s99001u1061-dsm2d-kl-ppo50-20260929-s100901
+      member: checkpoints/update-000756.pt

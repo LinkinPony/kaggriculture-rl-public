@@ -1,0 +1,13 @@
+defaults:
+  - script_neural
+  - _self_
+
+panel:
+  output: outputs/analysis/script-research-20260915/neural-r1-confirmation
+  variants:
+    - name: baseline
+    - name: revenue_lead_r1
+      market: lead
+      lead: 6
+      priority: true
+  seeds: [1860916501, 1860916502, 1860916503, 1860916504, 1860916505, 1860916506, 1860916507, 1860916508, 1860916509, 1860916510, 1860916511, 1860916512, 1860916513, 1860916514, 1860916515, 1860916516]

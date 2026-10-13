@@ -1,0 +1,15 @@
+analysis:
+  output: outputs/analysis/strategy-gap-20260928/replays
+  submissions: [56608595, 56614434, 56623562]
+  workers: 4
+  manifests:
+    - data/external/kaggriculture-dsm-replays/manifest.json
+    - data/external/kaggriculture-mm-pq-replays/manifest.json
+    - data/external/kaggriculture-decem-replays/manifest.json
+    - data/external/kaggriculture-boey-replays/manifest.json
+    - data/external/kaggriculture-vadim-replays/manifest.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/strategy-gap-replays

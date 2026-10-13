@@ -1,0 +1,29 @@
+defaults:
+- learning_watch6_active_recent_bc_20260926
+- _self_
+experiment:
+  output_dir: outputs/learning/derived-v5b-m384-u1729-boey388-watch4-bc100-20260928-s96001
+  seed: 96001
+  train_seed: 7700000000
+  resume: false
+  pretraining_only: true
+  initial_weights:
+    run: outputs/learning/derived-v5b-m384-watch6-ppo50-warmup300-20260927-s95001
+    checkpoint: checkpoints/update-001729.pt
+    sha256: 30f27cc28685fbecfa45a525a33031e2cabca073cf3dce9cafbdc0ea46c5e5b4
+  evaluation:
+    selection_seed: 7720000000
+    confirmation_seed: 7721000000
+    anchor_seeds:
+    - 460001
+    - 460002
+  demonstrations:
+    manifest: outputs/datasets/derived-v5b-boey-all-watch4-since-20260927-train-val-q100/manifest.json
+    sha256: 40dcf1fb07f120d682639b1438d9e125b8b1ed719864bb0ed51a1edc84c8702f
+    epochs: 100
+    learning_rate: 1.0e-05
+    epoch_checkpoint_interval: 4
+    early_stopping:
+      patience: 6
+      min_delta: 0.001
+    behavior_seed: 7722000000

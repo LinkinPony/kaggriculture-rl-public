@@ -1,0 +1,13 @@
+# s99001 U588 (Kaggle 56644629 ran it at T=1) at T=0 against U200 and the baseline opponents
+# on the baseline's seeds. The path is the snapshot copy of checkpoint 1e70d30a.
+defaults:
+  - evaluation_final_candidates_20260930
+  - _self_
+
+study:
+  output: outputs/analysis/final-candidates-20260930/s99001-u0588
+  devices: [cuda:0, cuda:1, cuda:0, cuda:1, cuda:0, cuda:1, cuda:0, cuda:1]
+  candidates:
+    - name: s99001-u0588-t0
+      temperature: 0
+      path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0588.pt

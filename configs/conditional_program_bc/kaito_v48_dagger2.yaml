@@ -1,0 +1,46 @@
+# Second student-state correction pass from the first aggregate challenger.
+dataset_dir: data/external/conditional-program-kaito-v48-dagger2-20260902-v1
+output_dir: outputs/conditional-program-bc/20260902-kaito-v48-dagger2-labels-v1
+initial_actor: outputs/turn-policy/20260828-opening-diverse-bc2-v1/actor-fp16.pt
+initial_checkpoint: outputs/conditional-program-bc/20260902-kaito-v48-dagger-aggregate1-v1/checkpoints/best.pt
+
+source: null
+demonstration_source: null
+aggregate_source: null
+correction_source:
+  teacher: kaito_v48
+  opponent: kaito_v39
+  student_checkpoint: outputs/conditional-program-bc/20260902-kaito-v48-dagger-aggregate1-v1/checkpoints/best.pt
+  public_agent_manifest: data/external/kaggriculture-public-notebooks-2026-08-28/manifest.json
+  seed_start: 7300000
+  seeds: 256
+  batch_seeds: 64
+  workers: 48
+  device: cuda:0
+  host_memory_limit_gib: 16
+  validation_fraction: 0.1
+  test_fraction: 0.1
+
+abi:
+  unit_limit: 32
+
+model:
+  model_width: 128
+  feedforward_width: 384
+
+optimization:
+  epochs: 3
+  batch_sequences: 4
+  learning_rate: 0.00001
+  weight_decay: 0.00001
+  outcome_loss_weight: 0.1
+  gradient_clip: 1.0
+  seed: 20260902
+  device: cuda:0
+  cpu_threads: 8
+  loader_workers: 8
+  prefetch_shards: 16
+
+environment:
+  episodeSteps: 720
+  maxMarketOrdersPerTurn: 10

@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "ref": "linkinpony/kaggriculture-rl-final-submissions",
+  "url": "https://www.kaggle.com/datasets/linkinpony/kaggriculture-rl-final-submissions",
+  "version": 2,
+  "is_private_at_verification": true,
+  "verified_at": "2026-10-13T03:40:58.025831+00:00",
+  "download_verification": {
+    "files": 46,
+    "all_sha256_match": true,
+    "method": "Kaggle authenticated per-file downloads",
+    "sha256sums_sha256": "a212feeb97a0136507b219d58a7a1b569541379c77b7a2f77d19660cb65915e1",
+    "scope": "Every downloaded file, including both expanded model directories and SHA256SUMS, matches the prepared sanitized distribution."
+  },
+  "model_directories": [
+    "s101701-u0250",
+    "s100901-u0756"
+  ],
+  "submission_ids": [
+    56721459,
+    56721201
+  ],
+  "whole_dataset_download_at_verification": {
+    "http_status": 404,
+    "per_file_downloads": "available and verified",
+    "documented_download_method": "README uses per-file downloads."
+  }
+}

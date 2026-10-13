@@ -1,0 +1,22 @@
+benchmark:
+  run: outputs/learning/gtrxl-m384-3d-20260916-s70001
+  output: outputs/analysis/gtrxl-20260916/pure-optimized-batch32.json
+  repetitions: 3
+  pure_selfplay: true
+  sequence_games_per_rank: 32
+  actor_learning_rate: 7.5e-6
+  target_kl: 0.05
+  kl_control: early_stop
+  execution:
+    devices: [cuda:0, cuda:1]
+    microbatch_rows: 384
+    workers_per_rank: 8
+    cpu_threads_per_rank: 2
+    compile_inference: false
+    fused_loss: false
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/gtrxl-20260916/hydra-benchmark
+  output_subdir: null

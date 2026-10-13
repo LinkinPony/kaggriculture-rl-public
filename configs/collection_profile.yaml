@@ -1,0 +1,16 @@
+benchmark:
+  run: outputs/learning/agronomy-v4-mixed-rl-qualification-20260917
+  rank: 0
+  workers: 8
+  worker_counts: null
+  optimization_sizes: null
+  optimizer_repeats: 2
+  updates: [3, 4, 3, 4]
+  report: outputs/analysis/agronomy-v4-throughput-20260917/collection.json
+
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/agronomy-v4-throughput-20260917/hydra
+  output_subdir: null

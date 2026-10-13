@@ -1,0 +1,15 @@
+defaults:
+  - cadence_long
+  - _self_
+checkpoint: outputs/releases/20260906-before-script-mix/checkpoint.pt
+output_dir: outputs/production-policy/20260906-cadence12-script50-long-v1
+ppo:
+  population: script_mix
+  script_fraction: 0.5
+  script_opponents:
+    - kaito_v48
+    - kaito_v39
+    - boatlee_v21
+    - mugundh_v21
+  # Script games contribute one learned seat; retain eight global optimizer steps.
+  batch_rows: 11520

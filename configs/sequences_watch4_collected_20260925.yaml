@@ -1,0 +1,30 @@
+collection:
+  output: outputs/datasets/derived-v5b-watch4-collected-since-20260924-train-val-q100/source-manifests
+  sources:
+    dsm: data/external/kaggriculture-dsm-replays/manifest.json
+    mm-pq: data/external/kaggriculture-mm-pq-replays/manifest.json
+    decem: data/external/kaggriculture-decem-replays/manifest.json
+    boey: data/external/kaggriculture-boey-replays/manifest.json
+  collected_since: '2026-09-24T00:00:00Z'
+data:
+  output: outputs/datasets/derived-v5b-watch4-collected-since-20260924-train-val-q100
+  raw: data/external
+  reuse: []
+  teachers: [DSM, 'M & M & P & Q', DECEM, Boey]
+  watch_manifests:
+    - ${collection.output}/dsm/selected.json
+    - ${collection.output}/mm-pq/selected.json
+    - ${collection.output}/decem/selected.json
+    - ${collection.output}/boey/selected.json
+  workers: 32
+  partition_seed: 62001
+  train_val: true
+  agronomy: true
+  derived: true
+report: outputs/analysis/watch4-collected-since-20260924-bc-20260925/data-verification.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/watch4-collected-20260925/${now:%Y%m%d-%H%M%S}
+  output_subdir: null

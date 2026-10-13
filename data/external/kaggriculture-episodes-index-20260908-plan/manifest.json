@@ -1,0 +1,70 @@
+{
+  "downloaded_at": 1788837953.2395406,
+  "source": "https://www.kaggle.com/datasets/kaggle/kaggriculture-episodes-index",
+  "sha256": "693695e3098ddae031b0cafdf1800ce47f0ffbd8bac6665340a67ceeba577d41",
+  "latest_dates": [
+    {
+      "date": "2026-09-01",
+      "daily_dataset_slug": "kaggriculture-episodes-2026-09-01",
+      "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/kaggriculture-episodes-2026-09-01",
+      "episode_count": "664",
+      "total_bytes": "21445226662",
+      "top_avg_score": "2934.241568",
+      "median_avg_score": "2802.583629"
+    },
+    {
+      "date": "2026-09-02",
+      "daily_dataset_slug": "kaggriculture-episodes-2026-09-02",
+      "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/kaggriculture-episodes-2026-09-02",
+      "episode_count": "660",
+      "total_bytes": "21470178426",
+      "top_avg_score": "2960.829809",
+      "median_avg_score": "2883.545756"
+    },
+    {
+      "date": "2026-09-03",
+      "daily_dataset_slug": "kaggriculture-episodes-2026-09-03",
+      "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/kaggriculture-episodes-2026-09-03",
+      "episode_count": "669",
+      "total_bytes": "21468486973",
+      "top_avg_score": "2992.905829",
+      "median_avg_score": "2912.860207"
+    },
+    {
+      "date": "2026-09-04",
+      "daily_dataset_slug": "kaggriculture-episodes-2026-09-04",
+      "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/kaggriculture-episodes-2026-09-04",
+      "episode_count": "668",
+      "total_bytes": "21442447873",
+      "top_avg_score": "3019.329575",
+      "median_avg_score": "2930.335032"
+    },
+    {
+      "date": "2026-09-05",
+      "daily_dataset_slug": "kaggriculture-episodes-2026-09-05",
+      "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/kaggriculture-episodes-2026-09-05",
+      "episode_count": "664",
+      "total_bytes": "21458110997",
+      "top_avg_score": "3027.017037",
+      "median_avg_score": "2877.479597"
+    },
+    {
+      "date": "2026-09-06",
+      "daily_dataset_slug": "kaggriculture-episodes-2026-09-06",
+      "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/kaggriculture-episodes-2026-09-06",
+      "episode_count": "662",
+      "total_bytes": "21464632922",
+      "top_avg_score": "3017.729278",
+      "median_avg_score": "2862.661763"
+    },
+    {
+      "date": "2026-09-07",
+      "daily_dataset_slug": "kaggriculture-episodes-2026-09-07",
+      "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/kaggriculture-episodes-2026-09-07",
+      "episode_count": "663",
+      "total_bytes": "21446433483",
+      "top_avg_score": "3020.888017",
+      "median_avg_score": "2834.194606"
+    }
+  ]
+}

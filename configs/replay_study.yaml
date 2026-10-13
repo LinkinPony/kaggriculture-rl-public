@@ -1,0 +1,13 @@
+analysis:
+  manifest: outputs/analysis/replay-insights-20260925-27/selection.json
+  output: outputs/analysis/replay-insights-20260925-27
+  workers: 16
+  excluded_episodes:
+    113215371: Fourth Quadrant enters TIMEOUT at frame 354 despite final DONE status.
+  focus_submissions: [56574712, 56580983, 56593706]
+
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/replay-insights-20260925-27

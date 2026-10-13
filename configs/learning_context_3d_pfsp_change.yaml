@@ -1,0 +1,25 @@
+defaults:
+  - learning_context_pfsp_change
+  - _self_
+change:
+  run: outputs/learning/context-26m-3d-20260910-s65001
+  population:
+    sources:
+      - run: outputs/learning/context-26m-20260908-s62001
+        state_sha256: 36b9bd770861a95583b586cee9f15c21b344b8c238ffee668f8d1e3fb8dc8179
+        checkpoints:
+          - checkpoints/update-000512.pt
+          - checkpoints/update-001536.pt
+          - checkpoints/update-002560.pt
+          - checkpoints/update-003584.pt
+          - checkpoints/update-004302.pt
+  qualification: outputs/analysis/context3d-mixed-pfsp-20260910/qualification.json
+  qualification_sha256: ${oc.env:PFSP_QUALIFICATION_SHA256,0000000000000000000000000000000000000000000000000000000000000000}
+qualification:
+  output_dir: outputs/learning/context3d-mixed-pfsp-qualification-20260910
+  updates: 8
+  evaluation_games: 2
+  official_seed: 1860911200
+hydra:
+  run:
+    dir: outputs/analysis/context3d-mixed-pfsp-20260910/hydra

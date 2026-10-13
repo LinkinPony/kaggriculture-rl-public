@@ -1,0 +1,8 @@
+defaults:
+  - rank8
+  - _self_
+
+# Complete-game train/validation/test source for the first random BC lineage.
+output_dir: data/external/kaggle-submission-55708706-teacher/intent-ledger-v4-rank8-bc256
+report_dir: outputs/bc-data/20260904-rank8-intent-ledger-v4-bc256
+games: 256

@@ -1,0 +1,24 @@
+# Final direct comparison of submission candidates before choosing the last two Kaggle bots.
+defaults:
+  - evaluation_panel
+  - _self_
+study:
+  output: outputs/analysis/final-round-robin-20260929
+  mode: round_robin
+  games: 128
+  seed: 9430000000
+  sampling_seed: 94300001
+  memory_fraction: 0.04
+  devices: [cuda:0, cuda:1, cuda:0, cuda:1, cuda:0, cuda:1, cuda:0, cuda:1]
+  scope: >-
+    Direct duels among the submission candidates; local only, not the Kaggle ladder.
+  candidates:
+    - {name: s100201-u0200, run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201, member: checkpoints/update-000200.pt}
+    - {name: s100201-u0100, run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201, member: checkpoints/update-000100.pt}
+    - {name: s99001-u0200, path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0200.pt}
+    - {name: clone-dsm, run: outputs/learning/team-clone-dsm-bc-20260929-s100012}
+    - {name: s99001-u0588, path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0588.pt}
+  opponents: []
+hydra:
+  run:
+    dir: tmp/hydra/final-round-robin-20260929

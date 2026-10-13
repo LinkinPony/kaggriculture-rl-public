@@ -1,0 +1,3 @@
+defaults:
+  - rl: terminal_wdl
+  - _self_

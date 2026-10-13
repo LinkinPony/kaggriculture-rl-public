@@ -1,0 +1,18 @@
+defaults:
+  - learning_compact_20260921
+  - _self_
+experiment:
+  output_dir: outputs/learning/compact289-v4-selected8-bc100-20260921-s74001
+  pretraining_only: true
+  demonstrations:
+    manifest: outputs/datasets/agronomy-v4-selected8-5d-20260921-q100/manifest.json
+    sha256: 8def06dbcad7881bcb4b3c2fbc2049c702cb050a1a8aaeb8121dac66088c34eb
+    epochs: 100
+    early_stopping: null
+    batch_rows: 11504
+    learning_rate: 0.0001
+    checkpoint_shards: 16
+    distributed: true
+    behavior_games: 0
+    control_games: 0
+    behavior_seed: 4802000000

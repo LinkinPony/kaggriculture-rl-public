@@ -1,0 +1,86 @@
+# Search-augmented capability PPO with exhaustive frozen-target candidate-Q.
+direct_capability: kaito_v48
+resume_checkpoint: null
+public_agent_manifest: data/external/kaggriculture-public-notebooks-2026-08-28/manifest.json
+output_dir: outputs/capability-rl/20260829-exhaustive-target-q-ppo-v2
+
+seed: 20260829
+rollout_seed_start: 3000000
+updates: 300000
+opponents: [kaito_v48, mugundh_v21, boatlee_v21, kaito_v39]
+opponent_weights:
+  kaito_v48: 0.25
+  mugundh_v21: 0.25
+  boatlee_v21: 0.25
+  kaito_v39: 0.25
+paired_seats: true
+selection_seeds: [74000, 74001, 74002, 74003]
+confirmation_seeds: [74100, 74101, 74102, 74103]
+
+abi:
+  version: 1
+  max_candidates: 16
+  max_edits: 8
+  mode_tokens: 4
+  integer_fields: 6
+  edit_value_features: 4
+  root_features: 90
+  candidate_features: 32
+  search_features: 0
+  integer_vocab_sizes: [4, 6, 12, 1024, 64, 8]
+
+model:
+  model_width: 128
+  feedforward_width: 256
+  initial_search_gate: 0.98
+  search_logit_limit: 16.0
+
+versions:
+  proposal: capability-proposal-v1
+  search: exhaustive-frozen-target-candidate-q-epsilon-v2
+  executor: capability-executor-v1
+
+search:
+  candidate_value_scale: 4.0
+  replay_prior_logit: 8.0
+  behavior_exploration_epsilon: 0.02
+  target_sync_interval: 10
+
+objective:
+  reward: terminal_wdl
+  discount: 1.0
+  gae_lambda: 1.0
+
+optimization:
+  ppo_epochs: 2
+  episodes_per_minibatch: 32
+  learning_rate: 0.0001
+  weight_decay: 0.00001
+  clip_epsilon: 0.1
+  value_loss_weight: 1.0
+  candidate_value_loss_weight: 1.0
+  entropy_weight: 0.001
+  target_kl: 0.02
+  gradient_clip: 1.0
+  normalize_advantage: true
+
+rollout:
+  seeds_per_update: 384
+  batch_games: 768
+  cpu_workers: 48
+  inference_batch_size: 768
+  host_memory_limit_gib: 256
+  gpu_memory_fraction: 0.70
+
+checkpoint:
+  rolling_interval: 5
+  rolling_keep: 5
+  permanent_interval: 50
+
+devices: [cuda:0]
+cpu_threads: 8
+act_timeout_seconds: 1.0
+remaining_overage_seconds: 60.0
+environment:
+  episodeSteps: 720
+  maxMarketOrdersPerTurn: 10

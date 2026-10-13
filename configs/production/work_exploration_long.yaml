@@ -1,0 +1,13 @@
+defaults:
+  - work_exploration_joint
+  - _self_
+checkpoint: outputs/analysis/20260906-work-exploration/prior-strength/bias-6/initial.pt
+output_dir: outputs/production-policy/20260906-work-exploration-long
+bc:
+  greedy_prior_bias: 6.0
+ppo:
+  updates: 300
+  seed_start: 16000000
+  bc_weight: 0.0
+  checkpoint_interval: 1
+  evaluation_interval: 10

@@ -1,0 +1,4 @@
+defaults:
+  - model: turn_transformer
+  - experiment: kaggle_3d_bc
+  - _self_

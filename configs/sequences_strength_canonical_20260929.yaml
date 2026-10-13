@@ -1,0 +1,35 @@
+# Refresh of the 2026-09-28 strength rule on the latest collector snapshots: rate every
+# decisive game since 9/26, admit versions submitted since 9/27 12:00 UTC within 1.0 logit.
+selection:
+  output: ${data.output}/source-manifests
+  sources:
+    dsm: data/external/kaggriculture-dsm-replays/manifest.json
+    mm-pq: data/external/kaggriculture-mm-pq-replays/manifest.json
+    boey: data/external/kaggriculture-boey-replays/manifest.json
+    decem: data/external/kaggriculture-decem-replays/manifest.json
+    vadim: data/external/kaggriculture-vadim-replays/manifest.json
+  rated_since: '2026-09-26T00:00:00Z'
+  submitted_since: '2026-09-27T12:00:00Z'
+  margin: 1.0
+  uncertainty: 2.0
+  precision: 0.25
+  excluded_submissions: [56652700, 56654377]
+data:
+  output: outputs/datasets/derived-v5b-strength-top-canonical-20260929-train-val-q100
+  raw: data/external
+  reuse: []
+  teachers: ???
+  watch_manifests: ???
+  workers: 16
+  partition_seed: 62001
+  train_val: true
+  agronomy: true
+  derived: true
+  canonical_market: true
+report: outputs/analysis/strength-canonical-bc-20260929/data-verification.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/strength-canonical-bc-20260929/${now:%Y%m%d-%H%M%S}
+  output_subdir: null

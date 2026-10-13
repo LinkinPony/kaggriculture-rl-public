@@ -1,0 +1,21 @@
+arena:
+  runs:
+    - outputs/learning/scratch-reverse-volume-v2-s45001
+    - outputs/learning/scratch-reverse-shared-v2-s45001
+  opponents:
+    - run: outputs/learning/scratch-curriculum-s43001
+      member: checkpoints/update-000064.pt
+    - run: outputs/learning/scratch-curriculum-s43002
+      member: checkpoints/update-000064.pt
+  updates: [0, 16, 32, 64, 96, 128]
+  output_dir: outputs/analysis/scratch-reverse-v2-common-arena
+  seed: 940000000
+  games_per_opponent: 64
+  device: cuda:0
+  role: selection
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${arena.output_dir}/hydra
+  output_subdir: null

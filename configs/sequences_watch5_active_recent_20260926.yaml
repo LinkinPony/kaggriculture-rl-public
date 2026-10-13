@@ -1,0 +1,35 @@
+selection:
+  output: ${data.output}/source-manifests
+  raw: data/external/kaggriculture-watch5-active-20260926
+  sources:
+    dsm: data/external/kaggriculture-dsm-replays/manifest.json
+    mm-pq: data/external/kaggriculture-mm-pq-replays/manifest.json
+    decem: data/external/kaggriculture-decem-replays/manifest.json
+    boey: data/external/kaggriculture-boey-replays/manifest.json
+    vadim: data/external/kaggriculture-vadim-replays/manifest.json
+  # Current public submissions OR submitted since 2026-09-25 00:01 UTC+8.
+  submitted_since: '2026-09-24T16:01:00Z'
+  excluded_submissions: [56414341, 56484772]
+data:
+  output: outputs/datasets/derived-v5b-watch5-active-recent-20260926-train-val-q100
+  raw: data/external
+  reuse: []
+  teachers: [DSM, 'M & M & P & Q', DECEM, Boey, Vadim Vasilenko]
+  watch_manifests:
+    - ${selection.output}/dsm/selected.json
+    - ${selection.output}/mm-pq/selected.json
+    - ${selection.output}/decem/selected.json
+    - ${selection.output}/boey/selected.json
+    - ${selection.output}/vadim/selected.json
+  workers: 24
+  partition_seed: 62001
+  train_val: true
+  agronomy: true
+  derived: true
+report: outputs/analysis/watch5-active-bc-20260926/data-verification.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/watch5-active-recent-20260926/${now:%Y%m%d-%H%M%S}
+  output_subdir: null

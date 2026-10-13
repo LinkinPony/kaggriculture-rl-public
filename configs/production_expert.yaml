@@ -1,0 +1,23 @@
+defaults:
+  - production: work_expert
+  - _self_
+proposals:
+  - {decisions: 1, temperature: 0.3}
+  - {decisions: 1, temperature: 0.6}
+  - {decisions: 4, temperature: 0.3}
+  - {decisions: 4, temperature: 0.6}
+  - {decisions: 16, temperature: 0.3}
+  - {decisions: 16, temperature: 1.0}
+iterations: 3
+learning_rate: 0.00001
+retention_weight: 1.0
+learner_rows: 11520
+microbatch_rows: 512
+maximum_plan_kl: 0.01
+backtrack_attempts: 6
+evaluation_interval: 3
+hydra:
+  run:
+    dir: ${production.output_dir}/hydra
+  job:
+    chdir: false

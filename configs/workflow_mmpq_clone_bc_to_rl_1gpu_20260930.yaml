@@ -1,0 +1,24 @@
+# Hand the completed v4 MMPQ clone (s101001) to single-GPU PPO through validation selection.
+defaults:
+- learning_mmpq_clone_v4_bc_20260930@bc_stage
+- learning_mmpq_clone_kl_ppo50_1gpu_20260930@rl_stage
+- _self_
+bc_stage:
+  experiment:
+    output_dir: outputs/learning/mmpq-clone-v4-parallel-bc-20260930-s101001
+    seed: 101001
+    device: cuda:0
+    execution:
+      devices: [cuda:0]
+workflow:
+  output_dir: outputs/workflows/mmpq-clone-v4-bc-to-rl-1gpu-20260930
+  bc: ${bc_stage.experiment}
+  rl: ${rl_stage.experiment}
+  historical_archive: ${rl_stage.historical_archive}
+  attached_bc: true
+hydra:
+  run:
+    dir: ${workflow.output_dir}/hydra
+  output_subdir: null
+  job:
+    chdir: false

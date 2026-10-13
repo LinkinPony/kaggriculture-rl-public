@@ -1,0 +1,14 @@
+audit:
+  runs:
+    - outputs/learning/scratch-work-s41001
+    - outputs/learning/scratch-work-s41002
+  output_dir: outputs/analysis/scratch-work-behavior
+  games: 8
+  seed: 730000000
+  device: cuda:0
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${audit.output_dir}/hydra
+  output_subdir: null

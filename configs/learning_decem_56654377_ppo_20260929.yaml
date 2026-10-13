@@ -1,0 +1,63 @@
+# PPO template: workflow supplies validation-best DECEM BC actor; DSM U139 supplies critic.
+defaults:
+- learning_dsm_clone2_kl_ppo50_20260929
+- learning_dsm_clone2_kl_ppo50_20260929@predecessor
+- _self_
+experiment:
+  output_dir: outputs/learning/derived-v5b-m384-decem56654377-kl-ppo50-20260929-s100701
+  initial_weights: null
+  initial_critic:
+    run: outputs/learning/derived-v5b-m384-dsmclone2-kl-ppo50-20260929-s100401
+    checkpoint: checkpoints/update-000139.pt
+    sha256: d2ea263b58fc711eb667bd63378ce45ddda100eaf1ff50ea18b48435ceab2adc
+  seed: 100701
+  train_seed: 8800000000
+  games: 128
+  population:
+    pfsp:
+      inheritance:
+        discount: 0.5
+      mastery:
+        min_games: 64
+        score_threshold: 0.95
+        review_fraction: 0.05
+    sources:
+    - ${....predecessor.experiment.population.sources.0}
+    - ${....predecessor.experiment.population.sources.1}
+    - ${....predecessor.experiment.population.sources.2}
+    - ${....predecessor.experiment.population.sources.3}
+    - ${....predecessor.experiment.population.sources.4}
+    - ${....predecessor.experiment.population.sources.5}
+    - ${....predecessor.experiment.population.sources.6}
+    - ${....predecessor.experiment.population.sources.7}
+    - ${....predecessor.experiment.population.sources.8}
+    - ${....predecessor.experiment.population.sources.9}
+    - ${....predecessor.experiment.population.sources.10}
+    - ${....predecessor.experiment.population.sources.11}
+    - ${....predecessor.experiment.population.sources.12}
+    - ${....predecessor.experiment.population.sources.13}
+    - ${....predecessor.experiment.population.sources.14}
+    - ${....predecessor.experiment.population.sources.15}
+    - ${....predecessor.experiment.population.sources.16}
+    - ${....predecessor.experiment.population.sources.17}
+    - ${....predecessor.experiment.population.sources.18}
+    - ${....predecessor.experiment.population.sources.19}
+    - run: outputs/learning/derived-v5b-m384-dsmclone2-kl-ppo50-20260929-s100401
+      state_sha256: d3501d8c6a0961858bab9351e7ce770b723c316b9c0ea03a3a327af7c72946bb
+      checkpoints:
+      - initial.pt
+      - checkpoints/update-000050.pt
+      - checkpoints/update-000064.pt
+      - checkpoints/update-000100.pt
+      - checkpoints/update-000128.pt
+      - checkpoints/update-000136.pt
+      - checkpoints/update-000139.pt
+  evaluation:
+    selection_seed: 8820000000
+    confirmation_seed: 8821000000
+    anchor_seeds: [500001, 500002]
+  execution:
+    devices: [cuda:0, cuda:1]
+historical_archive:
+  run: outputs/learning/derived-v5b-m384-dsmclone2-kl-ppo50-20260929-s100401
+  state_sha256: d3501d8c6a0961858bab9351e7ce770b723c316b9c0ea03a3a327af7c72946bb

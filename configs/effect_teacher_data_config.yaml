@@ -1,0 +1,3 @@
+defaults:
+  - effect_teacher_data: rank8_bc256
+  - _self_

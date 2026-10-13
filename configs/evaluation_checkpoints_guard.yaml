@@ -1,0 +1,16 @@
+supervision:
+  manifest: outputs/analysis/s99001-checkpoint-comparison-20260928/manifest.json
+  schedule: outputs/analysis/s99001-checkpoint-comparison-20260928/pilot-schedule.json
+  output: outputs/analysis/s99001-checkpoint-comparison-20260928/pilot
+  devices: [cuda:1]
+  batch_games: 32
+  memory_fraction: 0.06
+  minimum_free_mib: 12288
+  maximum_seconds: 28800
+  stale_training_seconds: 900
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${supervision.output}/hydra-supervisor
+  output_subdir: null

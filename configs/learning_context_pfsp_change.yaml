@@ -1,0 +1,26 @@
+defaults:
+  - learning_context_router_0909_change
+  - _self_
+change:
+  population:
+    fraction: 0.25
+    snapshot_interval: 64
+    capacity: 16
+    pfsp:
+      power: 2.0
+      uniform_fraction: 0.2
+      latest_fraction: 0.1
+      prior_games: 8.0
+      half_life_updates: 128.0
+      max_effective_games: 256.0
+      script_min_pairs_per_rank: 1
+      recent_snapshots: 4
+      concurrent_inference: true
+  qualification: outputs/analysis/context-pfsp-20260910/qualification.json
+qualification:
+  output_dir: outputs/learning/context-pfsp-qualification-20260910
+  updates: 8
+  official_seed: 1860910400
+hydra:
+  run:
+    dir: outputs/analysis/context-pfsp-20260910/hydra

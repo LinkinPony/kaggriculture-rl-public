@@ -1,0 +1,111 @@
+change:
+  run: outputs/learning/budget-q100-top10-2d-20260913-s68001
+  population:
+    fraction: 0.5
+    snapshot_interval: 64
+    capacity: 96
+    pfsp:
+      power: 2.0
+      uniform_fraction: 0.2
+      latest_fraction: 0.1
+      prior_games: 8.0
+      half_life_updates: 128.0
+      max_effective_games: 256.0
+      script_min_pairs_per_rank: 1
+      recent_snapshots: 4
+      concurrent_inference: true
+      script_sampling: independent_pfsp
+    sources:
+    - run: outputs/learning/context-26m-3d-20260910-s65001
+      state_sha256: 079f2c9faac9aea4ab4c702e25325dece09946a36b6d79530797c8aa7cb5eabd
+      checkpoints:
+      - pretraining/shard-000896.pt
+      - checkpoints/update-000124.pt
+      - checkpoints/update-000256.pt
+      - checkpoints/update-000512.pt
+      - checkpoints/update-000544.pt
+      - checkpoints/update-000768.pt
+      - checkpoints/update-001024.pt
+      - checkpoints/update-001152.pt
+      - checkpoints/update-001536.pt
+      - checkpoints/update-001728.pt
+      - checkpoints/update-002048.pt
+      - checkpoints/update-002176.pt
+      - checkpoints/update-002560.pt
+      - checkpoints/update-002688.pt
+      - checkpoints/update-003072.pt
+      - checkpoints/update-003328.pt
+      - checkpoints/update-003392.pt
+      - checkpoints/update-003456.pt
+      - checkpoints/update-003520.pt
+      - checkpoints/update-003548.pt
+      - checkpoints/update-003552.pt
+      - checkpoints/update-003556.pt
+      - checkpoints/update-003560.pt
+      - checkpoints/update-003564.pt
+      - checkpoints/update-003568.pt
+      - checkpoints/update-003572.pt
+      - checkpoints/update-003575.pt
+    - run: outputs/learning/context-26m-20260908-s62001
+      state_sha256: 36b9bd770861a95583b586cee9f15c21b344b8c238ffee668f8d1e3fb8dc8179
+      checkpoints:
+      - checkpoints/update-000512.pt
+      - checkpoints/update-001536.pt
+      - checkpoints/update-002560.pt
+      - checkpoints/update-003584.pt
+      - checkpoints/update-004302.pt
+    - run: outputs/learning/budget-q100-3d-20260912-s67001
+      state_sha256: 7c8ebba206034e8c74692a6aeffb29d623adb43d67763fb8bc66412c24e7ff42
+      checkpoints:
+      - pretraining/shard-000884.pt
+      - checkpoints/update-000064.pt
+      - checkpoints/update-000128.pt
+      - checkpoints/update-000192.pt
+      - checkpoints/update-000256.pt
+      - checkpoints/update-000320.pt
+      - checkpoints/update-000384.pt
+      - checkpoints/update-000448.pt
+      - checkpoints/update-000512.pt
+      - checkpoints/update-000576.pt
+      - checkpoints/update-000640.pt
+      - checkpoints/update-000704.pt
+      - checkpoints/update-000768.pt
+      - checkpoints/update-000832.pt
+      - checkpoints/update-000896.pt
+      - checkpoints/update-000960.pt
+      - checkpoints/update-001024.pt
+      - checkpoints/update-001088.pt
+      - checkpoints/update-001152.pt
+      - checkpoints/update-001216.pt
+      - checkpoints/update-001280.pt
+      - checkpoints/update-001344.pt
+      - checkpoints/update-001408.pt
+      - checkpoints/update-001472.pt
+      - checkpoints/update-001519.pt
+  script_population:
+    manifest: data/external/kaggriculture-public-native-20260914/manifest.json
+    sha256: 72e6919271b8a55cd77dbdb60adaa1f5f0674824c78e2172f495cb7703b56352
+    agents:
+    - ahmed_v41
+    - metacounter_r1
+    - shop_router_0913
+    - rayk_v38_low_pressure
+    - farming_v4_0912
+    backend: native-cpp
+    fraction: 0.2
+  qualification: outputs/opponents/public-20260914/qualification.json
+  qualification_sha256: ${oc.env:PUBLIC_QUALIFICATION_SHA256,0000000000000000000000000000000000000000000000000000000000000000}
+qualification:
+  output_dir: outputs/learning/public-native-qualification-20260914-v2
+  updates: 12
+  evaluation_games: 2
+  official_games: 10
+  official_seed: 4253100000
+  reference_directory: data/external/kaggriculture-reference-1.32.7
+  inference_device: cuda:0
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/opponents/public-20260914/hydra
+  output_subdir: null

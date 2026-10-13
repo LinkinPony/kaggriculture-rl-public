@@ -1,0 +1,16 @@
+retirement:
+  sources:
+    - outputs/datasets/agronomy-v4-dsm-games-20260922-24-train-val-q100/manifest.json
+    - outputs/datasets/agronomy-v4-watch3-submissions-20260923-24-train-val-q100/manifest.json
+    - outputs/datasets/derived-v5b-dsm-20260923-25-train-val-q100/manifest.json
+    - outputs/datasets/derived-v5b-watch4-collected-since-20260924-train-val-q100/manifest.json
+    - outputs/datasets/derived-v5b-watch5-active-recent-20260926-train-val-q100/manifest.json
+    - outputs/datasets/derived-v5b-watch6-active-recent-20260926-train-val-q100/manifest.json
+    - outputs/datasets/derived-v5b-watch6-expanded-20260927-train-val-q100/manifest.json
+  suffix: -exclude-56484772
+  report: outputs/analysis/exclude-boey-56484772-20260927/dataset-revisions.json
+hydra:
+  run:
+    dir: tmp/hydra/submission-retirement/${now:%Y%m%d-%H%M%S}
+  job:
+    chdir: false

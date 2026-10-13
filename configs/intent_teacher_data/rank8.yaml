@@ -1,0 +1,23 @@
+# Causal canonical-intent BC source; no hindsight oracle fields are persisted.
+teacher:
+  submission_id: 55708706
+  archive_path: data/external/kaggle-submission-55708706-teacher/submission.tar.gz
+  archive_sha256: 1648b4c28b798420b64bca066bcda886d2e79f7915507a203a6227f836dd254b
+  source_commit: 0742236a178d57a6f5b5c37a0f8caeec256d2b14
+  route_sha256: 193fef08eecaf64d375a0f027fac48fed8f9a1978a4d57f605162d35205e4e72
+submission_record_commit: 14f9fd924339139e2162bd3e24e8b0d96b1597bd
+output_dir: data/external/kaggle-submission-55708706-teacher/intent-ledger-v4
+report_dir: outputs/bc-data/20260904-rank8-intent-ledger-v4
+seed_start: 12000000
+games: 1024
+games_per_shard: 1
+process_workers: 4
+native_workers: 8
+compression_level: 4
+unit_limit: 32
+max_transaction_steps: 96
+environment:
+  boardSize: 10
+  episodeSteps: 720
+  turnsPerDay: 24
+  maxMarketOrdersPerTurn: 10

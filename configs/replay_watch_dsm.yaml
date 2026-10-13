@@ -1,0 +1,32 @@
+watch:
+  raw: data/external/kaggriculture-dsm-replays
+  team_id: 16732748
+  team_name: DSM
+  seed_submissions: [56444344]
+  seed_episodes: [111918050]
+  excluded_submissions: [56414341, 56484772]
+  submitted_since: '2026-09-17T00:00:00Z'
+  daily_archive_root: data/external
+  scan_own_history: true
+  history_sources:
+    - data/external/kaggle-submission-56161402/episodes.json
+    - data/external/kaggriculture-model-comparison-20260919/raw/replay-selection.json
+    - data/external/kaggriculture-bc-redesign-20260911/raw/public/manifest.json
+    - data/external/kaggriculture-top10-2d-20260913/raw/manifest.json
+    - data/external/kaggriculture-top10-2d-20260915/raw/manifest.json
+    - data/external/kaggriculture-mm-pq-replays/manifest.json
+  own_history_interval_seconds: 21600
+  poll_seconds: 3600
+  cycle_timeout_seconds: 3600
+  workers: 1
+  request_interval: 6.0
+  maximum_backoffs: 2
+  downloads_per_cycle: 200
+  once: false
+
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${watch.raw}/hydra
+  output_subdir: null

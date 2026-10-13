@@ -1,0 +1,11 @@
+# Bind the stopped run explicitly at invocation; only the Actor rate is revised.
+change:
+  run: ???
+  state_sha256: ???
+  actor_learning_rate: ???
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/learning-rate-change
+  output_subdir: null

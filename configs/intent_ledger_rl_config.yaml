@@ -1,0 +1,3 @@
+defaults:
+  - intent_ledger_rl: smoke
+  - _self_

@@ -1,0 +1,43 @@
+# Preserve 820 self-play games and draw the other 204 from one common PFSP pool.
+defaults:
+  - learning_population_change
+  - _self_
+change:
+  run: outputs/learning/compact289-v4-selected8-ppo-restart-20260921-s74001
+  population:
+    fraction: 0.19921875
+    snapshot_interval: 64
+    capacity: 177
+    unified: true
+    pfsp:
+      power: 2.0
+      uniform_fraction: 0.2
+      latest_fraction: 0.1
+      prior_games: 8.0
+      half_life_updates: 128.0
+      max_effective_games: 256.0
+      recent_snapshots: 4
+      concurrent_inference: true
+  script_population:
+    manifest: data/external/kaggriculture-public-native-20260916/manifest.json
+    sha256: 6d66d351cc01eb3e6e58f9921de0a1842f78aee03686b0312355725e1bdf2aa8
+    agents:
+      - ahmed_v45
+      - metacounter_r1
+      - shop_router_0913
+      - rayk_v38_low_pressure
+      - farming_v4_0914
+    backend: native-cpp
+    fraction: 0.0
+  qualification: outputs/analysis/compact-scripts-pfsp-20260921/qualification.json
+  qualification_sha256: ${oc.env:PFSP_QUALIFICATION_SHA256,0000000000000000000000000000000000000000000000000000000000000000}
+qualification:
+  output_dir: outputs/learning/compact-scripts-pfsp-qualification-20260921
+  updates: 8
+  evaluation_games: 2
+  official_games: 10
+  official_seed: 4803000000
+  inference_device: cuda:0
+hydra:
+  run:
+    dir: outputs/analysis/compact-scripts-pfsp-20260921/hydra

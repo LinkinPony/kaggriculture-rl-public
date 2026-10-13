@@ -1,0 +1,10 @@
+# DSM clone v4 of the latest version only, started from the v4 plan C clone (s101301, epoch 11)
+# instead of s100901 U756, so the four-version clone specializes to 56693917.
+defaults:
+- learning_dsm_clone_v4_latest_u756_bc_20260930
+- _self_
+experiment:
+  initial_weights:
+    run: outputs/learning/dsm-clone-v4-plan-c-bc-20260930-s101301
+    checkpoint: pretraining/shard-000638.pt
+    sha256: cdb0bd61ea97cd1a68163847f8a161d1d12ebcc2ef8ea33f9d32f1cb94bf81e5

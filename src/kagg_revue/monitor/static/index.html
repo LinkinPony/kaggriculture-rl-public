@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; connect-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'"
+    >
+    <meta name="theme-color" content="#0d1b25">
+    <meta name="ui-version" content="__UI_VERSION__">
+    <title>Revue · 训练观测台</title>
+    <link rel="stylesheet" href="/assets/styles.css?v=__UI_VERSION__">
+    <link rel="stylesheet" href="/assets/explorer.css?v=__UI_VERSION__">
+    <link rel="stylesheet" href="/assets/opponents.css?v=__UI_VERSION__">
+    <link rel="stylesheet" href="/assets/pretraining.css?v=__UI_VERSION__">
+  </head>
+  <body>
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand-row">
+          <div class="brand-mark" aria-hidden="true"><span>R</span></div>
+          <div>
+            <div class="eyebrow eyebrow-light">KAGG · REVUE</div>
+            <div class="brand-title">训练观测台</div>
+          </div>
+          <button class="icon-button sidebar-close" id="sidebar-close" aria-label="关闭运行列表">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+
+        <div class="sidebar-live" id="sidebar-live">
+          <span class="live-pulse"></span>
+          <span>正在连接本机训练状态</span>
+        </div>
+
+        <div class="run-tools">
+          <label class="search-field">
+            <span class="search-icon" aria-hidden="true"></span>
+            <input id="run-search" type="search" placeholder="搜索 run" autocomplete="off">
+          </label>
+          <div class="filters" id="run-filters" aria-label="运行筛选">
+            <button class="filter active" data-filter="all">全部</button>
+            <button class="filter" data-filter="live">在线</button>
+            <button class="filter" data-filter="rl">RL</button>
+            <button class="filter" data-filter="search">搜索</button>
+            <button class="filter" data-filter="bc">BC</button>
+            <button class="filter" data-filter="evaluated">已评估</button>
+          </div>
+        </div>
+
+        <div class="section-caption">
+          <span>实验运行</span>
+          <span id="run-count">—</span>
+        </div>
+        <nav class="run-list" id="run-list" aria-label="实验运行列表">
+          <div class="skeleton run-skeleton"></div>
+          <div class="skeleton run-skeleton"></div>
+          <div class="skeleton run-skeleton"></div>
+        </nav>
+
+        <div class="sidebar-system" id="sidebar-system">
+          <div class="sidebar-system-head">
+            <span>本机资源</span><span class="muted-light">读取中</span>
+          </div>
+          <div class="resource-line"><span>GPU</span><div class="mini-track"><i></i></div><b>—</b></div>
+          <div class="resource-line"><span>RAM</span><div class="mini-track"><i></i></div><b>—</b></div>
+        </div>
+        <div class="local-only"><span class="lock-icon" aria-hidden="true"></span>仅限 localhost</div>
+      </aside>
+
+      <div class="sidebar-scrim" id="sidebar-scrim"></div>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button class="icon-button menu-button" id="menu-button" aria-label="打开运行列表">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="crumbs">
+            <span>实验</span><i>/</i><strong id="crumb-run">等待选择</strong>
+          </div>
+          <div class="topbar-actions">
+            <button id="pin-run" class="pin-run">置顶运行</button>
+            <span class="sync-state" id="sync-state"><i></i>正在同步</span>
+            <a class="ghost-button hidden" id="tensorboard-link" target="_blank" rel="noreferrer">
+              TensorBoard <span aria-hidden="true">↗</span>
+            </a>
+            <button class="refresh-button" id="refresh-button">
+              <span class="refresh-icon" aria-hidden="true">↻</span><span>刷新</span>
+            </button>
+          </div>
+        </header>
+
+        <div class="error-banner hidden" id="error-banner" role="alert"></div>
+
+        <section class="hero-panel" id="hero-panel">
+          <div class="hero-grid"></div>
+          <div class="hero-copy">
+            <div class="hero-kicker"><span class="status-dot"></span><span>读取实验数据</span></div>
+            <h1>正在建立观测视图</h1>
+            <p>聚合 TensorBoard、训练指标、评估报告与本机资源。</p>
+          </div>
+          <div class="hero-progress">
+            <div class="hero-progress-top"><span>进度</span><strong>—</strong></div>
+            <div class="hero-progress-track"><i></i></div>
+            <div class="hero-progress-meta"><span>当前 —</span><span>目标 —</span></div>
+          </div>
+        </section>
+
+        <section id="explorer-toolbar" class="explorer-toolbar hidden" aria-label="训练图表控制">
+          <nav class="view-tabs" aria-label="监控视图">
+            <button data-view="overview">总览</button><button data-view="opponents">对手表现</button>
+            <button data-view="diagnostics">训练诊断</button><button data-view="resources">资源与记录</button>
+          </nav>
+          <div class="curve-controls">
+            <label>范围<select id="curve-window"><option value="100">最近 100 轮</option><option value="500" selected>最近 500 轮</option><option value="2000">最近 2000 轮</option><option value="0">全程</option><option value="custom">自定义</option></select></label>
+            <form id="curve-custom" class="hidden"><label>起始<input id="curve-start" type="number" min="0" required></label><span>—</span><label>结束<input id="curve-end" type="number" min="0" required></label><button type="submit">应用</button></form>
+            <label>趋势窗口<select id="curve-smoothing"><option value="1">1 轮</option><option value="8">8 轮</option><option value="32" selected>32 轮</option><option value="128">128 轮</option></select></label>
+            <label class="raw-control"><input id="curve-raw" type="checkbox">显示原始数据</label>
+            <button id="curve-follow" aria-pressed="true">暂停跟随</button><button id="curve-latest">回到最新</button>
+          </div>
+          <div class="curve-secondary">
+            <label>对手<select id="curve-opponent"><option value="all">全部当前脚本</option></select></label>
+            <label>布局<select id="curve-layout"><option value="separate">分别显示</option><option value="overlay">叠加比较</option></select></label>
+            <span id="curve-status" role="status" aria-live="polite">读取趋势</span>
+          </div>
+          <details id="curve-events"><summary>配置事件</summary><div id="curve-event-list"></div></details>
+        </section>
+        <section id="overview-evaluation" class="evaluation-summary hidden" data-views="overview"></section>
+        <section class="metric-grid" data-views="overview" id="metric-grid" aria-label="关键指标">
+          <div class="metric-card skeleton-card"></div>
+          <div class="metric-card skeleton-card"></div>
+          <div class="metric-card skeleton-card"></div>
+          <div class="metric-card skeleton-card"></div>
+        </section>
+
+        <section class="section-block hidden" id="bc-section">
+          <div class="section-heading"><div><div class="eyebrow">BEHAVIOR CLONING</div><h2>BC 进度与数据诊断</h2></div></div>
+          <div id="bc-panel"></div>
+        </section>
+        <section class="section-block hidden" id="search-section">
+          <div class="section-heading">
+            <div><div class="eyebrow">POLICY SEARCH</div><h2>搜索进度与策略采纳</h2></div>
+          </div>
+          <div id="search-panel" class="panel-card"></div>
+        </section>
+
+        <section class="section-block hidden" id="opponent-section" data-views="opponents">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">TRAINING POPULATION</div>
+              <h2>逐对手训练统计</h2>
+            </div>
+            <div class="evidence-note">按完整 rollout match 汇总；训练占比按保留 trajectory 计算</div>
+          </div>
+          <div class="opponent-panel" id="opponent-panel"></div>
+        </section>
+
+        <section class="section-block hidden" id="opponent-history-section" data-views="opponents">
+          <div class="section-heading"><div><div class="eyebrow">OPPONENT HISTORY</div><h2>对手战绩与交手历史</h2></div></div>
+          <p class="opponent-history-status evidence-note" aria-live="polite"></p>
+          <p class="opponent-footnote">累计统计覆盖本次运行全部已保存对局；区间统计跟随上方训练轮次范围。PFSP 预估比分包含衰减与先验，未交手成员从 50% 开始。</p>
+          <div class="opponent-history-controls">
+            <label>搜索 <input type="search" data-filter="search" placeholder="对手、来源运行或身份"></label>
+            <label>类型 <select data-filter="kind"><option value="all">全部类型</option><option value="history">历史模型</option><option value="script">脚本</option></select></label>
+            <label>对手池 <select data-filter="membership"><option value="all">全部对手</option><option value="active">当前在池</option><option value="retired">已退出池</option></select></label>
+          </div>
+          <div class="opponent-history-table opponent-table-wrap"></div>
+          <div class="opponent-pagination opponent-summary-pagination"><button data-summary-prev>上一页</button><span></span><button data-summary-next>下一页</button></div>
+          <div class="opponent-history-detail" hidden></div>
+        </section>
+        <dialog id="opponent-plot-dialog"><button type="button">关闭</button><article class="chart-card"></article></dialog>
+
+        <section class="section-block" id="training-charts-section">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">TRAINING SIGNALS</div>
+              <h2>训练走势</h2>
+            </div>
+            <div class="evidence-note" id="evidence-note">训练指标仅作诊断，不具有模型晋级权限</div>
+          </div>
+          <div class="chart-grid" id="chart-grid">
+            <div class="chart-card skeleton-chart"></div>
+            <div class="chart-card skeleton-chart"></div>
+          </div>
+        </section>
+
+        <section class="section-block" data-views="opponents">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">CLOSED-LOOP EVIDENCE</div>
+              <h2>模型表现</h2>
+            </div>
+            <span class="section-asof" id="evaluation-asof"></span>
+          </div>
+          <div id="evaluation-panel" class="evaluation-panel empty-panel">
+            <div class="empty-orbit" aria-hidden="true"><i></i></div>
+            <div><h3>等待完整比赛评估</h3><p>训练曲线会先显示；正式表现以官方规则下的配对比赛结果为准。</p></div>
+          </div>
+        </section>
+
+        <section class="two-column section-block" data-views="diagnostics resources">
+          <div class="panel-card" data-views="diagnostics">
+            <div class="panel-heading">
+              <div><div class="eyebrow">LATEST VALUES</div><h2>最新诊断</h2></div>
+              <span class="source-badge" id="metric-source">—</span>
+            </div>
+            <div class="latest-table-wrap" id="latest-metrics"></div>
+          </div>
+          <div class="panel-card" data-views="resources">
+            <div class="panel-heading">
+              <div><div class="eyebrow">HOST TELEMETRY</div><h2>计算资源</h2></div>
+              <span class="source-badge">实时</span>
+            </div>
+            <div id="system-panel" class="system-panel"></div>
+          </div>
+        </section>
+
+        <section class="section-block artifact-section" data-views="resources">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">RUN IDENTITY</div>
+              <h2>产物与复现身份</h2>
+            </div>
+          </div>
+          <div class="artifact-layout">
+            <div class="artifact-list panel-card" id="artifact-list"></div>
+            <div class="identity-card" id="identity-card"></div>
+          </div>
+        </section>
+
+        <footer class="page-footer">
+          <span>Revue local monitor</span>
+          <span id="footer-update">尚未同步</span>
+        </footer>
+      </main>
+    </div>
+    <dialog id="plot-dialog" aria-label="放大图表"><div class="dialog-toolbar"><span>框选区间可放大时间范围</span><button id="plot-close">关闭</button></div><article class="chart-card"></article></dialog>
+    <script src="/assets/app.js?v=__UI_VERSION__" type="module"></script>
+  </body>
+</html>

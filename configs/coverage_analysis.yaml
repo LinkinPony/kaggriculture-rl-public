@@ -1,0 +1,13 @@
+analysis:
+  baseline: outputs/datasets/grounded-v2-20260907-09/manifest.json
+  public: data/external/kaggriculture-bc-redesign-20260911/raw/public
+  extra_daily:
+    - data/external/kaggriculture-bc-redesign-20260911/raw/index/kaggriculture-episodes-2026-09-10.zip
+  output: outputs/analysis/bc-redesign-20260911
+  workers: 8
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${analysis.output}/hydra-analysis
+  output_subdir: null

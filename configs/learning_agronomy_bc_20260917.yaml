@@ -1,0 +1,19 @@
+defaults:
+  - learning_plain_memory_bc_20260917
+  - _self_
+
+experiment:
+  output_dir: outputs/learning/agronomy-v4-m384-bc100-3d-20260917-s73001
+  agronomy: true
+  seed: 73001
+  train_seed: 4350000000
+  evaluation:
+    selection_seed: 4380000000
+    confirmation_seed: 4381000000
+    anchor_seeds: [230001, 230002]
+  demonstrations:
+    manifest: outputs/datasets/agronomy-v4-sequences-3d-20260917-q100/manifest.json
+    sha256: d2b8d381b4cb33cde404e438f17ad922baa5e1367ff8df6cfbe1876c2179f812
+    epochs: 100
+    early_stopping: null
+    behavior_seed: 4382000000

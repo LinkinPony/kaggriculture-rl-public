@@ -1,0 +1,22 @@
+# KL-anchored runs (DSM clone v2: s100401; MMPQ clone v3: s100501) against opponents outside
+# their pools, on the seeds of the earlier held-out panels; s100201 U200 is the reference.
+defaults:
+  - evaluation_panel_s100101_heldout
+  - _self_
+study:
+  output: outputs/analysis/heldout-panel-20260929-anchored
+  memory_fraction: 0.04
+  devices: [cuda:0, cuda:1, cuda:0, cuda:1, cuda:0, cuda:1]
+  scope: >-
+    Held-out s99001 checkpoints and the 9/29 BC as opponents; none is in the anchored pools.
+  candidates:
+    - {name: s100201-u0200, run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201, member: checkpoints/update-000200.pt}
+    - {name: s100401-u0100, run: outputs/learning/derived-v5b-m384-dsmclone2-kl-ppo50-20260929-s100401, member: checkpoints/update-000100.pt}
+    - {name: s100401-u0200, run: outputs/learning/derived-v5b-m384-dsmclone2-kl-ppo50-20260929-s100401, member: checkpoints/update-000200.pt}
+    - {name: s100401-u0300, run: outputs/learning/derived-v5b-m384-dsmclone2-kl-ppo50-20260929-s100401, member: checkpoints/update-000300.pt}
+    - {name: s100501-u0100, run: outputs/learning/derived-v5b-m384-mmpqclone3-kl-ppo50-20260929-s100501, member: checkpoints/update-000100.pt}
+    - {name: s100501-u0200, run: outputs/learning/derived-v5b-m384-mmpqclone3-kl-ppo50-20260929-s100501, member: checkpoints/update-000200.pt}
+    - {name: s100501-u0300, run: outputs/learning/derived-v5b-m384-mmpqclone3-kl-ppo50-20260929-s100501, member: checkpoints/update-000300.pt}
+hydra:
+  run:
+    dir: tmp/hydra/heldout-panel-20260929-anchored

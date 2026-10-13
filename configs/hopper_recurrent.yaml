@@ -1,0 +1,20 @@
+benchmark:
+  run: outputs/learning/h200-throughput-s73001-snapshot-20260920
+  output: outputs/analysis/h200-throughput-20260920/baseline.json
+  repeats: 3
+  entity_options: null
+  temporal_dense: false
+  compiler: {}
+  cudnn_benchmark: false
+  tape: null
+  save_tape: outputs/analysis/h200-throughput-20260920/rollout.pt
+  profile: true
+  verify_history: false
+  history: null
+  compile_history: true
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/h200-throughput-20260920/hydra-recurrent
+  output_subdir: null

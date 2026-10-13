@@ -1,0 +1,13 @@
+defaults:
+  - task_critic_continuation
+  - _self_
+
+initial_checkpoint: null
+resume_checkpoint: outputs/analysis/20260905-task-critic-96/inputs/resume-update10-thread-safe.pt
+output_dir: outputs/effect-policy-rl/20260905-task-critic-96-selfplay-long-v4
+# Continue after the last complete update without reusing trained seeds.
+rollout_seed_start: 7502304
+# Preserve the remaining physical-game budget after resizing the rollout.
+updates: 3976
+rollout:
+  seeds_per_update: 96

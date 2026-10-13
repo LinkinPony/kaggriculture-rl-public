@@ -1,0 +1,13 @@
+// Generated from authenticated public notebook source; do not edit.
+#include "opponents/compiled/generated/declarations.hpp"
+
+namespace kagg::opponents::compiled {
+Value Code_052a8ea3076865bb89e4(Context& c, const ScopePtr& s) {
+static constexpr const char* s_names[] = {"n", "native"};
+s->PrepareSlots(s_names);
+auto v10743 = ([&]() -> Value { auto fn10744 = s->Global("sum"); Arguments args10745; args10745.Add(([&]() -> Value { auto comp10746 = std::make_shared<Scope>(); comp10746->globals = s->globals; comp10746->parent = s; static constexpr const char* comp10746_names[] = {"o"}; comp10746->PrepareSlots(comp10746_names); auto result10747 = List(); for (const auto& item10748 : Iterate(([&]() -> Value { auto fn10749 = PrepareDictionaryGet(Get(s->LocalAt(1), Value(int64_t{24}))); Arguments args10750; args10750.positional.reserve(2); args10750.Add(Value("market"), false); args10750.Add(List({}), false); return CallDictionaryGet(c, fn10749, std::move(args10750)); }()))) { comp10746->SetAt(0, item10748); result10747.node()->sequence.push_back(([&]() -> Value { auto v10751 = ([&]() -> Value { auto fn10752 = comp10746->Global("bool"); Arguments args10753; args10753.Add(comp10746->LocalAt(0), false); return Call(c, fn10752, std::move(args10753)); }()); if (!static_cast<bool>(v10751)) return v10751; v10751 = ([&]() -> Value { auto v10754 = Get(comp10746->LocalAt(0), Value(int64_t{0})); Value v10755; v10755 = Value("HIRE"); if (!static_cast<bool>(Binary("Eq", v10754, v10755))) return Value(false); v10754 = v10755; return Value(true); }()); return v10751; }())); } return result10747; }()), false); return Call(c, fn10744, std::move(args10745)); }());
+s->SetAt(0, v10743);
+return Tuple({([&]() -> Value { auto fn10756 = s->Global("sum"); Arguments args10757; args10757.Add(([&]() -> Value { auto comp10758 = std::make_shared<Scope>(); comp10758->globals = s->globals; comp10758->parent = s; static constexpr const char* comp10758_names[] = {"i"}; comp10758->PrepareSlots(comp10758_names); auto result10759 = List(); for (const auto& item10760 : Iterate(([&]() -> Value { auto fn10761 = s->Global("range"); Arguments args10762; args10762.Add(s->LocalAt(0), false); return Call(c, fn10761, std::move(args10762)); }()))) { comp10758->SetAt(0, item10760); result10759.node()->sequence.push_back(([&]() -> Value { auto fn10763 = comp10758->Global("_v219_fib"); Arguments args10764; args10764.Add(comp10758->LocalAt(0), false); return Call(c, fn10763, std::move(args10764)); }())); } return result10759; }()), false); return Call(c, fn10756, std::move(args10757)); }()), s->LocalAt(0)});
+return {};
+}
+}  // namespace kagg::opponents::compiled

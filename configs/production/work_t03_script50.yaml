@@ -1,0 +1,9 @@
+defaults:
+  - work_selfplay4_t03_bc
+  - _self_
+checkpoint: outputs/releases/20260906-work-selfplay-t03-stopped/update-0165-fork.pt
+output_dir: outputs/production-policy/20260906-work-t03-script50
+ppo:
+  population: script_mix
+  script_fraction: 0.5
+  script_opponents: [kaito_v48, kaito_v39, boatlee_v21, mugundh_v21]

@@ -1,0 +1,16 @@
+# s99001 U588 at T=0 and at its Kaggle temperature T=1, head to head with s101102 U200 on the
+# fresh-seed head-to-head seeds. Its older geometry cannot share panel workers with the
+# s1017xx candidates.
+defaults:
+  - evaluation_final_h2h_20260930
+  - _self_
+
+study:
+  output: outputs/analysis/final-candidates-20260930/h2h-fresh-s99001
+  candidates:
+    - name: s99001-u0588-t0
+      temperature: 0
+      path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0588.pt
+    - name: s99001-u0588-t1
+      temperature: 1
+      path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0588.pt

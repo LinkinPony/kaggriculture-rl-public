@@ -1,0 +1,25 @@
+defaults:
+  - _self_
+experiment:
+  output_dir: outputs/learning/scratch-work-s41001
+  seed: 41001
+  device: cuda:0
+  resume: false
+  checkpoint_keep_recent: 2
+  checkpoint_keep_interval: 200
+  updates: 32
+  games: 256
+  cash_weight: 0.0
+  compile: true
+  evaluation:
+    games: 64
+    interval: 4
+    selection_seed: 710000000
+    confirmation_seed: 720000000
+    anchor_seeds: [91001, 91002]
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${experiment.output_dir}/hydra
+  output_subdir: null

@@ -1,0 +1,11 @@
+defaults:
+  - work_prefix_recovery
+  - _self_
+output_dir: outputs/production-policy/20260907-work-prefix-history-u0175
+evaluation_seed: 434000000
+confirmation_seed: 435000000
+ppo:
+  seed_start: 501000000
+  history:
+    checkpoint: outputs/releases/20260907-work-prefix-recovery-u0175/training.pt
+    fraction: 0.5

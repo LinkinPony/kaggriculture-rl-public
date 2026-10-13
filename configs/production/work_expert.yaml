@@ -1,0 +1,14 @@
+defaults:
+  - work_t03_script50_wdl
+  - _self_
+checkpoint: outputs/releases/20260907-work-no-prior-ppo-lr1e6-stopped/update-0751.pt
+output_dir: outputs/production-policy/20260907-work-expert-iteration
+precision: bf16
+bf16_reduced_precision_reduction: false
+model:
+  time_prior: false
+  prior_scale: 0.0
+evaluation_seed: 33000000
+confirmation_seed: 34000000
+ppo:
+  seed_start: 50000000

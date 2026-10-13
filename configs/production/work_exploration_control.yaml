@@ -1,0 +1,14 @@
+defaults:
+  - work
+  - _self_
+mode: qualify
+checkpoint: outputs/analysis/20260906-work-exploration/prior-strength/bias-10/initial.pt
+output_dir: outputs/production-policy/20260906-work-exploration-control
+evaluation_games: 256
+evaluation_seed: 14100000
+confirmation_seed: 14200000
+ppo:
+  updates: 30
+  seed_start: 15000000
+  checkpoint_interval: 5
+  evaluation_interval: 5

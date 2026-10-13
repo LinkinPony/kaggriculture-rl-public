@@ -1,0 +1,17 @@
+panel:
+  source: outputs/opponents/research-20260915/revenue-lead-r1/main.py
+  source_sha256: 385024f8fa6419b237a49f47f161937362e71776ea99b824e911b3d89ff72505
+  asset: outputs/opponents/research-20260915/revenue-lead-r1/native/revenue_lead_r1.json.zlib
+  asset_sha256: 605ec5cd6f0007196e7fa1e0553928fb20e2f901b42fe60b167a014a676c9cec
+  library: outputs/opponents/research-20260915/revenue-lead-r1/native/_revue_native.cpython-311-x86_64-linux-gnu.so
+  normalization: v43-container-copy
+  manifest: data/external/kaggriculture-notebook-survey-20260915/manifest.json
+  output: outputs/analysis/script-research-20260915/revenue-lead-r1-native
+  opponents: [ahmed_v43, ahmed_v42, farming_v4_0914, shop_router_0913, rayk_v38_low_pressure, metacounter_r1]
+  seeds: [1860916201, 1860916202, 1860916203, 1860916204]
+  perturbations: [false, true]
+  workers: 8
+hydra:
+  run:
+    dir: outputs/analysis/script-research-20260915/hydra-qualification
+  output_subdir: null

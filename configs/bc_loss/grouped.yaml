@@ -1,0 +1,8 @@
+# @package experiment.demonstrations.loss
+normalization: domain_mean
+weights:
+  unit_target: 1.0
+  unit_operation: 1.0
+  unit_quantity: 1.0
+  market_operation: 1.0
+  market_quantity: 1.0

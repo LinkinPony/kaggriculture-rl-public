@@ -1,0 +1,26 @@
+defaults:
+  - learning_agronomy_bc_20260917
+  - learning_gtrxl_mixed_change@mixed
+  - _self_
+
+experiment:
+  pretraining_only: false
+  population: ${mixed.change.population}
+  script_population: ${mixed.change.script_population}
+  batch_rows: 40264
+  sequence_games_per_rank: 28
+  execution:
+    microbatch_rows: 1536
+    pipeline_groups: 2
+    async_checkpoint: true
+
+handoff:
+  qualification: outputs/analysis/agronomy-v4-async-20260917/qualification.json
+  native_qualification: outputs/analysis/agronomy-v4-throughput-20260917/native-geometry-compatibility.json
+  encoder_qualification: outputs/analysis/agronomy-v4-throughput-20260917/encoder-geometry-compatibility.json
+  qualification_run: outputs/learning/agronomy-v4-async-rl-qualification-20260917
+  updates: 6
+
+hydra:
+  run:
+    dir: outputs/analysis/agronomy-v4-rl-20260917/hydra

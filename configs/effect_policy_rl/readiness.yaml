@@ -1,0 +1,61 @@
+# Exact gate: five critic warmup updates followed by three full PPO updates.
+initial_actor: outputs/turn-policy/20260828-opening-diverse-bc2-v1/actor-fp16.pt
+initial_checkpoint: null
+resume_checkpoint: null
+public_agent_manifest: null
+output_dir: outputs/effect-policy-rl/20260905-readiness-selfplay-8u-v1
+seed: 20260905
+rollout_seed_start: 7400000
+updates: 8
+objective: terminal_wdl
+discount: 1.0
+gae_lambda: 1.0
+unit_limit: 32
+
+model:
+  model_width: 256
+  feedforward_width: 704
+  attention_heads: 4
+  state_layers: 2
+  train_turn_encoder: true
+
+optimization:
+  ppo_epochs: 2
+  episodes_per_minibatch: 32
+  episodes_per_microbatch: 16
+  actor_learning_rate: 0.00005
+  critic_learning_rate: 0.0001
+  critic_warmup_updates: 5
+  critic_actor_gradient: false
+  weight_decay: 0.00001
+  clip_epsilon: 0.1
+  value_loss_weight: 1.0
+  entropy_weight: 0.001
+  gradient_clip: 1.0
+  target_kl: 0.02
+  normalize_advantage: true
+
+population:
+  weights:
+    self_play: 1.0
+
+rollout:
+  seeds_per_update: 384
+  cpu_workers: 48
+  actor_streams_per_device: 3
+  maximum_graph_variants: 48
+  devices: [cuda:0, cuda:1]
+
+checkpoint:
+  interval: 1
+  keep: 3
+
+device: cuda:0
+cpu_threads: 8
+act_timeout_seconds: 1.0
+remaining_overage_seconds: 60.0
+environment:
+  boardSize: 10
+  episodeSteps: 720
+  turnsPerDay: 24
+  maxMarketOrdersPerTurn: 10

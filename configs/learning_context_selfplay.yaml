@@ -1,0 +1,13 @@
+defaults:
+  - learning_context
+  - _self_
+experiment:
+  output_dir: outputs/learning/context-selfplay-${now:%Y%m%d-%H%M%S}
+  games: 128
+  train_seed: 4060000000
+  population:
+    fraction: 0.0
+  script_population: null
+  batch_rows: 5760
+  execution:
+    microbatch_rows: 2880

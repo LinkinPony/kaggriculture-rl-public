@@ -1,0 +1,28 @@
+# Second seed of s101102's recipe on cuda:1 from the same v4 MMPQ clone (s101001) and the
+# s100901 U756 critic. The actor rate follows s101102's ramp exactly up to U200 and then holds
+# 5e-6, the rate at s101102's best checkpoint, instead of rising to 7.5e-6. Pool and inherited
+# evidence are s101701's.
+defaults:
+- learning_mmpq_rl_u200_cont_1gpu_20260930
+- _self_
+experiment:
+  output_dir: outputs/learning/derived-v5b-m384-mmpqclone4-kl-ppo50-1gpu-r2-20260930-s101702
+  initial_weights:
+    run: outputs/learning/mmpq-clone-v4-parallel-bc-20260930-s101001
+    checkpoint: pretraining/shard-000765.pt
+    sha256: adbca47d8c0bdcf1c2b948b6a15e03202a65bee7b6d3b364aee110c2b4543554
+  initial_critic:
+    run: outputs/learning/derived-v5b-m384-s99001u1061-dsm2d-kl-ppo50-20260929-s100901
+    checkpoint: checkpoints/update-000756.pt
+    sha256: 01aba0f8162c962d3d88cc627d48bdefd75bb2e61644005f5a4d8073b4d220b1
+  seed: 101702
+  train_seed: 9900000000
+  device: cuda:1
+  actor_learning_rate: 5.0e-06
+  learning_rate_warmup_updates: 200
+  execution:
+    devices: [cuda:1]
+  evaluation:
+    selection_seed: 9910000000
+    confirmation_seed: 9911000000
+    anchor_seeds: [600001, 600002]

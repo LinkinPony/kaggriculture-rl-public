@@ -1,0 +1,29 @@
+defaults:
+  - learning_grouped_bc
+  - _self_
+
+experiment:
+  output_dir: outputs/learning/agronomy-v4-m384-u1609-dsm-grouped-bc100-20260923-s79001
+  seed: 79001
+  train_seed: 5300000000
+  pretraining_only: true
+  initial_weights:
+    run: outputs/learning/agronomy-v4-m384-watch2-ppo-20260922-s78001
+    checkpoint: checkpoints/update-001609.pt
+    sha256: 9b5bd8d1e2a51f292e384900af0f6c5ed168741d695a651b1f19bc2b5afd4d60
+  evaluation:
+    selection_seed: 5320000000
+    confirmation_seed: 5321000000
+    anchor_seeds: [290001, 290002]
+  demonstrations:
+    manifest: outputs/datasets/agronomy-v4-dsm-20260921-23-train-val-q100/manifest.json
+    sha256: 1ec40de77e1f17045e33b4cedabb199ed815c6b036f56ff4d96e511d65e98475
+    epochs: 100
+    early_stopping: null
+    learning_rate: 0.0001
+    batch_rows: 5752
+    checkpoint_shards: 16
+    distributed: true
+    behavior_games: 0
+    control_games: 0
+    behavior_seed: 5322000000

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-10-13T04:41:28.291732+00:00",
+  "language": "English",
+  "translated_markdown_documents": 143,
+  "reviewed_translation_units": 3965,
+  "checked_markdown_documents": 153,
+  "remaining_chinese_documentation_files": 0,
+  "unchanged_non_document_files": true,
+  "preserved_fenced_code_blocks": 113,
+  "code_block_translation_scope": "Only Chinese comments and explanatory diagrams were translated; executable snippets were preserved.",
+  "repaired_section_links": 19,
+  "checks": [
+    "Numeric values and immutable identifiers verified against the original text, including per-cell table checks.",
+    "All referenced translated sections resolve through stable ASCII anchors.",
+    "No unresolved translation placeholders or whitespace errors.",
+    "No new home paths, private Drive links, private IP addresses, private keys or credential token patterns in the translated documents."
+  ],
+  "history": "Prepared as a new root commit without importing the original private repository history.",
+  "models": "The two previously verified sanitized model packages and Kaggle dataset version 2 are unchanged."
+}

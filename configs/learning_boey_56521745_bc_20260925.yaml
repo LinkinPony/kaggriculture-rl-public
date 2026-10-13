@@ -1,0 +1,32 @@
+# Latest stopped s82001 actor, with the exact 158 reported Boey 56521745 games.
+defaults:
+  - learning_grouped_bc
+  - _self_
+
+experiment:
+  output_dir: outputs/learning/derived-v5b-m384-u2349-boey158-bc100-20260925-s87001
+  seed: 87001
+  train_seed: 6300000000
+  agronomy: true
+  derived: true
+  pretraining_only: true
+  initial_weights:
+    run: outputs/learning/agronomy-v4-m384-dsm-games-ppo50-20260924-s82001
+    checkpoint: checkpoints/update-002349.pt
+    sha256: c4244971cc6a28286e2e377374a1849d7fc72c76f866e043cb24041351d968df
+  evaluation:
+    selection_seed: 6320000000
+    confirmation_seed: 6321000000
+    anchor_seeds: [370001, 370002]
+  demonstrations:
+    manifest: outputs/datasets/derived-v5b-boey-56521745-158-20260925-train-val-q100/manifest.json
+    sha256: ac8a1d2025001816abdc489b1355946eacd3a8fbf971632b35b118d48ba4366f
+    epochs: 100
+    early_stopping: null
+    learning_rate: 0.00001
+    batch_rows: 5752
+    checkpoint_shards: 16
+    distributed: true
+    behavior_games: 0
+    control_games: 0
+    behavior_seed: 6322000000

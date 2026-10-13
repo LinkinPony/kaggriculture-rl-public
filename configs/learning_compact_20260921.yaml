@@ -1,0 +1,24 @@
+defaults:
+  - learning_gtrxl_20260916
+  - model: compact289
+  - _self_
+experiment:
+  output_dir: outputs/learning/compact289-v4-${now:%Y%m%d-%H%M%S}-s${experiment.seed}
+  seed: 74001
+  train_seed: 4550000000
+  games: 1024
+  batch_rows: 2000000
+  precision: bf16
+  pretraining_only: false
+  demonstrations: null
+  population:
+    fraction: 0.19921875
+  execution:
+    devices: [cuda:0, cuda:1]
+    microbatch_rows: 12288
+    compile_inference: true
+    fused_loss: true
+  evaluation:
+    selection_seed: 4800000000
+    confirmation_seed: 4801000000
+    anchor_seeds: [240001, 240002]

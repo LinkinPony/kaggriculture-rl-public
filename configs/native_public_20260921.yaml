@@ -1,0 +1,9 @@
+generation:
+  manifest: data/external/kaggriculture-public-native-20260921/manifest.json
+  destination: src/kagg_revue/native/csrc/opponents/compiled/generated
+  assets: src/kagg_revue/opponents/portfolios
+  report: outputs/analysis/notebook-survey-20260921/generation.json
+hydra:
+  run:
+    dir: outputs/analysis/notebook-survey-20260921/hydra-generation
+  output_subdir: null

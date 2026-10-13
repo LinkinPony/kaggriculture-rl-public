@@ -1,0 +1,8 @@
+generation:
+  manifest: data/external/kaggriculture-public-native-20260914-v2/manifest.json
+  destination: src/kagg_revue/native/csrc/opponents/compiled/generated
+  assets: src/kagg_revue/opponents/portfolios
+  report: outputs/opponents/public-20260914-v2/generation.json
+hydra:
+  run:
+    dir: outputs/opponents/public-20260914-v2/hydra

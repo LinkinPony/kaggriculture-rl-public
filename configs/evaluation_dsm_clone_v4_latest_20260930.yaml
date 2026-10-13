@@ -1,0 +1,21 @@
+# Latest-version DSM clone variants (second seed from s100901 U756, from the v4 plan C clone,
+# from U0) on exactly the opponents, seeds and precision of the v3 plan C panel.
+defaults:
+- evaluation_dsm_clone_v3_20260930
+- _self_
+study:
+  output: outputs/analysis/dsm-bc-redesign-20260930/panel-t0-v4-latest
+  scope: >-
+    DSM clone v4 of 56693917 alone (second seed from s100901 U756, from the v4 plan C clone,
+    from U0) at T=0 against s100901 U480/U756, s100201 U200, s99001 U200 and the v4 P MMPQ
+    clone, all at T=0, on the v3 plan C panel's 64 common seeds with both seats.
+  candidates:
+    - name: dsm-v4-latest-u756-r2-t0
+      temperature: 0
+      run: outputs/learning/dsm-clone-v4-latest-from-u756-r2-bc-20260930-s101304
+    - name: dsm-v4-latest-from-plan-c-t0
+      temperature: 0
+      run: outputs/learning/dsm-clone-v4-latest-from-plan-c-bc-20260930-s101305
+    - name: dsm-v4-latest-u0-t0
+      temperature: 0
+      run: outputs/learning/dsm-clone-v4-latest-bc-20260930-s101306

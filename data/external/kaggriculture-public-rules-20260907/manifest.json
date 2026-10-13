@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-09-07T22:43:40.833674+00:00",
+  "retrieval": {
+    "method": "Kaggle CLI read-only kernels list and pull; code not executed during acquisition",
+    "selection": "Different reactive economics and per-day routing implementation; no imported learned artifact or encoded route payload",
+    "source_cell": "cell index 2, remove only %%writefile main.py directive",
+    "main_notebook_sha256": "b6d66cb0c589ec5094029b1900cf9a37246ca38d52f125e84b81b19fa90dffbe"
+  },
+  "agents": [
+    {
+      "agent_id": "ecobot_v7",
+      "notebook_ref": "premaananda108/economics-driven-rule-agent-ecobot-v7-arena",
+      "notebook_id": 131369359,
+      "notebook_url": "https://www.kaggle.com/code/premaananda108/economics-driven-rule-agent-ecobot-v7-arena",
+      "main_path": "data/external/kaggriculture-public-rules-20260907/ecobot/main.py",
+      "sha256": "0dc02e03c94ef60c06b5093efc2e2fd0530aa6eea20df507a90b90d6651bd067",
+      "evidence_level": "unverified",
+      "evidence_note": "Current public source acquired 2026-09-07; API last run 2026-09-01. No current leaderboard strength claim. Pure Python rule valuation and daily routing; standard-library imports only; no external model, fitted tree, encoded portfolio or IO calls found."
+    }
+  ],
+  "rejected": [
+    {
+      "notebook_ref": "pilkwang/kaggriculture-structured-economic-policy",
+      "reason": "Disclosed Kaito v58 fork with embedded versioned controller; not independent coverage of the old local Kaito family. Download retained and never executed."
+    }
+  ]
+}

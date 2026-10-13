@@ -1,0 +1,31 @@
+defaults:
+  - production: work_expert
+  - _self_
+production:
+  mode: qualify
+  output_dir: outputs/production-policy/20260907-work-state-branch
+  checkpoint: outputs/releases/20260907-state-branch-start/student.pt
+  evaluation_seed: 200000000
+  confirmation_seed: 210000000
+  ppo:
+    seed_start: 180000000
+    games_per_update: 512
+continuation: outputs/analysis/20260907-policy-search-g40-vs-ppo/candidate-generation-000040.pt
+reference: outputs/releases/20260907-work-no-prior-ppo-lr1e6-stopped/update-0751.pt
+updates: 10000
+root_groups: 4
+candidates: 8
+pivots: 2
+alternatives: 4
+learning_rate: 0.000003
+learner_steps: 2
+microbatch_rows: 256
+preference_beta: 1.0
+evaluation_interval: 5
+retain_checkpoints: 16
+root_seed: 691317
+hydra:
+  run:
+    dir: ${production.output_dir}/hydra
+  job:
+    chdir: false

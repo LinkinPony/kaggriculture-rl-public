@@ -1,0 +1,11 @@
+defaults:
+  - cadence_12
+  - _self_
+mode: train
+checkpoint: outputs/production-policy/20260905-cadence12-100u/checkpoints/update-0100.pt
+output_dir: outputs/production-policy/20260905-cadence12-selfplay-long-v1
+evaluation_games: 2048
+ppo:
+  updates: 100000
+  checkpoint_interval: 25
+  evaluation_interval: 100

@@ -1,0 +1,3 @@
+defaults:
+  - intent_bc: rank8_random_v4
+  - _self_

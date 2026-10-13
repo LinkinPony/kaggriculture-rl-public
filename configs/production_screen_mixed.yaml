@@ -1,0 +1,9 @@
+defaults:
+  - production_screen
+  - _self_
+production:
+  output_dir: outputs/production-policy/20260907-work-parameter-screen-mixed
+  evaluation_seed: 35001000
+  confirmation_seed: 36001000
+neural_opponent: outputs/releases/20260907-work-no-prior-ppo-lr1e6-stopped/update-0751.pt
+reuse_scripts: outputs/production-policy/20260907-work-parameter-screen

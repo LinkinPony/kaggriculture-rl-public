@@ -1,0 +1,10 @@
+index:
+  archive: data/external/kaggriculture-episodes-2026-09-06_2026-09-07/raw/kaggriculture-episodes-2026-09-06.zip
+  output_dir: data/external/kaggriculture-restart-candidates-2026-09-06-v1
+  report_dir: outputs/analysis/daily-20260906-state-coverage
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${index.report_dir}/hydra
+  output_subdir: null

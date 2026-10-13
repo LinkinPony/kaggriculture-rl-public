@@ -1,0 +1,10 @@
+upgrade:
+  run: outputs/learning/league3-20260909-s63001-fixed
+  qualification: outputs/analysis/league-throughput-20260909/qualification.json
+  qualification_sha256: ???
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/league-throughput-20260909/hydra
+  output_subdir: null

@@ -1,0 +1,16 @@
+# Final candidates s101701 and s101702 U200 at T=0 against U200 and the baseline opponents.
+defaults:
+  - evaluation_final_candidates_20260930
+  - _self_
+
+study:
+  output: outputs/analysis/final-candidates-20260930/u0200
+  candidates:
+    - name: s101701-u0200-t0
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-s101102u200-kl-ppo50-1gpu-20260930-s101701
+      member: checkpoints/update-000200.pt
+    - name: s101702-u0200-t0
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-mmpqclone4-kl-ppo50-1gpu-r2-20260930-s101702
+      member: checkpoints/update-000200.pt

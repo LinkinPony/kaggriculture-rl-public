@@ -1,0 +1,15 @@
+panel:
+  reference: outputs/opponents/research-20260915/neural-reference
+  manifest: data/external/kaggriculture-notebook-survey-20260915/manifest.json
+  output: outputs/analysis/script-research-20260915/neural-screen
+  variants:
+    - name: baseline
+    - name: lead_6
+      market: lead
+      lead: 6
+  seeds: [1860916401, 1860916402, 1860916403, 1860916404]
+  workers: 4
+hydra:
+  run:
+    dir: outputs/analysis/script-research-20260915/hydra-neural
+  output_subdir: null

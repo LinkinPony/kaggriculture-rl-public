@@ -1,0 +1,14 @@
+defaults:
+  - production: work_prior_migration
+  - _self_
+resume_from: outputs/releases/20260907-work-no-prior-ppo-lr1e6-stopped/update-0751.pt
+scale_step: 0.01
+scale_interval: 1
+learning_rate: 0.00003
+distillation_temperature: 2.0
+evaluation_interval: 5
+hydra:
+  run:
+    dir: ${production.output_dir}/hydra
+  job:
+    chdir: false

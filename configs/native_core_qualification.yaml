@@ -1,0 +1,14 @@
+audit:
+  run: outputs/learning/scratch-demonstrations-s47001
+  member: checkpoints/update-000128.pt
+  output_dir: outputs/analysis/native-core-neural-qualification
+  reference_directory: data/external/kaggriculture-reference-1.32.7
+  device: cuda:0
+  seed: 1290000000
+  games: 8
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/native-core-extraction/hydra
+  output_subdir: null

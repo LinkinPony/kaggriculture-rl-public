@@ -1,0 +1,7 @@
+mode: qualify
+manifest: data/external/kaggriculture-public-native-20260916/manifest.json
+seeds: [1860918101, 1860918102, 1860918103, 1860918104]
+workers: 4
+output: outputs/opponents/public-20260916/conformance
+perturb: false
+asset_destination: src/kagg_revue/opponents/portfolios

@@ -1,0 +1,13 @@
+# Victor @ Tufa Labs (leaderboard #4) clone data: its only version, collected since 9/28.
+defaults:
+  - sequences_team_clones_20260929
+  - _self_
+selection:
+  output: outputs/datasets/team-clone-tufa-20260929/source-manifests
+  sources:
+    tufa: data/external/kaggriculture-tufa-labs-replays/manifest.json
+data:
+  output: outputs/datasets/team-clone-tufa-20260929-train-val-q100
+  teachers: [Victor @ Tufa Labs]
+  watch_manifests: [outputs/datasets/team-clone-tufa-20260929/source-manifests/tufa/selected.json]
+report: outputs/analysis/team-clones-20260929/tufa-data-verification.json

@@ -1,0 +1,17 @@
+defaults:
+  - production_screen
+  - _self_
+production:
+  mode: evaluate
+  output_dir: outputs/production-policy/20260907-work-actor-exploration
+  checkpoint: outputs/releases/20260907-work-prefix-recovery-u0175/training.pt
+  evaluation_seed: 441000000
+  confirmation_seed: 442000000
+search_seed: 440000000
+mutation_seed: 764291
+mutation_scope: actor
+directions: 16
+scales: [0.003, 0.01, 0.03, 0.1]
+finalists: 8
+selection_games: 512
+confirmation_games: 2048

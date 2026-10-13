@@ -1,0 +1,16 @@
+defaults:
+  - entities
+  - _self_
+mode: qualify
+output_dir: outputs/production-policy/20260905-cadence24-100u
+checkpoint: outputs/production-policy/20260905-cadence24-100u/initial.pt
+decision_interval: 24
+evaluation_games: 512
+evaluation_seed: 11500000
+confirmation_seed: 11600000
+ppo:
+  updates: 100
+  seed_start: 200000000
+  batch_rows: 7680
+  checkpoint_interval: 25
+  evaluation_interval: 25

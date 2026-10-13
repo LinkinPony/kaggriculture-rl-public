@@ -1,0 +1,25 @@
+# Hand the completed latest-version DSM clone (s101303) to single-GPU PPO on cuda:1 through
+# validation selection.
+defaults:
+- learning_dsm_clone_v4_latest_u756_bc_20260930@bc_stage
+- learning_dsm_clone_kl_ppo50_1gpu_20260930@rl_stage
+- _self_
+bc_stage:
+  experiment:
+    output_dir: outputs/learning/dsm-clone-v4-latest-from-u756-bc-20260930-s101303
+    seed: 101303
+    device: cuda:1
+    execution:
+      devices: [cuda:1]
+workflow:
+  output_dir: outputs/workflows/dsm-clone-v4-latest-bc-to-rl-1gpu-20260930
+  bc: ${bc_stage.experiment}
+  rl: ${rl_stage.experiment}
+  historical_archive: ${rl_stage.historical_archive}
+  attached_bc: true
+hydra:
+  run:
+    dir: ${workflow.output_dir}/hydra
+  output_subdir: null
+  job:
+    chdir: false

@@ -1,0 +1,878 @@
+{
+  "schema_version": "kaggriculture-top20-runtime-raw-v1",
+  "retrieved_at": "2026-08-27T07:21:24.923111+00:00",
+  "competition": "kaggriculture",
+  "leaderboard_scope": "current public leaderboard top 20",
+  "source_revision": "aa7807b6c6b00c354a46b37d9db8242e32982506",
+  "sources": [
+    {
+      "kind": "leaderboard",
+      "url": "https://www.kaggle.com/competitions/kaggriculture/leaderboard",
+      "method": "Kaggle Competition API GetLeaderboard"
+    },
+    {
+      "kind": "submission_identity_and_episode_metadata",
+      "url": "https://www.kaggle.com/competitions/kaggriculture",
+      "method": "Kaggle Competition API ListTeamPublicSubmissions and ListSubmissionEpisodes"
+    },
+    {
+      "kind": "episode_replays",
+      "url": "https://www.kaggle.com/competitions/kaggriculture",
+      "method": "Kaggle Competition API GetEpisodeReplay"
+    }
+  ],
+  "selection": {
+    "wall_clock": "latest 20 completed episodes per current leaderboard submission",
+    "agent_timing": "latest 5 completed episodes per current leaderboard submission, or all when fewer existed",
+    "selected_unique_replays": 93,
+    "stored_replays": 105,
+    "stored_unselected_prior_snapshot_replays": 12
+  },
+  "metadata": {
+    "path": "raw/metadata.json",
+    "size_bytes": 1783844,
+    "sha256": "0a8b0e3910d10ba97073693e4be9c3224befac8e36a0e66f1819100a64478453"
+  },
+  "replays": [
+    {
+      "episode_id": 100488097,
+      "path": "raw/replays/episode-100488097-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 417914,
+      "sha256": "4589423e36fd359cbbcf2d8a10769f9a8730cfaee086b2624a9e8731ed9fede5"
+    },
+    {
+      "episode_id": 100488107,
+      "path": "raw/replays/episode-100488107-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 408487,
+      "sha256": "32dbc758a69bdce60fbfa38ec92952e0907d08181cfb88487d1c3f837c270cf4"
+    },
+    {
+      "episode_id": 100506165,
+      "path": "raw/replays/episode-100506165-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 340929,
+      "sha256": "08f12005f9a1d66b79496b5600e47e2581995d074f1e04a61e6f749bc0bb2f77"
+    },
+    {
+      "episode_id": 100529109,
+      "path": "raw/replays/episode-100529109-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 409120,
+      "sha256": "e2f1e724abbc0f899493233bd808aa62791310edebef93e97f7005d4c66597c2"
+    },
+    {
+      "episode_id": 100535710,
+      "path": "raw/replays/episode-100535710-replay.json.gz",
+      "selected_for_current_snapshot": false,
+      "compression": "gzip -9n",
+      "size_bytes": 417803,
+      "sha256": "fde91d1a262adddb2c154beb79e7257e046c87e4af032fe1e1b657df975e278b"
+    },
+    {
+      "episode_id": 100538051,
+      "path": "raw/replays/episode-100538051-replay.json.gz",
+      "selected_for_current_snapshot": false,
+      "compression": "gzip -9n",
+      "size_bytes": 422620,
+      "sha256": "714be0e757989ec720ae93154d44daa555eaa63a7551b35c3528dd2cbbd86170"
+    },
+    {
+      "episode_id": 100542774,
+      "path": "raw/replays/episode-100542774-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 409679,
+      "sha256": "ae834d205616344d98c4d615c6cd289c1470e820da0c1f9185ddf7c43a7fd4b7"
+    },
+    {
+      "episode_id": 100544993,
+      "path": "raw/replays/episode-100544993-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 422360,
+      "sha256": "7c2901e2a64327b2234b73d6f4b333500912dd39870acc4c52eb0782b9083579"
+    },
+    {
+      "episode_id": 100549633,
+      "path": "raw/replays/episode-100549633-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 347590,
+      "sha256": "2c9f8427b03212f2e7f985ecd6256ec9fe51ea8404f92920b2cb44610de82ba1"
+    },
+    {
+      "episode_id": 100561006,
+      "path": "raw/replays/episode-100561006-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 399595,
+      "sha256": "14fd036f8bd7ae45546fe3ec2991c2d1245aff5e8873fc528b0754b9230cb414"
+    },
+    {
+      "episode_id": 100563360,
+      "path": "raw/replays/episode-100563360-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 411027,
+      "sha256": "6fd3a1ebef3154f86f1ea89439452f567015642d53d3638d04f3802c20f75d7a"
+    },
+    {
+      "episode_id": 100565501,
+      "path": "raw/replays/episode-100565501-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 392000,
+      "sha256": "a4f5eb520c8e2e0b59b89e9e2063b5c0c3dd9f147e6ba9fc387b793e6ada8b16"
+    },
+    {
+      "episode_id": 100570089,
+      "path": "raw/replays/episode-100570089-replay.json.gz",
+      "selected_for_current_snapshot": false,
+      "compression": "gzip -9n",
+      "size_bytes": 330230,
+      "sha256": "45aecadb82cfedd252b024d2346e0d3a1a524df2d4578d005aa205981c40ea3b"
+    },
+    {
+      "episode_id": 100572408,
+      "path": "raw/replays/episode-100572408-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 410543,
+      "sha256": "3ff678156ce5c66a59dc0520592bd86c696849ea5fc700c8df84cf570a2e52c1"
+    },
+    {
+      "episode_id": 100574695,
+      "path": "raw/replays/episode-100574695-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 427937,
+      "sha256": "ed6ea40f9a8551f3940be768e5eb8fab05dd852f15b30b85c580431cd7fdf3c4"
+    },
+    {
+      "episode_id": 100579319,
+      "path": "raw/replays/episode-100579319-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 407660,
+      "sha256": "9a9bf0a53fef01ae090a69e189af8fbf4d79a2bed85936a9e6701f1ebe2e8160"
+    },
+    {
+      "episode_id": 100590691,
+      "path": "raw/replays/episode-100590691-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 408229,
+      "sha256": "3da73bffe12055badc4488e9370f455cd2381c880d6213718e8da39765c76fbc"
+    },
+    {
+      "episode_id": 100592839,
+      "path": "raw/replays/episode-100592839-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 414994,
+      "sha256": "97afb6daa5ea5f845653b0143aef4d99db3d9f3e7131e3d885803ffd9ea7725f"
+    },
+    {
+      "episode_id": 100595053,
+      "path": "raw/replays/episode-100595053-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 344599,
+      "sha256": "a9bca6476a3a4062f6e44403eede4f204c08fe0fed42b0b1f084f284b90f0998"
+    },
+    {
+      "episode_id": 100595222,
+      "path": "raw/replays/episode-100595222-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 383683,
+      "sha256": "12ec405520cf3eb56408c8bd045dc7372aa38bfa732ddef108208c8de425a556"
+    },
+    {
+      "episode_id": 100597433,
+      "path": "raw/replays/episode-100597433-replay.json.gz",
+      "selected_for_current_snapshot": false,
+      "compression": "gzip -9n",
+      "size_bytes": 309365,
+      "sha256": "2597c38f8ceececf99759d6c7d1a04ef02af3131fc5a4d6fbeab87c228d73c34"
+    },
+    {
+      "episode_id": 100599781,
+      "path": "raw/replays/episode-100599781-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 416767,
+      "sha256": "c109b04fa4de61df2dd8463037fb5bd337ea98e5337ab9e36c14f96c23cd4908"
+    },
+    {
+      "episode_id": 100604105,
+      "path": "raw/replays/episode-100604105-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 402224,
+      "sha256": "ca2e0a099f3029c28bf388a75884c113ac309c3ed9631b64bcec267a047aa754"
+    },
+    {
+      "episode_id": 100608956,
+      "path": "raw/replays/episode-100608956-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 401146,
+      "sha256": "1b71af0e9ba620aa7f8efc58f0861c8d67ef35b049aec51f66473f0806642396"
+    },
+    {
+      "episode_id": 100608973,
+      "path": "raw/replays/episode-100608973-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 344639,
+      "sha256": "0f8b33fdd691d8c204a80e602543fe1f395374ba00b92dfe731c665ad46a997e"
+    },
+    {
+      "episode_id": 100613471,
+      "path": "raw/replays/episode-100613471-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 344401,
+      "sha256": "0d38eedb488399a572fb4a228c63f9761fc10c3edf6cd52ec75ecdc031c50dba"
+    },
+    {
+      "episode_id": 100613524,
+      "path": "raw/replays/episode-100613524-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 334776,
+      "sha256": "f6df1752ec0f1829614db725f85d38b0fea873471bbce28eaf64a35162e39fee"
+    },
+    {
+      "episode_id": 100618016,
+      "path": "raw/replays/episode-100618016-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 419687,
+      "sha256": "74ae10772b3e9aa74aa45b0e3fffc8a5b79e7f81ba403863172e227794406cc6"
+    },
+    {
+      "episode_id": 100622415,
+      "path": "raw/replays/episode-100622415-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 318161,
+      "sha256": "aca61ac3779103a78c221d5bf251e37b7099c2bbd48f39a9f2ec8f979858064a"
+    },
+    {
+      "episode_id": 100622643,
+      "path": "raw/replays/episode-100622643-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 331986,
+      "sha256": "f0d4679c176db64010bbd255f3c76759a6992d781cdc758456aa58753663ce6f"
+    },
+    {
+      "episode_id": 100622661,
+      "path": "raw/replays/episode-100622661-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 342679,
+      "sha256": "54f1329d78ecd90c985d783c86a588d49f5299441cf52a2c9db3f762b4e8bf88"
+    },
+    {
+      "episode_id": 100624689,
+      "path": "raw/replays/episode-100624689-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 309120,
+      "sha256": "5997aafc1993d53d376d96b1c400d3333c236d1be5f2fc9fd80ed164e03068b8"
+    },
+    {
+      "episode_id": 100624910,
+      "path": "raw/replays/episode-100624910-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 353992,
+      "sha256": "81cd04bc5fb14799a8d08d73f16191373ad26d83336bd7c13a0aeb44b92a683e"
+    },
+    {
+      "episode_id": 100629235,
+      "path": "raw/replays/episode-100629235-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 347842,
+      "sha256": "219aeaf7afadae8842b12a92bd7fb118198c2783737f2112c8785534a6e116a2"
+    },
+    {
+      "episode_id": 100631425,
+      "path": "raw/replays/episode-100631425-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 407370,
+      "sha256": "37a1e06f21998b9fab4c59e29317ece364b14e91d42a7106008c43bd385d88c0"
+    },
+    {
+      "episode_id": 100631731,
+      "path": "raw/replays/episode-100631731-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 409739,
+      "sha256": "d8c051980db9c43c059842b89dc0c0b96b4a2a4e309a8a11a27daee6e19ff7d7"
+    },
+    {
+      "episode_id": 100636285,
+      "path": "raw/replays/episode-100636285-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 318851,
+      "sha256": "8cc964898fb1643c2f15665090932c1f3a50d296f2c197c8d8f2249d8ea81f59"
+    },
+    {
+      "episode_id": 100638342,
+      "path": "raw/replays/episode-100638342-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 349992,
+      "sha256": "c3dea71c874722774ef41079e0b69794b8045f7ee6f1ff34dac8c9ee6db23fb1"
+    },
+    {
+      "episode_id": 100640654,
+      "path": "raw/replays/episode-100640654-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 411946,
+      "sha256": "fcb5c50fd073501e470827ae85f18e0aab264a7a2820177b50789126803daeba"
+    },
+    {
+      "episode_id": 100640715,
+      "path": "raw/replays/episode-100640715-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 333099,
+      "sha256": "d7d189a8f6ff101dbf4f7112f57979b45240bc3a20a9f960aaada4d63c9063b6"
+    },
+    {
+      "episode_id": 100642870,
+      "path": "raw/replays/episode-100642870-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 352368,
+      "sha256": "faff0aa74ceab92a780c08e8dc597636c07c48e01689cff0649048895d69363e"
+    },
+    {
+      "episode_id": 100645157,
+      "path": "raw/replays/episode-100645157-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 325166,
+      "sha256": "e7bfefd066fd5d439b564751dcecacd8ec2a17ecccf66ea50141af9d9059a699"
+    },
+    {
+      "episode_id": 100647562,
+      "path": "raw/replays/episode-100647562-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 331207,
+      "sha256": "f43e9a57e5a8f0dbbd9a10f6fdeb13b480a74acdbd1a5a3e49ab675bf9e8c6b0"
+    },
+    {
+      "episode_id": 100649835,
+      "path": "raw/replays/episode-100649835-replay.json.gz",
+      "selected_for_current_snapshot": false,
+      "compression": "gzip -9n",
+      "size_bytes": 409109,
+      "sha256": "bd6d4e3848ab3258b92d089114091e2ef77769472c7827be807f13808be02fef"
+    },
+    {
+      "episode_id": 100649942,
+      "path": "raw/replays/episode-100649942-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 413260,
+      "sha256": "d323a72057884b0d795cc464365a684e1f38562bc9a4ec80fea0b40b06f817f3"
+    },
+    {
+      "episode_id": 100649949,
+      "path": "raw/replays/episode-100649949-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 401224,
+      "sha256": "9af58bac3e4450396f1a798842cae5a1ae507476c8adc31d13892e109e42e1dc"
+    },
+    {
+      "episode_id": 100652110,
+      "path": "raw/replays/episode-100652110-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 307915,
+      "sha256": "74e9754209aecd699124af73c78abffa47624a3b13d2a691bdbc9611c667a00a"
+    },
+    {
+      "episode_id": 100654381,
+      "path": "raw/replays/episode-100654381-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 349987,
+      "sha256": "6963d89cab949226f2d02a94ab5433fec590bf03426e6687c85128303f34abae"
+    },
+    {
+      "episode_id": 100654397,
+      "path": "raw/replays/episode-100654397-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 326631,
+      "sha256": "f15ee4e35dc19eb15f3b3b65547ff13ad42f86d6ac8af7f70de5ba37127dc0c3"
+    },
+    {
+      "episode_id": 100654445,
+      "path": "raw/replays/episode-100654445-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 403343,
+      "sha256": "476cbb05eab68df30d2d3e26a63efa93aec06d4117bcd96644f9fc5caf2f930f"
+    },
+    {
+      "episode_id": 100654498,
+      "path": "raw/replays/episode-100654498-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 339923,
+      "sha256": "bd9ba864260503fd230b3b3b8396ef107d53b20c7eeb09e32bbc2a10a12e05bb"
+    },
+    {
+      "episode_id": 100656593,
+      "path": "raw/replays/episode-100656593-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 360215,
+      "sha256": "4623f1bf5b2afbd6cc32821f1e227e0758eb28e7d0c84f598c5004bf35723446"
+    },
+    {
+      "episode_id": 100656610,
+      "path": "raw/replays/episode-100656610-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 333001,
+      "sha256": "a87659424e86ab903fbbecf77e9a7e28bf4a01e8cb8a0fb3737c03f210c5e2b1"
+    },
+    {
+      "episode_id": 100656862,
+      "path": "raw/replays/episode-100656862-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 425392,
+      "sha256": "5d013b230bd39e5851925e4a6f26795b401c0a0477f43798865dfeb92ba3da68"
+    },
+    {
+      "episode_id": 100661148,
+      "path": "raw/replays/episode-100661148-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 348688,
+      "sha256": "f6994ee90efeb56e749621e74d3b690fd946c44f31e333e4ee91b1515a8e2717"
+    },
+    {
+      "episode_id": 100661161,
+      "path": "raw/replays/episode-100661161-replay.json.gz",
+      "selected_for_current_snapshot": false,
+      "compression": "gzip -9n",
+      "size_bytes": 424349,
+      "sha256": "bf87922e728f272925fa3ab2420a766077ba406d2f8b4fec9b56ab4e0abc62f7"
+    },
+    {
+      "episode_id": 100661256,
+      "path": "raw/replays/episode-100661256-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 353546,
+      "sha256": "70cc7e8b9bd10a168b588015aaaee295bb4c87bd95905b5685ddc438b25ea108"
+    },
+    {
+      "episode_id": 100661270,
+      "path": "raw/replays/episode-100661270-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 359861,
+      "sha256": "722d950f113b7bd43f3b8411cb0e890e14f2f0e90f8aa5e3e887d1dc877b6c87"
+    },
+    {
+      "episode_id": 100663483,
+      "path": "raw/replays/episode-100663483-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 411789,
+      "sha256": "a7df1707a3dd991acc2b6b7235b7123852da95ca2d36626e6a9a88afe2f1e353"
+    },
+    {
+      "episode_id": 100663585,
+      "path": "raw/replays/episode-100663585-replay.json.gz",
+      "selected_for_current_snapshot": false,
+      "compression": "gzip -9n",
+      "size_bytes": 351803,
+      "sha256": "7638b6ab37bd51c0ec1c4140dcf3eefcda5855499a714779b7a0d7060e6b4427"
+    },
+    {
+      "episode_id": 100665723,
+      "path": "raw/replays/episode-100665723-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 360561,
+      "sha256": "7a1ca44a74a5aadebe1f94833341d82e84fc4e264f4e31b3e18853fe1067dec7"
+    },
+    {
+      "episode_id": 100665830,
+      "path": "raw/replays/episode-100665830-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 373835,
+      "sha256": "f78d26af19b429366ae639a8bce167d2c20b844a14432f52cfb7d00c0e44c9f3"
+    },
+    {
+      "episode_id": 100665873,
+      "path": "raw/replays/episode-100665873-replay.json.gz",
+      "selected_for_current_snapshot": false,
+      "compression": "gzip -9n",
+      "size_bytes": 340547,
+      "sha256": "44ac2e226fa74eabaea96292344ae04d297811eb6c23e7b7f99c83cd084ae61f"
+    },
+    {
+      "episode_id": 100665898,
+      "path": "raw/replays/episode-100665898-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 421418,
+      "sha256": "41f34ec806dfa276bbb500fe9ebea1da726f38b8cea42ac848be1c5097dcff06"
+    },
+    {
+      "episode_id": 100667999,
+      "path": "raw/replays/episode-100667999-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 338087,
+      "sha256": "8d5ff03c60621e3a53344f91ea6dbb78169b3f3081abfd228863682e6299ecc7"
+    },
+    {
+      "episode_id": 100668009,
+      "path": "raw/replays/episode-100668009-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 345800,
+      "sha256": "d2280887d14ddf2dd5a596d8b94c5b1a1fcb6df7403c461d072dee4e4e91454c"
+    },
+    {
+      "episode_id": 100668111,
+      "path": "raw/replays/episode-100668111-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 328158,
+      "sha256": "d520c4d656054cfbd4ac397d556cfd25981ef67e52a19d345149dfc6990dc2ce"
+    },
+    {
+      "episode_id": 100668227,
+      "path": "raw/replays/episode-100668227-replay.json.gz",
+      "selected_for_current_snapshot": false,
+      "compression": "gzip -9n",
+      "size_bytes": 347392,
+      "sha256": "fb9f64745acb8d147f8c15adac92a851f676b01ff530f8aa3999b3c2d19becbd"
+    },
+    {
+      "episode_id": 100670416,
+      "path": "raw/replays/episode-100670416-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 327081,
+      "sha256": "df8b5fbcb612f21f1c38b4235995230ad26ded2c69c6e5e99de0f82eca8cc41b"
+    },
+    {
+      "episode_id": 100670534,
+      "path": "raw/replays/episode-100670534-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 425961,
+      "sha256": "7124488c4a6ee42ddacdfd1b1e86ab0f32b2d8756c63052db94c4b6d0e774d5e"
+    },
+    {
+      "episode_id": 100670558,
+      "path": "raw/replays/episode-100670558-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 404216,
+      "sha256": "d5be0568e28d316bb31abed962db911680f0da76097641aa1846e1f90fb5d031"
+    },
+    {
+      "episode_id": 100672577,
+      "path": "raw/replays/episode-100672577-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 339814,
+      "sha256": "cbe89ff08dfaad40629563355208b738039fdbc5d1724fa39b9f7d40f9e8453d"
+    },
+    {
+      "episode_id": 100674897,
+      "path": "raw/replays/episode-100674897-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 427378,
+      "sha256": "30dd01ace19b92b56fe16284ba64d5d99b02a53fac17374264b21ae29260ac9b"
+    },
+    {
+      "episode_id": 100675047,
+      "path": "raw/replays/episode-100675047-replay.json.gz",
+      "selected_for_current_snapshot": false,
+      "compression": "gzip -9n",
+      "size_bytes": 358850,
+      "sha256": "263fc5c7cf2288edfc5f8ba2c7c739e3754f8e1eea01a18c0404f6f88a184bf7"
+    },
+    {
+      "episode_id": 100679452,
+      "path": "raw/replays/episode-100679452-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 344090,
+      "sha256": "1bffd07b1bfe8607dfcd946e866e100d562149249ac2ae947cd3ea0f85d1ce8b"
+    },
+    {
+      "episode_id": 100679575,
+      "path": "raw/replays/episode-100679575-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 346267,
+      "sha256": "ad66b155678cd2fe423d2ea5b514aec37fe3014cf5081b36ed9799aa6e258c22"
+    },
+    {
+      "episode_id": 100681755,
+      "path": "raw/replays/episode-100681755-replay.json.gz",
+      "selected_for_current_snapshot": false,
+      "compression": "gzip -9n",
+      "size_bytes": 331570,
+      "sha256": "3d0d3dfd080e3d0ceafa4034a6d4ac34e34f7edae36f4af5d297e3b969d32c4a"
+    },
+    {
+      "episode_id": 100681795,
+      "path": "raw/replays/episode-100681795-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 413569,
+      "sha256": "eeec142550291c0c6da98664c1cdb3528bd246c6823e1a5915febdc45c901a23"
+    },
+    {
+      "episode_id": 100681884,
+      "path": "raw/replays/episode-100681884-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 342600,
+      "sha256": "a21c3233bad53469ae22eed050f715784d413e8083a8dc25bb3157a71f6e8b04"
+    },
+    {
+      "episode_id": 100681904,
+      "path": "raw/replays/episode-100681904-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 412702,
+      "sha256": "b7a6fc56f083e00763f9c9047c2e1175d94c6bac434ac5fb5dc615e893b4c961"
+    },
+    {
+      "episode_id": 100681953,
+      "path": "raw/replays/episode-100681953-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 405389,
+      "sha256": "2b6af0c5fd3014c01efed4a14b2c3851b90aeb09179e4e05303f10be46f5ccd1"
+    },
+    {
+      "episode_id": 100684003,
+      "path": "raw/replays/episode-100684003-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 417517,
+      "sha256": "da3f96c5dde0e093b32f65c5e6d556ca1c0abbbb92c9a513e0e7a14996b06137"
+    },
+    {
+      "episode_id": 100684034,
+      "path": "raw/replays/episode-100684034-replay.json.gz",
+      "selected_for_current_snapshot": false,
+      "compression": "gzip -9n",
+      "size_bytes": 316053,
+      "sha256": "e190d775c5528673ecaee1a13008c8eed751f21d2bb09a28400a2519df981cfa"
+    },
+    {
+      "episode_id": 100684118,
+      "path": "raw/replays/episode-100684118-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 353248,
+      "sha256": "c340aa4798dfddc85e0a046b5ebe6d2206577d9607b40960bab211378f4cc3a4"
+    },
+    {
+      "episode_id": 100684131,
+      "path": "raw/replays/episode-100684131-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 375750,
+      "sha256": "5035db4c6c29f648f6bac2027934635eea28cb9b283d29aa29990fcc07ca1a4a"
+    },
+    {
+      "episode_id": 100684150,
+      "path": "raw/replays/episode-100684150-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 422360,
+      "sha256": "e3e1f94d0f4a458ae235defa4c7fc469d18ba883c55c95341ecea2e29b82a87c"
+    },
+    {
+      "episode_id": 100686312,
+      "path": "raw/replays/episode-100686312-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 332564,
+      "sha256": "fc5ae71c2f6c9d252e09f3f838667a11fbfa31a27ae650a1f2bb5e6b09e6ca6d"
+    },
+    {
+      "episode_id": 100686412,
+      "path": "raw/replays/episode-100686412-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 333852,
+      "sha256": "159e996868ac50bd02c2b12eda45bb6c9d25e17f9b638a725afb23a5fffd6a92"
+    },
+    {
+      "episode_id": 100686494,
+      "path": "raw/replays/episode-100686494-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 398924,
+      "sha256": "5cdd9bfbb9014d1df7906dfcdfe45b2b517aacf7210983afe89f23908c296671"
+    },
+    {
+      "episode_id": 100688599,
+      "path": "raw/replays/episode-100688599-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 323216,
+      "sha256": "b53c587e5ddee3658e03913d4cb5496721eae2e6cdf6c68f3fcf97f1777fcb72"
+    },
+    {
+      "episode_id": 100688694,
+      "path": "raw/replays/episode-100688694-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 384122,
+      "sha256": "4833e1dc752088b77db8ac1a910076a0f960c269f01237f1274761fd2fac9bfb"
+    },
+    {
+      "episode_id": 100688816,
+      "path": "raw/replays/episode-100688816-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 304785,
+      "sha256": "f0d3cd5f7bc440839cb81f4ae566283ee6f7fc66fa2d33332b77074575e87a3f"
+    },
+    {
+      "episode_id": 100690885,
+      "path": "raw/replays/episode-100690885-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 356311,
+      "sha256": "24952f9b02fe50a0d1bb67d227a385eb0c600f6348fc3dbc02f0adecd2486896"
+    },
+    {
+      "episode_id": 100690989,
+      "path": "raw/replays/episode-100690989-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 417196,
+      "sha256": "fd2850a344eb5c7ba0a351a1afc2fae5a9ee3fd914f429720c9e1afce3142700"
+    },
+    {
+      "episode_id": 100691083,
+      "path": "raw/replays/episode-100691083-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 403632,
+      "sha256": "2f6568cc845ddd1104abc203b1956778d0eb3f2ad3e081e21005a7f4eddb8a49"
+    },
+    {
+      "episode_id": 100693048,
+      "path": "raw/replays/episode-100693048-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 327151,
+      "sha256": "2d284f888bdf209c7b3d0dfdcc235281ace60e9dd837262484c8de822126527c"
+    },
+    {
+      "episode_id": 100693181,
+      "path": "raw/replays/episode-100693181-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 425457,
+      "sha256": "d091f9ea20ddd543fab5084533bacf5bcd4bcb95830325aaea2bc09d55a2f045"
+    },
+    {
+      "episode_id": 100695335,
+      "path": "raw/replays/episode-100695335-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 341526,
+      "sha256": "44b7ec6eac4aa370085e304e1310638caa9bd1e192cc6795d1086985dcc8cb14"
+    },
+    {
+      "episode_id": 100695463,
+      "path": "raw/replays/episode-100695463-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 417716,
+      "sha256": "822c3fdeb18cfdd41cae72313578127b0583a892b80bcd5d6078f8cef24e387f"
+    },
+    {
+      "episode_id": 100697582,
+      "path": "raw/replays/episode-100697582-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 392279,
+      "sha256": "fe89d5fdf40bf94ae6f475cb32932a88f4640c664b54396be5dacb3209c75c50"
+    },
+    {
+      "episode_id": 100697744,
+      "path": "raw/replays/episode-100697744-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 360819,
+      "sha256": "2f137e14559558a09cad0db6c6d5e5a3cfa2460acb217fbdd671e2a739476f79"
+    },
+    {
+      "episode_id": 100697861,
+      "path": "raw/replays/episode-100697861-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 312167,
+      "sha256": "0cb571e47b94b00902f42ac363fb2a7fb6e20f69e7f9981465826e19ddf60b6f"
+    },
+    {
+      "episode_id": 100697866,
+      "path": "raw/replays/episode-100697866-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 334572,
+      "sha256": "65621e759ea5d532c46545c49237df66a6387fffea54cb6ad3b1f000a10f15ae"
+    },
+    {
+      "episode_id": 100697868,
+      "path": "raw/replays/episode-100697868-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 404719,
+      "sha256": "39ec97b50afefe7a4b496f4c68021daa21f0014d3dfa00b6c57050200fd5b87c"
+    },
+    {
+      "episode_id": 100697890,
+      "path": "raw/replays/episode-100697890-replay.json.gz",
+      "selected_for_current_snapshot": true,
+      "compression": "gzip -9n",
+      "size_bytes": 407260,
+      "sha256": "3506d0ea7bb6f71fe31e2e0f9453bc375759092735783e69a9d4762d14d8935c"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+defaults:
+  - learning_league
+  - _self_
+experiment:
+  train_seed: 3780000000
+verification:
+  run: outputs/learning/league3-20260909-s63001
+  output: outputs/analysis/league-failure-20260909/ppo-verification.json
+  updates: 3

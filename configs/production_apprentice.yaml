@@ -1,0 +1,35 @@
+defaults:
+  - production: work_expert
+  - _self_
+production:
+  mode: evaluate
+  output_dir: outputs/production-policy/20260907-work-expert-apprentice
+  checkpoint: outputs/releases/20260907-work-no-prior-ppo-lr1e6-stopped/update-0751.pt
+  evaluation_seed: 140000000
+  confirmation_seed: 150000000
+  ppo:
+    seed_start: 110000000
+teacher: outputs/analysis/20260907-policy-search-g40-vs-ppo/candidate-generation-000040.pt
+reference: outputs/releases/20260907-work-no-prior-ppo-lr1e6-stopped/update-0751.pt
+generations: 6
+directions: 3
+scales: [0.01, 0.03, 0.1]
+mutation_seed: 98319
+finalists: 2
+retain_generations: 16
+collection_seed: 160000000
+validation_seed: 130000000
+learning_rate: 0.000001
+temperature: 2.0
+learner_steps: 8
+learner_rows: 11520
+microbatch_rows: 512
+observations_per_trajectory: 16
+search_interval: 3
+bootstrap_updates: 2
+evaluation_interval: 1
+hydra:
+  run:
+    dir: ${production.output_dir}/hydra
+  job:
+    chdir: false

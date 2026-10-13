@@ -1,0 +1,17 @@
+replay_route:
+  source_manifest: data/external/kaggriculture-rank1-2026-08-29/submission-55829779/manifest.json
+  source_agent_name: Crop Dusta
+  prefix_turns: 96
+  route_ids: null
+  output_dir: outputs/evaluation/20260830-rank1-replay-route-prefix96-selection-v1
+  baseline_report: outputs/evaluation/20260830-proposal-prior-checkpoint0-selection-greedy-v1/evaluation-report.json
+  seed_start: 76000
+  seed_count: 48
+  opponents: [kaito_v48, mugundh_v21, boatlee_v21, kaito_v39]
+  paired_seats: true
+  cpu_workers: 48
+  act_timeout_seconds: 1.0
+  remaining_overage_seconds: 60.0
+  environment:
+    episodeSteps: 720
+    maxMarketOrdersPerTurn: 10

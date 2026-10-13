@@ -1,0 +1,12 @@
+defaults:
+  - learning_upgrade
+  - _self_
+qualification:
+  run: ${upgrade.run}
+  output_dir: outputs/learning/dual-h200-qualification
+  report: ${upgrade.qualification}
+  updates: 12
+  execution: ${upgrade.execution}
+hydra:
+  run:
+    dir: outputs/analysis/dual-h200/hydra-qualification

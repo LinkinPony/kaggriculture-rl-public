@@ -1,0 +1,52 @@
+# Logical-minibatch challenger for the Rank8 BC warm start.
+initial_actor: outputs/turn-policy/20260828-opening-diverse-bc2-v1/actor-fp16.pt
+initial_checkpoint: outputs/intent-ledger-bc/20260904-rank8-random-v4-bc256-e32/checkpoints/best.pt
+resume_checkpoint: null
+output_dir: outputs/intent-ledger-rl/20260904-rank8-bc-e32-logical32-throughput3-v1
+seed: 20260904
+rollout_seed_start: 7300000
+updates: 3
+opponent: self_play
+objective: terminal_wdl
+discount: 1.0
+gae_lambda: 1.0
+unit_limit: 32
+
+model:
+  model_width: 128
+  feedforward_width: 384
+  train_turn_encoder: true
+
+optimization:
+  ppo_epochs: 2
+  episodes_per_minibatch: 32
+  episodes_per_microbatch: 2
+  learning_rate: 0.00001
+  weight_decay: 0.00001
+  clip_epsilon: 0.1
+  value_loss_weight: 1.0
+  entropy_weight: 0.001
+  gradient_clip: 1.0
+  target_kl: 0.02
+  normalize_advantage: true
+
+rollout:
+  seeds_per_update: 512
+  cpu_workers: 32
+  max_transaction_steps: 96
+  actor_streams_per_device: 4
+  devices: [cuda:0, cuda:1]
+
+checkpoint:
+  interval: 5
+  keep: 5
+
+device: cuda:0
+cpu_threads: 8
+act_timeout_seconds: 1.0
+remaining_overage_seconds: 60.0
+environment:
+  boardSize: 10
+  episodeSteps: 720
+  turnsPerDay: 24
+  maxMarketOrdersPerTurn: 10

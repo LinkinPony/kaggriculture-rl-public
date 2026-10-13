@@ -1,0 +1,25 @@
+# Early screen: s101701 and s101702 U100 at T=0 head to head with s101102 U200 at T=0 on the
+# final baseline's fresh common seeds with both seats.
+defaults:
+  - evaluation_final_candidates_20260930
+  - _self_
+
+study:
+  output: outputs/analysis/final-candidates-20260930/screen-u0100
+  scope: >-
+    s101701 and s101702 U100 at T=0 head to head with s101102 U200 at T=0 on the final
+    baseline's 256 fresh common seeds with both seats. Local proxy only.
+  candidates:
+    - name: s101701-u0100-t0
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-s101102u200-kl-ppo50-1gpu-20260930-s101701
+      member: checkpoints/update-000100.pt
+    - name: s101702-u0100-t0
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-mmpqclone4-kl-ppo50-1gpu-r2-20260930-s101702
+      member: checkpoints/update-000100.pt
+  opponents:
+    - name: s101102-u0200-t0
+      group: s101102-u0200
+      temperature: 0
+      path: outputs/analysis/s101102-vs-mmpq-clone-20260930/actors/s101102-u0200-t0.pt

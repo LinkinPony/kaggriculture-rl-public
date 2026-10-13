@@ -1,0 +1,29 @@
+data:
+  output_dir: outputs/datasets/grounded-v2-20260909-11-q100
+  architecture: grounded-v2
+  partition: episode-seed
+  partition_seed: 62001
+  workers: 12
+  episodes_per_shard: 8
+  quantity_max: 100
+  quantity_extra: []
+  quantity_encoding: clip
+  sources:
+  - archive: data/external/kaggriculture-context3d-20260910/raw/kaggriculture-episodes-2026-09-09.zip
+    sha256: e853036d0e5067ab1b8da32df81b1ba09a5dcb3c46ca9488151b8f493d96e4a8
+    date: '2026-09-09'
+    split: train
+  - archive: data/external/kaggriculture-bc-redesign-20260911/raw/index/kaggriculture-episodes-2026-09-10.zip
+    sha256: 54990628ff158b62119cd777bf92c132fe2c18300ae7b0dfc0ff332cea3b7e8c
+    date: '2026-09-10'
+    split: train
+  - archive: data/external/kaggriculture-latest3d-20260912/raw/kaggriculture-episodes-2026-09-11.zip
+    sha256: 6f90a3e82f2eb0cece56579efaac9c89a2d88769b589ab29812ebf8d86d5ef49
+    date: '2026-09-11'
+    split: train
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/latest3d-20260912/data-hydra
+  output_subdir: null

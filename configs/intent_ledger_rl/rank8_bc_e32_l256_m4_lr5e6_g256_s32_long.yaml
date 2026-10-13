@@ -1,0 +1,53 @@
+# Rank8 BC PPO branch with bounded transactions and 256 games per update.
+# This remains a research challenger with no production decision authority.
+initial_actor: outputs/turn-policy/20260828-opening-diverse-bc2-v1/actor-fp16.pt
+initial_checkpoint: outputs/intent-ledger-bc/20260904-rank8-random-v4-bc256-e32/checkpoints/best.pt
+resume_checkpoint: null
+output_dir: outputs/intent-ledger-rl/20260904-rank8-bc-e32-l256-m4-g256-s32-lr5e6-long-v1
+seed: 20260904
+rollout_seed_start: 7500000
+updates: 100000
+opponent: self_play
+objective: terminal_wdl
+discount: 1.0
+gae_lambda: 1.0
+unit_limit: 32
+
+model:
+  model_width: 128
+  feedforward_width: 384
+  train_turn_encoder: true
+
+optimization:
+  ppo_epochs: 2
+  episodes_per_minibatch: 256
+  episodes_per_microbatch: 4
+  learning_rate: 0.000005
+  weight_decay: 0.00001
+  clip_epsilon: 0.1
+  value_loss_weight: 1.0
+  entropy_weight: 0.001
+  gradient_clip: 1.0
+  target_kl: 0.02
+  normalize_advantage: true
+
+rollout:
+  seeds_per_update: 256
+  cpu_workers: 32
+  max_transaction_steps: 32
+  actor_streams_per_device: 4
+  devices: [cuda:0, cuda:1]
+
+checkpoint:
+  interval: 5
+  keep: 5
+
+device: cuda:0
+cpu_threads: 8
+act_timeout_seconds: 1.0
+remaining_overage_seconds: 60.0
+environment:
+  boardSize: 10
+  episodeSteps: 720
+  turnsPerDay: 24
+  maxMarketOrdersPerTurn: 10

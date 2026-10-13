@@ -1,0 +1,18 @@
+# MMPQ clone v4 with joint unit decoding, both at T=0 (validation-best epochs).
+# Same seeds, references and precision as evaluation_mmpq_clone_v4_parallel_20260930.
+defaults:
+  - evaluation_mmpq_clone_v4_parallel_20260930
+  - _self_
+study:
+  output: outputs/analysis/mmpq-bc-redesign-20260930/v4-joint
+  scope: >-
+    MMPQ v4 clones (current-plan data; cosine BC; units decoded in slot order, each seeing
+    earlier units' choices) at T=0 against four T=1 references and the v3 clone at T=0, on
+    64 common seeds with both seats. Local proxy only.
+  candidates:
+    - name: v4-joint-t0
+      temperature: 0
+      run: outputs/learning/mmpq-clone-v4-joint-bc-20260930-s101002
+    - name: v4-joint-hi-t0
+      temperature: 0
+      run: outputs/learning/mmpq-clone-v4-joint-hi-bc-20260930-s101003

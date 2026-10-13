@@ -1,0 +1,26 @@
+# All available games from DSM versions submitted on September 28 and 29 UTC.
+snapshot:
+  source: data/external/kaggriculture-dsm-recent2d-20260929/manifest.json
+  output: outputs/datasets/derived-v5b-dsm-recent2d-20260929-train-val-q100/source-manifests
+  submitted_since: '2026-09-28T00:00:00Z'
+  submitted_before: null
+data:
+  output: outputs/datasets/derived-v5b-dsm-recent2d-20260929-train-val-q100
+  raw: data/external
+  reuse: []
+  teachers: [DSM]
+  watch_manifests:
+  - ${snapshot.output}/selected.json
+  workers: 16
+  partition_seed: 62001
+  train_val: true
+  agronomy: true
+  derived: true
+  canonical_market: true
+report: outputs/analysis/s99001-u1061-dsm-recent2d-20260929/data-verification.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/s99001-dsm-recent2d-20260929/${now:%Y%m%d-%H%M%S}
+  output_subdir: null

@@ -1,0 +1,37 @@
+# MMPQ v5 clones (three 9/29 versions only) at T=0: from U0, and continued from the best
+# v4 clone. Same seeds and first five opponents as the v4 panels; the v4 constant-rate clone
+# at T=0 is appended as a sixth opponent for a direct comparison.
+defaults:
+  - evaluation_mmpq_clone_v4_parallel_20260930
+  - _self_
+study:
+  output: outputs/analysis/mmpq-bc-redesign-20260930/v5
+  scope: >-
+    MMPQ v5 clones (9/29 versions only; from U0 or continued from the v4 clone) at T=0
+    against four T=1 references, the v3 clone at T=0 and the v4 constant-rate clone at T=0,
+    on 64 common seeds with both seats. Local proxy only.
+  candidates:
+    - name: v5-scratch-t0
+      temperature: 0
+      run: outputs/learning/mmpq-clone-v5-scratch-bc-20260930-s101005
+    - name: v5-from-v4-t0
+      temperature: 0
+      run: outputs/learning/mmpq-clone-v5-from-v4-bc-20260930-s101006
+  opponents:
+    - name: s99001-u0200
+      group: s99001
+      path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0200.pt
+    - name: s100201-u0200
+      group: s100201
+      run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201
+      member: checkpoints/update-000200.pt
+    - {name: clone-dsm, group: dsm, run: outputs/learning/team-clone-dsm-bc-20260929-s100012}
+    - {name: clone-mm-pq-v1, group: mm-pq, run: outputs/learning/team-clone-mm-pq-bc-20260929-s100011}
+    - name: clone-mm-pq-v3-t0
+      group: mm-pq-v3
+      temperature: 0
+      run: outputs/learning/team-clone-v3-mm-pq-bc-20260929-s100023
+    - name: clone-mm-pq-v4-const-t0
+      group: mm-pq-v4
+      temperature: 0
+      run: outputs/learning/mmpq-clone-v4-parallel-const-bc-20260930-s101004

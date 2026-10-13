@@ -1,0 +1,8 @@
+defaults:
+  - learning_public_arena
+  - _self_
+arena:
+  manifest: data/external/kaggriculture-public-rules-20260907/manifest.json
+  manifest_sha256: 5eedced790faaac75184d9f6e116895a7db1dcf394c4ad2eb1c3f1d7f14f44af
+  output_dir: outputs/analysis/scratch-demonstrations-public-rules-arena
+  seed: 1340000000

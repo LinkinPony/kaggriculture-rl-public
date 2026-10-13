@@ -1,0 +1,14 @@
+defaults:
+  - production: work_expert
+  - _self_
+production:
+  output_dir: outputs/analysis/20260907-work-parameter-search/confirmation
+  evaluation_games: 1024
+  evaluation_seed: 35001000
+  confirmation_seed: 37000000
+candidate: outputs/production-policy/20260907-work-parameter-screen-mixed/candidates/candidate-0058.pt
+hydra:
+  run:
+    dir: ${production.output_dir}/hydra
+  job:
+    chdir: false

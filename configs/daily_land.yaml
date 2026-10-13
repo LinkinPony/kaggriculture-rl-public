@@ -1,0 +1,12 @@
+survey:
+  root: data/external
+  raw: data/external/kaggriculture-daily-merged-20260922/raw
+  output: outputs/analysis/daily-land-20260922
+  include_public: true
+  workers: 6
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${survey.output}/hydra
+  output_subdir: null

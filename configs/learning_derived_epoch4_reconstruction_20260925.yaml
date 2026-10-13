@@ -1,0 +1,12 @@
+defaults:
+- learning_derived_dsm_bc_20260925
+- _self_
+experiment:
+  output_dir: outputs/learning/derived-v5b-epoch4-reconstruction-20260925-s85001
+  checkpoint_keep_recent: 64
+  initial_weights:
+    run: outputs/learning/derived-v5b-m384-u1843-dsm-bc100-20260925-s85001
+    checkpoint: initial.pt
+    sha256: ee8f9d743a3d36f9fcd322c1a9a939bb3bbc604cac00e7df901cc6e252361aca
+  demonstrations:
+    epochs: 9

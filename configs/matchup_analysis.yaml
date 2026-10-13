@@ -1,0 +1,11 @@
+analysis:
+  manifest: data/external/kaggle-submission-56266758/raw/manifest.json
+  output: outputs/analysis/submission-56266758-matchups-20260918
+  submission_id: 56266758
+  workers: 4
+
+hydra:
+  run:
+    dir: outputs/analysis/submission-56266758-matchups-20260918/hydra
+  job:
+    chdir: false

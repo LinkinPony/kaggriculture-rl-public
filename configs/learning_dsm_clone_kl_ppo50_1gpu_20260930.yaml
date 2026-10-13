@@ -1,0 +1,146 @@
+# s101102's single-GPU WDL/KL PPO recipe on cuda:1 with the actor handed off from the
+# latest-version DSM clone (s101303) and the critic from s100901 U756. The pool is s101101's
+# (s100901's imported opponents with discounted evidence, s100901's own snapshots and the team
+# clones) plus the v4 P MMPQ clone and the nine other DSM clones of 9/30, which start unmet.
+defaults:
+- learning_mmpq_clone_kl_ppo50_1gpu_20260930
+- _self_
+experiment:
+  output_dir: outputs/learning/derived-v5b-m384-dsmclone4-kl-ppo50-1gpu-20260930-s101401
+  seed: 101401
+  train_seed: 9600000000
+  device: cuda:1
+  execution:
+    devices: [cuda:1]
+  evaluation:
+    selection_seed: 9620000000
+    confirmation_seed: 9621000000
+    anchor_seeds: [560001, 560002]
+  population:
+    sources:
+    - ${....lineage.experiment.population.sources.0}
+    - ${....lineage.experiment.population.sources.1}
+    - ${....lineage.experiment.population.sources.2}
+    - ${....lineage.experiment.population.sources.3}
+    - ${....lineage.experiment.population.sources.4}
+    - ${....lineage.experiment.population.sources.5}
+    - ${....lineage.experiment.population.sources.6}
+    - ${....lineage.experiment.population.sources.7}
+    - ${....lineage.experiment.population.sources.8}
+    - ${....lineage.experiment.population.sources.9}
+    - ${....lineage.experiment.population.sources.10}
+    - ${....lineage.experiment.population.sources.11}
+    - ${....lineage.experiment.population.sources.12}
+    - ${....lineage.experiment.population.sources.13}
+    - run: outputs/learning/derived-v5b-m384-s99001u1061-dsm2d-kl-ppo50-20260929-s100901
+      state_sha256: 2e39e1ed891b04982f3320f2cbea23b312f7a0d09819541509287c940d5ca142
+      checkpoints:
+      - initial.pt
+      - checkpoints/update-000064.pt
+      - checkpoints/update-000128.pt
+      - checkpoints/update-000192.pt
+      - checkpoints/update-000200.pt
+      - checkpoints/update-000256.pt
+      - checkpoints/update-000320.pt
+      - checkpoints/update-000384.pt
+      - checkpoints/update-000400.pt
+      - checkpoints/update-000448.pt
+      - checkpoints/update-000512.pt
+      - checkpoints/update-000576.pt
+      - checkpoints/update-000600.pt
+      - checkpoints/update-000640.pt
+      - checkpoints/update-000704.pt
+      - checkpoints/update-000752.pt
+      - checkpoints/update-000756.pt
+    - run: outputs/learning/team-clone-mm-pq-bc-20260929-s100011
+      state_sha256: febfc27d837e3189a381806f17f9e816a98b7fca0c64dc06d69b55641d89a909
+      checkpoints:
+      - pretraining/shard-000294.pt
+    - run: outputs/learning/team-clone-dsm-bc-20260929-s100012
+      state_sha256: 6d84cd34e4d9dacfc04cc333794009ea29d165d296366c775c4e9151dcc49f59
+      checkpoints:
+      - pretraining/shard-000512.pt
+    - run: outputs/learning/team-clone-vadim-bc-20260929-s100013
+      state_sha256: de9cc107bbd1e4d6256fc7b09e75d38accfb8e59403135127736c992cd9102de
+      checkpoints:
+      - pretraining/shard-000210.pt
+    - run: outputs/learning/team-clone-decem-bc-20260929-s100014
+      state_sha256: d1276507f9aafe575d1425fcad28bbbcb32d7c9d2ff2b2317f2d1252ccaee470
+      checkpoints:
+      - pretraining/shard-000558.pt
+    - run: outputs/learning/team-clone-boey-bc-20260929-s100015
+      state_sha256: ec8263f3a7cfd220985bd8f10964327b4713d3c5f3f4988e37697f5bc76ad794
+      checkpoints:
+      - pretraining/shard-000168.pt
+    - run: outputs/learning/team-clone-tufa-bc-20260929-s100016
+      state_sha256: 6e710738642db05539556f202ffe031be4c010cfdd53414c0868fca4d03211f9
+      checkpoints:
+      - pretraining/shard-000052.pt
+    - run: outputs/learning/team-clone-v2-dsm-bc-20260929-s100022
+      state_sha256: a164e93c57d7caff5e1e9a23292e15dd31a18bb28ae3e797d4a5429e085c61a2
+      checkpoints:
+      - pretraining/shard-000228.pt
+    - run: outputs/learning/team-clone-v3-mm-pq-bc-20260929-s100023
+      state_sha256: a4959610bf69cb293378359cb33b678fad68308859447911ce1dcc1c1f74e1cd
+      checkpoints:
+      - pretraining/shard-000738.pt
+    - run: outputs/learning/mmpq-clone-v4-parallel-const-bc-20260930-s101004
+      state_sha256: 06cd37679b49522583b15eff87b439a3e7c10f15af320e9919ae64dddaaa8e87
+      checkpoints:
+      - pretraining/shard-000935.pt
+    - run: outputs/learning/mmpq-clone-v5-scratch-bc-20260930-s101005
+      state_sha256: 929e67e8396400805e541c19ae6f1df8df6de9be6131a02071cbea60697ade18
+      checkpoints:
+      - pretraining/shard-000480.pt
+    - run: outputs/learning/mmpq-clone-v5-from-v4-bc-20260930-s101006
+      state_sha256: 9579465d9dee28f52d5cb45794ce3c3ae88ecd438fc3860901e3a2189a803170
+      checkpoints:
+      - pretraining/shard-000080.pt
+    - run: outputs/learning/mmpq-clone-v4-parallel-const-r2-bc-20260930-s101007
+      state_sha256: 8663a67ba3dc614e04fab346929db3c3f8289018cd3cbe9d6fee544978d3e09f
+      checkpoints:
+      - pretraining/shard-000935.pt
+    - run: outputs/learning/mmpq-clone-v4-parallel-r2-bc-20260930-s101008
+      state_sha256: 3bbc1a77ad9d31dee4be3b4658c363b44fbb5068322849d3945808069f316e30
+      checkpoints:
+      - pretraining/shard-000765.pt
+    - run: outputs/learning/mmpq-clone-v4-parallel-bc-20260930-s101001
+      state_sha256: 48deef6d4c6882c1d46c7cea68e0f01913924616e297004d00d14526bd286443
+      checkpoints:
+      - pretraining/shard-000765.pt
+    - run: outputs/learning/dsm-clone-v3-plan-c-bc-20260930-s101201
+      state_sha256: 3129bf2edb8efc98910e6d47aced91bc747b90a7f293b92efbf894ea55590c03
+      checkpoints:
+      - pretraining/shard-000520.pt
+    - run: outputs/learning/dsm-clone-v3-plan-b-bc-20260930-s101202
+      state_sha256: 48866f2f767cbab9eef749da1f3c9d5ae2241ffd1e9bbc1457447796005e7cef
+      checkpoints:
+      - pretraining/shard-001024.pt
+    - run: outputs/learning/dsm-clone-v3-plan-c-from-u1061-bc-20260930-s101203
+      state_sha256: ad6c7f1fa5c7456746d0f777a8aaafc385f1b14e2cb71593a1abca059a4db12a
+      checkpoints:
+      - pretraining/shard-000520.pt
+    - run: outputs/learning/dsm-clone-v3-plan-c-from-u756-bc-20260930-s101204
+      state_sha256: 682cdf82b81ac5a3c16b2404ddc98a5140b0934c9d9ddd41ac97a078f2a478df
+      checkpoints:
+      - pretraining/shard-000416.pt
+    - run: outputs/learning/dsm-clone-v4-plan-c-bc-20260930-s101301
+      state_sha256: 9b2ff0044bf20aebaeba7ed2b0661b03ca2b301035005ff2f4b291dfb020b73f
+      checkpoints:
+      - pretraining/shard-000638.pt
+    - run: outputs/learning/dsm-clone-v4-plan-c-from-u756-bc-20260930-s101302
+      state_sha256: 65ddf10166a361b4a74039a989a32731d01df5892b855fb2f26e9be922fc1a2f
+      checkpoints:
+      - pretraining/shard-000406.pt
+    - run: outputs/learning/dsm-clone-v4-latest-from-u756-r2-bc-20260930-s101304
+      state_sha256: b4e0294eae39fec21662555dcd17eb3bfbcfdbeb4ddc2301c49013002b3a133f
+      checkpoints:
+      - pretraining/shard-000117.pt
+    - run: outputs/learning/dsm-clone-v4-latest-from-plan-c-bc-20260930-s101305
+      state_sha256: d0ca86363d1f5f67eb875c6ad0d5506373790a79f26b99819e02ebe37541d98a
+      checkpoints:
+      - pretraining/shard-000026.pt
+    - run: outputs/learning/dsm-clone-v4-latest-bc-20260930-s101306
+      state_sha256: b828afa94fcf3a74c5b6f4fb13c36069c01e88efe3022e6f2eeb08092238d60e
+      checkpoints:
+      - pretraining/shard-000117.pt

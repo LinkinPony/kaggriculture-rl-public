@@ -1,0 +1,34 @@
+# Warm-start challenger only; checkpoint selection uses held-out imitation NLL.
+dataset_dir: data/external/kaggle-submission-55708706-teacher/intent-ledger-v4-rank8-bc256
+dataset_id: fe27af06def04ecf2862607aa2b1b4a36e024eba03e1cd428bd63bd3d6bdf80f
+output_dir: outputs/intent-ledger-bc/20260904-rank8-random-v4-bc256-e32
+architecture_actor: outputs/turn-policy/20260828-opening-diverse-bc2-v1/actor-fp16.pt
+initialization: random
+validation_games: 16
+test_games: 16
+unit_limit: 32
+
+model:
+  model_width: 128
+  feedforward_width: 384
+  train_turn_encoder: true
+
+optimization:
+  epochs: 32
+  # One complete physical game per H200; both seats always remain together.
+  games_per_batch: 2
+  learning_rate: 0.0002
+  weight_decay: 0.00001
+  outcome_loss_weight: 0.1
+  gradient_clip: 1.0
+  seed: 20260904
+  device: cuda:0
+  cpu_threads: 16
+  loader_workers: 8
+  prefetch_batches: 8
+
+environment:
+  boardSize: 10
+  episodeSteps: 720
+  turnsPerDay: 24
+  maxMarketOrdersPerTurn: 10

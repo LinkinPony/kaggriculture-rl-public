@@ -1,0 +1,45 @@
+# Same frozen U480 actor at both temperatures; every opponent stays at T=1.
+study:
+  output: outputs/analysis/s100901-u0480-temperature-20260929
+  games: 128
+  seed: 9492900000
+  sampling_seed: 94929001
+  devices: [cuda:0, cuda:1]
+  memory_fraction: 0.08
+  minimum_free_mib: 12288
+  precision: fp32
+  scope: >-
+    U480 at T=0 and T=1 with full 384-turn memory, FP32 CUDA, 64 common environment
+    seeds with both seats per opponent. Eight equally weighted opponents: five
+    closed-loop team clones, two previously submitted policies and the exact BC
+    initialization. Clones are local proxies; this is not a Kaggle-wide win rate.
+    The BC initialization is in the training pool. No outcomes select the panel.
+  candidates:
+    - name: s100901-u0480-t0
+      temperature: 0
+      path: outputs/analysis/s100901-u0480-20260929-t0-once/snapshot/checkpoints/update-000480.pt
+    - name: s100901-u0480-t1
+      temperature: 1
+      path: outputs/analysis/s100901-u0480-20260929-t0-once/snapshot/checkpoints/update-000480.pt
+  opponents:
+    - {name: clone-mm-pq, group: mm-pq, run: outputs/learning/team-clone-mm-pq-bc-20260929-s100011}
+    - {name: clone-dsm, group: dsm, run: outputs/learning/team-clone-dsm-bc-20260929-s100012}
+    - {name: clone-vadim, group: vadim, run: outputs/learning/team-clone-vadim-bc-20260929-s100013}
+    - {name: clone-decem, group: decem, run: outputs/learning/team-clone-decem-bc-20260929-s100014}
+    - {name: clone-tufa, group: tufa, run: outputs/learning/team-clone-tufa-bc-20260929-s100016}
+    - name: submitted-s100201-u0200
+      group: s100201
+      run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201
+      member: checkpoints/update-000200.pt
+    - name: submitted-s99001-u0200
+      group: s99001
+      path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0200.pt
+    - name: s100901-bc-start
+      group: bc-start
+      path: outputs/analysis/s100901-u0480-20260929-t0-once/snapshot/initial.pt
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${study.output}/hydra
+  output_subdir: null

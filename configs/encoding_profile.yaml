@@ -1,0 +1,14 @@
+benchmark:
+  engine: src/kagg_revue/native/_revue_core.cpython-311-x86_64-linux-gnu.so
+  manifest: outputs/datasets/agronomy-v4-sequences-3d-20260917-q100/manifest.json
+  audit: outputs/analysis/agronomy-v4-20260917/data-verification.json
+  episodes: 3
+  stride: 72
+  repeats: 64
+  report: outputs/analysis/agronomy-v4-throughput-20260917/encoding-profile.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/encoding-profile
+  output_subdir: null

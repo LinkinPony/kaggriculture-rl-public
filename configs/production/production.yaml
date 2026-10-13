@@ -1,0 +1,50 @@
+mode: train
+output_dir: outputs/production-policy/20260905-selfplay-v1
+checkpoint: outputs/production-policy/20260905-v1/bc/best.pt
+devices: [cuda:0, cuda:1]
+seed: 20260905
+workers: 12
+cpu_threads: 4
+unit_limit: 32
+width: 128
+decision_interval: 24
+quantity_max: 128
+quantity_extra: [256, 512, 1024, 4096, 1000000]
+environment:
+  boardSize: 10
+  episodeSteps: 720
+  turnsPerDay: 24
+  maxMarketOrdersPerTurn: 10
+opponents: [kaito_v48, kaito_v39, boatlee_v21, mugundh_v21]
+evaluation_games: 64
+evaluation_seed: 9300000
+confirmation_seed: 9800000
+compile: true
+bc:
+  source: data/external/parallel-kaito-20260905-v1
+  directory: data/external/production-contracts-kaito-20260905-v1
+  games: 256
+  shard_games: 64
+  seed_start: 9100000
+  epochs: 6
+  batch_rows: 2048
+  learning_rate: 0.0003
+  prior_pseudocount: 0.05
+ppo:
+  population: self_play
+  updates: 50
+  games_per_update: 1024
+  batch_rows: 8192
+  epochs: 1
+  actor_learning_rate: 0.0003
+  critic_learning_rate: 0.0003
+  clip: 0.1
+  target_kl: 0.01
+  bc_weight: 0.1
+  bc_rows: 256
+  entropy_weight: 0.0
+  cash_weight: 0.0
+  cash_scale: 10000.0
+  win_weight: 1.0
+  seed_start: 9600000
+  checkpoint_interval: 1

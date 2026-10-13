@@ -1,0 +1,17 @@
+change:
+  run: outputs/learning/derived-v5b-m384-watch6-ppo50-20260926-s91001
+  cash_margin:
+    beta: 1.0
+    cash_scale: 10000.0
+  qualification: outputs/analysis/watch6-rl-margin-20260926/qualification.json
+  qualification_sha256: ${oc.env:MARGIN_QUALIFICATION_SHA256,0000000000000000000000000000000000000000000000000000000000000000}
+qualification:
+  output_dir: outputs/learning/watch6-margin-qualification-20260926-v1
+  updates: 4
+  evaluation_games: 2
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/watch6-rl-margin-20260926/hydra
+  output_subdir: null

@@ -1,0 +1,3 @@
+defaults:
+  - effect_policy_rl: smoke
+  - _self_

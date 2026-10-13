@@ -1,0 +1,30 @@
+{
+  "schema_version": "kaggriculture-raw-archive-v1",
+  "download_verified_at": 1788798576.340445,
+  "source_index": {
+    "path": "data/external/kaggriculture-episodes-2026-09-06_2026-09-07/raw/kaggriculture-episodes-index.zip",
+    "sha256": "fa7a07855e56b92664e2f9873b730abd9971fe640f41ea87353377d0996e52ff",
+    "dataset_url": "https://www.kaggle.com/datasets/kaggle/kaggriculture-episodes-index"
+  },
+  "selection": {
+    "dates": [
+      "2026-09-06"
+    ],
+    "semantics": "latest complete downloaded index day"
+  },
+  "license": "CC0-1.0",
+  "daily_archives": [
+    {
+      "path": "data/external/kaggriculture-episodes-2026-09-06_2026-09-07/raw/kaggriculture-episodes-2026-09-06.zip",
+      "sha256": "8ab6f7da8b19c211361d7a8b769e41339f3e6f94f79f52b701fd7bf0dbdd556e",
+      "size_bytes": 595249654,
+      "members": 662,
+      "uncompressed_bytes": 21464632922,
+      "compressed_member_bytes": 595131597,
+      "daily_manifest_sha256": "e34eeb97b98c148f1037b8219ece4a1cdaaf820d8571256620cee34e1372d6a4",
+      "daily_manifest_size_bytes": 56346,
+      "date": "2026-09-06",
+      "dataset_url": "https://www.kaggle.com/datasets/kaggle/kaggriculture-episodes-2026-09-06"
+    }
+  ]
+}

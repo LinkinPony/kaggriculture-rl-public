@@ -1,0 +1,819 @@
+{
+  "episodes": [
+    {
+      "id": 110066141,
+      "createTime": "2026-09-17T13:38:50.742Z",
+      "endTime": "2026-09-17T13:47:12.118Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56266758,
+          "reward": 120498,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        },
+        {
+          "submissionId": 56216119,
+          "index": 1,
+          "reward": 122883,
+          "teamName": "Majkel1337",
+          "teamId": 16718819
+        }
+      ]
+    },
+    {
+      "id": 110360764,
+      "createTime": "2026-09-18T07:53:36.401Z",
+      "endTime": "2026-09-18T08:03:07.774Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56266758,
+          "reward": 97332,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        },
+        {
+          "submissionId": 56216119,
+          "index": 1,
+          "reward": 95317,
+          "teamName": "Majkel1337",
+          "teamId": 16718819
+        }
+      ]
+    },
+    {
+      "id": 110047039,
+      "createTime": "2026-09-17T12:26:51.009Z",
+      "endTime": "2026-09-17T12:33:29.850Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56216119,
+          "reward": 93695,
+          "teamName": "Majkel1337",
+          "teamId": 16718819
+        },
+        {
+          "submissionId": 56266758,
+          "index": 1,
+          "reward": 98072,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        }
+      ]
+    },
+    {
+      "id": 110102993,
+      "createTime": "2026-09-17T15:58:05.505Z",
+      "endTime": "2026-09-17T16:05:47.430Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56216119,
+          "reward": 110093,
+          "teamName": "Majkel1337",
+          "teamId": 16718819
+        },
+        {
+          "submissionId": 56266758,
+          "index": 1,
+          "reward": 112236,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        }
+      ]
+    },
+    {
+      "id": 110438600,
+      "createTime": "2026-09-18T12:41:34.012Z",
+      "endTime": "2026-09-18T12:47:33.271Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56305493,
+          "reward": 96192,
+          "teamName": "ymg_aq",
+          "teamId": 16732403
+        },
+        {
+          "submissionId": 56266758,
+          "index": 1,
+          "reward": 102369,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        }
+      ]
+    },
+    {
+      "id": 110320847,
+      "createTime": "2026-09-18T05:25:32.494Z",
+      "endTime": "2026-09-18T05:35:24.114Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56266899,
+          "reward": 122897,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        },
+        {
+          "submissionId": 56216119,
+          "index": 1,
+          "reward": 123573,
+          "teamName": "Majkel1337",
+          "teamId": 16718819
+        }
+      ]
+    },
+    {
+      "id": 110199768,
+      "createTime": "2026-09-17T21:57:01.282Z",
+      "endTime": "2026-09-17T22:05:54.172Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56266899,
+          "reward": 93540,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        },
+        {
+          "submissionId": 56216119,
+          "index": 1,
+          "reward": 90750,
+          "teamName": "Majkel1337",
+          "teamId": 16718819
+        }
+      ]
+    },
+    {
+      "id": 110261418,
+      "createTime": "2026-09-18T01:44:59.901Z",
+      "endTime": "2026-09-18T01:52:29.468Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56216119,
+          "reward": 102183,
+          "teamName": "Majkel1337",
+          "teamId": 16718819
+        },
+        {
+          "submissionId": 56266899,
+          "index": 1,
+          "reward": 101045,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        }
+      ]
+    },
+    {
+      "id": 110204283,
+      "createTime": "2026-09-17T22:13:03.628Z",
+      "endTime": "2026-09-17T22:21:14.450Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56216119,
+          "reward": 106434,
+          "teamName": "Majkel1337",
+          "teamId": 16718819
+        },
+        {
+          "submissionId": 56266899,
+          "index": 1,
+          "reward": 109135,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        }
+      ]
+    },
+    {
+      "id": 110378193,
+      "createTime": "2026-09-18T08:57:36.680Z",
+      "endTime": "2026-09-18T09:02:39.465Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56266899,
+          "reward": 131325,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        },
+        {
+          "submissionId": 56305493,
+          "index": 1,
+          "reward": 130437,
+          "teamName": "ymg_aq",
+          "teamId": 16732403
+        }
+      ]
+    },
+    {
+      "id": 110360756,
+      "createTime": "2026-09-18T07:53:36.393Z",
+      "endTime": "2026-09-18T08:01:04.408Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56305515,
+          "reward": 149219,
+          "teamName": "ymg_aq",
+          "teamId": 16732403
+        },
+        {
+          "submissionId": 56266899,
+          "index": 1,
+          "reward": 144588,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        }
+      ]
+    },
+    {
+      "id": 110266530,
+      "createTime": "2026-09-18T02:04:58.882Z",
+      "endTime": "2026-09-18T02:11:03.003Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56305515,
+          "reward": 109024,
+          "teamName": "ymg_aq",
+          "teamId": 16732403
+        },
+        {
+          "submissionId": 56266899,
+          "index": 1,
+          "reward": 110159,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        }
+      ]
+    },
+    {
+      "id": 110674163,
+      "createTime": "2026-09-19T03:13:42.535Z",
+      "endTime": "2026-09-19T03:19:04.571Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56305493,
+          "reward": 120920,
+          "teamName": "ymg_aq",
+          "teamId": 16732403
+        },
+        {
+          "submissionId": 56331731,
+          "index": 1,
+          "reward": 117622,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        }
+      ]
+    },
+    {
+      "id": 110659520,
+      "createTime": "2026-09-19T02:21:41.758Z",
+      "endTime": "2026-09-19T02:28:58.435Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56331731,
+          "reward": 78398,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        },
+        {
+          "submissionId": 56332038,
+          "index": 1,
+          "reward": 79290,
+          "teamName": "Majkel1337",
+          "teamId": 16718819
+        }
+      ]
+    },
+    {
+      "id": 110645655,
+      "createTime": "2026-09-19T01:29:43.251Z",
+      "endTime": "2026-09-19T01:35:29.483Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56331731,
+          "reward": 118101,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        },
+        {
+          "submissionId": 56305515,
+          "index": 1,
+          "reward": 119832,
+          "teamName": "ymg_aq",
+          "teamId": 16732403
+        }
+      ]
+    },
+    {
+      "id": 110634750,
+      "createTime": "2026-09-19T00:49:44.547Z",
+      "endTime": "2026-09-19T00:57:49.249Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56331731,
+          "reward": 101315,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        },
+        {
+          "submissionId": 56305493,
+          "index": 1,
+          "reward": 100019,
+          "teamName": "ymg_aq",
+          "teamId": 16732403
+        }
+      ]
+    },
+    {
+      "id": 110615995,
+      "createTime": "2026-09-18T23:39:23.234Z",
+      "endTime": "2026-09-18T23:45:27.622Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56305515,
+          "reward": 90098,
+          "teamName": "ymg_aq",
+          "teamId": 16732403
+        },
+        {
+          "submissionId": 56331731,
+          "index": 1,
+          "reward": 93884,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        }
+      ]
+    },
+    {
+      "id": 110572500,
+      "createTime": "2026-09-18T20:59:14.224Z",
+      "endTime": "2026-09-18T21:04:40.468Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56305493,
+          "reward": 89552,
+          "teamName": "ymg_aq",
+          "teamId": 16732403
+        },
+        {
+          "submissionId": 56331731,
+          "index": 1,
+          "reward": 91193,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        }
+      ]
+    },
+    {
+      "id": 110684258,
+      "createTime": "2026-09-19T03:49:43.137Z",
+      "endTime": "2026-09-19T03:55:24.487Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56216119,
+          "reward": 84057,
+          "teamName": "Majkel1337",
+          "teamId": 16718819
+        },
+        {
+          "submissionId": 56331777,
+          "index": 1,
+          "reward": 79287,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        }
+      ]
+    },
+    {
+      "id": 110664248,
+      "createTime": "2026-09-19T02:37:42.629Z",
+      "endTime": "2026-09-19T02:44:51.565Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56305493,
+          "reward": 135336,
+          "teamName": "ymg_aq",
+          "teamId": 16732403
+        },
+        {
+          "submissionId": 56331777,
+          "index": 1,
+          "reward": 135331,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        }
+      ]
+    },
+    {
+      "id": 110658893,
+      "createTime": "2026-09-19T02:17:42.311Z",
+      "endTime": "2026-09-19T02:23:31.865Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56331777,
+          "reward": 91491,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        },
+        {
+          "submissionId": 56305515,
+          "index": 1,
+          "reward": 91557,
+          "teamName": "ymg_aq",
+          "teamId": 16732403
+        }
+      ]
+    },
+    {
+      "id": 110658829,
+      "createTime": "2026-09-19T02:17:42.216Z",
+      "endTime": "2026-09-19T02:23:22.907Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56305515,
+          "reward": 74839,
+          "teamName": "ymg_aq",
+          "teamId": 16732403
+        },
+        {
+          "submissionId": 56331777,
+          "index": 1,
+          "reward": 75322,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        }
+      ]
+    },
+    {
+      "id": 110624805,
+      "createTime": "2026-09-19T00:11:26.258Z",
+      "endTime": "2026-09-19T00:18:10.077Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56331777,
+          "reward": 108747,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        },
+        {
+          "submissionId": 56305515,
+          "index": 1,
+          "reward": 107948,
+          "teamName": "ymg_aq",
+          "teamId": 16732403
+        }
+      ]
+    },
+    {
+      "id": 110603774,
+      "createTime": "2026-09-18T22:55:14.713Z",
+      "endTime": "2026-09-18T23:03:51.205Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56305493,
+          "reward": 113990,
+          "teamName": "ymg_aq",
+          "teamId": 16732403
+        },
+        {
+          "submissionId": 56331777,
+          "index": 1,
+          "reward": 114131,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        }
+      ]
+    },
+    {
+      "id": 110567173,
+      "createTime": "2026-09-18T20:39:15.723Z",
+      "endTime": "2026-09-18T20:45:49.136Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56305493,
+          "reward": 114743,
+          "teamName": "ymg_aq",
+          "teamId": 16732403
+        },
+        {
+          "submissionId": 56331777,
+          "index": 1,
+          "reward": 114225,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        }
+      ]
+    },
+    {
+      "id": 110561883,
+      "createTime": "2026-09-18T20:19:15.131Z",
+      "endTime": "2026-09-18T20:24:00.349Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56332038,
+          "reward": 89161,
+          "teamName": "Majkel1337",
+          "teamId": 16718819
+        },
+        {
+          "submissionId": 56331777,
+          "index": 1,
+          "reward": 85427,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        }
+      ]
+    },
+    {
+      "id": 110540350,
+      "createTime": "2026-09-18T18:59:15.310Z",
+      "endTime": "2026-09-18T19:03:23.527Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56305515,
+          "reward": 98173,
+          "teamName": "ymg_aq",
+          "teamId": 16732403
+        },
+        {
+          "submissionId": 56331777,
+          "index": 1,
+          "reward": 97035,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        }
+      ]
+    },
+    {
+      "id": 110535791,
+      "createTime": "2026-09-18T18:43:15.819Z",
+      "endTime": "2026-09-18T18:50:44.558Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56331777,
+          "reward": 84007,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        },
+        {
+          "submissionId": 56332038,
+          "index": 1,
+          "reward": 85254,
+          "teamName": "Majkel1337",
+          "teamId": 16718819
+        }
+      ]
+    },
+    {
+      "id": 110518397,
+      "createTime": "2026-09-18T17:37:31.786Z",
+      "endTime": "2026-09-18T17:45:19.615Z",
+      "state": "COMPLETED",
+      "type": "EPISODE_TYPE_PUBLIC",
+      "agents": [
+        {
+          "submissionId": 56331777,
+          "reward": 89229,
+          "teamName": "Unknown Mother-Goose",
+          "teamId": 16730612
+        },
+        {
+          "submissionId": 56332038,
+          "index": 1,
+          "reward": 91081,
+          "teamName": "Majkel1337",
+          "teamId": 16718819
+        }
+      ]
+    }
+  ],
+  "replays": [
+    {
+      "episode_id": 110066141,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110066141.json.gz",
+      "sha256": "8b1f4fdeb7eab61c8edd345e24167daa16e67e7a0c47b4f2cd0e145b85cc26c5",
+      "bytes": 1359462
+    },
+    {
+      "episode_id": 110360764,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110360764.json.gz",
+      "sha256": "0a24b721610106d79879ffb4bbb4604455b44b0f4aad81e4c717e01b2b7d0f3b",
+      "bytes": 1376494
+    },
+    {
+      "episode_id": 110047039,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110047039.json.gz",
+      "sha256": "e78b1b21a8b4abaaabf2dd2f6e4ef117d8a8e3b28f39d8a1f6ca67209d892290",
+      "bytes": 1359717
+    },
+    {
+      "episode_id": 110102993,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110102993.json.gz",
+      "sha256": "3df8ffff20fadef4f22829e95cf8e0dddd9f9a9ae3c3e1d62c76b2ab9c6e4a6b",
+      "bytes": 1365065
+    },
+    {
+      "episode_id": 110438600,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110438600.json.gz",
+      "sha256": "a57caf265785878e735e14ec227ca488fdd380c414245f9bad56ca19bae98ce1",
+      "bytes": 1350757
+    },
+    {
+      "episode_id": 110320847,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110320847.json.gz",
+      "sha256": "51884083732707f3d9cd97b4259877a78dc1218750e3c433b79f5f011a091f56",
+      "bytes": 1366543
+    },
+    {
+      "episode_id": 110199768,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110199768.json.gz",
+      "sha256": "9ffb4347779f3fa973531917de0d2fe5575cf5123d3a36185fc75fb2b3739be9",
+      "bytes": 1365178
+    },
+    {
+      "episode_id": 110261418,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110261418.json.gz",
+      "sha256": "f479db4e5483bfc9547797ef39acfd41ca8ba0df9b777734085507f430566851",
+      "bytes": 1358597
+    },
+    {
+      "episode_id": 110204283,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110204283.json.gz",
+      "sha256": "2d0aaf08415453b4a99f484bce9f74958621d01b0568f6853ce6ab47dda75122",
+      "bytes": 1368342
+    },
+    {
+      "episode_id": 110378193,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110378193.json.gz",
+      "sha256": "b55e80d09678329cc83714bbe75ea92e401d95cdc8b850243558adc5c59cde4e",
+      "bytes": 1349031
+    },
+    {
+      "episode_id": 110360756,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110360756.json.gz",
+      "sha256": "5cbd875bd503d028cab60501d79cf9ea94565a87ab666bc27b1c04d35537d65f",
+      "bytes": 1346553
+    },
+    {
+      "episode_id": 110266530,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110266530.json.gz",
+      "sha256": "49e604744ce1a73a1cd1d28cfbfd133d704d0f5b3dabeb352eecda15e0cbad58",
+      "bytes": 1386286
+    },
+    {
+      "episode_id": 110674163,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110674163.json.gz",
+      "sha256": "380de0884b929e7b1ef132b1b79aff1f0e81ba764ab310c69013d80726b58a23",
+      "bytes": 1402665
+    },
+    {
+      "episode_id": 110659520,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110659520.json.gz",
+      "sha256": "f8e53f4ed4f479b51537c2625c8df6c1f45bef5032c5839cfb62c3321f6bd81c",
+      "bytes": 1371887
+    },
+    {
+      "episode_id": 110645655,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110645655.json.gz",
+      "sha256": "718ec7cc733d1e6ba49c4ee1badf5c3938d26009520a979804e0f35ee1aa592f",
+      "bytes": 1344738
+    },
+    {
+      "episode_id": 110634750,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110634750.json.gz",
+      "sha256": "0f9cd29efbceff0b23902ee27ccb5232f63b7c090204743da768912f8771a349",
+      "bytes": 1383446
+    },
+    {
+      "episode_id": 110615995,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110615995.json.gz",
+      "sha256": "474ab017894bec9b21f6ec82e2519e30a547db42d2d78c7c7f8456f0ef251aeb",
+      "bytes": 1378861
+    },
+    {
+      "episode_id": 110572500,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110572500.json.gz",
+      "sha256": "6d76e1510bc55c1a64112c2ec1000c79e29de27fe4cc03bfef5715414fb25bbc",
+      "bytes": 1416518
+    },
+    {
+      "episode_id": 110684258,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110684258.json.gz",
+      "sha256": "2df16c638b2e30342bac395a410cf3e2e5fcfcd8daa0576c3ca6a9e34274c3bf",
+      "bytes": 1374819
+    },
+    {
+      "episode_id": 110664248,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110664248.json.gz",
+      "sha256": "f11934fe0222ef9c7adfe28eddd1cd25f41da40726a7c7f0747abc87b517c89f",
+      "bytes": 1340937
+    },
+    {
+      "episode_id": 110658893,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110658893.json.gz",
+      "sha256": "14a47b9fc948fecdfaba1be353a4af863e1a356f7737dd5fb915df8476e4b380",
+      "bytes": 1400626
+    },
+    {
+      "episode_id": 110658829,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110658829.json.gz",
+      "sha256": "7ea3bacf14a73b46b02f0c52f6ab9b85f5317aae4e38f21ec48e0b4d40669b37",
+      "bytes": 1393351
+    },
+    {
+      "episode_id": 110624805,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110624805.json.gz",
+      "sha256": "5bf3d7865442372f5e7763970ce8f0b1024d7da6d9dd3d5bb7a23c306006703f",
+      "bytes": 1370525
+    },
+    {
+      "episode_id": 110603774,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110603774.json.gz",
+      "sha256": "a87d774b5026bbfadfa7de6aa5d53fdfed6ef9caf9b378baec609a07eeb89e5b",
+      "bytes": 1373917
+    },
+    {
+      "episode_id": 110567173,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110567173.json.gz",
+      "sha256": "121f2c895122b287462648b28f0a3426b6edb1e073d8b4977c525e624c7ea38f",
+      "bytes": 1385430
+    },
+    {
+      "episode_id": 110561883,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110561883.json.gz",
+      "sha256": "a4eb9ed826441483f4986e5429acd123b9b151ac3b5820bdb59d7472dc3432c3",
+      "bytes": 1405445
+    },
+    {
+      "episode_id": 110540350,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110540350.json.gz",
+      "sha256": "161c3e4295b4c842ba2488df3b2c4add5545be18e9ebbce20c89a9155a5b2118",
+      "bytes": 1418601
+    },
+    {
+      "episode_id": 110535791,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110535791.json.gz",
+      "sha256": "fffed24ab81e83acea8c0e482ce3de21d06916ea78af07e562d9664845753751",
+      "bytes": 1428228
+    },
+    {
+      "episode_id": 110518397,
+      "path": "data/external/kaggriculture-model-comparison-20260919/raw/replays/110518397.json.gz",
+      "sha256": "b065dfba86407ca99faf29730482f8586e228ff2685655786f6e8e2223f7c2c5",
+      "bytes": 1422382
+    }
+  ],
+  "failures": []
+}

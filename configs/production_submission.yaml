@@ -1,0 +1,11 @@
+checkpoint: outputs/releases/20260906-work-migration-u0045/update-0045.pt
+output_dir: outputs/kaggle-submission/20260906-work-migration-u45
+cpu_threads: 1
+native:
+  interpreters:
+    - ${oc.env:REVUE_PYTHON_311,/usr/bin/python3.11}
+    - /usr/bin/python3.12
+  compiler: ${oc.env:REVUE_CXX,/usr/bin/g++}
+  patchelf: ${oc.env:REVUE_PATCHELF,/usr/bin/patchelf}
+  max_glibc: "2.35"
+  jobs: 16

@@ -1,0 +1,15 @@
+change:
+  run: outputs/learning/budget-q100-top10-2d-20260913-s68001
+  wdl: true
+  qualification: outputs/analysis/wdl-20260916/qualification.json
+  qualification_sha256: "0000000000000000000000000000000000000000000000000000000000000000"
+qualification:
+  output_dir: outputs/learning/wdl-qualification-20260916
+  updates: 4
+  evaluation_games: 2
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/wdl-20260916/hydra
+  output_subdir: null

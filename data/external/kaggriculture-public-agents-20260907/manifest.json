@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-09-07T21:31:05.378388+00:00",
+  "retrieval": {
+    "method": "kaggle kernels list scoreDescending and kernels pull --metadata; notebook cells were not executed",
+    "kernel_list_sha256": "75e8310d7fb6ad426240f11c57c1be24532a73454876028bce18e22bddd6df60",
+    "notebook_sha256": "a6027339030e6204e512ccf7cc3641cb158531d8924717d089638c276b94744f",
+    "metadata_sha256": "439258901135b9192141231fb34fe75677a2d6df977997856dd444494c96a6d3",
+    "extraction": "cell 9 literal MAIN_B64 decoded with base64.b64decode(validate=True); exactly matches EXPECTED_MAIN_SHA256",
+    "embedded_routes_sha256": "aabfbe9164937e4f46b59582479cebc5a1615a5652fa804adb172742f998db11",
+    "runtime_review": "Only base64/json/zlib imports; embedded payload checked as action routes, no weight arrays or model files; public observation rules, no IO or network calls",
+    "role": "frozen external evaluation only; never a training teacher or initialization"
+  },
+  "agents": [
+    {
+      "agent_id": "shop_pasture_20260907",
+      "notebook_ref": "tetsutani/shape-the-shop-work-the-pasture-kaggriculture",
+      "notebook_id": 132511782,
+      "notebook_url": "https://www.kaggle.com/code/tetsutani/shape-the-shop-work-the-pasture-kaggriculture",
+      "main_path": "data/external/kaggriculture-public-agents-20260907/shop-pasture/main.py",
+      "sha256": "2b97e2c653018ac4aeffb8463ec91c8f26b097b4cef81289acc25ccdbc68f916",
+      "evidence_level": "unverified",
+      "evidence_note": "Public notebook downloaded 2026-09-07; exact current artifact, no verified leaderboard score. Source states conserved public action routes with bounded rules, no learned model. One policy family, not general leaderboard coverage."
+    }
+  ],
+  "rejected": [
+    {
+      "notebook_ref": "thomastschinkel/kaggriculture-93-8-win-rate-public-state-router",
+      "reason": "Embedded fitted routing trees; not executing imported learned parameters under fresh-weights constraint."
+    },
+    {
+      "notebook_ref": "flexonafft/kaggriculture-smart-farm-strategy-lab",
+      "reason": "Derived from same six-day router with embedded fitted routing trees; not executing imported learned parameters."
+    },
+    {
+      "notebook_ref": "lynnsakurai/farming-score-a-mathematical-approach",
+      "reason": "Same conserved-route family as selected shop-pasture artifact; retained download, not counted as independent opponent coverage."
+    }
+  ]
+}

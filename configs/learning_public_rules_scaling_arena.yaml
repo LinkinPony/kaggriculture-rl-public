@@ -1,0 +1,10 @@
+defaults:
+  - learning_public_rules_arena
+  - _self_
+arena:
+  runs:
+    - outputs/learning/scratch-scaling-s51001
+    - outputs/learning/scratch-scaling-s51002
+  updates: [0, 128, 512]
+  output_dir: outputs/analysis/scratch-scaling-public-rules-arena
+  seed: 1360000000

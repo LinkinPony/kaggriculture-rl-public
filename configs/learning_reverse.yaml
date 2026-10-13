@@ -1,0 +1,17 @@
+defaults:
+  - learning_curriculum
+  - _self_
+experiment:
+  output_dir: outputs/learning/scratch-reverse-volume-v2-s45001
+  seed: 45001
+  train_seed: 870000000
+  updates: 128
+  operation_quantity_bias: true
+  curriculum:
+    manifest: data/external/kaggriculture-restart-candidates-2026-09-06-v2/manifest.json
+    manifest_sha256: ca76eaa5e627bd76d53b1393886b870bf7069248b0fbcbea6cbb6f5e921e3f9e
+    starts: [576, 384, 192, 96, 48, 24, 12, 6, 3, 1]
+  evaluation:
+    selection_seed: 880000000
+    confirmation_seed: 890000000
+    anchor_seeds: [95001, 95002]

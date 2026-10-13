@@ -1,0 +1,18 @@
+# DSM clone v3 plan C started from RL weights (s99001 U1061, s100901 U756) on exactly the
+# opponents, seeds and precision of the plan C panel.
+defaults:
+- evaluation_dsm_clone_v3_20260930
+- _self_
+study:
+  output: outputs/analysis/dsm-bc-redesign-20260930/panel-t0-rl-init
+  scope: >-
+    DSM clone v3 plan C from s99001 U1061 and from s100901 U756 at T=0 against s100901
+    U480/U756, s100201 U200, s99001 U200 and the v4 P MMPQ clone, all at T=0, on the plan C
+    panel's 64 common seeds with both seats.
+  candidates:
+    - name: dsm-v3-plan-c-u1061-t0
+      temperature: 0
+      run: outputs/learning/dsm-clone-v3-plan-c-from-u1061-bc-20260930-s101203
+    - name: dsm-v3-plan-c-u756-t0
+      temperature: 0
+      run: outputs/learning/dsm-clone-v3-plan-c-from-u756-bc-20260930-s101204

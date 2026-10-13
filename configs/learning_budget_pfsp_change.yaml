@@ -1,0 +1,80 @@
+defaults:
+- learning_population_change
+- _self_
+change:
+  run: outputs/learning/budget-26m-20260911-s66001
+  population:
+    unified: true
+    fraction: 0.65
+    snapshot_interval: 64
+    capacity: 64
+    pfsp:
+      power: 2.0
+      uniform_fraction: 0.2
+      latest_fraction: 0.1
+      prior_games: 8.0
+      half_life_updates: 128.0
+      max_effective_games: 256.0
+      recent_snapshots: 4
+      concurrent_inference: true
+    sources:
+    - run: outputs/learning/context-26m-3d-20260910-s65001
+      state_sha256: 079f2c9faac9aea4ab4c702e25325dece09946a36b6d79530797c8aa7cb5eabd
+      checkpoints:
+      - pretraining/shard-000896.pt
+      - checkpoints/update-000124.pt
+      - checkpoints/update-000256.pt
+      - checkpoints/update-000512.pt
+      - checkpoints/update-000544.pt
+      - checkpoints/update-000768.pt
+      - checkpoints/update-001024.pt
+      - checkpoints/update-001152.pt
+      - checkpoints/update-001536.pt
+      - checkpoints/update-001728.pt
+      - checkpoints/update-002048.pt
+      - checkpoints/update-002176.pt
+      - checkpoints/update-002560.pt
+      - checkpoints/update-002688.pt
+      - checkpoints/update-003072.pt
+      - checkpoints/update-003328.pt
+      - checkpoints/update-003392.pt
+      - checkpoints/update-003456.pt
+      - checkpoints/update-003520.pt
+      - checkpoints/update-003548.pt
+      - checkpoints/update-003552.pt
+      - checkpoints/update-003556.pt
+      - checkpoints/update-003560.pt
+      - checkpoints/update-003564.pt
+      - checkpoints/update-003568.pt
+      - checkpoints/update-003572.pt
+      - checkpoints/update-003575.pt
+    - run: outputs/learning/context-26m-20260908-s62001
+      state_sha256: 36b9bd770861a95583b586cee9f15c21b344b8c238ffee668f8d1e3fb8dc8179
+      checkpoints:
+      - checkpoints/update-000512.pt
+      - checkpoints/update-001536.pt
+      - checkpoints/update-002560.pt
+      - checkpoints/update-003584.pt
+      - checkpoints/update-004302.pt
+  script_population:
+    manifest: data/external/kaggriculture-shop-router-0909-20260909/manifest.json
+    sha256: 1e7c8958cc41e003ca80778a3fddb502a49599426352e2085aa25e3b49a73c8b
+    agents:
+    - router_95
+    - farming_v4
+    - kaito_v58
+    - shop_router_0908
+    - shop_router_0909
+    fraction: 0.0
+  qualification: outputs/analysis/budget-unified-pfsp-20260912/qualification.json
+  qualification_sha256: ${oc.env:PFSP_QUALIFICATION_SHA256,0000000000000000000000000000000000000000000000000000000000000000}
+qualification:
+  output_dir: outputs/learning/budget-unified-pfsp-qualification-20260912
+  updates: 12
+  evaluation_games: 2
+  official_games: 10
+  official_seed: 4251000000
+  inference_device: cuda:0
+hydra:
+  run:
+    dir: outputs/analysis/budget-unified-pfsp-20260912/hydra

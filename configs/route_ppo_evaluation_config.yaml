@@ -1,0 +1,13 @@
+defaults:
+  - route_ppo: long
+  - _self_
+
+evaluation:
+  run_dir: outputs/route-ppo/20260830-event-route-ppo-v1
+  output_dir: outputs/evaluation/20260830-event-route-ppo-selection-v1
+  panel: selection
+  checkpoint_set: permanent
+  checkpoint_update: null
+  seed_start: null
+  seed_count: null
+  prior_logit_override: null

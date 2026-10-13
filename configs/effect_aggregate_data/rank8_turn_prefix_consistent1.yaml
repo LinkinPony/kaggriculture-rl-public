@@ -1,0 +1,12 @@
+# Combine clean Rank8 demonstrations with only turn-prefix-consistent corrections.
+components:
+  demonstration:
+    manifest: data/external/kaggle-submission-55708706-teacher/atomic-effect-v2-rank8-bc256/manifest.json
+    validation_games: 16
+    test_games: 16
+  turn_prefix_correction:
+    manifest: data/external/kaggle-submission-55708706-teacher/atomic-effect-v2-rank8-turn-prefix-correction32-prefix1/manifest.json
+    validation_games: 4
+    test_games: 4
+output_dir: data/external/kaggle-submission-55708706-teacher/atomic-effect-v2-rank8-turn-prefix-consistent1
+report_dir: outputs/bc-data/20260905-rank8-atomic-effect-v2-turn-prefix-consistent1

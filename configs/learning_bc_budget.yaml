@@ -1,0 +1,3 @@
+budget:
+  run: outputs/learning/gtrxl-m384-3d-20260916-s70001
+  epochs: 5

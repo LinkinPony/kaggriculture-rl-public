@@ -1,0 +1,17 @@
+# DSM clone v3 data (plan C): only the current DSM plan. From 56675988 (9/29 12:54 UTC) every
+# version hires about 10.2 hands a day, buys three to five plots on days 6/8/10 and starts
+# tomatoes on day 8. The 9/25-9/29 plan B (9.5 hires, five plots on day 8, tomatoes late or
+# never) is left out; s100801's "recent two days" data mixed both plans.
+defaults:
+  - sequences_team_clones_20260929
+  - _self_
+selection:
+  output: outputs/datasets/team-clone-v3-dsm-plan-c-20260930/source-manifests
+  rated_since: '2026-09-25T00:00:00Z'
+  submitted_since: '2026-09-29T12:00:00Z'
+data:
+  output: outputs/datasets/team-clone-v3-dsm-plan-c-20260930-train-val-q100
+  teachers: [DSM]
+  watch_manifests: [outputs/datasets/team-clone-v3-dsm-plan-c-20260930/source-manifests/dsm/selected.json]
+  workers: 24
+report: outputs/analysis/dsm-bc-redesign-20260930/plan-c-data-verification.json

@@ -1,0 +1,12 @@
+defaults:
+  - learning_demonstrations
+  - _self_
+experiment:
+  output_dir: outputs/learning/scratch-scaling-s51001
+  seed: 51001
+  train_seed: 1150000000
+  updates: 512
+  evaluation:
+    selection_seed: 1160000000
+    confirmation_seed: 1170000000
+    anchor_seeds: [100001, 100002]

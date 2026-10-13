@@ -1,0 +1,14 @@
+# Preserve the previous six-teacher cohort and add newly collected eligible games.
+defaults:
+  - sequences_watch6_active_recent_20260926
+  - _self_
+
+selection:
+  output: ${data.output}/source-manifests
+  raw: data/external/kaggriculture-watch5-active-20260927
+data:
+  output: outputs/datasets/derived-v5b-watch6-expanded-20260927-train-val-q100
+report: outputs/analysis/watch6-scratch-bc-20260927/data-verification.json
+hydra:
+  run:
+    dir: tmp/hydra/watch6-expanded-20260927/${now:%Y%m%d-%H%M%S}

@@ -1,0 +1,11 @@
+curves:
+  source: outputs/analysis/scratch-reverse-v2-common-arena/curves.json
+  output_dir: outputs/analysis/scratch-reverse-v2-common-arena/figures
+  title: "Reverse curriculum: paired quantity-exploration comparison"
+  labels: ["Separate sale quantity prior", "Shared quantity prior"]
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${curves.output_dir}/hydra
+  output_subdir: null

@@ -1,0 +1,11 @@
+defaults:
+  - joint_bc
+  - _self_
+
+dataset_dir: data/external/kaggle-submission-55708706-teacher/compact-v1
+output_dir: outputs/turn-policy/20260825-submission-55708706-latent-bc-v1
+batch_sequences: 16
+loader_workers: 2
+unroll_length: 719
+burn_in: 0
+evaluation_device: cuda

@@ -1,0 +1,36 @@
+# First student-state correction pass for the canonical-position Rank8 policy.
+dataset_dir: data/external/kaggle-submission-55708706-teacher/atomic-effect-v2-rank8-dagger1
+dataset_id: 6bf925062710112c0932ef2108b6c1c329b3856d923ca20d4352839079ae9c62
+output_dir: outputs/effect-policy-bc/20260905-rank8-canonical-dagger1-e8-v1
+initial_actor: outputs/turn-policy/20260828-opening-diverse-bc2-v1/actor-fp16.pt
+initial_checkpoint: outputs/effect-policy-bc/20260904-rank8-canonical-pos-v2-bc256-e32/checkpoints/best.pt
+validation_games: 20
+test_games: 20
+unit_limit: 32
+
+model:
+  model_width: 256
+  feedforward_width: 704
+  attention_heads: 4
+  state_layers: 2
+  train_turn_encoder: true
+
+optimization:
+  epochs: 8
+  games_per_batch: 2
+  learning_rate: 0.00001
+  weight_decay: 0.00001
+  outcome_loss_weight: 0.05
+  gradient_clip: 1.0
+  seed: 20260905
+  device: cuda:0
+  cpu_threads: 16
+  loader_workers: 4
+  prefetch_batches: 4
+  candidate_elements_per_chunk: 2000000
+
+environment:
+  boardSize: 10
+  episodeSteps: 720
+  turnsPerDay: 24
+  maxMarketOrdersPerTurn: 10

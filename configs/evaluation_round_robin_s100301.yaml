@@ -1,0 +1,19 @@
+# Direct duels: s100301 checkpoints against the two tracked Kaggle bots (s100201 U200 and
+# s99001 U200).
+defaults:
+  - evaluation_round_robin_final
+  - _self_
+study:
+  output: outputs/analysis/round-robin-20260929-s100301
+  seed: 9440000000
+  sampling_seed: 94400001
+  devices: [cuda:0, cuda:1, cuda:0, cuda:1, cuda:0, cuda:1]
+  candidates:
+    - {name: s100201-u0200, run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201, member: checkpoints/update-000200.pt}
+    - {name: s99001-u0200, path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0200.pt}
+    - {name: s100301-u0150, run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100301, member: checkpoints/update-000150.pt}
+    - {name: s100301-u0200, run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100301, member: checkpoints/update-000200.pt}
+    - {name: s100301-u0250, run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100301, member: checkpoints/update-000250.pt}
+hydra:
+  run:
+    dir: tmp/hydra/round-robin-20260929-s100301

@@ -1,0 +1,108 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "farm-executor-revue"
+version = "0.1.0"
+license = "MIT"
+license-files = ["LICENSE", "NOTICE", "LICENSES/*"]
+description = "Turn-recurrent closed-loop policy for a competitive farming environment"
+requires-python = ">=3.11"
+dependencies = [
+    "cuda-bindings>=12,<14; platform_system == 'Linux'",
+    "fastapi>=0.115,<1",
+    "hydra-core>=1.3,<2",
+    "numpy>=1.26",
+    "orjson>=3.10,<4",
+    "pydantic>=2.8,<3",
+    "psutil>=6,<8",
+    "tensorboard>=2.16,<3",
+    "torch>=2.4",
+    "uvicorn>=0.30,<1",
+]
+
+[project.scripts]
+kagg-revue-production = "kagg_revue.production.cli:main"
+kagg-revue = "kagg_revue.learning.cli:main"
+kagg-revue-bc = "kagg_revue.bc.cli:main"
+kagg-revue-bc-data = "kagg_revue.bc.data_cli:main"
+kagg-revue-teacher-data = "kagg_revue.teacher.cli:main"
+kagg-revue-rl = "kagg_revue.rl.cli:main"
+kagg-revue-capability-rl = "kagg_revue.rl.capabilities.cli:main"
+kagg-revue-plan-rl = "kagg_revue.rl.plans.cli:main"
+kagg-revue-task-rl = "kagg_revue.rl.tasks.cli:main"
+kagg-revue-program-rl = "kagg_revue.rl.programs.cli:main"
+kagg-revue-program-bc = "kagg_revue.bc.programs.cli:main"
+kagg-revue-intent-rl = "kagg_revue.rl.intents.cli:main"
+kagg-revue-effect-rl = "kagg_revue.rl.effects.cli:main"
+kagg-revue-intent-oracle-audit = "kagg_revue.rl.intents.audit_cli:main"
+kagg-revue-intent-bc = "kagg_revue.bc.intents.train_cli:main"
+kagg-revue-intent-teacher-data = "kagg_revue.bc.intents.cli:main"
+kagg-revue-effect-teacher-data = "kagg_revue.bc.effects.data_cli:main"
+kagg-revue-effect-correction-data = "kagg_revue.bc.effects.correction_cli:main"
+kagg-revue-effect-aggregate-data = "kagg_revue.bc.effects.aggregate_cli:main"
+kagg-revue-effect-bc = "kagg_revue.bc.effects.train_cli:main"
+kagg-revue-effect-evaluate = "kagg_revue.rl.effects.evaluation_cli:main"
+kagg-revue-task-bc = "kagg_revue.bc.tasks.cli:main"
+kagg-revue-route-ppo = "kagg_revue.rl.routes.cli:main"
+kagg-revue-route-evaluate = "kagg_revue.rl.routes.evaluation_cli:main"
+kagg-revue-route-screen = "kagg_revue.rl.routes.screen_cli:main"
+kagg-revue-route-runtime-audit = "kagg_revue.rl.routes.runtime_audit_cli:main"
+kagg-revue-monitor = "kagg_revue.monitor.cli:main"
+kagg-revue-opponents = "kagg_revue.opponents.cli:main"
+kagg-revue-submission = "kagg_revue.submission.cli:main"
+
+[project.optional-dependencies]
+dev = ["mypy", "pybind11>=2.12", "pytest", "ruff"]
+analysis = ["matplotlib>=3.8,<4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"kagg_revue.datasets.behavior" = ["dashboard.html"]
+"kagg_revue.native" = ["*.pyi", "csrc/*", "csrc/boatlee/*", "csrc/conversion/*", "csrc/core/*", "csrc/deployment/*", "csrc/derived/*", "csrc/effects/*", "csrc/intents/*", "csrc/kaito_v39/*", "csrc/mugundh/*", "csrc/opponents/*", "csrc/opponents/compiled/*", "csrc/opponents/compiled/generated/*", "csrc/parallel/*", "csrc/production/*", "csrc/plans/*", "csrc/programs/*", "csrc/tasks/*"]
+"kagg_revue.monitor" = ["static/*"]
+"kagg_revue.opponents.kaito" = ["LICENSE", "NOTICE.md", "routes.json.zlib"]
+"kagg_revue.opponents.kaito.v39" = ["portfolio.npz"]
+"kagg_revue.opponents.boatlee" = ["LICENSE", "NOTICE.md", "portfolio.npz"]
+"kagg_revue.opponents.portfolios" = ["LICENSE", "NOTICE.md", "*.json.zlib"]
+"kagg_revue.opponents.mugundh" = ["LICENSE", "NOTICE.md", "portfolio.npz"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "D"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src"]
+
+[tool.basedpyright]
+include = ["src", "tests"]
+exclude = [
+    "**/node_modules",
+    "**/__pycache__",
+    "**/.*",
+    "tmp",
+    "outputs",
+    "data",
+]
+pythonVersion = "3.11"
+extraPaths = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "--basetemp=tmp/pytest"
+cache_dir = "tmp/pytest-cache"

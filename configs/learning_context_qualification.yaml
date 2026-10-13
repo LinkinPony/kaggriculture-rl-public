@@ -1,0 +1,21 @@
+defaults:
+- learning_context
+- _self_
+experiment:
+  output_dir: outputs/learning/context-26m-qualification-v1
+  seed: 62002
+  updates: 8
+  train_seed: 4120000000
+  demonstrations:
+    manifest: outputs/analysis/grounded-v2-20260908/fixture-dataset/manifest.json
+    sha256: 4935baf70519edbce2bb3fa2016d6bb826a7b227b5ce205b897d39ad6c6a8f7e
+    checkpoint_shards: 1
+    behavior_games: 0
+  evaluation:
+    games: 2
+    interval: 8
+    selection_seed: 4130000000
+    confirmation_seed: 4140000000
+hydra:
+  run:
+    dir: ${experiment.output_dir}/hydra

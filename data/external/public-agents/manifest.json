@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-08-22T07:00:00Z",
+  "retrieval": {
+    "source": "Kaggle public notebooks",
+    "method": "kaggle kernels pull -m; kaggle kernels output"
+  },
+  "agents": [
+    {
+      "agent_id": "kaito_v39",
+      "notebook_ref": "kaitofukami/103-126-untouched-future-top-30-v39-history-gate",
+      "notebook_id": 129557885,
+      "notebook_url": "https://www.kaggle.com/code/kaitofukami/103-126-untouched-future-top-30-v39-history-gate",
+      "main_path": "data/external/public-agents/kaito-v39/main.py",
+      "sha256": "c0298c82c2a2f9b41cd48657b63b16a9c6f07ea3ee02dc85062f807e54e8c54a",
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "Notebook reports 103/126 against an untouched future Top-30 set and 159/208 over public notebooks; these are local tests."
+    }
+  ],
+  "rejected": []
+}

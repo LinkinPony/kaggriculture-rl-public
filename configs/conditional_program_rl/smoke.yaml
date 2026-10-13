@@ -1,0 +1,60 @@
+# Bounded CPU integration profile; it is not promotion evidence.
+initial_actor: outputs/turn-policy/20260828-opening-diverse-bc2-v1/actor-fp16.pt
+initial_checkpoint: null
+resume_checkpoint: null
+public_agent_manifest: null
+output_dir: outputs/conditional-program-rl/smoke-v1
+
+seed: 20260902
+rollout_seed_start: 6100000
+updates: 1
+opponents: [self_play]
+opponent_weights:
+  self_play: 1.0
+paired_seats: true
+
+abi:
+  unit_limit: 32
+
+model:
+  model_width: 64
+  feedforward_width: 128
+
+objective:
+  reward: terminal_wdl
+  discount: 1.0
+  gae_lambda: 1.0
+
+optimization:
+  ppo_epochs: 1
+  episodes_per_minibatch: 4
+  episodes_per_microbatch: 4
+  learning_rate: 0.00005
+  weight_decay: 0.00001
+  clip_epsilon: 0.1
+  value_loss_weight: 1.0
+  entropy_weight: 0.001
+  gradient_clip: 1.0
+  target_kl: 0.02
+  normalize_advantage: true
+
+rollout:
+  seeds_per_update: 2
+  batch_games: 4
+  devices: [cpu]
+  cpu_workers: 4
+  actor_streams: 1
+  host_memory_limit_gib: 4
+
+checkpoint:
+  rolling_interval: 1
+  rolling_keep: 2
+  permanent_interval: 10
+
+device: cpu
+cpu_threads: 4
+act_timeout_seconds: 1.0
+remaining_overage_seconds: 60.0
+environment:
+  episodeSteps: 3
+  maxMarketOrdersPerTurn: 2

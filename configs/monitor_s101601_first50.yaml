@@ -1,0 +1,14 @@
+tracking:
+  run: outputs/learning/derived-v5b-m384-dsmclone5-kl-ppo50-1gpu-20260930-s101601
+  workflow: outputs/workflows/dsm-clone-v5-latest-bc-to-rl-1gpu-20260930
+  output: outputs/analysis/s101601-first50-20260930
+  target_update: 50
+  interval_seconds: 10
+  stale_seconds: 240
+  minimum_free_mib: 8192
+hydra:
+  run:
+    dir: ${tracking.output}/hydra
+  output_subdir: null
+  job:
+    chdir: false

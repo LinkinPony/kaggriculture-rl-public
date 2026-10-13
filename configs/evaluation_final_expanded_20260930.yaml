@@ -1,0 +1,71 @@
+# Expanded final panel at T=0 on fresh common seeds disjoint from every earlier final panel,
+# both seats: both live Kaggle anchors (s101102 U200, s100901 U480), the v4 P MMPQ clone, the
+# v5 DSM clone and the Tufa Labs, DECEM and Vadim team clones. Every candidate meets the same
+# seeds, so candidates pair seed by seed across this config and its s100901 child.
+study:
+  output: outputs/analysis/final-candidates-20260930/expanded-mmpq
+  games: 256
+  seed: 9970000000
+  sampling_seed: 99700001
+  devices: [cuda:0, cuda:1, cuda:0, cuda:1, cuda:0]
+  memory_fraction: 0.06
+  precision: bf16
+  scope: >-
+    MMPQ-line final candidates and the s101102 U200 anchor at T=0 against both live Kaggle
+    anchors, the v4 P MMPQ clone, the v5 DSM clone and the Tufa Labs, DECEM and Vadim team
+    clones, all at T=0, on 128 fresh common seeds with both seats. Local proxy only.
+  candidates:
+    - name: s101102-u0200-base
+      temperature: 0
+      path: outputs/analysis/s101102-vs-mmpq-clone-20260930/actors/s101102-u0200-t0.pt
+    - name: s101701-u0200-t0
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-s101102u200-kl-ppo50-1gpu-20260930-s101701
+      member: checkpoints/update-000200.pt
+    - name: s101701-u0250-t0
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-s101102u200-kl-ppo50-1gpu-20260930-s101701
+      member: checkpoints/update-000250.pt
+    - name: s101702-u0200-t0
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-mmpqclone4-kl-ppo50-1gpu-r2-20260930-s101702
+      member: checkpoints/update-000200.pt
+  opponents:
+    - name: s101102-u0200-t0
+      group: s101102-u0200
+      temperature: 0
+      path: outputs/analysis/s101102-vs-mmpq-clone-20260930/actors/s101102-u0200-t0.pt
+    - name: s100901-u0480-t0
+      group: s100901-u0480
+      temperature: 0
+      path: outputs/analysis/s100901-u0480-temperature-20260929/actors/s100901-u0480-t0.pt
+    - name: mmpq-v4-p-t0
+      group: mmpq-v4-p
+      temperature: 0
+      path: outputs/analysis/s101102-vs-mmpq-clone-20260930/actors/mmpq-v4-p-t0.pt
+    - name: dsm-v5-t0
+      group: dsm-v5
+      temperature: 0
+      run: outputs/learning/dsm-clone-v5-latest-from-u756-bc-20260930-s101501
+      member: pretraining/shard-000128.pt
+    - name: clone-tufa-t0
+      group: tufa
+      temperature: 0
+      run: outputs/learning/team-clone-tufa-bc-20260929-s100016
+      member: pretraining/shard-000052.pt
+    - name: clone-decem-t0
+      group: decem
+      temperature: 0
+      run: outputs/learning/team-clone-decem-bc-20260929-s100014
+      member: pretraining/shard-000558.pt
+    - name: clone-vadim-t0
+      group: vadim
+      temperature: 0
+      run: outputs/learning/team-clone-vadim-bc-20260929-s100013
+      member: pretraining/shard-000210.pt
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${study.output}/hydra
+  output_subdir: null

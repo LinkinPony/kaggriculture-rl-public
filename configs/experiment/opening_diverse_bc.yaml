@@ -1,0 +1,31 @@
+# Two exact passes over empirical, structurally diverse replay openings.
+defaults:
+  - joint_bc
+  - _self_
+
+dataset_dir: data/external/kaggriculture-episodes-2026-08-25_2026-08-28/compact-opening-diverse-v1
+public_agent_manifest: data/external/kaggriculture-public-notebooks-2026-08-28/manifest.json
+output_dir: outputs/turn-policy/20260828-opening-diverse-bc2-v1
+resume_checkpoint: null
+initial_actor: outputs/actor-snapshots/20260828-opening-episode-noise-v1-update2495/actor-fp32.pt
+
+seed: 20260828
+split_seed: 20260829
+train_fraction: 0.9
+validation_fraction: 0.05
+epochs: 2
+checkpoint_selection: final_epoch
+batch_sequences: 16
+loader_workers: 4
+prefetch_batches: 2
+unroll_length: 32
+burn_in: 0
+learning_rate: 0.0001
+weight_decay: 0.00001
+quantity_loss_weight: 1.0
+gradient_clip: 1.0
+device: cuda:0
+
+unit_limit: 32
+evaluation_device: cuda
+cpu_threads: 8

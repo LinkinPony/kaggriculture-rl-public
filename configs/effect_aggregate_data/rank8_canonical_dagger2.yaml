@@ -1,0 +1,16 @@
+# Preserve held-out groups across the demonstration and both correction passes.
+components:
+  demonstration:
+    manifest: data/external/kaggle-submission-55708706-teacher/atomic-effect-v2-rank8-bc256/manifest.json
+    validation_games: 16
+    test_games: 16
+  correction1:
+    manifest: data/external/kaggle-submission-55708706-teacher/atomic-effect-v2-rank8-correction32/manifest.json
+    validation_games: 4
+    test_games: 4
+  correction2:
+    manifest: data/external/kaggle-submission-55708706-teacher/atomic-effect-v2-rank8-correction32-dagger1/manifest.json
+    validation_games: 4
+    test_games: 4
+output_dir: data/external/kaggle-submission-55708706-teacher/atomic-effect-v2-rank8-dagger2
+report_dir: outputs/bc-data/20260905-rank8-atomic-effect-v2-dagger2

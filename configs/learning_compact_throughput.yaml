@@ -1,0 +1,25 @@
+defaults:
+  - learning_scaling_profile
+  - _self_
+benchmark:
+  output: outputs/analysis/throughput-scale-20260921/compact289_peer1024_selected.json
+  initialization: random
+  selfplay: false
+  same_model_history: true
+  history_fraction: 0.2
+  parameters_min: 2000000
+  parameters_max: 3000000
+  changes:
+    precision: bf16
+    width: 256
+    depth: 3
+    heads: 4
+    critic_width: 128
+    critic_depth: 1
+    memory_turns: 0
+    games: 1024
+    batch_rows: 2000000
+  execution:
+    microbatch_rows: 6144
+    compile_inference: true
+    fused_loss: true

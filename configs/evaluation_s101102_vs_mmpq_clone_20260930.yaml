@@ -1,0 +1,44 @@
+# s101102 checkpoints head to head against their RL start point, the v4 P MMPQ clone, and
+# against the current Kaggle submission s100901 U480 (56689315), all at T=0, on fresh seeds:
+# U200 (best progress panel), U300 and the latest. One worker per GPU keeps each card's
+# reserve above the panel stop threshold while both GPUs train.
+study:
+  output: outputs/analysis/s101102-vs-mmpq-clone-20260930
+  games: 256
+  seed: 9700000000
+  sampling_seed: 97000001
+  devices: [cuda:0, cuda:1]
+  memory_fraction: 0.06
+  precision: bf16
+  scope: >-
+    s101102 U200, U300 and U332 at T=0 against the v4 P MMPQ clone (s101001 epoch 9) and
+    s100901 U480 (Kaggle 56689315), both at T=0, on 128 fresh common seeds with both seats.
+    Local proxy only.
+  candidates:
+    - name: s101102-u0200-t0
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-mmpqclone4-kl-ppo50-1gpu-20260930-s101102
+      member: checkpoints/update-000200.pt
+    - name: s101102-u0300-t0
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-mmpqclone4-kl-ppo50-1gpu-20260930-s101102
+      member: checkpoints/update-000300.pt
+    - name: s101102-u0332-t0
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-mmpqclone4-kl-ppo50-1gpu-20260930-s101102
+      member: checkpoints/update-000332.pt
+  opponents:
+    - name: mmpq-v4-p-t0
+      group: mmpq-v4-p
+      temperature: 0
+      run: outputs/learning/mmpq-clone-v4-parallel-bc-20260930-s101001
+    - name: s100901-u0480-t0
+      group: s100901-u0480
+      temperature: 0
+      path: outputs/analysis/s100901-u0480-temperature-20260929/actors/s100901-u0480-t0.pt
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${study.output}/hydra
+  output_subdir: null

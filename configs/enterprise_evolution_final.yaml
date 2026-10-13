@@ -1,0 +1,10 @@
+defaults:
+- enterprise
+- _self_
+search_output: outputs/analysis/enterprise-20260915/evolution-02
+generations: 4
+population: 32
+panel:
+  workers: 16
+  trace: false
+warm_start: outputs/analysis/enterprise-20260915/warm-start.json

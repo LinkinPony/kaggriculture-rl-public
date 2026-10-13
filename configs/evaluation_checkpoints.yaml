@@ -1,0 +1,16 @@
+comparison:
+  manifest: outputs/analysis/s99001-checkpoint-comparison-20260928/manifest.json
+  schedule: outputs/analysis/s99001-checkpoint-comparison-20260928/pilot-schedule.json
+  output: outputs/analysis/s99001-checkpoint-comparison-20260928/pilot
+  device: cuda:1
+  batch_games: 32
+  workers: 4
+  memory_fraction: 0.06
+  shard: 0
+  shards: 1
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${comparison.output}/hydra-${comparison.shard}
+  output_subdir: null

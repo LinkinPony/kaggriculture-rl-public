@@ -1,0 +1,23 @@
+benchmark:
+  output: outputs/analysis/throughput-scale-20260921/compact-matmul-hopper.json
+  repeats: 10
+  shapes:
+    - [1171456, 256, 768, float32]
+    - [1171456, 256, 512, float32]
+    - [1171456, 512, 256, bfloat16]
+  variants:
+    - name: current
+      options: {}
+    - name: autotune
+      options: {max_autotune_gemm: true, max_autotune_gemm_backends: 'ATEN,TRITON'}
+    - name: autotune_tma
+      options:
+        max_autotune_gemm: true
+        max_autotune_gemm_backends: ATEN,TRITON
+        triton.enable_persistent_tma_matmul: true
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/throughput-scale-20260921/hydra-matmul
+  output_subdir: null

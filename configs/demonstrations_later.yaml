@@ -1,0 +1,16 @@
+defaults:
+  - demonstrations
+  - _self_
+data:
+  output_dir: data/external/grounded-demonstrations-20260905-06-v1
+  sources:
+    - archive: data/external/kaggriculture-episodes-2026-09-03_2026-09-06/raw/kaggriculture-episodes-2026-09-05.zip
+      sha256: e57448887bcd84e049a2558a676abffd7b1e1d1b61d36991f9da0833a420e473
+      date: '2026-09-05'
+      split: train
+    - archive: data/external/kaggriculture-episodes-2026-09-06_2026-09-07/raw/kaggriculture-episodes-2026-09-06.zip
+      sha256: 8ab6f7da8b19c211361d7a8b769e41339f3e6f94f79f52b701fd7bf0dbdd556e
+      date: '2026-09-06'
+      split: selection
+  quantity_max: 128
+  quantity_extra: [256, 499, 500, 502, 505, 506, 512, 970, 978, 980, 982, 984, 985, 986, 987, 989, 990, 991, 992, 993, 994, 995, 996, 997, 998, 999, 1024, 4096, 10000, 1000000]

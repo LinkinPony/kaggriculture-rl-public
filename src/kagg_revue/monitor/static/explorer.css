@@ -1,0 +1,63 @@
+.view-hidden { display: none !important; }
+.explorer-active .hero-panel { min-height: 148px; padding: 24px 28px; }
+.explorer-active .hero-copy h1 { font-size: clamp(22px, 2.5vw, 32px); }
+.explorer-active .section-block { margin-top: 25px; }
+.explorer-active .two-column { grid-template-columns: 1fr; }
+.explorer-toolbar { margin-top: 20px; padding: 16px 20px; background: var(--card); border: 1px solid #d9ded9; border-radius: 16px; }
+.view-tabs { display: flex; gap: 6px; border-bottom: 1px solid #e3e8e3; padding-bottom: 12px; margin-bottom: 14px; }
+.explorer-toolbar button, .explorer-toolbar select, .explorer-toolbar input[type=number], .plot-expand, .dialog-toolbar button { font: inherit; font-size: 12px; color: #344c54; border: 1px solid #cedbd4; border-radius: 7px; padding: 7px 10px; background: #fff; }
+.explorer-toolbar button, .plot-expand, .dialog-toolbar button { cursor: pointer; }
+.view-tabs button[aria-selected=true] { color: #0c6252; background: #e3f4ee; border-color: #9bd0be; font-weight: 700; }
+.curve-controls, .curve-secondary { display: flex; align-items: end; flex-wrap: wrap; gap: 12px; }
+.curve-controls label, .curve-secondary label { display: grid; gap: 5px; font-size: 11px; color: #647879; }
+.curve-controls .raw-control { display: flex; align-items: center; gap: 7px; align-self: center; color: #294b40; }
+.raw-control input { accent-color: #14816b; width: 16px; height: 16px; }
+.curve-secondary { align-items: center; margin-top: 12px; }
+.curve-secondary label { display: flex; align-items: center; }
+#curve-status { font-size: 11px; color: #6e807f; flex: 1; text-align: right; line-height: 1.8; }
+#curve-status[data-error=true] { color: #b44834; }
+#curve-custom { display: flex; align-items: end; gap: 7px; }
+#curve-custom input { width: 95px; }
+#curve-events { font-size: 11px; margin-top: 12px; color: #738380; }
+#curve-events summary { cursor: pointer; }
+#curve-event-list { display: grid; gap: 8px; padding-top: 10px; }
+.curve-event { display: grid; grid-template-columns: auto 1fr; align-items: start; gap: 10px; }
+.curve-event p { margin: 0; overflow-wrap: anywhere; line-height: 1.7; }
+.curve-event strong { color: #405d54; }
+.evaluation-summary { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 16px; padding: 17px 21px; border: 1px solid #cbdfd4; border-radius: 14px; background: #edf6ef; }
+.evaluation-summary h3 { margin: 0 0 7px; font-size: 14px; color: #275849; }
+.evaluation-summary p { font-size: 11px; color: #647d72; margin: 0; line-height: 1.7; }
+.evaluation-summary button { flex-shrink: 0; border: 0; background: transparent; color: #176f57; cursor: pointer; }
+.trend-legends { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; min-height: 28px; }
+.trend-legend { display: flex; align-items: center; gap: 6px; border: 0; background: #f0f5f1; border-radius: 6px; padding: 6px 8px; color: #536c66; font: inherit; font-size: 10px; cursor: pointer; }
+.trend-legend i { width: 7px; height: 7px; border-radius: 50%; }
+.trend-legend b { color: #213e35; font-size: 12px; }
+.trend-legend small { color: #6c7f78; font-variant-numeric: tabular-nums; }
+.plot-footnote { font-size: 10px; color: #6e8279; margin-top: 8px; line-height: 1.7; }
+.plot-raw { opacity: .22; stroke-width: 1; }
+.plot-trend { stroke-width: 2.4; }
+.plot-event { stroke: #aa8754; stroke-width: 1; stroke-dasharray: 4 4; opacity: .65; }
+.plot-event-label { fill: #94754a; font-size: 9px; }
+.plot-selection { fill: #319878; opacity: .18; }
+.explorer-active .chart-hit { touch-action: pan-y; }
+.tooltip-observation { color: #9eb6ad; font-size: 8px; margin-bottom: 6px; }
+#plot-dialog { width: min(1250px, 94vw); max-width: 94vw; max-height: 94vh; border: 1px solid #b3ccbd; border-radius: 18px; padding: 16px; background: #f3f7f0; }
+#plot-dialog::backdrop { background: rgba(9, 26, 23, .55); backdrop-filter: blur(3px); }
+.dialog-toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; color: #6a7c71; font-size: 12px; }
+#plot-dialog .plot-expand { display: none; }
+.run-group-title { color: #a0b7b4; font-size: 10px; padding: 16px 8px 8px; }
+.run-history summary { color: #839e98; font-size: 11px; cursor: pointer; padding: 15px 8px; }
+.pin-run { padding: 7px 10px; border: 1px solid #cedbd4; border-radius: 7px; background: transparent; color: #4f6b60; cursor: pointer; font-size: 11px; }
+@media (min-width: 1500px) { .explorer-active .metric-grid[data-family=learning] { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 650px) {
+  .explorer-toolbar { padding: 14px; }
+  .view-tabs { gap: 4px; overflow-x: auto; }
+  .view-tabs button { white-space: nowrap; padding: 7px 8px; }
+  .curve-controls { gap: 10px; }
+  #curve-status { flex-basis: 100%; text-align: left; }
+  .evaluation-summary { align-items: start; }
+  .explorer-active .hero-panel { padding: 22px; }
+  .explorer-active .chart-head { flex-direction: row; }
+  .plot-expand { white-space: nowrap; }
+  .curve-event { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,29 @@
+defaults:
+  - production
+  - _self_
+mode: bc
+output_dir: outputs/production-policy/20260905-entities-bc-v2
+checkpoint: null
+width: 384
+model:
+  architecture: entities-v2
+  depth: 6
+  heads: 8
+  expansion: 4
+  critic_width: 256
+  critic_depth: 3
+evaluation_seed: 11100000
+confirmation_seed: 11200000
+bc:
+  source: data/external/production-entities-kaito-20260905-v2
+  directory: data/external/production-entities-contracts-20260905-v2
+  seed_start: 11000000
+  epochs: 20
+  batch_rows: 256
+  learning_rate: 0.0001
+ppo:
+  seed_start: 12000000
+  actor_learning_rate: 0.0001
+  microbatch_rows: 512
+  evaluation_interval: 0
+  retain_checkpoints: 4

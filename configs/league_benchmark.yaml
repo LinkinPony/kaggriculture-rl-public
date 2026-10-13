@@ -1,0 +1,14 @@
+benchmark:
+  run: outputs/learning/league3-20260909-s63001-fixed
+  output: outputs/analysis/league-throughput-20260909/baseline.json
+  repetitions: 3
+  profile: false
+  concurrent_inference: true
+  sample_path: null
+  require_actor_updates: true
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/league-throughput-20260909/hydra
+  output_subdir: null

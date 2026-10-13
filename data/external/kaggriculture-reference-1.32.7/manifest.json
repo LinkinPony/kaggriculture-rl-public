@@ -1,0 +1,8 @@
+{
+  "package": "kaggle-environments",
+  "version": "1.32.7",
+  "source": "https://pypi.org/project/kaggle-environments/1.32.7/",
+  "wheel": "kaggle_environments-1.32.7-py3-none-any.whl",
+  "wheel_sha256": "2a1bb862ad2d6463080f80f6a766f46d94b53fd57168cfeddb9857fc3dbc4c8f",
+  "interpreter_sha256": "bc8a54879ef02c7ea64b8b333d6a976f0ea65c4949149d01f463f23bccee653e"
+}

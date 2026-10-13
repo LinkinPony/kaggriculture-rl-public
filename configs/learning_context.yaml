@@ -1,0 +1,70 @@
+defaults:
+- learning_long
+- _self_
+experiment:
+  output_dir: outputs/learning/context-26m-20260908-s62001
+  seed: 62001
+  checkpoint_keep_recent: 2
+  checkpoint_keep_interval: 200
+  architecture: grounded-v2
+  width: 384
+  depth: 16
+  heads: 8
+  expansion: 2
+  critic_width: 320
+  critic_depth: 6
+  train_seed: 4000000000
+  actor_learning_rate: 3.0e-05
+  critic_learning_rate: 0.0001
+  quantity_extra:
+  - 256
+  - 499
+  - 500
+  - 502
+  - 505
+  - 506
+  - 512
+  - 978
+  - 982
+  - 984
+  - 985
+  - 986
+  - 989
+  - 990
+  - 991
+  - 992
+  - 993
+  - 994
+  - 995
+  - 996
+  - 997
+  - 998
+  - 999
+  - 1024
+  - 4096
+  - 10000
+  - 1000000
+  execution:
+    microbatch_rows: 2880
+  demonstrations:
+    manifest: outputs/datasets/grounded-v2-20260903-07/manifest.json
+    sha256: 789bcd28991222a9b98e04c969be4ba5b4fff97c61dc4ad6a2d51be4cf05c953
+    epochs: 4
+    batch_rows: 256
+    learning_rate: 0.0001
+    checkpoint_shards: 4
+    distributed: true
+    behavior_games: 4
+    behavior_seed: 4200000000
+  evaluation:
+    selection_seed: 4100000000
+    confirmation_seed: 4110000000
+    anchor_seeds:
+    - 120001
+    - 120002
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${experiment.output_dir}/hydra
+  output_subdir: null

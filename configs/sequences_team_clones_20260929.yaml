@@ -1,0 +1,35 @@
+# Per-team clone data: every version each watched team submitted since 9/27 12:00 UTC
+# (margin wide enough to admit all), one prepared dataset per team via data overrides.
+selection:
+  output: outputs/datasets/team-clones-20260929/source-manifests
+  sources:
+    dsm: data/external/kaggriculture-dsm-replays/manifest.json
+    mm-pq: data/external/kaggriculture-mm-pq-replays/manifest.json
+    boey: data/external/kaggriculture-boey-replays/manifest.json
+    decem: data/external/kaggriculture-decem-replays/manifest.json
+    vadim: data/external/kaggriculture-vadim-replays/manifest.json
+  rated_since: '2026-09-26T00:00:00Z'
+  submitted_since: '2026-09-27T12:00:00Z'
+  margin: 50.0
+  uncertainty: 2.0
+  precision: 0.25
+  excluded_submissions: [56652700, 56654377]
+data:
+  output: ???
+  raw: data/external
+  reuse: []
+  teachers: ???
+  watch_manifests: ???
+  workers: 10
+  partition_seed: 62001
+  train_val: true
+  agronomy: true
+  derived: true
+  canonical_market: true
+report: ???
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/team-clones-20260929/${now:%Y%m%d-%H%M%S}
+  output_subdir: null

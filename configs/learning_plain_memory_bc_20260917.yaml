@@ -1,0 +1,30 @@
+defaults:
+  - learning_gtrxl_bc100_20260916
+  - _self_
+
+experiment:
+  output_dir: outputs/learning/plain-m384-bc-3d-20260917-s72001
+  pretraining_only: true
+  seed: 72001
+  train_seed: 3950000000
+  gated: false
+  depth: 16
+  width: 384
+  critic_depth: 6
+  critic_width: 320
+  batch_rows: 5752
+  sequence_games_per_rank: 4
+  evaluation:
+    selection_seed: 3980000000
+    confirmation_seed: 3981000000
+    anchor_seeds: [220001, 220002]
+  demonstrations:
+    manifest: outputs/datasets/grounded-sequences-latest3d-20260917-q100/manifest.json
+    sha256: 6ea86052a53d795160680b918cad31febcfb7076664b7d2370fedf11552b90c2
+    batch_rows: 5752
+    checkpoint_shards: 16
+    behavior_games: 4
+    control_games: 16
+    behavior_seed: 3982000000
+  execution:
+    microbatch_rows: 384

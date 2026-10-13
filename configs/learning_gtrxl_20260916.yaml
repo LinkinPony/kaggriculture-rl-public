@@ -1,0 +1,97 @@
+experiment:
+  output_dir: outputs/learning/gtrxl-m384-3d-20260916-s70001
+  resume: false
+  device: cuda:0
+  seed: 70001
+  train_seed: 3900000000
+  updates: 100000
+  checkpoint_interval: 4
+  checkpoint_keep_recent: 2
+  checkpoint_keep_interval: 200
+  games: 128
+  workers: 16
+  cpu_threads: 4
+  width: 384
+  architecture: grounded-v2
+  operation_quantity_bias: true
+  market_budget: true
+  depth: 6
+  heads: 8
+  expansion: 2
+  critic_width: 320
+  critic_depth: 3
+  unit_limit: 32
+  decision_interval: 1
+  quantity_max: 100
+  quantity_extra: []
+  environment:
+    boardSize: 10
+    episodeSteps: 720
+    turnsPerDay: 24
+    maxMarketOrdersPerTurn: 10
+  batch_rows: 46016
+  microbatch_rows: 256
+  epochs: 1
+  actor_learning_rate: 7.5e-06
+  critic_learning_rate: 0.0001
+  target_kl: 0.05
+  clip: 0.1
+  entropy_weight: 0.0001
+  cash_weight: 0.0
+  cash_scale: 10000.0
+  compile: true
+  precision: bf16
+  deterministic: false
+  exploration:
+    market_stop_probability: 0.98
+    quantity_decay: 1.0
+    head_standard_deviation: 0.01
+  population:
+    fraction: 0.0
+    snapshot_interval: 64
+    capacity: 177
+    pfsp: null
+    sources: []
+  evaluation:
+    games: 64
+    interval: 512
+    selection_seed: 3930000000
+    confirmation_seed: 3931000000
+    anchor_seeds:
+    - 200001
+    - 200002
+  curriculum: null
+  demonstrations:
+    manifest: outputs/datasets/grounded-sequences-20260913-15-q100/manifest.json
+    sha256: b905a2edb075935decac7655f0cf1a5b4b9a7ceaa0c688361c398a969b7b0847
+    epochs: 5
+    batch_rows: 46016
+    learning_rate: 0.0001
+    checkpoint_shards: 16
+    distributed: true
+    behavior_games: 0
+    behavior_seed: 3932000000
+  execution:
+    devices:
+    - cuda:0
+    - cuda:1
+    microbatch_rows: 3072
+    workers_per_rank: 8
+    cpu_threads_per_rank: 2
+    compile_inference: false
+    fused_loss: false
+  script_population: null
+  gated: true
+  memory_turns: 384
+  memory_width: 256
+  memory_layers: 2
+  memory_tokens: 4
+  sequence_chunk_turns: 48
+  sequence_games_per_rank: 32
+  kl_control: early_stop
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${experiment.output_dir}/hydra
+  output_subdir: null

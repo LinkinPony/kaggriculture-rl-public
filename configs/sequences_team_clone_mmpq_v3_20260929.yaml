@@ -1,0 +1,15 @@
+# MMPQ clone v3 data: MMPQ versions submitted within the last three days (since 9/26 13:30
+# UTC), excluding versions that are clearly broken or sabotaged (see excluded_submissions).
+defaults:
+  - sequences_team_clones_20260929
+  - _self_
+selection:
+  output: outputs/datasets/team-clone-v3-mm-pq-20260929/source-manifests
+  rated_since: '2026-09-25T00:00:00Z'
+  submitted_since: '2026-09-26T13:30:00Z'
+data:
+  output: outputs/datasets/team-clone-v3-mm-pq-20260929-train-val-q100
+  teachers: [M & M & P & Q]
+  watch_manifests: [outputs/datasets/team-clone-v3-mm-pq-20260929/source-manifests/mm-pq/selected.json]
+  workers: 16
+report: outputs/analysis/team-clones-20260929/mm-pq-v3-data-verification.json

@@ -1,0 +1,20 @@
+# Exact 158 replays available at 2026-09-25T11:39:39.737021Z for Boey 56521745.
+data:
+  output: outputs/datasets/derived-v5b-boey-56521745-158-20260925-train-val-q100
+  raw: data/external
+  reuse: []
+  teachers: [Boey]
+  watch_manifests:
+    - ${data.output}/source-manifests/selected.json
+  workers: 16
+  partition_seed: 62001
+  train_val: true
+  agronomy: true
+  derived: true
+report: outputs/analysis/boey-56521745-bc-20260925/data-verification.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/boey-56521745-bc-20260925/${now:%Y%m%d-%H%M%S}
+  output_subdir: null

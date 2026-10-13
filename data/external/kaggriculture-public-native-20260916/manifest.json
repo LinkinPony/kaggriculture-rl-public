@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-09-16T01:29:13.273722+00:00",
+  "retrieval": {
+    "method": "Exact source from 20260916 notebook survey; retain four existing frozen sources. V45 reviewed, native compilation and qualification recorded separately.",
+    "previous_manifest": "data/external/kaggriculture-public-native-20260914-v2/manifest.json",
+    "survey_manifest": "data/external/kaggriculture-notebook-survey-20260916/manifest.json"
+  },
+  "agents": [
+    {
+      "agent_id": "ahmed_v45",
+      "notebook_ref": "ahmedberatozer/kaggriculture-v45-first-turn-wheat-round-trip",
+      "notebook_id": 134526919,
+      "notebook_url": "https://www.kaggle.com/code/ahmedberatozer/kaggriculture-v45-first-turn-wheat-round-trip",
+      "main_path": "data/external/kaggriculture-notebook-survey-20260916/ahmedberatozer__kaggriculture-v45-first-turn-wheat-round-trip/extracted/main.py",
+      "sha256": "2536d41ed5a00c75204b6350f1c76c54259c774cb065ba2a3a0072eedf210d94",
+      "files": {},
+      "evidence_level": "unverified",
+      "evidence_note": "Fresh static source extraction; author claims are not local evaluation evidence."
+    },
+    {
+      "agent_id": "metacounter_r1",
+      "notebook_ref": "alperen5252525/kaggriculture-metacounter-r1-scored-agent",
+      "notebook_id": 134246361,
+      "notebook_url": "https://www.kaggle.com/code/alperen5252525/kaggriculture-metacounter-r1-scored-agent",
+      "main_path": "data/external/kaggriculture-notebook-survey-20260914/metacounter/extracted/main.py",
+      "sha256": "75e1424c2d560e5e5bf102ab02cf8233d360622bcf086a1811aff839a17067b9",
+      "files": {},
+      "evidence_level": "unverified",
+      "evidence_note": "Frozen source for September 14 survey; author claims are not independently established."
+    },
+    {
+      "agent_id": "shop_router_0913",
+      "notebook_ref": "yhay81/shop-router-0913",
+      "notebook_id": 134178545,
+      "notebook_url": "https://www.kaggle.com/code/yhay81/shop-router-0913",
+      "main_path": "data/external/kaggriculture-notebook-survey-20260914/shop-0913/extracted/main.py",
+      "sha256": "77cf67723a753be957cf70fdb8abbce7ef5c020299e8acd16ed8d2dc8b929dfa",
+      "files": {},
+      "evidence_level": "unverified",
+      "evidence_note": "Frozen source for September 14 survey; author claims are not independently established."
+    },
+    {
+      "agent_id": "rayk_v38_low_pressure",
+      "notebook_ref": "raykkretzschmar/kaggriculture-rank-your-agent",
+      "notebook_id": 129805908,
+      "notebook_url": "https://www.kaggle.com/code/raykkretzschmar/kaggriculture-rank-your-agent",
+      "main_path": "data/external/kaggriculture-notebook-survey-20260914/rank-agent/extracted/main.py",
+      "sha256": "8f03b16618586e1d9a55c38d5232ea61729b82cdc5abcf383cca73227d4875b5",
+      "files": {
+        "my_agent.py": "114123d17ad08ebb71487b885f0f48ae97251b1f9b4495082ea2d799785ddb1c"
+      },
+      "evidence_level": "unverified",
+      "evidence_note": "Frozen source for September 14 survey; author claims are not independently established."
+    },
+    {
+      "agent_id": "farming_v4_0914",
+      "notebook_ref": "lynnsakurai/farming-score-v4-a-better-shop",
+      "notebook_id": 132681375,
+      "notebook_url": "https://www.kaggle.com/code/lynnsakurai/farming-score-v4-a-better-shop",
+      "main_path": "data/external/kaggriculture-notebook-survey-20260914-refresh/current-farming_v4_0912/extracted/main.py",
+      "sha256": "03e263f1a20db29d6aa3404e978b97549bdac7f81d2b7f8dea5b36a3d6e91edc",
+      "files": {},
+      "evidence_level": "unverified",
+      "evidence_note": "Same notebook ref returns changed source despite unchanged lastRunTime. Fresh retrieval, distinct frozen source."
+    }
+  ],
+  "rejected": []
+}

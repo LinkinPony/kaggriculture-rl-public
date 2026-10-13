@@ -1,0 +1,39 @@
+output_dir: outputs/evaluation/20260904-rank8-intent-language-audit-24seed-abi-v4
+teacher:
+  submission_id: 55708706
+  archive_path: data/external/kaggle-submission-55708706-teacher/submission.tar.gz
+  archive_sha256: 1648b4c28b798420b64bca066bcda886d2e79f7915507a203a6227f836dd254b
+  source_commit: 0742236a178d57a6f5b5c37a0f8caeec256d2b14
+  route_sha256: 193fef08eecaf64d375a0f027fac48fed8f9a1978a4d57f605162d35205e4e72
+seeds:
+  - 9911000
+  - 9911022
+  - 9911023
+  - 9911053
+  - 9911069
+  - 9911071
+  - 9911072
+  - 9911075
+  - 9911001
+  - 9911005
+  - 9911013
+  - 9911020
+  - 9911047
+  - 9911054
+  - 9911055
+  - 9911058
+  - 9911003
+  - 9911009
+  - 9911019
+  - 9911036
+  - 9911042
+  - 9911067
+  - 9911074
+  - 9911077
+required_event_days: [3, 6, 9]
+require_clean_source: false
+environment:
+  boardSize: 10
+  episodeSteps: 720
+  turnsPerDay: 24
+  maxMarketOrdersPerTurn: 10

@@ -1,0 +1,14 @@
+analysis:
+  baseline_run: outputs/learning/agronomy-v4-m384-bc100-3d-20260917-s73001/resolved-config.json
+  baseline: outputs/datasets/agronomy-v4-sequences-3d-20260917-q100/manifest.json
+  baseline_sha256: d2b8d381b4cb33cde404e438f17ad922baa5e1367ff8df6cfbe1876c2179f812
+  current: outputs/datasets/agronomy-v4-selected8-5d-20260921-q100/manifest.json
+  current_sha256: 8def06dbcad7881bcb4b3c2fbc2049c702cb050a1a8aaeb8121dac66088c34eb
+  output: outputs/analysis/bc-dataset-comparison-20260921
+  workers: 24
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/bc-comparison-20260921/${now:%Y%m%d-%H%M%S}
+  output_subdir: null

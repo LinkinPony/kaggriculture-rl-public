@@ -1,0 +1,17 @@
+package: outputs/deployment/context3d-s65001-u2748-20260911-double/package
+replay: data/external/kaggle-submission-56161402/107807755-replay.json
+checkpoints:
+  bc1: outputs/learning/context-26m-3d-20260910-s65001/pretraining/shard-000224.pt
+  bc2: outputs/learning/context-26m-3d-20260910-s65001/pretraining/shard-000448.pt
+  bc3: outputs/learning/context-26m-3d-20260910-s65001/pretraining/shard-000672.pt
+  bc4: outputs/learning/context-26m-3d-20260910-s65001/pretraining/shard-000896.pt
+  ppo2748: outputs/analysis/kaggle-context3d-s65001-u2748-20260911-double/update-002748.pt
+draws: 128
+seed: 1651110000
+output: outputs/analysis/bc-redesign-20260911/stage-probe.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/bc-redesign-20260911/hydra-stages
+  output_subdir: null

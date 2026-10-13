@@ -1,0 +1,15 @@
+defaults:
+  - learning_league
+  - _self_
+experiment:
+  script_population:
+    manifest: data/external/kaggriculture-public-native-20260916/manifest.json
+    sha256: 6d66d351cc01eb3e6e58f9921de0a1842f78aee03686b0312355725e1bdf2aa8
+    agents: [ahmed_v45, metacounter_r1, shop_router_0913, rayk_v38_low_pressure, farming_v4_0914]
+    backend: native-cpp
+    fraction: 0.4166666666666667
+league:
+  members: [bc, spataro]
+  games_per_pair: 32
+  selfplay_games_per_member: 40
+  games_per_script_per_member: 8

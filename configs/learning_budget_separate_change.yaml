@@ -1,0 +1,20 @@
+defaults:
+- learning_budget_pfsp_change
+- _self_
+change:
+  population:
+    unified: false
+    fraction: 0.5
+    pfsp:
+      script_sampling: independent_pfsp
+  script_population:
+    fraction: 0.2
+  qualification: outputs/analysis/budget-separate-pools-20260912/qualification.json
+  qualification_sha256: ${oc.env:SEPARATE_QUALIFICATION_SHA256,0000000000000000000000000000000000000000000000000000000000000000}
+qualification:
+  output_dir: outputs/learning/budget-separate-adaptive-qualification-20260912
+  updates: 8
+  official_seed: 4252000000
+hydra:
+  run:
+    dir: outputs/analysis/budget-separate-pools-20260912/hydra

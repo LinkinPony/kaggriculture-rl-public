@@ -1,0 +1,23 @@
+defaults:
+  - entities
+  - _self_
+mode: qualify
+checkpoint: null
+output_dir: outputs/production-policy/20260906-work-transfer-v5
+decision_interval: 12
+model:
+  architecture: work-v1
+evaluation_seed: 11700000
+confirmation_seed: 11800000
+bc:
+  directory: data/external/production-work-kaito-20260906-v1
+  epochs: 0
+  greedy_prior_bias: 10.0
+ppo:
+  population: script_mix
+  script_fraction: 0.5
+  script_opponents: [kaito_v48, kaito_v39, boatlee_v21, mugundh_v21]
+  updates: 3
+  batch_rows: 11520
+  seed_start: 13000000
+  checkpoint_interval: 1

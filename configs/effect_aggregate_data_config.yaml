@@ -1,0 +1,3 @@
+defaults:
+  - effect_aggregate_data: rank8_canonical_dagger1
+  - _self_

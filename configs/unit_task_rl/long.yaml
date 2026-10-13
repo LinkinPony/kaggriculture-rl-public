@@ -1,0 +1,83 @@
+# Research challenger only; promotion requires separate complete held-out panels.
+initial_actor: outputs/turn-policy/20260828-opening-diverse-bc2-v1/actor-fp16.pt
+initial_task_checkpoint: outputs/unit-task-rl/20260831-quality-restored-attention-selfplay-v3/checkpoints/rolling/checkpoint-00000120.pt
+initial_task_checkpoint_sha256: 8cdb0f85444bc50d31002c50f46d205e09c8d24459d55927be56b2d079e11da7
+initial_optimizer: import
+resume_checkpoint: null
+public_agent_manifest: data/external/kaggriculture-public-notebooks-2026-08-28/manifest.json
+output_dir: outputs/unit-task-rl/20260901-quality-restored-attention-selfplay-v5
+
+seed: 20260831
+rollout_seed_start: 5010304
+updates: 119
+opponents: [self_play]
+opponent_weights:
+  self_play: 1.0
+paired_seats: true
+evaluation_opponents: [deterministic_incumbent, kaito_v39, kaito_v48]
+selection_seeds: [31000000, 31000001, 31000002, 31000003]
+confirmation_seeds: [31001000, 31001001, 31001002, 31001003]
+
+abi:
+  unit_limit: 32
+  maximum_quantity: 128
+
+model:
+  architecture_version: attention-v1
+  model_width: 128
+  feedforward_width: 384
+  attention_heads: 4
+  prefix_layers: 2
+
+objective:
+  reward: terminal_wdl
+  discount: 1.0
+  gae_lambda: 1.0
+
+optimization:
+  ppo_epochs: 2
+  episodes_per_minibatch: 2
+  learning_rate: 0.00005
+  weight_decay: 0.00001
+  clip_epsilon: 0.1
+  task_value_loss_weight: 1.0
+  market_value_loss_weight: 1.0
+  task_entropy_weight: 0.001
+  market_entropy_weight: 0.001
+  gradient_clip: 1.0
+  target_kl: 0.02
+  normalize_advantage: true
+
+rollout:
+  seeds_per_update: 64
+  batch_games: 32
+  cpu_workers: 48
+  actor_streams: 8
+  host_memory_limit_gib: 128
+  gpu_memory_fraction: 0.7
+
+checkpoint:
+  rolling_interval: 5
+  rolling_keep: 5
+  permanent_interval: 50
+
+incumbent:
+  kind: event_route_ppo
+  checkpoint: outputs/route-ppo/20260830-event-route-ppo-v1/checkpoints/permanent/checkpoint-00000275.pt
+  checkpoint_sha256: a69d1160632a366d184c322fb7b2e73c22b87034308ef81d76655f7567d8a8a5
+  prior_logit: 6.0
+  unit_limit: 65
+  confirmation_report: outputs/evaluation/20260830-event-route-ppo-checkpoint275-prior6-confirmation192-v1/evaluation-report.json
+  confirmation_sha256: cc0c0cdae05a85b8ce7b7d3d92e2ddb7a7b9eb199e34fcbe1cbbfd4254610e3c
+  runtime_audit_report: outputs/evaluation/20260830-event-route-ppo-checkpoint275-prior6-runtime-audit-v2/runtime-audit-report.json
+  runtime_audit_sha256: fa310435a4e0228cf05cfbbca7db47ba130ee077554eda41db4f942faf35dbc2
+
+device: cuda:0
+training_devices: [cuda:0, cuda:1]
+cuda_allocator_expandable_segments: true
+cpu_threads: 8
+act_timeout_seconds: 1.0
+remaining_overage_seconds: 60.0
+environment:
+  episodeSteps: 720
+  maxMarketOrdersPerTurn: 10

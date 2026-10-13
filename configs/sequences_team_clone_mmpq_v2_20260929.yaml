@@ -1,0 +1,13 @@
+# MMPQ clone v2 data: every MMPQ version submitted since 9/26 (about twice the v1 data).
+defaults:
+  - sequences_team_clones_20260929
+  - _self_
+selection:
+  output: outputs/datasets/team-clone-v2-mm-pq-20260929/source-manifests
+  submitted_since: '2026-09-26T00:00:00Z'
+data:
+  output: outputs/datasets/team-clone-v2-mm-pq-20260929-train-val-q100
+  teachers: [M & M & P & Q]
+  watch_manifests: [outputs/datasets/team-clone-v2-mm-pq-20260929/source-manifests/mm-pq/selected.json]
+  workers: 16
+report: outputs/analysis/team-clones-20260929/mm-pq-v2-data-verification.json

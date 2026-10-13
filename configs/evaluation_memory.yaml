@@ -1,0 +1,21 @@
+ablation:
+  checkpoint: outputs/analysis/memory-ablation-s97001-20260928/update-000116.pt
+  checkpoint_sha256: 26a20d3d51a799339e778ab3480d3ba5574821076082914d56414e4f262ba5c4
+  output: outputs/analysis/memory-ablation-s97001-20260928/main
+  opponents: [ahmed_v45, metacounter_r1, shop_router_0913, rayk_v38_low_pressure, farming_v4_0914, ahmed_v53, thomas_metav4]
+  seed: 9282000000
+  seeds: 32
+  duel_seed: 9283000000
+  duel_seeds: 64
+  sampling_seed: 92840001
+  batch_games: 32
+  workers: 4
+  device: cuda:0
+  precision: bf16
+  memory_fraction: 0.08
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${ablation.output}/hydra
+  output_subdir: null

@@ -1,0 +1,19 @@
+# Second training seeds of the v4 constant-rate and cosine recipes at T=0, on the same
+# seeds and six opponents as evaluation_mmpq_clone_v5_20260930 (including the first-seed
+# v4 constant-rate clone), to measure seed-to-seed variation of the v4 recipe.
+defaults:
+  - evaluation_mmpq_clone_v5_20260930
+  - _self_
+study:
+  output: outputs/analysis/mmpq-bc-redesign-20260930/v4-reseed
+  scope: >-
+    Second-seed MMPQ v4 clones (constant-rate and cosine BC; parallel unit decoder) at T=0
+    against four T=1 references, the v3 clone at T=0 and the first-seed v4 constant-rate
+    clone at T=0, on 64 common seeds with both seats. Local proxy only.
+  candidates:
+    - name: v4-parallel-const-r2-t0
+      temperature: 0
+      run: outputs/learning/mmpq-clone-v4-parallel-const-r2-bc-20260930-s101007
+    - name: v4-parallel-r2-t0
+      temperature: 0
+      run: outputs/learning/mmpq-clone-v4-parallel-r2-bc-20260930-s101008

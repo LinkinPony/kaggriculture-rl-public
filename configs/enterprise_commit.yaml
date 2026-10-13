@@ -1,0 +1,14 @@
+defaults:
+  - enterprise
+  - _self_
+panel:
+  output: outputs/analysis/enterprise-20260915/prototype-04
+  variants:
+    default: {commit: true}
+    crops_only: {animal_limit: 0, central_reserve: 0, commit: true}
+    short_cycle: {duration_power: 1.6, central_reserve: 0, commit: true}
+    livestock: {animal_bias: 1.5, central_reserve: 5, commit: true}
+    production: {workers: 14, growth_bias: 0.0, commit: true}
+    strawberry: {workers: 14, animal_limit: 8, growth_bias: 0.5, crop_bias: {STRAWBERRY: 2.0}, commit: true}
+    base_unlocked: {commit: false}
+    no_fert_locked: {fertilize: false, commit: true, workers: 13}

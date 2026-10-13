@@ -1,0 +1,11 @@
+defaults:
+  - production: work_exploration_long
+  - _self_
+confirmation_games: 1024
+poll_seconds: 10
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${production.output_dir}/completion-hydra
+  output_subdir: null

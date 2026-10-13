@@ -1,0 +1,22 @@
+defaults:
+  - learning_script_mix_change
+  - _self_
+change:
+  execution:
+    devices: [cuda:0, cuda:1]
+    microbatch_rows: 2880
+    workers_per_rank: 8
+    cpu_threads_per_rank: 2
+    compile_inference: true
+    fused_loss: true
+  script_population:
+    manifest: data/external/kaggriculture-shop-router-0909-20260909/manifest.json
+    sha256: 1e7c8958cc41e003ca80778a3fddb502a49599426352e2085aa25e3b49a73c8b
+    agents: [router_95, farming_v4, shop_router_0909, shop_router_0908]
+  qualification: outputs/analysis/context-shop-router-0909-20260909/qualification.json
+qualification:
+  output_dir: outputs/learning/context-shop-router-0909-dual-qualification-20260909
+  official_seed: 1860909600
+hydra:
+  run:
+    dir: outputs/analysis/context-shop-router-0909-20260909/hydra

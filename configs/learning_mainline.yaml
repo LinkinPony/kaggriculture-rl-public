@@ -1,0 +1,19 @@
+defaults:
+  - learning_demonstrations
+  - _self_
+experiment:
+  output_dir: outputs/learning/demonstrations-${now:%Y%m%d-%H%M%S}-s${experiment.seed}
+  seed: 50001
+  updates: 512
+  train_seed: 1120000000
+  execution:
+    devices: [cuda:0, cuda:1]
+    microbatch_rows: 5760
+    workers_per_rank: 8
+    cpu_threads_per_rank: 2
+    compile_inference: true
+    fused_loss: true
+  evaluation:
+    selection_seed: 1130000000
+    confirmation_seed: 1140000000
+    anchor_seeds: [99001, 99002]

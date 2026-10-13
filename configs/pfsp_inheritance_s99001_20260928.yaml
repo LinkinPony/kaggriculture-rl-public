@@ -1,0 +1,17 @@
+# s99001 stopped at U307: inherit s97001 (one generation) then s95001 (two generations).
+defaults:
+  - learning_pfsp_inheritance_change
+  - _self_
+change:
+  run: outputs/learning/derived-v5b-m384-strength-canonical-ppo50-warmup300-20260928-s99001
+  state_sha256: 9bb1287c110ed106bb474791f9a1c3212da2a48daebceca7ecdf7d108cd6503e
+  donors:
+    - run: outputs/learning/derived-v5b-m384-boey-watch4-ppo50-warmup300-20260928-s97001
+      state_sha256: 94a9272d0b959332a8a6c0ea7826e8954960235b051938622d551fb83138a9d6
+    - run: outputs/learning/derived-v5b-m384-watch6-ppo50-warmup300-20260927-s95001
+      state_sha256: dadf669f66e58799bf91d2168e792d5bf3b475ba9ad6bd67ec957cbf31af88a8
+  inheritance:
+    discount: 0.5
+hydra:
+  run:
+    dir: outputs/analysis/pfsp-inheritance-20260928/hydra

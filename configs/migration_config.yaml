@@ -1,0 +1,19 @@
+defaults:
+  - rl: terminal_wdl
+  - _self_
+
+migration:
+  source_checkpoint: outputs/terminal-wdl/20260826-pure-selfplay-ddp-economic-v2-resume-1040/checkpoints/permanent/checkpoint-00002400.pt
+  source_initial_actor: outputs/checkpoint-migration/20260826-economic-v1-update-915/initial-actor.pt
+  destination_dir: outputs/strategy-migration/20260827-strategy-v1
+  unit_limit: 32
+  strategy_tokens: 8
+  seed: 20260827
+  distillation_games: 2
+  distillation_turns: 12
+  distillation_learning_rate: 0.00001
+
+rl:
+  initial_actor: outputs/strategy-migration/20260827-strategy-v1/initial-actor.pt
+  resume_checkpoint: outputs/strategy-migration/20260827-strategy-v1/checkpoint.pt
+  output_dir: outputs/terminal-wdl/20260827-strategy-workspace-v1

@@ -1,0 +1,10 @@
+# DSM clone v3 plan C started from our latest RL actor, s100901 U756 (itself RL on top of the
+# s100801 DSM BC), with the plan C recipe unchanged.
+defaults:
+- learning_dsm_clone_v3_plan_c_bc_20260930
+- _self_
+experiment:
+  initial_weights:
+    run: outputs/learning/derived-v5b-m384-s99001u1061-dsm2d-kl-ppo50-20260929-s100901
+    checkpoint: checkpoints/update-000756.pt
+    sha256: 01aba0f8162c962d3d88cc627d48bdefd75bb2e61644005f5a4d8073b4d220b1

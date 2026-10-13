@@ -1,0 +1,13 @@
+# DSM clone v2 data: DSM versions since 9/28, including 56661176 and 56664798 of 9/29.
+defaults:
+  - sequences_team_clones_20260929
+  - _self_
+selection:
+  output: outputs/datasets/team-clone-v2-dsm-20260929/source-manifests
+  submitted_since: '2026-09-28T00:00:00Z'
+data:
+  output: outputs/datasets/team-clone-v2-dsm-20260929-train-val-q100
+  teachers: [DSM]
+  watch_manifests: [outputs/datasets/team-clone-v2-dsm-20260929/source-manifests/dsm/selected.json]
+  workers: 16
+report: outputs/analysis/team-clones-20260929/dsm-v2-data-verification.json

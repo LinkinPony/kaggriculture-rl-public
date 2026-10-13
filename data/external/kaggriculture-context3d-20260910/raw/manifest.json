@@ -1,0 +1,67 @@
+{
+  "schema": "daily-behavior-source-v1",
+  "verified_at_utc": "2026-09-10T08:24:28.110444+00:00",
+  "source_index": {
+    "path": "data/external/kaggriculture-context3d-20260910/raw/kaggriculture-episodes-index.zip",
+    "sha256": "e6be2d8095a735be244b38cf759fc3c212c56f2e749107c3d68ad252da0943d7",
+    "url": "https://www.kaggle.com/datasets/kaggle/kaggriculture-episodes-index"
+  },
+  "selection": "latest index dates; every episode, both seats",
+  "license": "CC0-1.0",
+  "daily_archives": [
+    {
+      "path": "data/external/kaggriculture-episodes-2026-09-03_2026-09-07/raw/kaggriculture-episodes-2026-09-07.zip",
+      "sha256": "08e49bd2bf0c975bc2a1fa92249f0cfe6ecbdff7436e49d7bb0b398b5decc50d",
+      "size_bytes": 588306669,
+      "members": 663,
+      "uncompressed_bytes": 21446433483,
+      "compressed_member_bytes": 588188332,
+      "daily_manifest_sha256": "27313072834295f8658032ede9404a62860d644bc80f8321c80a2c3f627cffd2",
+      "daily_manifest_size_bytes": 56431,
+      "date": "2026-09-07",
+      "daily_dataset_slug": "kaggriculture-episodes-2026-09-07",
+      "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/kaggriculture-episodes-2026-09-07",
+      "episode_count": "663",
+      "total_bytes": "21446433483",
+      "top_avg_score": "3020.888017",
+      "median_avg_score": "2834.194606",
+      "reused": true
+    },
+    {
+      "path": "data/external/kaggriculture-episodes-survey-20260909/raw/kaggriculture-episodes-2026-09-08.zip",
+      "sha256": "e24aa237bbecff0dd63e55b024b9645dbcfde08d822924e0ea865ecb806765da",
+      "size_bytes": 587628915,
+      "members": 663,
+      "uncompressed_bytes": 21472957263,
+      "compressed_member_bytes": 587510727,
+      "daily_manifest_sha256": "013d8224b121756709774187213b805a83424d097ba0fcbc797e79446696ec76",
+      "daily_manifest_size_bytes": 56431,
+      "date": "2026-09-08",
+      "daily_dataset_slug": "kaggriculture-episodes-2026-09-08",
+      "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/kaggriculture-episodes-2026-09-08",
+      "episode_count": "663",
+      "total_bytes": "21472957263",
+      "top_avg_score": "2948.453701",
+      "median_avg_score": "2854.366972",
+      "reused": true
+    },
+    {
+      "path": "data/external/kaggriculture-context3d-20260910/raw/kaggriculture-episodes-2026-09-09.zip",
+      "sha256": "e853036d0e5067ab1b8da32df81b1ba09a5dcb3c46ca9488151b8f493d96e4a8",
+      "size_bytes": 549750612,
+      "members": 662,
+      "uncompressed_bytes": 21460401592,
+      "compressed_member_bytes": 549632569,
+      "daily_manifest_sha256": "9b54609466d901b2615cf6d08ae1bd7f13bfca4adfe4ecc22718de1003ce7bed",
+      "daily_manifest_size_bytes": 56346,
+      "date": "2026-09-09",
+      "daily_dataset_slug": "kaggriculture-episodes-2026-09-09",
+      "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/kaggriculture-episodes-2026-09-09",
+      "episode_count": "662",
+      "total_bytes": "21460401592",
+      "top_avg_score": "3008.171959",
+      "median_avg_score": "2913.006741",
+      "reused": false
+    }
+  ]
+}

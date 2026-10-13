@@ -1,0 +1,17 @@
+change:
+  run: outputs/learning/gtrxl-m384-bc100-3d-20260916-s71001
+  cash_margin:
+    beta: 1.0
+    cash_scale: 10000.0
+  qualification: outputs/analysis/gtrxl-margin-20260917/qualification.json
+  qualification_sha256: ${oc.env:MARGIN_QUALIFICATION_SHA256,0000000000000000000000000000000000000000000000000000000000000000}
+qualification:
+  output_dir: outputs/learning/gtrxl-margin-qualification-20260917-v1
+  updates: 4
+  evaluation_games: 2
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/gtrxl-margin-20260917/hydra
+  output_subdir: null

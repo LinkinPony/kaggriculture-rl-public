@@ -1,0 +1,24 @@
+defaults:
+  - script_research_screen
+  - _self_
+
+research:
+  output: outputs/analysis/script-research-20260915/market-selection
+  seeds: [1860916101, 1860916102, 1860916103, 1860916104, 1860916105, 1860916106, 1860916107, 1860916108, 1860916109, 1860916110, 1860916111, 1860916112, 1860916113, 1860916114, 1860916115, 1860916116, 1860916117, 1860916118, 1860916119, 1860916120, 1860916121, 1860916122, 1860916123, 1860916124, 1860916125, 1860916126, 1860916127, 1860916128, 1860916129, 1860916130, 1860916131, 1860916132]
+  opponents: [ahmed_v43, ahmed_v42, farming_v4_0914, shop_router_0913, rayk_v38_low_pressure, metacounter_r1]
+  variants:
+    - name: baseline
+    - name: lead_6
+      market: lead
+      lead: 6
+    - name: lead_8
+      market: lead
+      lead: 8
+    - name: lead_6_priority
+      market: lead
+      lead: 6
+      priority: true
+    - name: lead_8_priority
+      market: lead
+      lead: 8
+      priority: true

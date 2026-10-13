@@ -1,0 +1,12 @@
+export:
+  manifest: data/external/kaggriculture-notebook-survey-20260915/manifest.json
+  directory: outputs/opponents/research-20260915/revenue-lead-r1-reproduced
+  variant:
+    name: revenue_lead_r1
+    market: lead
+    lead: 6
+    priority: true
+hydra:
+  run:
+    dir: outputs/analysis/script-research-20260915/hydra-export
+  output_subdir: null

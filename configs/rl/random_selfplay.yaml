@@ -1,0 +1,22 @@
+defaults:
+  - terminal_wdl
+  - _self_
+
+# Fresh architecture-native initialization; the artifact supplies ABI metadata only.
+actor_initialization: random
+resume_checkpoint: null
+resume_transition: null
+output_dir: outputs/terminal-wdl/20260828-random-init-pure-selfplay-v1
+opponents: [self_play]
+opponent_sampling: null
+opening_exploration:
+  enabled: false
+pfsp:
+  enabled: false
+  self_play_probability: 1.0
+  history_capacity: 8
+terminal_reward:
+  mode: wdl
+  margin_beta: 0.0
+  margin_cash_scale: 1.0
+critic_warmup_updates: 0

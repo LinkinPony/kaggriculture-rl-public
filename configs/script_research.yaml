@@ -1,0 +1,14 @@
+research:
+  manifest: data/external/kaggriculture-notebook-survey-20260915/manifest.json
+  output: outputs/analysis/script-research-20260915/baseline-diagnostics
+  variants:
+    - name: baseline
+  opponents: [ahmed_v42, ahmed_v43, farming_v4_0914, shop_router_0913]
+  seeds: [1860916001, 1860916002, 1860916003, 1860916004]
+  workers: 8
+  engine: native
+  accounting: true
+hydra:
+  run:
+    dir: outputs/analysis/script-research-20260915/hydra
+  output_subdir: null

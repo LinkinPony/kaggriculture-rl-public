@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "artifacts": [
+    {
+      "name": "s101701-u0250",
+      "filename": "s101701-u0250.tar.gz",
+      "submission_id": 56721459,
+      "sha256": "e00340e6b30afc5bf9c88d2284a4c5f9dd509504513529a4b201adbcf0b4dc8b",
+      "size_bytes": 93734280,
+      "provenance": {
+        "schema_version": 1,
+        "submission_id": 56721459,
+        "original_archive_sha256": "c278b324677210baca9dbc79ebe193426c1c13eae16894228f20aee1e65ea165",
+        "original_actor_sha256": "ffe167e876ee96298846292893990c5e11bff80eca3e8b96706ed7fcc2480473",
+        "checkpoint_sha256": "f0b34daa100c590057ee33f1ce228707978bda8d6617665aa54be4c386063c54",
+        "changes": {
+          "torchscript_debug_members": 1,
+          "unused_elf_path_strings": {
+            "src/kagg_revue/native/_revue_observation.cpython-311-x86_64-linux-gnu.so": 1,
+            "src/kagg_revue/native/_revue_observation.cpython-312-x86_64-linux-gnu.so": 1
+          },
+          "metadata": "Local build paths replaced; hashes regenerated; license notices added."
+        },
+        "invariant": "Every non-debug TorchScript ZIP member is byte-identical to the original.",
+        "scope": "Sanitized distribution of the final submitted policy; not the byte-identical competition tar."
+      }
+    },
+    {
+      "name": "s100901-u0756",
+      "filename": "s100901-u0756.tar.gz",
+      "submission_id": 56721201,
+      "sha256": "095eeb35753464ac36d66b2b0c539a5560de367330f6b3af335897449d046417",
+      "size_bytes": 93733796,
+      "provenance": {
+        "schema_version": 1,
+        "submission_id": 56721201,
+        "original_archive_sha256": "8bf76b3b544cb3edac045bfba99db3a9ab2a6146df313891ea51792f401813b6",
+        "original_actor_sha256": "6a4137fe9775aa8958ffc1f3893102bc253dfa24370c4cc1ecb5487acc5bef6b",
+        "checkpoint_sha256": "01aba0f8162c962d3d88cc627d48bdefd75bb2e61644005f5a4d8073b4d220b1",
+        "changes": {
+          "torchscript_debug_members": 1,
+          "unused_elf_path_strings": {
+            "src/kagg_revue/native/_revue_observation.cpython-311-x86_64-linux-gnu.so": 1,
+            "src/kagg_revue/native/_revue_observation.cpython-312-x86_64-linux-gnu.so": 1
+          },
+          "metadata": "Local build paths replaced; hashes regenerated; license notices added."
+        },
+        "invariant": "Every non-debug TorchScript ZIP member is byte-identical to the original.",
+        "scope": "Sanitized distribution of the final submitted policy; not the byte-identical competition tar."
+      }
+    }
+  ],
+  "kaggle_distribution": {
+    "layout": "Kaggle expands each uploaded tar.gz into a directory named after its archive stem.",
+    "directory_names": [
+      "s101701-u0250",
+      "s100901-u0756"
+    ],
+    "checksum_file": "SHA256SUMS",
+    "archive_hash_scope": "Pre-upload sanitized tar; verify downloaded directory members with SHA256SUMS and each model manifest."
+  }
+}

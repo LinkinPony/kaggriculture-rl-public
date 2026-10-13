@@ -1,0 +1,19 @@
+# s100201 checkpoints against opponents outside its PFSP pool (s99001 U588, U256, U192 and
+# the 9/29 BC), with its DSM-clone start and s99001 U200 as reference candidates.
+defaults:
+  - evaluation_panel_s100101_heldout
+  - _self_
+study:
+  output: outputs/analysis/heldout-panel-20260929-s100201
+  memory_fraction: 0.04
+  scope: >-
+    Held-out s99001 checkpoints and the 9/29 BC as opponents; none is in the s100201 pool.
+  candidates:
+    - {name: s99001-u0200, path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0200.pt}
+    - {name: clone-dsm, run: outputs/learning/team-clone-dsm-bc-20260929-s100012}
+    - {name: s100201-u0100, run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201, member: checkpoints/update-000100.pt}
+    - {name: s100201-u0200, run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201, member: checkpoints/update-000200.pt}
+    - {name: s100201-u0300, run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201, member: checkpoints/update-000300.pt}
+hydra:
+  run:
+    dir: tmp/hydra/heldout-panel-20260929-s100201

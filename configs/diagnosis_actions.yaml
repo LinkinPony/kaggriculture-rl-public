@@ -1,0 +1,13 @@
+analysis:
+  output: outputs/analysis/strategy-gap-20260928/actions
+  snapshot: outputs/analysis/strategy-gap-20260928/imitation/snapshot.json
+  manifest: outputs/datasets/derived-v5b-boey-all-watch4-since-20260927-train-val-q100/manifest.json
+  manifest_sha256: 40dcf1fb07f120d682639b1438d9e125b8b1ed719864bb0ed51a1edc84c8702f
+  model: bc
+  device: cuda:0
+  chunk_turns: 48
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/strategy-gap-actions-${analysis.model}

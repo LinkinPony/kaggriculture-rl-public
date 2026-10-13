@@ -1,0 +1,3 @@
+defaults:
+  - effect_correction_data: rank8_canonical_v2
+  - _self_

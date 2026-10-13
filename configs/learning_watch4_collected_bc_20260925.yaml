@@ -1,0 +1,32 @@
+# All four collectors, selected by first download since 2026-09-24 00:00 UTC.
+defaults:
+  - learning_grouped_bc
+  - _self_
+
+experiment:
+  output_dir: outputs/learning/derived-v5b-m384-u2349-watch4-bc100-20260925-s88001
+  seed: 88001
+  train_seed: 6500000000
+  agronomy: true
+  derived: true
+  pretraining_only: true
+  initial_weights:
+    run: outputs/learning/agronomy-v4-m384-dsm-games-ppo50-20260924-s82001
+    checkpoint: checkpoints/update-002349.pt
+    sha256: c4244971cc6a28286e2e377374a1849d7fc72c76f866e043cb24041351d968df
+  evaluation:
+    selection_seed: 6520000000
+    confirmation_seed: 6521000000
+    anchor_seeds: [380001, 380002]
+  demonstrations:
+    manifest: outputs/datasets/derived-v5b-watch4-collected-since-20260924-train-val-q100-exclude-56484772/manifest.json
+    sha256: e354945c043a72b36cfa69dab965f9a12e9807101ae0595eb63ecb04065aaf41
+    epochs: 100
+    early_stopping: null
+    learning_rate: 0.00001
+    batch_rows: 5752
+    checkpoint_shards: 16
+    distributed: true
+    behavior_games: 0
+    control_games: 0
+    behavior_seed: 6522000000

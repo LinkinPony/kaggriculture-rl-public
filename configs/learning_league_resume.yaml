@@ -1,0 +1,8 @@
+recovery:
+  run: outputs/learning/league3-20260909-s63001-fixed
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${recovery.run}/hydra-recovery
+  output_subdir: null

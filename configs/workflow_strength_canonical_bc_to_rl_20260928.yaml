@@ -1,0 +1,19 @@
+# Attach to the running strength-canonical BC; PPO starts from its validation-best actor.
+defaults:
+  - learning_strength_canonical_bc_20260928@bc_stage
+  - learning_strength_canonical_ppo50_20260928@rl_stage
+  - _self_
+
+workflow:
+  output_dir: outputs/workflows/derived-v5b-strength-canonical-bc-to-rl-20260928
+  attached_bc: true
+  bc: ${bc_stage.experiment}
+  rl: ${rl_stage.experiment}
+  historical_archive: ${rl_stage.historical_archive}
+
+hydra:
+  run:
+    dir: ${workflow.output_dir}/hydra
+  output_subdir: null
+  job:
+    chdir: false

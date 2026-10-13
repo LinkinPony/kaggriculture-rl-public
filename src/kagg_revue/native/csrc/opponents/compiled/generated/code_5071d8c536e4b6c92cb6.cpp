@@ -1,0 +1,11 @@
+// Generated from authenticated public notebook source; do not edit.
+#include "opponents/compiled/generated/declarations.hpp"
+
+namespace kagg::opponents::compiled {
+Value Code_5071d8c536e4b6c92cb6(Context& c, const ScopePtr& s) {
+static constexpr const char* s_names[] = {"a", "b"};
+s->PrepareSlots(s_names);
+return ([&]() -> Value { auto comp30633 = std::make_shared<Scope>(); comp30633->globals = s->globals; comp30633->parent = s; static constexpr const char* comp30633_names[] = {"p"}; comp30633->PrepareSlots(comp30633_names); auto result30634 = List(); for (const auto& item30635 : Iterate(([&]() -> Value { auto v30636 = ([&]() -> Value { auto fn30637 = s->Global("set"); Arguments args30638; args30638.Add(s->LocalAt(0), false); return Call(c, fn30637, std::move(args30638)); }()); return Binary("BitOr", v30636, ([&]() -> Value { auto fn30639 = s->Global("set"); Arguments args30640; args30640.Add(s->LocalAt(1), false); return Call(c, fn30639, std::move(args30640)); }())); }()))) { comp30633->SetAt(0, item30635); if (!static_cast<bool>(([&]() -> Value { auto v30641 = ([&]() -> Value { auto fn30643 = comp30633->Global("int"); Arguments args30644; args30644.Add(([&]() -> Value { auto fn30645 = PrepareDictionaryGet(comp30633->Captured("a")); Arguments args30646; args30646.positional.reserve(2); args30646.Add(comp30633->LocalAt(0), false); args30646.Add(Value(int64_t{0}), false); return CallDictionaryGet(c, fn30645, std::move(args30646)); }()), false); return Call(c, fn30643, std::move(args30644)); }()); Value v30642; v30642 = ([&]() -> Value { auto fn30647 = comp30633->Global("int"); Arguments args30648; args30648.Add(([&]() -> Value { auto fn30649 = PrepareDictionaryGet(comp30633->Captured("b")); Arguments args30650; args30650.positional.reserve(2); args30650.Add(comp30633->LocalAt(0), false); args30650.Add(Value(int64_t{0}), false); return CallDictionaryGet(c, fn30649, std::move(args30650)); }()), false); return Call(c, fn30647, std::move(args30648)); }()); if (!static_cast<bool>(Binary("Eq", v30641, v30642))) return Value(false); v30641 = v30642; return Value(true); }()))) return Value(false); } return Value(true); }());
+return {};
+}
+}  // namespace kagg::opponents::compiled

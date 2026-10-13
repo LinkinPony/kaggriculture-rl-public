@@ -1,0 +1,17 @@
+benchmark:
+  run: outputs/learning/h200-throughput-s73001-snapshot-20260920
+  tape: outputs/analysis/h200-throughput-20260920/rollout.pt
+  output: outputs/analysis/h200-throughput-20260920/history-verification.json
+  rows: 44
+  checkpoint: null
+  production: true
+  components: [encoder, memory, decoder]
+  compiler:
+    triton.cudagraphs: false
+    emulate_precision_casts: false
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/h200-throughput-20260920/hydra-history
+  output_subdir: null

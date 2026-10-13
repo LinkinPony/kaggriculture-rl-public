@@ -1,0 +1,20 @@
+analysis:
+  manifest: data/external/kaggriculture-dsm-duels-20260925/watched-selection.json
+  output: outputs/analysis/dsm-duels-20260925
+  groups:
+    s78001_u340_t0: [56468475]
+    s78001_u1512_t0: [56478145]
+    s80001_u816_t0: [56489080]
+    s80001_u1644_t1: [56498204]
+    s80001_u2696_t0: [56507324]
+    s80001_u2696_t1: [56507372]
+    s82001_u276_t1: [56519499]
+    s82001_u800_t1: [56525914]
+    latest_two: [56519499, 56525914]
+    all_recent: [56468475, 56478145, 56489080, 56498204, 56507324, 56507372, 56519499, 56525914]
+
+hydra:
+  run:
+    dir: outputs/analysis/dsm-duels-20260925/hydra
+  job:
+    chdir: false

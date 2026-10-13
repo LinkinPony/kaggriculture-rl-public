@@ -1,0 +1,10 @@
+handoff:
+  run: outputs/learning/gtrxl-m384-bc100-3d-20260916-s71001
+  selection: latest
+
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/gtrxl-bc-to-rl-20260916/hydra
+  output_subdir: null

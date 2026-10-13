@@ -1,0 +1,17 @@
+# MMPQ clone v4 data: only the current MMPQ plan. From 56612150 (9/27 15:03 UTC) every
+# version adds tomatoes, buys the third quadrant on day 10 and hires about 10.2 hands per
+# day; the earlier 56594027/56607039 plan differs, so it is left out. Includes the two
+# newest versions 56679033 and 56680759 that v3 did not have.
+defaults:
+  - sequences_team_clones_20260929
+  - _self_
+selection:
+  output: outputs/datasets/team-clone-v4-mm-pq-20260930/source-manifests
+  rated_since: '2026-09-25T00:00:00Z'
+  submitted_since: '2026-09-27T15:00:00Z'
+data:
+  output: outputs/datasets/team-clone-v4-mm-pq-20260930-train-val-q100
+  teachers: [M & M & P & Q]
+  watch_manifests: [outputs/datasets/team-clone-v4-mm-pq-20260930/source-manifests/mm-pq/selected.json]
+  workers: 24
+report: outputs/analysis/mmpq-bc-redesign-20260930/v4-data-verification.json

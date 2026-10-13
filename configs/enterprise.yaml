@@ -1,0 +1,22 @@
+panel:
+  manifest: data/external/kaggriculture-notebook-survey-20260915/manifest.json
+  output: outputs/analysis/enterprise-20260915/prototype-01
+  variants:
+    default: {}
+    crops_only:
+      animal_limit: 0
+      central_reserve: 0
+    short_cycle:
+      duration_power: 1.6
+      central_reserve: 0
+    livestock:
+      animal_bias: 1.5
+      central_reserve: 5
+  opponents: [ahmed_v43]
+  seeds: [1860917101, 1860917102]
+  workers: 8
+  trace: true
+hydra:
+  run:
+    dir: outputs/analysis/enterprise-20260915/hydra
+  output_subdir: null

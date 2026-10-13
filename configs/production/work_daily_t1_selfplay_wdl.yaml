@@ -1,0 +1,17 @@
+defaults:
+  - work_daily_bc
+  - _self_
+mode: qualify
+checkpoint: outputs/releases/20260906-work-daily-bc/bc-trained.pt
+output_dir: outputs/production-policy/20260906-work-daily-t1-selfplay-wdl
+devices: [cuda:0, cuda:1]
+bc:
+  epochs: 0
+ppo:
+  population: self_play
+  temperature: 1.0
+  script_fraction: 0.0
+  script_opponents: []
+  cash_weight: 0.0
+  win_weight: 1.0
+  bc_weight: 0.0

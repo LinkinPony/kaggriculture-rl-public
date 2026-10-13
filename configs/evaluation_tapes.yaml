@@ -1,0 +1,32 @@
+study:
+  output: outputs/analysis/strong-tapes-20260929
+  engine: src/kagg_revue/native/_revue_native.cpython-311-x86_64-linux-gnu.so
+  workers: 40
+  chunk: 4
+  baseline: s99001-u588
+  tapes:
+    manifests:
+      - data/external/kaggriculture-mm-pq-replays/manifest.json
+      - data/external/kaggriculture-dsm-replays/manifest.json
+      - data/external/kaggriculture-vadim-replays/manifest.json
+      - data/external/kaggriculture-boey-replays/manifest.json
+      - data/external/kaggriculture-decem-replays/manifest.json
+    # Each team's two latest tracked versions at 2026-09-28 23:10 UTC (DECEM 56652700
+    # rated 2224.8 and unconverged, so its previous version is used instead).
+    submissions: [56640167, 56624842, 56646963, 56643615, 56638665, 56614976,
+                  56640149, 56521745, 56650654, 56639947]
+    games_per_submission: 16
+  candidates:
+    - {label: s99001-u588, package: outputs/deployment/strength-canonical-v5b-s99001-u588-20260928-t1-once/package, submission: 56644629}
+    - {label: s95001-u964, package: outputs/deployment/watch6-v5b-s95001-u964-20260927-t1-once/package, submission: 56614434}
+    - {label: s91001-u2137, package: outputs/deployment/watch6-v5b-s91001-u2137-20260927-t1-once/package, submission: 56593706}
+    - {label: s82001-u276, package: outputs/deployment/agronomy-dsm-games-s82001-u276-20260924-t1-once/package, submission: 56519499}
+    - {label: s80001-u816-t0, package: outputs/deployment/agronomy-dsm-grouped-s80001-u816-20260923-t0-once/package, submission: 56489080}
+    - {label: s78001-u1512-t0, package: outputs/deployment/agronomy-watch2-s78001-u1512-20260923-t0-once/package, submission: 56478145}
+    - {label: s73001-u2724-t0, package: outputs/analysis/strong-tapes-20260929/packages/s73001-u2724-t0, submission: 56331731}
+    - {label: s68001-u5629-t0, package: outputs/deployment/budget-q100-top10-2d-s68001-u5629-20260916-t0-t1-t0/package, submission: 56266758}
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/strong-tapes-20260929

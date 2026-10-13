@@ -1,0 +1,40 @@
+# Extra head-to-head evidence: final candidates at T=0 against s101102 U200 at T=0 on fresh
+# seeds disjoint from the baseline panel's, both seats.
+defaults:
+  - evaluation_final_candidates_20260930
+  - _self_
+
+study:
+  output: outputs/analysis/final-candidates-20260930/h2h-fresh
+  seed: 9960000000
+  sampling_seed: 99600001
+  devices: [cuda:0, cuda:1, cuda:0, cuda:1, cuda:0, cuda:1, cuda:0, cuda:1]
+  scope: >-
+    Final candidates at T=0 head to head with s101102 U200 at T=0 on 256 fresh common seeds
+    disjoint from the baseline panel's, both seats. Local proxy only.
+  candidates:
+    - name: s101701-u0200-t0
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-s101102u200-kl-ppo50-1gpu-20260930-s101701
+      member: checkpoints/update-000200.pt
+    - name: s101701-u0250-t0
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-s101102u200-kl-ppo50-1gpu-20260930-s101701
+      member: checkpoints/update-000250.pt
+    - name: s101701-u0292-t0
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-s101102u200-kl-ppo50-1gpu-20260930-s101701
+      member: checkpoints/update-000292.pt
+    - name: s101702-u0200-t0
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-mmpqclone4-kl-ppo50-1gpu-r2-20260930-s101702
+      member: checkpoints/update-000200.pt
+    - name: s101702-u0292-t0
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-mmpqclone4-kl-ppo50-1gpu-r2-20260930-s101702
+      member: checkpoints/update-000292.pt
+  opponents:
+    - name: s101102-u0200-t0
+      group: s101102-u0200
+      temperature: 0
+      path: outputs/analysis/s101102-vs-mmpq-clone-20260930/actors/s101102-u0200-t0.pt

@@ -1,0 +1,12 @@
+# Preserve held-out groups from both teacher and student-state components.
+components:
+  demonstration:
+    manifest: data/external/kaggle-submission-55708706-teacher/atomic-effect-v2-rank8-bc256/manifest.json
+    validation_games: 16
+    test_games: 16
+  correction:
+    manifest: data/external/kaggle-submission-55708706-teacher/atomic-effect-v2-rank8-correction32/manifest.json
+    validation_games: 4
+    test_games: 4
+output_dir: data/external/kaggle-submission-55708706-teacher/atomic-effect-v2-rank8-dagger1
+report_dir: outputs/bc-data/20260904-rank8-atomic-effect-v2-dagger1

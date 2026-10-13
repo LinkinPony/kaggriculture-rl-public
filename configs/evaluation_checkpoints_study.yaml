@@ -1,0 +1,17 @@
+study:
+  manifest: outputs/analysis/s99001-checkpoint-comparison-20260928/manifest.json
+  output: outputs/analysis/s99001-checkpoint-comparison-20260928
+  deadline: '2026-09-28T23:06:00+00:00'
+  devices: [cuda:0, cuda:1, cuda:0, cuda:1]
+  memory_fraction: 0.025
+  selection_games: 64
+  confirmation_base_games: 128
+  confirmation_games: 192
+  controls: [u0588, u0616]
+  final_duel_games: 256
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${study.output}/hydra-study
+  output_subdir: null

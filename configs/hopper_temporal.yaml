@@ -1,0 +1,10 @@
+benchmark:
+  shapes: [{batch: 28, turns: 48}, {batch: 83, turns: 1}]
+  repeats: 10
+  output: outputs/analysis/h200-throughput-20260920/temporal-kernels.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/h200-throughput-20260920/hydra-temporal
+  output_subdir: null

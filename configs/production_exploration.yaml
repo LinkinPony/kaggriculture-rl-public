@@ -1,0 +1,17 @@
+defaults:
+  - production: work
+  - _self_
+production:
+  mode: evaluate
+  checkpoint: outputs/production-policy/20260906-work-transfer-v5/bc/best.pt
+  output_dir: outputs/analysis/20260906-work-exploration/prior-strength
+  evaluation_games: 256
+  evaluation_seed: 14100000
+  confirmation_seed: 14200000
+biases: [10.0, 8.0, 6.0, 4.0]
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${production.output_dir}/hydra
+  output_subdir: null

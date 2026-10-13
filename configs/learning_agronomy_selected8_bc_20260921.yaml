@@ -1,0 +1,29 @@
+defaults:
+  - learning_agronomy_bc_20260917
+  - _self_
+
+experiment:
+  output_dir: outputs/learning/agronomy-v4-m384-u7820-selected8-bc100-20260921-s75001
+  seed: 75001
+  train_seed: 4900000000
+  pretraining_only: true
+  initial_weights:
+    run: outputs/learning/agronomy-v4-m384-bc100-3d-20260917-s73001
+    checkpoint: checkpoints/update-007820.pt
+    sha256: ee5964120b3f6ed427d289e83539975513cc9f2ed2485e0c2688829236a468dc
+  evaluation:
+    selection_seed: 4920000000
+    confirmation_seed: 4921000000
+    anchor_seeds: [250001, 250002]
+  demonstrations:
+    manifest: outputs/datasets/agronomy-v4-selected8-5d-20260921-q100/manifest.json
+    sha256: 8def06dbcad7881bcb4b3c2fbc2049c702cb050a1a8aaeb8121dac66088c34eb
+    epochs: 100
+    early_stopping: null
+    learning_rate: 0.0001
+    batch_rows: 5752
+    checkpoint_shards: 16
+    distributed: true
+    behavior_games: 0
+    control_games: 0
+    behavior_seed: 4922000000

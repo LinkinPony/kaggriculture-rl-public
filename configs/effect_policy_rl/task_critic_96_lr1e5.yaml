@@ -1,0 +1,8 @@
+defaults:
+  - task_critic_96
+  - _self_
+
+resume_checkpoint: outputs/analysis/20260905-task-critic-96-lr1e5/inputs/resume-lr1e5.pt
+output_dir: outputs/effect-policy-rl/20260905-task-critic-96-lr1e5-selfplay-long-v1
+optimization:
+  actor_learning_rate: 1.0e-5

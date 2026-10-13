@@ -1,0 +1,22 @@
+defaults:
+  - work_selfplay4_t03_bc
+  - _self_
+mode: bc
+checkpoint: null
+output_dir: outputs/production-policy/20260906-work-daily-bc
+devices: [cuda:1]
+quantity_extra: [256, 499, 500, 502, 505, 506, 512, 970, 978, 980, 982, 984, 985, 986, 987, 989, 990, 991, 992, 993, 994, 995, 996, 997, 998, 999, 1024, 4096, 10000, 1000000]
+model:
+  time_prior: false
+bc:
+  source_kind: daily
+  source: data/external/kaggriculture-episodes-2026-09-03_2026-09-06/raw
+  directory: data/external/kaggriculture-episodes-2026-09-03_2026-09-06/work-state-cadence4-v1
+  replay_module_version: '1.32.7'
+  games: 4002
+  shard_games: 32
+  epochs: 3
+  batch_rows: 256
+  learning_rate: 0.0001
+ppo:
+  cash_weight: 0.0

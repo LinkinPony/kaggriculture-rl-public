@@ -1,0 +1,10 @@
+# DSM clone v4 of the latest version only, started from U0 (s99001 initial.pt) like the plan C
+# clones, to test whether 103 training games need an RL starting point.
+defaults:
+- learning_dsm_clone_v4_latest_u756_bc_20260930
+- _self_
+experiment:
+  initial_weights:
+    run: outputs/learning/derived-v5b-m384-strength-canonical-ppo50-warmup300-20260928-s99001
+    checkpoint: initial.pt
+    sha256: 25a2d49c498b7bbb114439931c7a03e303ee27663d6ecfc11c19797964d06f27

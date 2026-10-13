@@ -1,0 +1,10 @@
+defaults:
+  - long
+  - _self_
+
+initial_checkpoint: outputs/analysis/20260905-task-critic/inputs/checkpoint-00000065.pt
+resume_checkpoint: null
+output_dir: outputs/effect-policy-rl/20260905-task-critic
+model:
+  independent_critic: true
+  task_conditioning: true

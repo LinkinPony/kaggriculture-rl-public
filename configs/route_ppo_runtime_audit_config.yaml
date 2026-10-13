@@ -1,0 +1,11 @@
+defaults:
+  - route_ppo: long
+  - _self_
+
+audit:
+  checkpoint_path: outputs/route-ppo/20260830-event-route-ppo-v1/checkpoints/permanent/checkpoint-00000275.pt
+  confirmation_report: outputs/evaluation/20260830-event-route-ppo-checkpoint275-prior6-confirmation192-v1/evaluation-report.json
+  output_dir: outputs/evaluation/20260830-event-route-ppo-checkpoint275-prior6-runtime-audit-v2
+  prior_logit: 6.0
+  seed_start: 76200
+  seed_count: 16

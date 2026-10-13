@@ -1,0 +1,14 @@
+audit:
+  run: outputs/learning/scratch-demonstrations-s47001
+  member: checkpoints/update-000128.pt
+  output_dir: outputs/deployment/scratch-demonstrations-s47001-u128-fp32
+  reference_directory: data/external/kaggriculture-reference-1.32.7
+  games: 2
+  seed: 1200000000
+  cpu_threads: 1
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/deployment-qualification/hydra
+  output_subdir: null

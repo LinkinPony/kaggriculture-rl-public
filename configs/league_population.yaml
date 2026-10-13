@@ -1,0 +1,17 @@
+change:
+  mode: qualify
+  run: outputs/learning/league3-20260909-s63001-fixed
+  manifest: data/external/kaggriculture-shop-router-0909-20260909/manifest.json
+  manifest_sha256: 1e7c8958cc41e003ca80778a3fddb502a49599426352e2085aa25e3b49a73c8b
+  games_per_pair: 32
+  selfplay_games_per_member: 40
+  games_per_script_per_member: 8
+  destination: outputs/learning/league2-five-scripts-qualification-20260909-v2
+  report: outputs/learning/league2-five-scripts-qualification-20260909-v2/report.json
+  report_sha256: null
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/learning/league-population-control/hydra
+  output_subdir: null

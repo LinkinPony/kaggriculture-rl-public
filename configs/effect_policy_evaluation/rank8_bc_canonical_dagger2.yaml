@@ -1,0 +1,25 @@
+# Fresh complete paired panels decide whether DAgger2 can warm-start formal RL.
+checkpoint: outputs/effect-policy-bc/20260905-rank8-canonical-dagger2-e8-v1/checkpoints/best.pt
+training_report: outputs/effect-policy-bc/20260905-rank8-canonical-dagger2-e8-v1/training-report.json
+public_agent_manifest: data/external/kaggriculture-public-notebooks-2026-08-28/manifest.json
+output_dir: outputs/effect-policy-evaluation/20260905-rank8-canonical-dagger2-e8-v1
+opponents:
+  - kaito_v39
+  - kaito_v48
+  - boatlee_v21
+  - mugundh_v21
+selection_seed_start: 13800000
+selection_seed_count: 8
+confirmation_seed_start: 13900000
+confirmation_seed_count: 8
+unit_limit: 32
+device: cuda:0
+cpu_workers: 32
+maximum_graph_variants: 48
+act_timeout_seconds: 1.0
+remaining_overage_seconds: 60.0
+environment:
+  boardSize: 10
+  episodeSteps: 720
+  turnsPerDay: 24
+  maxMarketOrdersPerTurn: 10

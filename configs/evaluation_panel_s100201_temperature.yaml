@@ -1,0 +1,37 @@
+defaults:
+  - evaluation_panel_s100901_temperature
+  - _self_
+study:
+  output: outputs/analysis/s100201-u0200-temperature-20260929
+  devices: [cuda:0, cuda:1, cuda:0, cuda:1, cuda:0, cuda:1]
+  memory_fraction: 0.04
+  scope: >-
+    s100201 U200 at T=0 and T=1, FP32 CUDA, full 384-turn memory. The same 64
+    paired environment seeds and seven common opponents as the U480 panel.
+    Replace the candidate's own T=1 opponent with frozen s100901 U480 at T=1.
+    Eight opponents receive equal weight; local clones are proxies, not live
+    Kaggle teams. The panel does not estimate a Kaggle-wide win rate.
+  candidates:
+    - name: s100201-u0200-t0
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201
+      member: checkpoints/update-000200.pt
+    - name: s100201-u0200-t1
+      temperature: 1
+      run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201
+      member: checkpoints/update-000200.pt
+  opponents:
+    - {name: clone-mm-pq, group: mm-pq, path: outputs/analysis/s100901-u0480-temperature-20260929/actors/clone-mm-pq.pt}
+    - {name: clone-dsm, group: dsm, path: outputs/analysis/s100901-u0480-temperature-20260929/actors/clone-dsm.pt}
+    - {name: clone-vadim, group: vadim, path: outputs/analysis/s100901-u0480-temperature-20260929/actors/clone-vadim.pt}
+    - {name: clone-decem, group: decem, path: outputs/analysis/s100901-u0480-temperature-20260929/actors/clone-decem.pt}
+    - {name: clone-tufa, group: tufa, path: outputs/analysis/s100901-u0480-temperature-20260929/actors/clone-tufa.pt}
+    - name: s100901-u0480-t1
+      group: s100901
+      path: outputs/analysis/s100901-u0480-temperature-20260929/actors/s100901-u0480-t1.pt
+    - name: submitted-s99001-u0200
+      group: s99001
+      path: outputs/analysis/s100901-u0480-temperature-20260929/actors/submitted-s99001-u0200.pt
+    - name: s100901-bc-start
+      group: bc-start
+      path: outputs/analysis/s100901-u0480-temperature-20260929/actors/s100901-bc-start.pt

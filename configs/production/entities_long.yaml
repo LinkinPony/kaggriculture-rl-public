@@ -1,0 +1,10 @@
+defaults:
+  - entities_qualification
+  - _self_
+mode: train
+checkpoint: outputs/production-policy/20260905-entities-qualification-v2/checkpoints/update-0050.pt
+output_dir: outputs/production-policy/20260905-entities-selfplay-long-v1
+ppo:
+  updates: 100000
+  checkpoint_interval: 25
+  evaluation_interval: 100

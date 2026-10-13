@@ -1,0 +1,19 @@
+submission:
+  training_run: outputs/terminal-wdl/20260825-kaggle-latest-2d-scene64-register4-latent-rl-perf-v2
+  source_snapshot: outputs/kaggle-submission/20260826-latest-rl-snapshot-v6
+  output_dir: outputs/kaggle-submission/20260826-latest-rl-snapshot-v7
+  unit_limit: 32
+  cpu_threads: 1
+  native:
+    interpreters:
+      - ${oc.env:REVUE_PYTHON_311,/usr/bin/python3.11}
+      - /usr/bin/python3.12
+    compiler: ${oc.env:REVUE_CXX,/usr/bin/g++}
+    patchelf: ${oc.env:REVUE_PATCHELF,/usr/bin/patchelf}
+    max_glibc: "2.35"
+    jobs: 16
+  smoke:
+    seed: 64200
+    act_timeout_seconds: 1.0
+    remaining_overage_seconds: 60.0
+    run_timeout_seconds: 1200.0

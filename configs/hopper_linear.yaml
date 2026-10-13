@@ -1,0 +1,15 @@
+benchmark:
+  shapes:
+    - [384384, 384, 1152]
+    - [384384, 384, 768]
+    - [384384, 768, 384]
+    - [384384, 320, 640]
+  recipes: [bf16, tensorwise, rowwise]
+  repeats: 3
+  output: outputs/analysis/h200-throughput-20260920/linear-fp8-production.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/h200-throughput-20260920/hydra-linear
+  output_subdir: null

@@ -1,0 +1,62 @@
+# Bounded integration only; this profile is not promotion evidence.
+initial_actor: outputs/turn-policy/20260828-opening-diverse-bc2-v1/actor-fp16.pt
+initial_checkpoint: null
+resume_checkpoint: null
+public_agent_manifest: data/external/kaggriculture-public-notebooks-2026-08-28/manifest.json
+output_dir: outputs/effect-policy-rl/smoke-v1
+seed: 20260905
+rollout_seed_start: 7300000
+updates: 1
+objective: terminal_wdl
+discount: 1.0
+gae_lambda: 1.0
+unit_limit: 32
+
+model:
+  model_width: 256
+  feedforward_width: 704
+  attention_heads: 4
+  state_layers: 2
+  train_turn_encoder: true
+
+optimization:
+  ppo_epochs: 2
+  episodes_per_minibatch: 8
+  episodes_per_microbatch: 4
+  actor_learning_rate: 0.00005
+  critic_learning_rate: 0.0001
+  critic_warmup_updates: 0
+  critic_actor_gradient: false
+  weight_decay: 0.00001
+  clip_epsilon: 0.1
+  value_loss_weight: 1.0
+  entropy_weight: 0.001
+  gradient_clip: 1.0
+  target_kl: 0.02
+  normalize_advantage: true
+
+population:
+  weights:
+    self_play: 0.5
+    kaito_v48: 0.5
+
+rollout:
+  seeds_per_update: 4
+  cpu_workers: 8
+  actor_streams_per_device: 1
+  maximum_graph_variants: 48
+  devices: [cuda:0]
+
+checkpoint:
+  interval: 1
+  keep: 2
+
+device: cuda:0
+cpu_threads: 8
+act_timeout_seconds: 1.0
+remaining_overage_seconds: 60.0
+environment:
+  boardSize: 10
+  episodeSteps: 3
+  turnsPerDay: 24
+  maxMarketOrdersPerTurn: 10

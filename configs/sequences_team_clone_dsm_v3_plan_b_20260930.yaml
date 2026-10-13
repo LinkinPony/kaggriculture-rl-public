@@ -1,0 +1,19 @@
+# DSM clone v3 data (plan B): the long-lived 9/25-9/29 DSM plan (9.5 hires a day, five plots
+# on day 8, tomatoes late or never), restricted to its versions with Bradley-Terry strength of
+# at least 3.9 (56571979 through 56664798, ten versions). The weaker plan-B versions 56575949,
+# 56605436 and 56646963 and every current plan-C version are excluded.
+defaults:
+  - sequences_team_clones_20260929
+  - _self_
+selection:
+  output: outputs/datasets/team-clone-v3-dsm-plan-b-20260930/source-manifests
+  rated_since: '2026-09-25T00:00:00Z'
+  submitted_since: '2026-09-26T06:00:00Z'
+  excluded_submissions:
+    [56652700, 56654377, 56575949, 56605436, 56646963, 56675988, 56681605, 56692773, 56693917]
+data:
+  output: outputs/datasets/team-clone-v3-dsm-plan-b-20260930-train-val-q100
+  teachers: [DSM]
+  watch_manifests: [outputs/datasets/team-clone-v3-dsm-plan-b-20260930/source-manifests/dsm/selected.json]
+  workers: 24
+report: outputs/analysis/dsm-bc-redesign-20260930/plan-b-data-verification.json

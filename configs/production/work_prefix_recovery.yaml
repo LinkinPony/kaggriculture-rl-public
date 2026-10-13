@@ -1,0 +1,23 @@
+defaults:
+  - work_prefix_selfplay
+  - _self_
+mode: train
+output_dir: outputs/production-policy/20260907-work-prefix-recovery-u0175
+checkpoint: outputs/releases/20260907-work-prefix-recovery-u0175/training.pt
+checkpoint_mode: fork
+evaluation_seed: 432000000
+confirmation_seed: 433000000
+recovery_evaluation:
+  control_checkpoint: outputs/releases/20260907-work-policy-search-ppo-start/actor.pt
+  maximum_net_regressions: 8
+ppo:
+  updates: 200
+  seed_start: 500000000
+  temperature: 0.2
+  temperature_schedule: null
+  actor_learning_rate: 0.0000001
+  evaluation_interval: 5
+  protection:
+    backtrack_attempts: 3
+    learning_rate_decay: 0.5
+    skip_constant_returns: true

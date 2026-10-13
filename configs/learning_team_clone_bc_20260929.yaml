@@ -1,0 +1,15 @@
+# Closed-loop proxy of one watched team: fine-tune U0 on that team's recent versions only.
+# Per-team output_dir, seed and demonstrations manifest/sha256 are given as overrides.
+defaults:
+- learning_strength_canonical_bc_20260929
+- _self_
+experiment:
+  output_dir: ???
+  seed: ???
+  demonstrations:
+    manifest: ???
+    sha256: ???
+    epochs: 12
+    early_stopping:
+      patience: 2
+      min_delta: 0.0005

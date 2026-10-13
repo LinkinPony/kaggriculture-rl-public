@@ -1,0 +1,18 @@
+defaults:
+  - production: work_expert
+  - _self_
+production:
+  mode: evaluate
+  output_dir: outputs/analysis/20260907-work-policy-search/confirmation
+  checkpoint: outputs/production-policy/20260907-work-parameter-screen-mixed/candidates/candidate-0058.pt
+  evaluation_games: 1024
+  evaluation_seed: 70000000
+  confirmation_seed: 95000000
+  ppo:
+    seed_start: 80000000
+candidate: outputs/production-policy/20260907-work-policy-search/checkpoints/update-000003.pt
+hydra:
+  run:
+    dir: ${production.output_dir}/hydra
+  job:
+    chdir: false

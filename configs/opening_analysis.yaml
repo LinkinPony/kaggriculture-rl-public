@@ -1,0 +1,24 @@
+analysis:
+  daily_manifest: data/external/kaggriculture-opening-eda-20260916/raw/daily/manifest.json
+  baseline_catalog: outputs/analysis/top10-2d-20260913/catalog.json
+  teacher_screening: outputs/analysis/top10-2d-20260915/screening.json
+  output: outputs/analysis/opening-eda-20260916
+  horizon: 144
+  workers: 16
+  partition_seed: 62001
+
+validation:
+  output: ${analysis.output}
+  checkpoint: outputs/learning/budget-q100-top10-2d-20260913-s68001/checkpoints/update-005952.pt
+  reference: data/external/kaggriculture-reference-1.32.7
+  per_day: 4
+  baseline_episodes: 8
+  workers: 8
+  seed: 1960916401
+
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/opening-analysis/${now:%Y%m%d-%H%M%S}
+  output_subdir: null

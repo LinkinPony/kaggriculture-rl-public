@@ -1,0 +1,24 @@
+defaults:
+  - work
+  - _self_
+mode: qualify
+checkpoint: null
+output_dir: outputs/production-policy/20260906-work-selfplay4-unbiased-10k
+decision_interval: 4
+evaluation_games: 256
+evaluation_seed: 31000000
+confirmation_seed: 32000000
+bc:
+  directory: data/external/production-work-kaito-cadence4-20260906-v1
+  epochs: 0
+  greedy_prior_bias: 0.0
+ppo:
+  population: self_play
+  ratio_scope: plan
+  script_fraction: 0.0
+  script_opponents: []
+  updates: 10000
+  seed_start: 40000000
+  bc_weight: 0.0
+  checkpoint_interval: 1
+  evaluation_interval: 50

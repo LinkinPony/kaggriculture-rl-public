@@ -1,0 +1,73 @@
+# Keep the current WDL/KL PPO recipe; actor follows DSM BC and critic comes from s99001 U1061.
+defaults:
+- learning_dsm_clone2_kl_ppo50_20260929
+- learning_strength_canonical_ppo50_20260928@predecessor
+- _self_
+experiment:
+  output_dir: outputs/learning/derived-v5b-m384-s99001u1061-dsm2d-kl-ppo50-20260929-s100901
+  initial_weights: null
+  initial_critic:
+    run: outputs/learning/derived-v5b-m384-strength-canonical-ppo50-warmup300-20260928-s99001
+    checkpoint: checkpoints/update-001061.pt
+    sha256: 03a8c0f738811f00ab8200297e8ce7ffde29d46c411c17d0f9c67b72ec92aa42
+  seed: 100901
+  train_seed: 9000000000
+  games: 128
+  population:
+    pfsp:
+      inheritance:
+        discount: 0.5
+      mastery:
+        min_games: 64
+        score_threshold: 0.95
+        review_fraction: 0.05
+    sources:
+    - ${....predecessor.experiment.population.sources.0}
+    - ${....predecessor.experiment.population.sources.1}
+    - ${....predecessor.experiment.population.sources.2}
+    - ${....predecessor.experiment.population.sources.3}
+    - ${....predecessor.experiment.population.sources.4}
+    - ${....predecessor.experiment.population.sources.5}
+    - ${....predecessor.experiment.population.sources.6}
+    - ${....predecessor.experiment.population.sources.7}
+    - ${....predecessor.experiment.population.sources.8}
+    - ${....predecessor.experiment.population.sources.9}
+    - ${....predecessor.experiment.population.sources.10}
+    - ${....predecessor.experiment.population.sources.11}
+    - ${....predecessor.experiment.population.sources.12}
+    - run: outputs/learning/derived-v5b-m384-strength-canonical-ppo50-warmup300-20260928-s99001
+      state_sha256: 31b1d6f83c5653f0ed5934ccf788f3e4a0e8251ed9745b934a3dd2fae048c186
+      checkpoints:
+      - initial.pt
+      - checkpoints/update-000064.pt
+      - checkpoints/update-000128.pt
+      - checkpoints/update-000192.pt
+      - checkpoints/update-000200.pt
+      - checkpoints/update-000256.pt
+      - checkpoints/update-000320.pt
+      - checkpoints/update-000384.pt
+      - checkpoints/update-000400.pt
+      - checkpoints/update-000448.pt
+      - checkpoints/update-000512.pt
+      - checkpoints/update-000576.pt
+      - checkpoints/update-000600.pt
+      - checkpoints/update-000640.pt
+      - checkpoints/update-000704.pt
+      - checkpoints/update-000768.pt
+      - checkpoints/update-000800.pt
+      - checkpoints/update-000832.pt
+      - checkpoints/update-000896.pt
+      - checkpoints/update-000960.pt
+      - checkpoints/update-001000.pt
+      - checkpoints/update-001024.pt
+      - checkpoints/update-001060.pt
+      - checkpoints/update-001061.pt
+  evaluation:
+    selection_seed: 9020000000
+    confirmation_seed: 9021000000
+    anchor_seeds: [520001, 520002]
+  execution:
+    devices: [cuda:0, cuda:1]
+historical_archive:
+  run: outputs/learning/derived-v5b-m384-strength-canonical-ppo50-warmup300-20260928-s99001
+  state_sha256: 31b1d6f83c5653f0ed5934ccf788f3e4a0e8251ed9745b934a3dd2fae048c186

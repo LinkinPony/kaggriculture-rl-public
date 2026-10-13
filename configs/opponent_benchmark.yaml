@@ -1,0 +1,14 @@
+benchmark:
+  public_agent_manifest: data/external/kaggriculture-shop-router-0908-20260908/manifest.json
+  output_dir: outputs/analysis/shop-router-0908-20260908/public-screen
+  agent_ids: [router_95, farming_v4, kaito_v58, shop_router_0908]
+  anchor_id: null
+  seeds: [65200]
+  workers: 16
+  engine: native
+  paired_seats: true
+  act_timeout_seconds: 1.0
+  remaining_overage_seconds: 60.0
+  environment:
+    episodeSteps: 720
+    maxMarketOrdersPerTurn: 10

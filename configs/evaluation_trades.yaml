@@ -1,0 +1,20 @@
+screening:
+  checkpoint: outputs/learning/budget-q100-top10-2d-20260913-s68001/checkpoints/update-005952.pt
+  output_dir: outputs/analysis/wheat-opening-20260916/full-wdl
+  seed: 1960916200
+  seeds: 8
+  other_seeds: 2
+  opponents:
+    - ahmed_v45
+    - metacounter_r1
+    - shop_router_0913
+    - rayk_v38_low_pressure
+    - farming_v4_0914
+  workers: 16
+  temperature: 0
+
+hydra:
+  run:
+    dir: tmp/hydra/evaluation-trades/${now:%Y%m%d-%H%M%S}
+  job:
+    chdir: false

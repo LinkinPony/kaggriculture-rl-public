@@ -1,0 +1,9 @@
+# Recovery uses the archived source and protocol; pass recovery.run explicitly.
+recovery:
+  run: ???
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${recovery.run}/hydra-recovery
+  output_subdir: null

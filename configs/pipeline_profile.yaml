@@ -1,0 +1,12 @@
+benchmark:
+  run: outputs/learning/agronomy-v4-mixed-rl-qualification-20260917
+  rank: 0
+  updates: [4]
+  repeats: 2
+  report: outputs/analysis/agronomy-v4-throughput-20260917/pipeline-profile.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/pipeline-profile
+  output_subdir: null

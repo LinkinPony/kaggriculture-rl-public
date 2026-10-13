@@ -1,0 +1,15 @@
+output_dir: outputs/evaluation/20260904-rank8-intent-oracle-language-audit-smoke-abi-v4-market-slots
+teacher:
+  submission_id: 55708706
+  archive_path: data/external/kaggle-submission-55708706-teacher/submission.tar.gz
+  archive_sha256: 1648b4c28b798420b64bca066bcda886d2e79f7915507a203a6227f836dd254b
+  source_commit: 0742236a178d57a6f5b5c37a0f8caeec256d2b14
+  route_sha256: 193fef08eecaf64d375a0f027fac48fed8f9a1978a4d57f605162d35205e4e72
+seeds: [9911000]
+required_event_days: [3]
+require_clean_source: false
+environment:
+  boardSize: 10
+  episodeSteps: 720
+  turnsPerDay: 24
+  maxMarketOrdersPerTurn: 10

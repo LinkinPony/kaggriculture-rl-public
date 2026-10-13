@@ -1,0 +1,7 @@
+defaults:
+  - work_t03_script50_wdl
+  - _self_
+checkpoint: outputs/releases/20260906-work-t03-wdl-no-prior/update-0442-no-prior.pt
+output_dir: outputs/production-policy/20260906-work-t03-script50-wdl-no-prior
+model:
+  time_prior: false

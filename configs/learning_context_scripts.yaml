@@ -1,0 +1,10 @@
+defaults:
+  - learning_context_selfplay
+  - _self_
+experiment:
+  output_dir: outputs/learning/context-scripts-${now:%Y%m%d-%H%M%S}
+  script_population:
+    manifest: data/external/kaggriculture-shop-router-0908-20260908/manifest.json
+    sha256: 1d93290c788275d0a2c58c33435c210e5ee1b4e5aff7094615e6dc2c136f2bb8
+    agents: [router_95, farming_v4, kaito_v58, shop_router_0908]
+    fraction: 0.5

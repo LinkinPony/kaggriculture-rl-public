@@ -1,0 +1,10 @@
+deduplication:
+  plan: outputs/analysis/weight-cleanup-20261001/revision-2/cleanup-plan.json
+  report: outputs/analysis/weight-cleanup-20261001/revision-2/execution
+  apply: false
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${deduplication.report}/hydra
+  output_subdir: null

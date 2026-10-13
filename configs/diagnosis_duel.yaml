@@ -1,0 +1,13 @@
+analysis:
+  snapshot: outputs/analysis/strategy-gap-20260928/imitation/snapshot.json
+  output: outputs/analysis/strategy-gap-20260928/duel
+  device: cuda:1
+  seed: 9285100000
+  sampling_seed: 92851001
+  seeds: 64
+  batch_games: 32
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/strategy-gap-duel

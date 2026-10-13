@@ -1,0 +1,49 @@
+{
+  "verified_at": 1788839267.482888,
+  "window": [
+    "2026-09-03",
+    "2026-09-07"
+  ],
+  "daily_archives": [
+    {
+      "path": "data/external/kaggriculture-episodes-2026-09-03_2026-09-07/raw/kaggriculture-episodes-2026-09-03.zip",
+      "date": "2026-09-03",
+      "sha256": "3dfd17bffd67bb8a026705b6ac48f242277d2cb7c5f706dea4adcb456a8ad8ff",
+      "bytes": 538048136,
+      "episodes": 669,
+      "source": "https://www.kaggle.com/datasets/kaggle/kaggriculture-episodes-2026-09-03"
+    },
+    {
+      "path": "data/external/kaggriculture-episodes-2026-09-03_2026-09-07/raw/kaggriculture-episodes-2026-09-04.zip",
+      "date": "2026-09-04",
+      "sha256": "fe986b01057c06f6be3ef1dc3e04fc285c77a70e84d70bff72715985a88cb121",
+      "bytes": 548533251,
+      "episodes": 668,
+      "source": "https://www.kaggle.com/datasets/kaggle/kaggriculture-episodes-2026-09-04"
+    },
+    {
+      "path": "data/external/kaggriculture-episodes-2026-09-03_2026-09-07/raw/kaggriculture-episodes-2026-09-05.zip",
+      "date": "2026-09-05",
+      "sha256": "e57448887bcd84e049a2558a676abffd7b1e1d1b61d36991f9da0833a420e473",
+      "bytes": 549366207,
+      "episodes": 664,
+      "source": "https://www.kaggle.com/datasets/kaggle/kaggriculture-episodes-2026-09-05"
+    },
+    {
+      "path": "data/external/kaggriculture-episodes-2026-09-03_2026-09-07/raw/kaggriculture-episodes-2026-09-06.zip",
+      "date": "2026-09-06",
+      "sha256": "8ab6f7da8b19c211361d7a8b769e41339f3e6f94f79f52b701fd7bf0dbdd556e",
+      "bytes": 595249654,
+      "episodes": 662,
+      "source": "https://www.kaggle.com/datasets/kaggle/kaggriculture-episodes-2026-09-06"
+    },
+    {
+      "path": "data/external/kaggriculture-episodes-2026-09-03_2026-09-07/raw/kaggriculture-episodes-2026-09-07.zip",
+      "date": "2026-09-07",
+      "sha256": "08e49bd2bf0c975bc2a1fa92249f0cfe6ecbdff7436e49d7bb0b398b5decc50d",
+      "bytes": 588306669,
+      "episodes": 663,
+      "source": "https://www.kaggle.com/datasets/kaggle/kaggriculture-episodes-2026-09-07"
+    }
+  ]
+}

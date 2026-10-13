@@ -1,0 +1,41 @@
+defaults:
+- learning_population_change
+- _self_
+change:
+  run: outputs/learning/compact289-v4-selected8-ppo-restart-20260921-s74001
+  population:
+    fraction: 0.19921875
+    snapshot_interval: 64
+    capacity: 177
+    unified: true
+    pfsp:
+      power: 2.0
+      uniform_fraction: 0.2
+      latest_fraction: 0.1
+      prior_games: 8.0
+      half_life_updates: 128.0
+      max_effective_games: 256.0
+      recent_snapshots: 4
+      concurrent_inference: true
+  script_population:
+    manifest: data/external/kaggriculture-public-native-20260921/manifest.json
+    sha256: 7ffa98e2860d1638dc340bf060d6592791f41c6580e99fe6d007edab62a40b01
+    agents:
+    - ahmed_v45
+    - metacounter_r1
+    - shop_router_0913
+    - rayk_v38_low_pressure
+    - farming_v4_0914
+    - ahmed_v53
+    - thomas_metav4
+    backend: native-cpp
+    fraction: 0.0
+  qualification: outputs/analysis/notebook-survey-20260921/population-qualification.json
+  qualification_sha256: ${oc.env:PFSP_QUALIFICATION_SHA256,0000000000000000000000000000000000000000000000000000000000000000}
+hydra:
+  run:
+    dir: outputs/analysis/notebook-survey-20260921/hydra-population
+evidence:
+  conformance: outputs/analysis/notebook-survey-20260921/conformance-forecast/report.json
+  official: outputs/analysis/notebook-survey-20260921/official-forecast.json
+  throughput: outputs/analysis/notebook-survey-20260921/throughput-forecast.json

@@ -1,0 +1,15 @@
+checkpoint: outputs/learning/agronomy-v4-m384-dsm-games-ppo50-20260924-s82001/checkpoints/update-000800.pt
+checkpoint_sha256: ec0f01735af45dca54de955164e47c61406fbfa0887bd21657562e819f25ddbf
+native: outputs/deployment/agronomy-dsm-games-s82001-u800-20260924-t1-once/package/src/kagg_revue/native/_revue_observation.cpython-311-x86_64-linux-gnu.so
+native_sha256: 719550bf0313495d381607f7db6b037d092e54ddd67580275445974fc499d7b2
+replay: data/external/kaggriculture-dsm-replays/replays/112952251.json.gz
+replay_sha256: 7c0d244424dc397477653fc978d4a636e4fa9692633fa779eb309be208affe91
+output: outputs/analysis/features-v5-design-20260925/compatibility.json
+starts: [0, 210, 286, 358, 430, 711]
+length: 8
+threads: 2
+hydra:
+  run:
+    dir: outputs/analysis/features-v5-design-20260925/hydra
+  job:
+    chdir: false

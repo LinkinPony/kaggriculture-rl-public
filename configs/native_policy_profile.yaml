@@ -1,0 +1,11 @@
+profile:
+  opponents: [metacounter_r1, ahmed_v45, shop_router_0913]
+  games: 2
+  seed: 1860914400
+  report: outputs/analysis/agronomy-v4-throughput-20260917/native-policy-profile.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/native-policy-profile
+  output_subdir: null

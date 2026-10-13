@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-09-08T12:40:42.934566+00:00",
+  "retrieval": {
+    "method": "kaggle kernels pull yhay81/shop-router-0908 --metadata; AST extraction of literal base64 submission; notebook cells not executed",
+    "previous_manifest": "data/external/kaggriculture-notebook-survey-20260908/manifest.json",
+    "extraction": "submission.tar.gz regular top-level files copied without executing notebook or submission; source bundle hashes in provenance.json",
+    "scope": "Native training population; replace Boatlee v29 with Shop Router 0908"
+  },
+  "agents": [
+    {
+      "agent_id": "kaito_v39",
+      "notebook_ref": "kaitofukami/103-126-untouched-future-top-30-v39-history-gate",
+      "notebook_id": 129557885,
+      "notebook_url": "https://www.kaggle.com/code/kaitofukami/103-126-untouched-future-top-30-v39-history-gate",
+      "main_path": "data/external/public-agents/kaito-v39/main.py",
+      "sha256": "c0298c82c2a2f9b41cd48657b63b16a9c6f07ea3ee02dc85062f807e54e8c54a",
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "Existing frozen control; notebook reports 103/126 against an untouched future Top-30 set."
+    },
+    {
+      "agent_id": "kaito_v48",
+      "notebook_ref": "kaitofukami/40-40-early-floor-39-46-top-10-v48-fast-routes",
+      "notebook_id": 129971739,
+      "notebook_url": "https://www.kaggle.com/code/kaitofukami/40-40-early-floor-39-46-top-10-v48-fast-routes",
+      "main_path": "data/external/kaggriculture-public-notebooks-2026-08-28/raw/kaitofukami__v48/main.py",
+      "sha256": "dadee25a9840313218384208c53b2c4752f82c3209cc654632e0b96c65e2664a",
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "Notebook reports 39/46 against a current Top-10 holdout and 97/140 against a Top-30 holdout; these are local controls."
+    },
+    {
+      "agent_id": "boatlee_v21",
+      "notebook_ref": "boatlee/v21-r1-public-state-route-portfolio",
+      "notebook_id": 131517790,
+      "notebook_url": "https://www.kaggle.com/code/boatlee/v21-r1-public-state-route-portfolio",
+      "main_path": "data/external/kaggriculture-public-notebooks-2026-08-28/raw/boatlee__v21/main.py",
+      "sha256": "c6f96a8521dc9aa369b6f27e5b36b9d481e5c1688f50c8ca215c3bb53f1f9eb8",
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "Notebook reports 164/192 against score-stratified executable proxies and 45/48 against top-front proxies."
+    },
+    {
+      "agent_id": "mugundh_v21",
+      "notebook_ref": "mugundhjb/v21-multi-route-agent-sell-divergence-guarder",
+      "notebook_id": 131735152,
+      "notebook_url": "https://www.kaggle.com/code/mugundhjb/v21-multi-route-agent-sell-divergence-guarder",
+      "main_path": "data/external/kaggriculture-public-notebooks-2026-08-28/raw/mugundhjb__v21/main.py",
+      "sha256": "e2f9107e9e537b77b9e908744114a43cece81a6316e33a69ff8aa02618b4c0f1",
+      "evidence_level": "unverified",
+      "evidence_note": "Multi-route agent with a sell-divergence guard; retained to measure lineage overlap with related route portfolios."
+    },
+    {
+      "agent_id": "boatlee_v29",
+      "notebook_ref": "boatlee/v29-r1-adaptive-market-hysteresis",
+      "notebook_id": 132858221,
+      "notebook_url": "https://www.kaggle.com/code/boatlee/v29-r1-adaptive-market-hysteresis",
+      "main_path": "data/external/kaggriculture-notebook-survey-20260908/boatlee-v29/main.py",
+      "sha256": "c4a6964cec3c1c99207c32bb1fd91e53c3ec01e6890da5734331cbeab1cc1267",
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "Author reports 106W/2L on 108 regression games including old v21 and Kaito v48. Not independently verified at acquisition."
+    },
+    {
+      "agent_id": "kaito_v58",
+      "notebook_ref": "kaitofukami/238-238-known-streams-v58-minimax-closed-loop",
+      "notebook_id": 129684439,
+      "notebook_url": "https://www.kaggle.com/code/kaitofukami/238-238-known-streams-v58-minimax-closed-loop",
+      "main_path": "data/external/kaggriculture-notebook-survey-20260908/kaito-v58/main.py",
+      "sha256": "b041058ec187a8d0a01edc0eab8de068b53deca3e6c1973faf74ace6916ddcb9",
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "238/238 known frozen development streams; explicitly not an unseen holdout. Dynamic v57 comparison 2W/8T/2L."
+    },
+    {
+      "agent_id": "farming_v4",
+      "notebook_ref": "lynnsakurai/farming-score-v4-a-better-shop",
+      "notebook_id": 132681375,
+      "notebook_url": "https://www.kaggle.com/code/lynnsakurai/farming-score-v4-a-better-shop",
+      "main_path": "data/external/kaggriculture-notebook-survey-20260908/farming-v4/main.py",
+      "sha256": "1590394cf30c8989a3e1cfdb027d89b5ccd97c2fb4cdc14959a15555b2b2361a",
+      "evidence_level": "unverified",
+      "evidence_note": "Prefix-safe four-route runtime with budget and inventory guards. No independent strength claim."
+    },
+    {
+      "agent_id": "router_95",
+      "notebook_ref": "thomastschinkel/kaggriculture-95-5-win-rate-via-replay-routing",
+      "notebook_id": 133468879,
+      "notebook_url": "https://www.kaggle.com/code/thomastschinkel/kaggriculture-95-5-win-rate-via-replay-routing",
+      "main_path": "data/external/kaggriculture-notebook-survey-20260908/router-95/main.py",
+      "sha256": "8241246765098c50223d897739cb32076b71a303284d2e5e1c5f0fb495bb5a97",
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "Author reports 95.51% over 44,096 games against 689 held-out replay streams, 32 seeds, both seats. Contains fitted tree; research acquisition only."
+    },
+    {
+      "agent_id": "shop_router_0908",
+      "notebook_ref": "yhay81/shop-router-0908",
+      "notebook_id": 133520239,
+      "notebook_url": "https://www.kaggle.com/code/yhay81/shop-router-0908",
+      "main_path": "data/external/kaggriculture-shop-router-0908-20260908/main.py",
+      "sha256": "66585d1a5dbfe11c946a3c400278592f860342bc4a8f5e5f87f2a9293348984b",
+      "files": {
+        "actions.json": "171c8550addac9fdb49acb44af36f64b4eb54e34c561eb6f3d4a83e2dcc803a6",
+        "model.json": "e6a3a8eff5d499a1764001943c9989bfe5a8ed3da8a5ab457d53012c56f9a378",
+        "observation.py": "516aee86ca84550839ecc5217cff3464c896a6a69d338f91f7ccfa16fee73fa9"
+      },
+      "evidence_level": "notebook_self_report",
+      "evidence_note": "Frozen four-tape router with public-state decisions at steps 144 and 648. Notebook replay-screen claims are not independent strength evidence."
+    }
+  ],
+  "rejected": []
+}

@@ -1,0 +1,12 @@
+# Read-only local dashboard. The host is intentionally not configurable.
+outputs_dir: outputs
+port: 8765
+refresh_seconds: 5
+stale_after_seconds: 180
+max_points: 400
+recent_points: 2000
+history_cache_runs: 2
+default_window: 500
+smoothing_window: 32
+show_raw: false
+tensorboard_port: 6006

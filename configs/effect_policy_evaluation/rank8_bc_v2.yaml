@@ -1,0 +1,25 @@
+# Complete paired panels decide only whether this checkpoint is a useful RL warm start.
+checkpoint: outputs/effect-policy-bc/20260904-rank8-v2-bc256-e32/checkpoints/best.pt
+training_report: outputs/effect-policy-bc/20260904-rank8-v2-bc256-e32/training-report.json
+public_agent_manifest: data/external/kaggriculture-public-notebooks-2026-08-28/manifest.json
+output_dir: outputs/effect-policy-evaluation/20260904-rank8-bc-v2
+opponents:
+  - kaito_v39
+  - kaito_v48
+  - boatlee_v21
+  - mugundh_v21
+selection_seed_start: 13100000
+selection_seed_count: 8
+confirmation_seed_start: 13200000
+confirmation_seed_count: 8
+unit_limit: 32
+device: cuda:0
+cpu_workers: 32
+maximum_graph_variants: 48
+act_timeout_seconds: 1.0
+remaining_overage_seconds: 60.0
+environment:
+  boardSize: 10
+  episodeSteps: 720
+  turnsPerDay: 24
+  maxMarketOrdersPerTurn: 10

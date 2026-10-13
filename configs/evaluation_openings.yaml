@@ -1,0 +1,28 @@
+device: cuda:0
+batch_rows: 128
+draws: 1024
+games: 256
+streams: 2
+horizons: [1, 2, 4, 12, 24, 72]
+environment_seed: 4252000000
+sampling_seed: 4253000000
+output: outputs/analysis/budget-openings-20260911-u56
+checkpoints:
+  bc1:
+    path: outputs/learning/budget-26m-20260911-s66001/pretraining/shard-000085.pt
+    rollout: false
+  bc2:
+    path: outputs/learning/budget-26m-20260911-s66001/pretraining/shard-000170.pt
+    rollout: true
+  ppo56:
+    path: outputs/analysis/budget-openings-20260911-u56/update-000056.pt
+    rollout: true
+  old_ppo2748:
+    path: outputs/analysis/kaggle-context3d-s65001-u2748-20260911-double/update-002748.pt
+    rollout: false
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${output}/hydra
+  output_subdir: null

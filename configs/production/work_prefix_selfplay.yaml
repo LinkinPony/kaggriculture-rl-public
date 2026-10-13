@@ -1,0 +1,24 @@
+defaults:
+  - work_t03_script50_wdl_no_prior
+  - _self_
+mode: qualify
+output_dir: outputs/production-policy/20260907-work-prefix-selfplay-t1
+checkpoint: outputs/releases/20260907-work-policy-search-ppo-start/actor.pt
+precision: bf16
+bf16_reduced_precision_reduction: false
+model:
+  prior_scale: 0.0
+evaluation_seed: 170000000
+confirmation_seed: 171000000
+ppo:
+  population: self_play
+  script_fraction: 0.0
+  script_opponents: []
+  temperature: 1.0
+  ratio_scope: prefix
+  prefix_value_weight: 1.0
+  prefix_warmup_updates: 3
+  actor_learning_rate: 0.000001
+  seed_start: 150000000
+  evaluation_interval: 25
+  retain_checkpoints: 8

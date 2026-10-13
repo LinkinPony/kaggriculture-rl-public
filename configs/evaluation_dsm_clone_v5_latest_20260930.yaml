@@ -1,0 +1,20 @@
+# DSM clone v5 (56693917 alone, 132 games) from s100901 U756, two seeds, on exactly the
+# opponents, seeds and precision of the v3 plan C panel, so each pairs seed by seed with the
+# v4 latest-version clones s101303/s101304. Workers use cuda:0, freed when s101102 stopped.
+defaults:
+- evaluation_dsm_clone_v3_20260930
+- _self_
+study:
+  output: outputs/analysis/dsm-bc-redesign-20260930/panel-t0-v5-latest
+  devices: [cuda:0, cuda:0, cuda:0]
+  scope: >-
+    DSM clone v5 of 56693917 alone (132 games; two seeds from s100901 U756) at T=0 against
+    s100901 U480/U756, s100201 U200, s99001 U200 and the v4 P MMPQ clone, all at T=0, on the
+    v3 plan C panel's 64 common seeds with both seats.
+  candidates:
+    - name: dsm-v5-latest-u756-t0
+      temperature: 0
+      run: outputs/learning/dsm-clone-v5-latest-from-u756-bc-20260930-s101501
+    - name: dsm-v5-latest-u756-r2-t0
+      temperature: 0
+      run: outputs/learning/dsm-clone-v5-latest-from-u756-r2-bc-20260930-s101502

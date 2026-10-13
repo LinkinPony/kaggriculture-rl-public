@@ -1,0 +1,121 @@
+experiment:
+  output_dir: outputs/learning/gtrxl-m384-qualification-20260916-v5
+  resume: false
+  device: cuda:0
+  seed: 70002
+  train_seed: 3940000000
+  updates: 4
+  checkpoint_interval: 1
+  checkpoint_keep_recent: 2
+  checkpoint_keep_interval: 200
+  games: 128
+  workers: 16
+  cpu_threads: 4
+  width: 384
+  architecture: grounded-v2
+  operation_quantity_bias: true
+  market_budget: true
+  depth: 6
+  heads: 8
+  expansion: 2
+  critic_width: 320
+  critic_depth: 3
+  unit_limit: 32
+  decision_interval: 1
+  quantity_max: 100
+  quantity_extra: []
+  environment:
+    boardSize: 10
+    episodeSteps: 720
+    turnsPerDay: 24
+    maxMarketOrdersPerTurn: 10
+  batch_rows: 5760
+  microbatch_rows: 256
+  epochs: 1
+  actor_learning_rate: 7.5e-06
+  critic_learning_rate: 0.0001
+  target_kl: 0.01
+  clip: 0.1
+  entropy_weight: 0.0001
+  cash_weight: 0.0
+  cash_scale: 10000.0
+  compile: true
+  precision: bf16
+  deterministic: false
+  exploration:
+    market_stop_probability: 0.98
+    quantity_decay: 1.0
+    head_standard_deviation: 0.01
+  population:
+    fraction: 0.5
+    snapshot_interval: 2
+    capacity: 8
+    pfsp:
+      power: 2.0
+      uniform_fraction: 0.2
+      latest_fraction: 0.1
+      prior_games: 8.0
+      half_life_updates: 128.0
+      max_effective_games: 256.0
+      script_min_pairs_per_rank: 1
+      recent_snapshots: 4
+      concurrent_inference: true
+      script_sampling: independent_pfsp
+    sources:
+    - run: outputs/learning/budget-q100-top10-2d-20260913-s68001
+      state_sha256: 61bdcc389ae8bbd52e2fbc87e8309eb5ca61098d445858ca8ad8fe9e71a071c8
+      checkpoints:
+      - pretraining/shard-001804.pt
+      - checkpoints/update-006105.pt
+  evaluation:
+    games: 4
+    interval: 4
+    selection_seed: 3941000000
+    confirmation_seed: 3942000000
+    anchor_seeds:
+    - 200001
+    - 200002
+  curriculum: null
+  demonstrations:
+    manifest: outputs/analysis/gtrxl-20260916/throughput-data/manifest.json
+    sha256: 8740ad80da3cfcf5708fe7cf321b50071e07e941e59943d73f800e2cd509930d
+    epochs: 2
+    batch_rows: 46016
+    learning_rate: 0.0001
+    checkpoint_shards: 1
+    distributed: true
+    behavior_games: 0
+    behavior_seed: 3932000000
+  execution:
+    devices:
+    - cuda:0
+    - cuda:1
+    microbatch_rows: 384
+    workers_per_rank: 8
+    cpu_threads_per_rank: 2
+    compile_inference: false
+    fused_loss: false
+  script_population:
+    manifest: data/external/kaggriculture-public-native-20260916/manifest.json
+    sha256: 6d66d351cc01eb3e6e58f9921de0a1842f78aee03686b0312355725e1bdf2aa8
+    agents:
+    - ahmed_v45
+    - metacounter_r1
+    - shop_router_0913
+    - rayk_v38_low_pressure
+    - farming_v4_0914
+    backend: native-cpp
+    fraction: 0.2
+  gated: true
+  memory_turns: 384
+  memory_width: 256
+  memory_layers: 2
+  memory_tokens: 4
+  sequence_chunk_turns: 48
+  sequence_games_per_rank: 4
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/learning/gtrxl-m384-3d-20260916-s70001/hydra
+  output_subdir: null

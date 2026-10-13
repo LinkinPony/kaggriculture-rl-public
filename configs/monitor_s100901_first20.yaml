@@ -1,0 +1,14 @@
+tracking:
+  run: outputs/learning/derived-v5b-m384-s99001u1061-dsm2d-kl-ppo50-20260929-s100901
+  workflow: outputs/workflows/derived-v5b-s99001u1061-dsm2d-bc-to-rl-20260929
+  output: outputs/analysis/s100901-first20-20260929
+  target_update: 20
+  interval_seconds: 10
+  stale_seconds: 240
+  minimum_free_mib: 8192
+hydra:
+  run:
+    dir: ${tracking.output}/hydra
+  output_subdir: null
+  job:
+    chdir: false

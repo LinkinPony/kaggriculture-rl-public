@@ -1,0 +1,51 @@
+# s101101 checkpoints at T=0 on the clone-vs-RL panel. Opponents, seeds and precision equal
+# the v4 P clone's panel (its RL start point), so differences are paired by environment seed.
+# s100201 U200 and s100901 U480 are outside the training pool; U756 and s99001 U200 are in it.
+progress:
+  run: outputs/learning/derived-v5b-m384-mmpqclone4-kl-ppo50-20260930-s101101
+  prefix: s101101
+  updates: [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400]
+  temperature: 0
+  poll_seconds: 60
+  window: 20
+  baseline:
+    study: outputs/analysis/mmpq-bc-redesign-20260930/vs-rl-t0
+    candidate: v4-parallel-t0
+  study:
+    output: outputs/analysis/s101101-progress-20260930
+    games: 128
+    seed: 9500000000
+    sampling_seed: 95000001
+    devices: [cuda:0, cuda:1]
+    memory_fraction: 0.06
+    precision: bf16
+    scope: >-
+      s101101 checkpoints at T=0 against s100901 U480/U756, s100201 U200 and s99001 U200,
+      all at T=0, on 64 common seeds with both seats; baseline is the v4 P clone (U0) on the
+      same seeds. Local proxy only.
+    candidates: []
+    opponents:
+      - name: s100901-u0480-t0
+        group: s100901-u0480
+        temperature: 0
+        path: outputs/analysis/s100901-u0480-temperature-20260929/actors/s100901-u0480-t0.pt
+      - name: s100901-u0756-t0
+        group: s100901-u0756
+        temperature: 0
+        run: outputs/learning/derived-v5b-m384-s99001u1061-dsm2d-kl-ppo50-20260929-s100901
+        member: checkpoints/update-000756.pt
+      - name: s100201-u0200-t0
+        group: s100201
+        temperature: 0
+        run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201
+        member: checkpoints/update-000200.pt
+      - name: s99001-u0200-t0
+        group: s99001
+        temperature: 0
+        path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0200.pt
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${progress.study.output}/hydra
+  output_subdir: null

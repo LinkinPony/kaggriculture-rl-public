@@ -1,0 +1,23 @@
+defaults:
+  - learning_grounded
+  - _self_
+experiment:
+  output_dir: outputs/learning/scratch-curriculum-s43001
+  seed: 43001
+  train_seed: 790000000
+  updates: 64
+  cash_weight: 0.0
+  cash_scale: 1000.0
+  curriculum:
+    manifest: data/external/kaggriculture-restart-candidates-2026-09-06-v1/manifest.json
+    manifest_sha256: 435ad997dd7f18f1bac93257c20ce75a458633aee27e6922ebfb9fa0565badf0
+    maximum_episodes: 128
+    maximum_cash_gap: 0.2
+    starts: [576, 384, 192, 48]
+    updates_per_stage: 8
+    full_every: 4
+  evaluation:
+    interval: 8
+    selection_seed: 800000000
+    confirmation_seed: 810000000
+    anchor_seeds: [93001, 93002]

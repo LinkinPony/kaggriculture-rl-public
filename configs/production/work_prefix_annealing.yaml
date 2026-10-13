@@ -1,0 +1,13 @@
+defaults:
+  - work_prefix_selfplay
+  - _self_
+output_dir: outputs/production-policy/20260907-work-prefix-selfplay-anneal300-restored
+evaluation_seed: 420000000
+confirmation_seed: 421000000
+ppo:
+  updates: 100000
+  seed_start: 300000000
+  temperature_schedule:
+    end_update: 300
+    start_temperature: 0.02
+    scale_actor_learning_rate: true

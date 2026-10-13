@@ -1,0 +1,37 @@
+# Sequential behavior warm start for the every-turn joint actor.
+dataset_dir: data/external/executor-advice-dataset-v1
+public_agent_manifest: data/external/public-agents/manifest.json
+output_dir: outputs/turn-policy/20260825-latent-bc-warmup-v1
+resume_checkpoint: null
+
+seed: 20260824
+split_seed: 20260825
+train_fraction: 0.8
+validation_fraction: 0.1
+epochs: 6
+batch_sequences: 4
+loader_workers: 1
+prefetch_batches: 2
+unroll_length: 128
+burn_in: 32
+learning_rate: 0.0002
+weight_decay: 0.00001
+quantity_loss_weight: 1.0
+gradient_clip: 1.0
+device: cuda
+
+unit_limit: 16
+selection_seeds: [62000, 62001, 62002, 62003]
+confirmation_seeds: [62100, 62101, 62102, 62103]
+confirmation_opponents: [kaito_v39]
+evaluation_device: cpu
+cpu_threads: 1
+act_timeout_seconds: 1.0
+remaining_overage_seconds: 60.0
+observability:
+  tensorboard: true
+  flush_seconds: 30
+  max_queue: 100
+environment:
+  episodeSteps: 720
+  maxMarketOrdersPerTurn: 10

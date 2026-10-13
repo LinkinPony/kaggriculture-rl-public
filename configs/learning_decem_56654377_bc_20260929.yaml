@@ -1,0 +1,21 @@
+# Only DECEM 56654377 and behavior-matched 56652700; start from the common BC actor.
+defaults:
+- learning_strength_canonical_bc_20260929
+- _self_
+experiment:
+  output_dir: outputs/learning/derived-v5b-m384-decem56654377-bc-20260929-s100601
+  seed: 100601
+  train_seed: 8700000000
+  evaluation:
+    selection_seed: 8720000000
+    confirmation_seed: 8721000000
+    anchor_seeds: [490001, 490002]
+  demonstrations:
+    manifest: outputs/datasets/derived-v5b-decem-56654377-canonical-20260929-train-val-q100/manifest.json
+    sha256: 15b2ab3ded1e92e4bcf4850799ae04d13d5aabc779c8eccdba4e9fe652106a22
+    epochs: 40
+    epoch_checkpoint_interval: 1
+    early_stopping:
+      patience: 4
+      min_delta: 0.0005
+    behavior_seed: 8722000000

@@ -1,0 +1,13 @@
+# Inherit discounted predecessor PFSP evidence into one stopped run; donors from nearest.
+change:
+  run: ???
+  state_sha256: ???
+  donors: ???
+  inheritance:
+    discount: 0.5
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${change.run}/hydra-pfsp-inheritance
+  output_subdir: null

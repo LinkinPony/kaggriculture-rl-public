@@ -1,0 +1,10 @@
+panel:
+  source: outputs/opponents/enterprise-20260915/enterprise-p1/main.py
+  reference: outputs/opponents/research-20260915/neural-reference
+  output: outputs/analysis/enterprise-20260915/neural-confirmation
+  seeds: [1860917501, 1860917502, 1860917503, 1860917504, 1860917505, 1860917506, 1860917507, 1860917508]
+  workers: 16
+hydra:
+  run:
+    dir: outputs/analysis/enterprise-20260915/hydra-neural
+  output_subdir: null

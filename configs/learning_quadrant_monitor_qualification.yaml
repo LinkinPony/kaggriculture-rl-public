@@ -1,0 +1,16 @@
+defaults:
+  - _self_
+change:
+  run: outputs/learning/agronomy-v4-m384-dsm-grouped-ppo-20260923-s80001
+  implementation: true
+  qualification: outputs/analysis/quadrant-monitor-20260923/qualification.json
+qualification:
+  output_dir: outputs/learning/s80001-quadrant-monitor-qualification-20260923
+  updates: 4
+  evaluation_games: 2
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/quadrant-monitor-20260923/hydra
+  output_subdir: null

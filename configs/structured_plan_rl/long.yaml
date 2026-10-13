@@ -1,0 +1,135 @@
+# Pure terminal-W/D/L research challenger. External promotion remains a
+# separate complete-match decision on the disjoint panels below.
+actor_initialization: bc_backbone
+initial_actor: outputs/turn-policy/20260828-opening-diverse-bc2-v1/actor-fp16.pt
+resume_checkpoint: null
+output_dir: outputs/structured-plan-rl/20260830-bc-backbone-fifo-ddp-selfplay-v12
+
+seed: 20260830
+rollout_seed_start: 4000000
+updates: 10000
+paired_seats: true
+selection_seeds:
+  - 30000000
+  - 30000001
+  - 30000002
+  - 30000003
+  - 30000004
+  - 30000005
+  - 30000006
+  - 30000007
+  - 30000008
+  - 30000009
+  - 30000010
+  - 30000011
+  - 30000012
+  - 30000013
+  - 30000014
+  - 30000015
+confirmation_seeds:
+  - 30001000
+  - 30001001
+  - 30001002
+  - 30001003
+  - 30001004
+  - 30001005
+  - 30001006
+  - 30001007
+  - 30001008
+  - 30001009
+  - 30001010
+  - 30001011
+  - 30001012
+  - 30001013
+  - 30001014
+  - 30001015
+
+abi:
+  version: 3
+  production_lines: 8
+  line_fields: 6
+  global_fields: 10
+  mode_tokens: 2
+  line_operation_tokens: 3
+  line_value_tokens: 16
+  global_operation_tokens: 2
+  global_value_tokens: 16
+  observation_features: 90
+  journal_features: 32
+  event_features: 32
+
+model:
+  model_width: 256
+  entity_width: 128
+  attention_heads: 4
+  feedforward_width: 704
+  latent_tokens: 64
+  register_tokens: 4
+  scene_layers: 2
+  temporal_layers: 20
+  action_layers: 2
+  max_history: 64
+  strategy_tokens: 8
+  fact_dropout: 0.25
+
+versions:
+  language: independent-execution-portfolio-language-v5
+  observation: actor-visible-rich-portfolio-observation-v3
+  grammar: parallel-prefix-portfolio-grammar-v6
+  executor: native-portfolio-executor-v7
+
+objective:
+  reward: terminal_wdl
+  discount: 1.0
+  gae_lambda: 1.0
+
+optimization:
+  ppo_epochs: 2
+  episodes_per_minibatch: 320
+  actor_learning_rate: 0.000005
+  critic_learning_rate: 0.0001
+  weight_decay: 0.00001
+  clip_epsilon: 0.1
+  value_loss_weight: 1.0
+  entropy_weight: 0.001
+  target_kl: 0.02
+  gradient_clip: 1.0
+  normalize_advantage: true
+
+rollout:
+  seeds_per_update: 2048
+  cpu_workers: 48
+  inference_batch_size: 2048
+  event_cuda_graph_max_batch_size: 16
+  host_memory_limit_gib: 16
+  gpu_memory_fraction: 0.5
+
+self_play:
+  historical_fraction: 0.5
+  snapshot_interval: 25
+  history_capacity: 8
+
+health:
+  warmup_updates: 50
+  anchor_panels: 3
+  stop_fraction_floor: 0.9
+  plan_change_fraction_ceiling: 0.1
+  anchor_loss_rate_floor: 0.8
+
+checkpoint:
+  rolling_interval: 10
+  rolling_keep: 3
+  permanent_interval: 100
+
+observability:
+  tensorboard: true
+  flush_seconds: 10
+  max_queue: 20
+
+devices: [cuda:0, cuda:1]
+cpu_threads: 16
+act_timeout_seconds: 1.0
+remaining_overage_seconds: 60.0
+environment:
+  episodeSteps: 720
+  maxMarketOrdersPerTurn: 10

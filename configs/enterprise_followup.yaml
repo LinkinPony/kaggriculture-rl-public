@@ -1,0 +1,14 @@
+defaults:
+  - enterprise
+  - _self_
+panel:
+  output: outputs/analysis/enterprise-20260915/prototype-02
+  variants:
+    default: {}
+    crops_only: {animal_limit: 0, central_reserve: 0}
+    short_cycle: {duration_power: 1.6, central_reserve: 0}
+    livestock: {animal_bias: 1.5, central_reserve: 5}
+    expansion: {workers: 14, initial_workers: 8, growth_bias: 1.5}
+    turnover: {growth_bias: 2, workers: 13, duration_power: 1.4}
+    few_animals: {animal_limit: 6, workers: 13, growth_bias: 1.5}
+    no_fertilizer: {fertilize: false, workers: 13, growth_bias: 1.5}

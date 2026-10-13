@@ -1,0 +1,7 @@
+defaults:
+  - joint_bc
+  - _self_
+
+dataset_dir: data/external/kaggriculture-episodes-2026-08-21_2026-08-24/compact-v1
+output_dir: outputs/turn-policy/20260825-kaggle-3d-latent-bc-v1
+batch_sequences: 64

@@ -1,0 +1,16 @@
+# Direct s82001 U1843 continuation; original learning rates, optimizers and PFSP.
+defaults:
+- learning_feature_change
+- _self_
+change:
+  run: outputs/learning/agronomy-v4-m384-dsm-games-ppo50-20260924-s82001
+  state_sha256: 7ed90bebc9534313d94bf4960d8f2f59c6fdb9bbaa37fc8af5dfe209f9dce752
+  native_qualification:
+    path: outputs/analysis/derived-bc-to-rl-20260925/native-compatibility.json
+    sha256: a9f444b8b4cab456ef8a22849bf4dc83ccebdec5884bd45f5cb935212bf06c22
+  model_qualification:
+    path: outputs/analysis/derived-dsm-bc-20260925/compatibility.json
+    sha256: d3327a2cc0171260e81431d0812144929a9b95a3a00b76bc51a96190bb18f89e
+  script_qualification:
+    path: outputs/analysis/s82001-v5b-continuation-20260925/script-qualification.json
+    sha256: 09480c45b53eaae98a0d71defeb62572f94bde99fe78fd6bba15caccb211403f

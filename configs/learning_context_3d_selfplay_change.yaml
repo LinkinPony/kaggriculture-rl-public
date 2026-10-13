@@ -1,0 +1,27 @@
+defaults:
+  - _self_
+change:
+  selfplay: true
+  run: outputs/learning/context-26m-3d-20260910-s65001
+  games: 128
+  train_seed: 4150000000
+  batch_rows: 5760
+  execution:
+    devices: [cuda:0, cuda:1]
+    microbatch_rows: 2880
+    workers_per_rank: 8
+    cpu_threads_per_rank: 2
+    compile_inference: true
+    fused_loss: true
+  qualification: outputs/analysis/context3d-selfplay-20260910/qualification.json
+  qualification_sha256: ${oc.env:SELFPLAY_QUALIFICATION_SHA256,0000000000000000000000000000000000000000000000000000000000000000}
+qualification:
+  output_dir: outputs/learning/context3d-selfplay-qualification-20260910
+  updates: 4
+  evaluation_games: 2
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/context3d-selfplay-20260910/hydra
+  output_subdir: null

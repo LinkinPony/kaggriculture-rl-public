@@ -1,0 +1,27 @@
+benchmark:
+  batch: 1344
+  tokens: 286
+  heads: 8
+  widths: [48, 40]
+  repeats: 10
+  backward: true
+  output: outputs/analysis/h200-throughput-20260920/entity-kernels.json
+  variants:
+    - name: baseline
+      options: {BACKEND: TRITON}
+    - name: safe_rows
+      options: {BACKEND: TRITON, ROWS_GUARANTEED_SAFE: true}
+    - name: tma
+      options: {BACKEND: TRITON, ROWS_GUARANTEED_SAFE: true, USE_TMA: true}
+    - name: tiles64
+      options: {BACKEND: TRITON, ROWS_GUARANTEED_SAFE: true, BLOCK_M: 64, BLOCK_N: 64}
+    - name: tiles64_tma
+      options: {BACKEND: TRITON, ROWS_GUARANTEED_SAFE: true, BLOCK_M: 64, BLOCK_N: 64, USE_TMA: true}
+    - name: tiles32
+      options: {BACKEND: TRITON, ROWS_GUARANTEED_SAFE: true, BLOCK_M: 32, BLOCK_N: 64}
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/h200-throughput-20260920/hydra-kernels
+  output_subdir: null

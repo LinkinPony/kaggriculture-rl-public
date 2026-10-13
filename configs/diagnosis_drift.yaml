@@ -1,0 +1,35 @@
+# Teacher agreement and entropy along the s99001 and s100201 checkpoint sequences, on the
+# held-out MMPQ/DSM trajectories of the 9/29 strength-canonical dataset.
+analysis:
+  output: outputs/analysis/rl-drift-20260929/teacher
+  manifest: outputs/datasets/derived-v5b-strength-top-canonical-20260929-train-val-q100/manifest.json
+  manifest_sha256: 41003c94fd78644e4619352eaff20429059f65eef21fad4f37ead81bb359e23d
+  device: cuda:0
+  memory_fraction: 0.06
+  checkpoints:
+    - {name: s99001-u0000, path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0000.pt}
+    - {name: s99001-u0064, path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0064.pt}
+    - {name: s99001-u0128, path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0128.pt}
+    - {name: s99001-u0192, path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0192.pt}
+    - {name: s99001-u0256, path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0256.pt}
+    - {name: s99001-u0320, path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0320.pt}
+    - {name: s99001-u0384, path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0384.pt}
+    - {name: s99001-u0448, path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0448.pt}
+    - {name: s99001-u0512, path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0512.pt}
+    - {name: s99001-u0576, path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0576.pt}
+    - {name: s99001-u0616, path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0616.pt}
+    - {name: s99001-u0800, path: outputs/learning/derived-v5b-m384-strength-canonical-ppo50-warmup300-20260928-s99001/checkpoints/update-000800.pt}
+    - {name: s99001-u1000, path: outputs/learning/derived-v5b-m384-strength-canonical-ppo50-warmup300-20260928-s99001/checkpoints/update-001000.pt}
+    - {name: s99001-u1061, path: outputs/learning/derived-v5b-m384-strength-canonical-ppo50-warmup300-20260928-s99001/checkpoints/update-001061.pt}
+    - {name: s100201-u0000, path: outputs/learning/team-clone-dsm-bc-20260929-s100012/pretraining/shard-000512.pt}
+    - {name: s100201-u0050, path: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201/checkpoints/update-000050.pt}
+    - {name: s100201-u0100, path: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201/checkpoints/update-000100.pt}
+    - {name: s100201-u0150, path: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201/checkpoints/update-000150.pt}
+    - {name: s100201-u0200, path: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201/checkpoints/update-000200.pt}
+    - {name: s100201-u0250, path: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201/checkpoints/update-000250.pt}
+    - {name: s100201-u0300, path: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201/checkpoints/update-000300.pt}
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/rl-drift-20260929

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-13",
+  "source_snapshot": {
+    "original_tracked_files": 2547,
+    "missing_files": 0,
+    "original_git_history_imported": false
+  },
+  "credential_scan": {
+    "tool": "gitleaks",
+    "version": "8.30.1",
+    "staged_raw_findings": 2,
+    "confirmed_secrets": 0,
+    "reviewed_false_positives": [
+      {
+        "path": "src/kagg_revue/learning/performance/history.py",
+        "rule": "generic-api-key",
+        "explanation": "A list of neural-network parameter names, including memory.pool_keys.bias and market_heads.0.1.bias."
+      },
+      {
+        "path": "src/kagg_revue/policy/memory/temporal.py",
+        "rule": "generic-api-key",
+        "explanation": "Checking whether an attention tensor uses the PyTorch bfloat16 dtype."
+      }
+    ],
+    "expanded_archives": {
+      "findings": 0,
+      "scope": "Both final tar archives, nested TorchScript ZIP members including debug metadata and tensor-storage printable strings, native ELF printable strings, and tracked zlib/npz opponent assets."
+    }
+  },
+  "privacy_checks": {
+    "original_private_email_absent": true,
+    "original_home_paths_absent": true,
+    "private_drive_folder_links_absent": true,
+    "git_authors": "Public GitHub identity and noreply email only"
+  },
+  "validation": {
+    "ruff": "passed: src tests",
+    "mypy": "passed: 1068 source files",
+    "pytest": "passed: 9 release redaction and publishing tests",
+    "native_core": "rebuilt from the sanitized source snapshot",
+    "model_comparison": "See validation.json: two policies, two Python runtimes, full 719-turn games and both seats."
+  },
+  "limits": "Scans and manual review support this release; they do not guarantee the absence of every possible sensitive string. Public competition identities, research dates, results, provenance hashes and third-party credits are intentionally retained."
+}

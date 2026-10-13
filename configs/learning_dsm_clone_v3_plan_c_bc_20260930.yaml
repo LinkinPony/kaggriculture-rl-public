@@ -1,0 +1,19 @@
+# DSM clone v3, plan C: the MMPQ v4 P recipe (U0, cosine peak 2e-5 after a one-epoch warmup,
+# validation early stopping) on the current DSM plan only (four versions, 413/25 games).
+defaults:
+- learning_team_clone_bc_20260929
+- _self_
+experiment:
+  joint_units: false
+  demonstrations:
+    manifest: outputs/datasets/team-clone-v3-dsm-plan-c-20260930-train-val-q100/manifest.json
+    sha256: 41f5d9222532ec3f2a1a84eb859a112c58902481a4a8d91516adbfc90ccac047
+    learning_rate: 2.0e-05
+    joint_learning_rate: null
+    epochs: 14
+    schedule:
+      warmup_shards: 52
+      final_fraction: 0.05
+    early_stopping:
+      patience: 5
+      min_delta: 0.0005

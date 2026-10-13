@@ -1,0 +1,16 @@
+probe:
+  runs:
+    - outputs/learning/scratch-curriculum-s43001
+    - outputs/learning/scratch-curriculum-s43002
+  output_dir: outputs/analysis/scratch-curriculum-source-selection
+  updates: [0, 8, 16, 32, 64]
+  start_step: 576
+  seeds: 32
+  sampling_seed: 840000000
+  split: selection
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${probe.output_dir}/hydra
+  output_subdir: null

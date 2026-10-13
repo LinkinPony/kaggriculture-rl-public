@@ -1,0 +1,32 @@
+# Six teachers; opponents use submission union, own seats use episode createTime.
+defaults:
+  - learning_grouped_bc
+  - _self_
+
+experiment:
+  output_dir: outputs/learning/derived-v5b-m384-u3243-watch6-bc100-20260926-s90001
+  seed: 90001
+  train_seed: 6600000000
+  agronomy: true
+  derived: true
+  pretraining_only: true
+  initial_weights:
+    run: outputs/learning/agronomy-v4-m384-dsm-games-ppo50-20260924-s82001
+    checkpoint: checkpoints/update-003243.pt
+    sha256: ece90a347c5864dbccb0fcf322102feaefffeab5ebd8b0baee04ca15128b6f7f
+  evaluation:
+    selection_seed: 6620000000
+    confirmation_seed: 6621000000
+    anchor_seeds: [400001, 400002]
+  demonstrations:
+    manifest: outputs/datasets/derived-v5b-watch6-active-recent-20260926-train-val-q100-exclude-56484772/manifest.json
+    sha256: 3bfaab1d825f2ac7b85e20e5c9281c9d2f42baa2ebffc68f2cf10e0d2da87ed3
+    epochs: 100
+    early_stopping: null
+    learning_rate: 0.00001
+    batch_rows: 5752
+    checkpoint_shards: 16
+    distributed: true
+    behavior_games: 0
+    control_games: 0
+    behavior_seed: 6622000000

@@ -1,0 +1,19 @@
+defaults:
+  - _self_
+upgrade:
+  run: outputs/learning/long-100k-20260908-s61001
+  execution:
+    devices: [cuda:0, cuda:1]
+    microbatch_rows: 5760
+    workers_per_rank: 8
+    cpu_threads_per_rank: 2
+    compile_inference: true
+    fused_loss: true
+  qualification: outputs/analysis/dual-h200/qualification.json
+  qualification_sha256: ???
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/dual-h200/hydra-upgrade
+  output_subdir: null

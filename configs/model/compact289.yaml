@@ -1,0 +1,18 @@
+# @package experiment
+# Frozen 2,887,708-parameter Actor + Prefix Critic; full v4 observations and 286 scene tokens.
+architecture: grounded-v2
+width: 256
+depth: 3
+heads: 4
+expansion: 2
+critic_width: 128
+critic_depth: 1
+gated: false
+memory_turns: 0
+operation_quantity_bias: true
+market_budget: true
+agronomy: true
+unit_limit: 32
+decision_interval: 1
+quantity_max: 100
+quantity_extra: []

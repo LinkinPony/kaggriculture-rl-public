@@ -1,0 +1,29 @@
+change:
+  selfplay: true
+  run: outputs/learning/gtrxl-m384-3d-20260916-s70001
+  games: 128
+  train_seed: 3900000000
+  batch_rows: 46016
+  sequence_games_per_rank: 32
+  actor_learning_rate: 7.5e-6
+  target_kl: 0.05
+  kl_control: early_stop
+  execution:
+    devices: [cuda:0, cuda:1]
+    microbatch_rows: 3072
+    workers_per_rank: 8
+    cpu_threads_per_rank: 2
+    compile_inference: false
+    fused_loss: false
+  qualification: outputs/analysis/gtrxl-20260916/selfplay-qualification.json
+  qualification_sha256: ${oc.env:SELFPLAY_QUALIFICATION_SHA256,0000000000000000000000000000000000000000000000000000000000000000}
+qualification:
+  output_dir: outputs/learning/gtrxl-m384-selfplay-qualification-20260916-v1
+  updates: 4
+  evaluation_games: 2
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/gtrxl-20260916/hydra-selfplay
+  output_subdir: null

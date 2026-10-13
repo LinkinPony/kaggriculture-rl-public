@@ -1,0 +1,29 @@
+# Continue the s99001 BC start (U0) on the 9/29 strength selection (MMPQ x2, DSM x3).
+defaults:
+- learning_strength_canonical_bc_20260928
+- _self_
+experiment:
+  output_dir: outputs/learning/derived-v5b-m384-u0-strength-canonical-bc-20260929-s100001
+  seed: 100001
+  train_seed: 7900000000
+  resume: false
+  pretraining_only: true
+  initial_weights:
+    run: outputs/learning/derived-v5b-m384-strength-canonical-ppo50-warmup300-20260928-s99001
+    checkpoint: initial.pt
+    sha256: 25a2d49c498b7bbb114439931c7a03e303ee27663d6ecfc11c19797964d06f27
+  evaluation:
+    selection_seed: 7920000000
+    confirmation_seed: 7921000000
+    anchor_seeds:
+    - 480001
+    - 480002
+  demonstrations:
+    manifest: outputs/datasets/derived-v5b-strength-top-canonical-20260929-train-val-q100/manifest.json
+    sha256: ???
+    epochs: 20
+    epoch_checkpoint_interval: 1
+    early_stopping:
+      patience: 3
+      min_delta: 0.0005
+    behavior_seed: 7922000000

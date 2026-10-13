@@ -1,0 +1,14 @@
+defaults:
+  - learning_population_change
+  - _self_
+change:
+  batch:
+    games: 512
+    train_seed: 3100000000
+  qualification: outputs/analysis/batch-512-20260908/qualification.json
+qualification:
+  output_dir: outputs/learning/batch-512-qualification-20260908
+  updates: 8
+hydra:
+  run:
+    dir: outputs/analysis/batch-512-20260908/hydra

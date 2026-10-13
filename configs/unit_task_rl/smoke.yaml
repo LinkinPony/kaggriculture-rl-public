@@ -1,0 +1,83 @@
+# CPU-only bounded integration profile. It is not promotion evidence.
+initial_actor: outputs/turn-policy/20260828-opening-diverse-bc2-v1/actor-fp16.pt
+initial_task_checkpoint: null
+initial_task_checkpoint_sha256: null
+initial_optimizer: reset
+resume_checkpoint: null
+public_agent_manifest: data/external/kaggriculture-public-notebooks-2026-08-28/manifest.json
+output_dir: outputs/unit-task-rl/smoke-v1
+
+seed: 20260831
+rollout_seed_start: 5000000
+updates: 1
+opponents: [self_play]
+opponent_weights:
+  self_play: 1.0
+paired_seats: true
+evaluation_opponents: [deterministic_incumbent, kaito_v39]
+selection_seeds: [85000, 85001]
+confirmation_seeds: [85100, 85101]
+
+abi:
+  unit_limit: 32
+  maximum_quantity: 128
+
+model:
+  architecture_version: factorized-v3
+  model_width: 64
+  feedforward_width: 128
+  attention_heads: 4
+  prefix_layers: 1
+
+objective:
+  reward: terminal_wdl
+  discount: 1.0
+  gae_lambda: 1.0
+
+optimization:
+  ppo_epochs: 1
+  episodes_per_minibatch: 4
+  learning_rate: 0.00005
+  weight_decay: 0.00001
+  clip_epsilon: 0.1
+  task_value_loss_weight: 1.0
+  market_value_loss_weight: 1.0
+  task_entropy_weight: 0.001
+  market_entropy_weight: 0.001
+  gradient_clip: 1.0
+  target_kl: 0.02
+  normalize_advantage: true
+
+rollout:
+  seeds_per_update: 2
+  batch_games: 4
+  cpu_workers: 4
+  actor_streams: 1
+  host_memory_limit_gib: 4
+  gpu_memory_fraction: 0.5
+
+checkpoint:
+  rolling_interval: 1
+  rolling_keep: 2
+  permanent_interval: 10
+
+incumbent:
+  kind: event_route_ppo
+  checkpoint: outputs/route-ppo/20260830-event-route-ppo-v1/checkpoints/permanent/checkpoint-00000275.pt
+  checkpoint_sha256: a69d1160632a366d184c322fb7b2e73c22b87034308ef81d76655f7567d8a8a5
+  prior_logit: 6.0
+  unit_limit: 65
+  confirmation_report: outputs/evaluation/20260830-event-route-ppo-checkpoint275-prior6-confirmation192-v1/evaluation-report.json
+  confirmation_sha256: cc0c0cdae05a85b8ce7b7d3d92e2ddb7a7b9eb199e34fcbe1cbbfd4254610e3c
+  runtime_audit_report: outputs/evaluation/20260830-event-route-ppo-checkpoint275-prior6-runtime-audit-v2/runtime-audit-report.json
+  runtime_audit_sha256: fa310435a4e0228cf05cfbbca7db47ba130ee077554eda41db4f942faf35dbc2
+
+device: cpu
+training_devices: [cpu]
+cuda_allocator_expandable_segments: false
+cpu_threads: 4
+act_timeout_seconds: 1.0
+remaining_overage_seconds: 60.0
+environment:
+  episodeSteps: 3
+  maxMarketOrdersPerTurn: 2

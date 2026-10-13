@@ -1,0 +1,20 @@
+# s101701 (continuation of s101102 U200) checkpoints on s101102's progress panel: same four
+# T=0 opponents, seeds and precision, paired against s101102 U200's own panel row, so a positive
+# difference means the continuation beats its start on these references.
+defaults:
+- evaluation_progress_s101102_20260930
+- _self_
+progress:
+  run: outputs/learning/derived-v5b-m384-s101102u200-kl-ppo50-1gpu-20260930-s101701
+  prefix: s101701
+  updates: [50, 100, 150, 200, 250, 300, 350, 400, 450, 500]
+  baseline:
+    study: outputs/analysis/s101102-progress-20260930/u000200
+    candidate: s101102-u000200
+  study:
+    output: outputs/analysis/s101701-progress-20260930
+    devices: [cuda:0, cuda:1]
+    scope: >-
+      s101701 checkpoints at T=0 against s100901 U480/U756, s100201 U200 and s99001 U200, all
+      at T=0, on 64 common seeds with both seats; baseline is s101102 U200 (its start, Kaggle
+      56709373) on the same seeds. Local proxy only.

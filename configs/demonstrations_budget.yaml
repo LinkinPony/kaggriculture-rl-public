@@ -1,0 +1,18 @@
+data:
+  output_dir: outputs/datasets/budget-20260911
+  tasks: outputs/analysis/bc-redesign-20260911/tasks.json
+  trajectories: outputs/analysis/bc-redesign-20260911/trajectories.jsonl
+  public_manifest: data/external/kaggriculture-bc-redesign-20260911/raw/public/manifest.json
+  minimum_public_score: 2800
+  partition_seed: 62001
+  workers: 8
+  episodes_per_shard: 32
+  exposure_power: 0.5
+  minimum_weight: 0.5
+  maximum_weight: 2.0
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/analysis/budget-20260911/data-hydra
+  output_subdir: null

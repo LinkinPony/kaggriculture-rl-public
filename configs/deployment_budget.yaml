@@ -1,0 +1,6 @@
+defaults:
+  - deployment_check
+  - _self_
+check:
+  interpreter: ${oc.env:REVUE_PYTHON_311,/usr/bin/python3.11}
+  output_dir: outputs/analysis/deployment-budget-${now:%Y%m%d-%H%M%S}

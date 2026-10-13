@@ -1,0 +1,9 @@
+defaults:
+  - learning_demonstration_qualification
+  - _self_
+experiment:
+  output_dir: outputs/learning/scratch-recovery-continuous-v1
+  seed: 48002
+  deterministic: true
+  demonstrations:
+    epochs: 4

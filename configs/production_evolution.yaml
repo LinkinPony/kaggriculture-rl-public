@@ -1,0 +1,23 @@
+defaults:
+  - production: work_expert
+  - _self_
+production:
+  mode: evaluate
+  output_dir: outputs/production-policy/20260907-work-policy-search
+  checkpoint: outputs/production-policy/20260907-work-parameter-screen-mixed/candidates/candidate-0058.pt
+  evaluation_seed: 70000000
+  confirmation_seed: 95000000
+  ppo:
+    seed_start: 80000000
+reference: outputs/releases/20260907-work-no-prior-ppo-lr1e6-stopped/update-0751.pt
+generations: 10000
+directions: 3
+scales: [0.01, 0.03, 0.1]
+mutation_seed: 97319
+finalists: 2
+retain_generations: 16
+hydra:
+  run:
+    dir: ${production.output_dir}/hydra
+  job:
+    chdir: false

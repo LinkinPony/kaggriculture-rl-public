@@ -1,0 +1,17 @@
+# The two parallel-decoder MMPQ v4 clones at T=1 on the same seeds and references as their
+# T=0 panel (evaluation_mmpq_clone_v4_parallel_20260930).
+defaults:
+  - evaluation_mmpq_clone_v4_parallel_20260930
+  - _self_
+study:
+  output: outputs/analysis/mmpq-bc-redesign-20260930/v4-parallel-t1
+  scope: >-
+    MMPQ v4 clones (current-plan data; parallel unit decoder) at T=1 against four T=1
+    references and the v3 clone at T=0, on 64 common seeds with both seats. Local proxy only.
+  candidates:
+    - name: v4-parallel-t1
+      temperature: 1
+      run: outputs/learning/mmpq-clone-v4-parallel-bc-20260930-s101001
+    - name: v4-parallel-const-t1
+      temperature: 1
+      run: outputs/learning/mmpq-clone-v4-parallel-const-bc-20260930-s101004

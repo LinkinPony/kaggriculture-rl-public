@@ -1,0 +1,23 @@
+.opponent-history-controls, .opponent-pagination { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin: 14px 0; }
+.opponent-history-controls label { display: flex; align-items: center; gap: 8px; }
+.opponent-history-controls input, .opponent-history-controls select, .opponent-pagination button, [data-close-opponent], #opponent-plot-dialog > button { font: inherit; font-size: 12px; color: #344c54; border: 1px solid #cedbd4; border-radius: 7px; padding: 7px 10px; background: #fff; }
+.opponent-pagination button, [data-close-opponent], #opponent-plot-dialog > button { cursor: pointer; }
+.opponent-pagination button:disabled { opacity: .45; cursor: default; }
+.opponent-pagination span, .opponent-history-controls label { font-size: 12px; color: var(--muted); }
+.opponent-history-controls input { min-width: 240px; }
+.opponent-history-status[data-error="true"] { color: var(--loss, #b44343); }
+.opponent-history-table th button { white-space: nowrap; font: inherit; color: inherit; background: transparent; border: 0; padding: 0; cursor: pointer; }
+.opponent-history-table small { display: block; margin-top: 5px; opacity: .65; font-size: 11px; }
+.opponent-open { background: transparent; border: 0; padding: 0; text-align: left; color: var(--accent, #209f80); cursor: pointer; max-width: 350px; overflow-wrap: anywhere; }
+.opponent-wdl { white-space: nowrap; }
+.opponent-selected { background: rgba(32, 159, 128, .08); }
+.opponent-history-detail { margin-top: 24px; border-top: 1px solid var(--border, #ddd); padding-top: 20px; scroll-margin-top: 15px; }
+.opponent-identity { overflow-wrap: anywhere; font-size: 12px; line-height: 1.8; opacity: .75; }
+.opponent-history-plots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 20px 0; }
+.opponent-history-ready .legacy-pfsp { display: none; }
+#opponent-plot-dialog { width: min(1100px, 95vw); max-height: 94vh; overflow: auto; border: 1px solid var(--border, #ddd); border-radius: 12px; padding: 20px; }
+#opponent-plot-dialog::backdrop { background: rgba(0, 0, 0, .4); }
+#opponent-plot-dialog > button { float: right; margin-bottom: 10px; }
+#opponent-plot-dialog article { clear: both; }
+#opponent-plot-dialog .plot-expand { display: none; }
+@media (max-width: 900px) { .opponent-history-plots { grid-template-columns: 1fr; } .opponent-history-controls input { min-width: 180px; } }

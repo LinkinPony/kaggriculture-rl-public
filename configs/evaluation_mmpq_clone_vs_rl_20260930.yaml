@@ -1,0 +1,49 @@
+# The best MMPQ clones against our strongest RL actors, everyone at T=0 (deployment
+# decoding). s100901 U480 is Kaggle submission 56689315 (T=0); U756 is where s100901 was
+# stopped for the MMPQ BC redesign. Same seeds and precision as the clone panels.
+study:
+  output: outputs/analysis/mmpq-bc-redesign-20260930/vs-rl-t0
+  games: 128
+  seed: 9500000000
+  sampling_seed: 95000001
+  devices: [cuda:0, cuda:1, cuda:0, cuda:1]
+  memory_fraction: 0.06
+  precision: bf16
+  scope: >-
+    MMPQ v4/v5 clones at T=0 against s100901 U480/U756, s100201 U200 and s99001 U200, all at
+    T=0, on 64 common seeds with both seats. Local proxy only.
+  candidates:
+    - name: v5-scratch-t0
+      temperature: 0
+      run: outputs/learning/mmpq-clone-v5-scratch-bc-20260930-s101005
+    - name: v4-parallel-const-t0
+      temperature: 0
+      run: outputs/learning/mmpq-clone-v4-parallel-const-bc-20260930-s101004
+    - name: v4-parallel-t0
+      temperature: 0
+      run: outputs/learning/mmpq-clone-v4-parallel-bc-20260930-s101001
+  opponents:
+    - name: s100901-u0480-t0
+      group: s100901-u0480
+      temperature: 0
+      path: outputs/analysis/s100901-u0480-temperature-20260929/actors/s100901-u0480-t0.pt
+    - name: s100901-u0756-t0
+      group: s100901-u0756
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-s99001u1061-dsm2d-kl-ppo50-20260929-s100901
+      member: checkpoints/update-000756.pt
+    - name: s100201-u0200-t0
+      group: s100201
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201
+      member: checkpoints/update-000200.pt
+    - name: s99001-u0200-t0
+      group: s99001
+      temperature: 0
+      path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0200.pt
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${study.output}/hydra
+  output_subdir: null

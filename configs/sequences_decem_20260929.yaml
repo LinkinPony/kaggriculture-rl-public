@@ -1,0 +1,25 @@
+similarity:
+  source: data/external/kaggriculture-decem-replays/manifest.json
+  output: outputs/analysis/decem-56654377-similarity-20260929
+  reference: 56654377
+  workers: 12
+data:
+  output: outputs/datasets/derived-v5b-decem-56654377-canonical-20260929-train-val-q100
+  raw: data/external
+  reuse: []
+  teachers: [DECEM]
+  watch_manifests:
+  - outputs/analysis/decem-56654377-similarity-20260929/selected.json
+  workers: 12
+  partition_seed: 62001
+  train_val: true
+  agronomy: true
+  derived: true
+  canonical_market: true
+report: outputs/analysis/decem-56654377-similarity-20260929/data-verification.json
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: tmp/hydra/decem-56654377-20260929/${now:%Y%m%d-%H%M%S}
+  output_subdir: null

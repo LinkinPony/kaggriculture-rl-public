@@ -1,0 +1,16 @@
+# User-authorized single Kaggle submission of the qualified s101701 U250 package.
+# FP32 T=0 with final-turn liquidation; the attempt record prevents a second upload.
+submission:
+  archive: outputs/deployment/s101701-u0250-20260930-t0-liquidation/submission.tar.gz
+  archive_sha256: c278b324677210baca9dbc79ebe193426c1c13eae16894228f20aee1e65ea165
+  qualification: outputs/analysis/s101701-u0250-20260930-t0-liquidation/qualification.json
+  description: "MMPQ line U200-continuation RL v5b s101701 U250; FP32 T=0; final-turn liquidation; ckpt f0b34daa; pkg c278b324"
+  output: outputs/analysis/s101701-u0250-20260930-t0-liquidation
+  competition: kaggriculture
+  dry_run: false
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${submission.output}/hydra-submission
+  output_subdir: null

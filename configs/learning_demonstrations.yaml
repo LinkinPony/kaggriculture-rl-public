@@ -1,0 +1,27 @@
+defaults:
+  - learning_grounded
+  - _self_
+experiment:
+  output_dir: outputs/learning/scratch-demonstrations-s47001
+  seed: 47001
+  train_seed: 960000000
+  updates: 128
+  games: 128
+  operation_quantity_bias: true
+  quantity_max: 128
+  quantity_extra: [256, 499, 500, 502, 505, 506, 512, 970, 978, 980, 982, 984, 985, 986, 987, 989, 990, 991, 992, 993, 994, 995, 996, 997, 998, 999, 1024, 4096, 10000, 1000000]
+  cash_weight: 0.0
+  cash_scale: 10000.0
+  demonstrations:
+    manifest: data/external/grounded-demonstrations-20260903-05-v1/manifest.json
+    sha256: 31af71c65666fad467eb5e6a06a9c0edaaef6c7dd6137315199c7cb20996989e
+    epochs: 4
+    batch_rows: 256
+    learning_rate: 0.0003
+    checkpoint_shards: 16
+  evaluation:
+    games: 64
+    interval: 16
+    selection_seed: 970000000
+    confirmation_seed: 980000000
+    anchor_seeds: [97001, 97002]

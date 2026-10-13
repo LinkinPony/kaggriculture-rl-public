@@ -1,0 +1,23 @@
+defaults:
+  - learning_agronomy_bc_20260917
+  - _self_
+
+experiment:
+  output_dir: outputs/learning/agronomy-v4-m384-bc-qualification-20260917
+  seed: 73002
+  train_seed: 4390000000
+  updates: 2
+  checkpoint_interval: 1
+  evaluation:
+    games: 2
+    selection_seed: 4391000000
+    confirmation_seed: 4392000000
+  demonstrations:
+    manifest: outputs/analysis/agronomy-v4-20260917/qualification-data/manifest.json
+    sha256: 3c9d4f3f4bdc26c9aa58fc710c2d247ae9cb15cd6910592f2609b9e3a46697c6
+    epochs: 2
+    checkpoint_shards: 1
+    behavior_games: 2
+    control_games: 2
+    behavior_seed: 4393000000
+    early_stopping: null

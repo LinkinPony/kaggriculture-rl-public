@@ -1,0 +1,3 @@
+defaults:
+  - conditional_program_rl: smoke
+  - _self_

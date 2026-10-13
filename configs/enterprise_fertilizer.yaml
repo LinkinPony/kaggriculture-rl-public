@@ -1,0 +1,130 @@
+panel:
+  manifest: data/external/kaggriculture-notebook-survey-20260915/manifest.json
+  output: outputs/analysis/enterprise-20260915/fertilizer-01
+  variants:
+    delivery:
+      future_shops: 0.585
+      duration_power: 0.5
+      animal_bias: 1.99876
+      animal_last_day: 14
+      central_reserve: 3
+      animal_limit: 5
+      plant_priority: 0.77898
+      water_priority: 0.25
+      fertilizer_priority: 0.2
+      care_priority: 1.09931
+      workers: 9
+      travel_power: 1.03257
+      crop_bias:
+        WHEAT: 0.64852
+        CARROT: 2.12728
+        TOMATO: 0.75176
+        STRAWBERRY: 0.95577
+        MELON: 0.80614
+      sell_floor: 1
+      growth_bias: 0.0
+      initial_workers: 7
+      fertilize: true
+      sticky: 2.0
+      commit: true
+      crews: false
+      territories: false
+      efficient_transport: true
+    fertilizer:
+      future_shops: 0.585
+      duration_power: 0.5
+      animal_bias: 1.99876
+      animal_last_day: 14
+      central_reserve: 3
+      animal_limit: 5
+      plant_priority: 0.77898
+      water_priority: 0.25
+      fertilizer_priority: 0.2
+      care_priority: 1.09931
+      workers: 9
+      travel_power: 1.03257
+      crop_bias:
+        WHEAT: 0.64852
+        CARROT: 2.12728
+        TOMATO: 0.75176
+        STRAWBERRY: 0.95577
+        MELON: 0.80614
+      sell_floor: 1
+      growth_bias: 0.0
+      initial_workers: 7
+      fertilize: true
+      sticky: 2.0
+      commit: true
+      crews: false
+      territories: false
+      efficient_transport: true
+      buy_fertilizer: true
+    fertilizer_labor:
+      future_shops: 0.585
+      duration_power: 0.5
+      animal_bias: 1.99876
+      animal_last_day: 14
+      central_reserve: 3
+      animal_limit: 5
+      plant_priority: 0.77898
+      water_priority: 0.25
+      fertilizer_priority: 0.2
+      care_priority: 1.09931
+      workers: 12
+      travel_power: 1.03257
+      crop_bias:
+        WHEAT: 0.64852
+        CARROT: 2.12728
+        TOMATO: 0.75176
+        STRAWBERRY: 0.95577
+        MELON: 0.80614
+      sell_floor: 1
+      growth_bias: 0.0
+      initial_workers: 7
+      fertilize: true
+      sticky: 2.0
+      commit: true
+      crews: false
+      territories: false
+      efficient_transport: true
+      buy_fertilizer: true
+    fertilizer_land:
+      future_shops: 0.585
+      duration_power: 0.5
+      animal_bias: 1.99876
+      animal_last_day: 14
+      central_reserve: 3
+      animal_limit: 5
+      plant_priority: 2
+      water_priority: 0.7
+      fertilizer_priority: 0.2
+      care_priority: 1.09931
+      workers: 12
+      travel_power: 1.03257
+      crop_bias:
+        WHEAT: 0.64852
+        CARROT: 2.12728
+        TOMATO: 0.75176
+        STRAWBERRY: 0.95577
+        MELON: 0.80614
+      sell_floor: 1
+      growth_bias: 0.0
+      initial_workers: 7
+      fertilize: true
+      sticky: 2.0
+      commit: true
+      crews: false
+      territories: false
+      efficient_transport: true
+      buy_fertilizer: true
+  opponents:
+  - ahmed_v43
+  seeds:
+  - 1860917101
+  - 1860917102
+  workers: 8
+  trace: true
+hydra:
+  run:
+    dir: outputs/analysis/enterprise-20260915/hydra
+  output_subdir: null

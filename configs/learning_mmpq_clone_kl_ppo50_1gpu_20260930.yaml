@@ -1,0 +1,18 @@
+# s101101 on cuda:0 alone (cuda:1 is reserved for DSM BC): the single-GPU shape of this recipe,
+# 64 games per update as in s100401, so each rank keeps its two-GPU workload. Handoff, critic,
+# reward, anchor and opponent pool are unchanged.
+defaults:
+- learning_mmpq_clone_kl_ppo50_20260930
+- _self_
+experiment:
+  output_dir: outputs/learning/derived-v5b-m384-mmpqclone4-kl-ppo50-1gpu-20260930-s101102
+  seed: 101102
+  train_seed: 9200000000
+  games: 64
+  device: cuda:0
+  evaluation:
+    selection_seed: 9220000000
+    confirmation_seed: 9221000000
+    anchor_seeds: [540001, 540002]
+  execution:
+    devices: [cuda:0]

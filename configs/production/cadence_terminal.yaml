@@ -1,0 +1,10 @@
+defaults:
+  - cadence_24
+  - _self_
+output_dir: outputs/production-policy/20260905-cadence-terminal-100u
+checkpoint: outputs/production-policy/20260905-cadence-terminal-100u/initial.pt
+decision_interval: 12
+late_replanning_days: 3
+late_decision_interval: 4
+ppo:
+  batch_rows: 18432

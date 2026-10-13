@@ -1,0 +1,10 @@
+# DSM clone v4 plan C: the v3 plan C recipe on the refreshed four-version data (490 games,
+# train/val 461/29); warmup stays one epoch of 58 shards.
+defaults:
+- learning_dsm_clone_v3_plan_c_bc_20260930
+- _self_
+experiment:
+  demonstrations:
+    manifest: outputs/datasets/team-clone-v4-dsm-plan-c-20260930-train-val-q100/manifest.json
+    sha256: d760db0bf17238170f14274e444be64bc127980724a09008f2cbefc797868382
+    schedule: {warmup_shards: 58}

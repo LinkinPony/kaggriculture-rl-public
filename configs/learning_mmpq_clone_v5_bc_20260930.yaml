@@ -1,0 +1,16 @@
+# MMPQ clone v5: the three 9/29 MMPQ versions only, with the constant-rate recipe that
+# matched the best v4 clone (1e-5, validation early stopping). The continuation variant
+# overrides initial_weights with the best v4 clone and lowers the rate.
+defaults:
+- learning_mmpq_clone_v4_bc_20260930
+- _self_
+experiment:
+  demonstrations:
+    manifest: outputs/datasets/team-clone-v5-mm-pq-20260930-train-val-q100/manifest.json
+    sha256: 4a12fb79b4967efcc6fbb791ee12aab8057338398adbbdcc8c972e67ac217f75
+    learning_rate: 1.0e-05
+    epochs: 30
+    schedule: null
+    early_stopping:
+      patience: 3
+      min_delta: 0.0005

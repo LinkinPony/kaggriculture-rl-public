@@ -1,0 +1,51 @@
+# Bounded integration profile; it is not promotion evidence.
+initial_actor: outputs/turn-policy/20260828-opening-diverse-bc2-v1/actor-fp16.pt
+resume_checkpoint: null
+output_dir: outputs/intent-ledger-rl/smoke-v1
+seed: 20260903
+rollout_seed_start: 7100000
+updates: 1
+opponent: self_play
+objective: terminal_wdl
+discount: 1.0
+gae_lambda: 1.0
+unit_limit: 32
+
+model:
+  model_width: 64
+  feedforward_width: 128
+  train_turn_encoder: false
+
+optimization:
+  ppo_epochs: 1
+  episodes_per_minibatch: 4
+  episodes_per_microbatch: null
+  learning_rate: 0.00005
+  weight_decay: 0.00001
+  clip_epsilon: 0.1
+  value_loss_weight: 1.0
+  entropy_weight: 0.001
+  gradient_clip: 1.0
+  target_kl: 0.02
+  normalize_advantage: true
+
+rollout:
+  seeds_per_update: 2
+  cpu_workers: 4
+  max_transaction_steps: 8
+  actor_streams_per_device: 1
+  devices: [cuda:0]
+
+checkpoint:
+  interval: 1
+  keep: 2
+
+device: cuda:0
+cpu_threads: 4
+act_timeout_seconds: 1.0
+remaining_overage_seconds: 60.0
+environment:
+  boardSize: 10
+  episodeSteps: 3
+  turnsPerDay: 24
+  maxMarketOrdersPerTurn: 10

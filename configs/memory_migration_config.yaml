@@ -1,0 +1,14 @@
+defaults:
+  - rl: terminal_wdl
+  - _self_
+
+migration:
+  source_checkpoint: outputs/terminal-wdl/20260827-strategy-workspace-v1/checkpoints/rolling/checkpoint-00000040.pt
+  source_initial_actor: outputs/strategy-migration/20260827-strategy-v1/initial-actor.pt
+  destination_dir: outputs/strategy-migration/20260827-persistent-gru-v2
+  seed: 2026082702
+
+rl:
+  initial_actor: outputs/strategy-migration/20260827-persistent-gru-v2/initial-actor.pt
+  resume_checkpoint: outputs/strategy-migration/20260827-persistent-gru-v2/checkpoint.pt
+  output_dir: outputs/terminal-wdl/20260827-persistent-gru-v2

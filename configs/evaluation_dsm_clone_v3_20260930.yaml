@@ -1,0 +1,59 @@
+# The current-plan DSM clone (v3 plan C) against the earlier DSM clones, all at T=0.
+# Opponents are the clone-vs-RL panel (same seeds and precision as the MMPQ clone panels, so
+# the four RL families compare directly with the v4 P MMPQ clone's 62.7%) plus that MMPQ
+# clone itself. Plan B is evaluated on the same seeds by evaluation_dsm_clone_v3_plan_b.
+# Workers stay on cuda:1; cuda:0 trains s101102.
+study:
+  output: outputs/analysis/dsm-bc-redesign-20260930/panel-t0
+  games: 128
+  seed: 9500000000
+  sampling_seed: 95000001
+  devices: [cuda:1, cuda:1, cuda:1]
+  memory_fraction: 0.06
+  precision: bf16
+  scope: >-
+    DSM clones v3 plan C, v1, v2 and the s100801 two-day BC at T=0 against
+    s100901 U480/U756, s100201 U200, s99001 U200 and the v4 P MMPQ clone, all at T=0, on 64
+    common seeds with both seats. Local proxy only.
+  candidates:
+    - name: dsm-v3-plan-c-t0
+      temperature: 0
+      run: outputs/learning/dsm-clone-v3-plan-c-bc-20260930-s101201
+    - name: dsm-v1-t0
+      temperature: 0
+      run: outputs/learning/team-clone-dsm-bc-20260929-s100012
+    - name: dsm-v2-t0
+      temperature: 0
+      run: outputs/learning/team-clone-v2-dsm-bc-20260929-s100022
+    - name: dsm-2d-s100801-t0
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-s99001u1061-dsm2d-bc-20260929-s100801
+  opponents:
+    - name: s100901-u0480-t0
+      group: s100901-u0480
+      temperature: 0
+      path: outputs/analysis/s100901-u0480-temperature-20260929/actors/s100901-u0480-t0.pt
+    - name: s100901-u0756-t0
+      group: s100901-u0756
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-s99001u1061-dsm2d-kl-ppo50-20260929-s100901
+      member: checkpoints/update-000756.pt
+    - name: s100201-u0200-t0
+      group: s100201
+      temperature: 0
+      run: outputs/learning/derived-v5b-m384-dsmclone-ppo50-warmup300-20260929-s100201
+      member: checkpoints/update-000200.pt
+    - name: s99001-u0200-t0
+      group: s99001
+      temperature: 0
+      path: outputs/analysis/s99001-checkpoint-comparison-20260928/actors/u0200.pt
+    - name: mmpq-v4-p-t0
+      group: mmpq-v4-p
+      temperature: 0
+      run: outputs/learning/mmpq-clone-v4-parallel-bc-20260930-s101001
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${study.output}/hydra
+  output_subdir: null

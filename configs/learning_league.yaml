@@ -1,0 +1,56 @@
+defaults:
+  - learning_context_selfplay
+  - _self_
+experiment:
+  output_dir: outputs/learning/league3-20260909-s63001-fixed
+  seed: 63001
+  device: cuda:0
+  updates: 100000
+  games: 192
+  width: 192
+  depth: 15
+  heads: 4
+  expansion: 2
+  critic_width: 160
+  critic_depth: 6
+  train_seed: 3700000000
+  demonstrations: null
+  population:
+    fraction: 0.0
+  script_population: null
+  batch_rows: 5760
+  checkpoint_interval: 4
+  checkpoint_keep_recent: 2
+  checkpoint_keep_interval: 200
+  quantity_extra: [256, 499, 500, 502, 512, 978, 979, 983, 984, 987, 990, 991, 992, 993, 994, 995, 996, 997, 998, 999, 1000, 1024, 4096, 10000, 1000000]
+  execution:
+    devices: [cuda:0, cuda:1]
+    microbatch_rows: 5760
+    workers_per_rank: 8
+    cpu_threads_per_rank: 2
+    compile_inference: true
+    fused_loss: true
+  evaluation:
+    interval: 512
+    selection_seed: 3750000000
+    confirmation_seed: 3751000000
+    anchor_seeds: [130001]
+league:
+  strata: outputs/datasets/league-v2-20260906-08/views/strata.json
+  strata_sha256: 7681a3fb111fc7a423a385ddba811fc25b1252d142d1e8abd9ab6e25cb46abd4
+  bc_epochs: 6
+  bc_batch_rows: 1024
+  bc_learning_rate: 0.0001
+  bc_checkpoint_shards: 8
+  games_per_pair: 32
+  selfplay_games_per_member: 32
+  cudnn_attention: false
+  resume: false
+  stop_after_update: null
+  stop_after_bc_shards: null
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${experiment.output_dir}/hydra
+  output_subdir: null

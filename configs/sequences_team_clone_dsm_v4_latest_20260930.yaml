@@ -1,0 +1,14 @@
+# DSM clone v4 data (latest version only): 56693917 (9/30 01:50 UTC), DSM's newest and strongest
+# version. It keeps plan C's hiring and tomato timing but issues about 5.2 market orders a turn
+# instead of 2.6-3.0, buys two plots on day 8 (days 6/8/8/10 rather than 6/8/9/10), and shifts
+# wheat to carrots and melons, so it is not mixed with the other plan C versions here.
+defaults:
+  - sequences_team_clone_dsm_v3_plan_c_20260930
+  - _self_
+selection:
+  output: outputs/datasets/team-clone-v4-dsm-latest-20260930/source-manifests
+  submitted_since: '2026-09-30T01:30:00Z'
+data:
+  output: outputs/datasets/team-clone-v4-dsm-latest-20260930-train-val-q100
+  watch_manifests: [outputs/datasets/team-clone-v4-dsm-latest-20260930/source-manifests/dsm/selected.json]
+report: outputs/analysis/dsm-bc-redesign-20260930/v4-latest-data-verification.json
